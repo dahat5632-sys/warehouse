@@ -1,0 +1,27 @@
+{
+  "name": "Bilal Gürkan Şanlı | Portfolio",
+  "short_name": "BIO",
+  "description": "Bilal Gürkan Şanlı — interaktif siberpunk portfolyo.",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "orientation": "any",
+  "background_color": "#020408",
+  "theme_color": "#020408",
+  "lang": "tr",
+  "categories": ["portfolio", "personal", "education"],
+  "icons": [
+    {
+      "src": "assets/default/common/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    },
+    {
+      "src": "assets/default/common/bio-logo.webp",
+      "sizes": "512x512",
+      "type": "image/webp",
+      "purpose": "any maskable"
+    }
+  ]
+}

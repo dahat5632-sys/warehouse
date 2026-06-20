@@ -1,0 +1,7 @@
+Recovered static website mirror
+Base URL: https://www.bilalgurkansanli.com/
+Downloaded files: 108
+Failures: 0
+
+Failed URLs:
+

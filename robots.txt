@@ -1,0 +1,24 @@
+# BIO: Implementation note for this section.
+# BIO: https://bilalgurkansanli.com
+
+User-agent: *
+Allow: /
+
+# BIO: Implementation note for this section.
+# BIO: budget downloading the videos / 3D textures themselves.
+Disallow: /assets/default/intro/
+Disallow: /assets/default/interactions/
+Disallow: /assets/default/sfx/
+Disallow: /assets/default/music/
+Disallow: /assets/pro/sfx/
+Disallow: /node_modules/
+
+# BIO: Implementation note for this section.
+# BIO: User-agent: GPTBot
+# BIO: Disallow:
+# BIO: User-agent: ClaudeBot
+# BIO: Disallow:
+# BIO: User-agent: CCBot
+# BIO: Disallow:
+
+Sitemap: https://bilalgurkansanli.com/sitemap.xml

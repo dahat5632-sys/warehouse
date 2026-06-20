@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+  <url>
+    <loc>https://bilalgurkansanli.com/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>1.0</priority>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://bilalgurkansanli.com/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://bilalgurkansanli.com/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://bilalgurkansanli.com/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://bilalgurkansanli.com/"/>
+    <image:image>
+      <image:loc>https://bilalgurkansanli.com/assets/og-cover.webp</image:loc>
+      <image:title>Bilal Gürkan Şanlı Portfolio Cover</image:title>
+      <image:caption>Bilal Gürkan Şanlı interaktif portfolyo kapak görseli.</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://bilalgurkansanli.com/assets/seo/websitepicturedefault.webp</image:loc>
+      <image:title>Bilal Gürkan Şanlı Default Mode Portfolio</image:title>
+      <image:caption>Bilal Gürkan Şanlı Default Mode portfolyo arayüzü ve interaktif düğüm görünümü.</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://bilalgurkansanli.com/assets/seo/websitepicturepro.webp</image:loc>
+      <image:title>Bilal Gürkan Şanlı Pro Mode Portfolio</image:title>
+      <image:caption>Bilal Gürkan Şanlı Pro Mode masaüstü 3D kokpit portfolyo deneyimi.</image:caption>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://bilalgurkansanli.com/default-mode/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+</urlset>
