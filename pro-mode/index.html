@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>Bilal Gürkan Şanlı | Portfolio (Pro Mode)</title>
+
+<!-- BIO: Implementation note for this section. -->
+<meta name="description" content="Bilal Gürkan Şanlı — İnternet ve Ağ Teknolojileri öğrencisi. Pro Mode: interaktif 3D kokpit portfolyo deneyimi; frontend, siber güvenlik ve yapay zeka odaklı.">
+<meta name="author" content="Bilal Gürkan Şanlı">
+<meta name="theme-color" content="#020408">
+<meta name="color-scheme" content="dark">
+<meta name="robots" content="index,follow">
+<link rel="canonical" href="https://bilalgurkansanli.com/">
+<!-- BIO: Dil seçenekleri tek URL üzerinden (TR/EN/DE); sitemap ile uyumlu hreflang. -->
+<link rel="alternate" hreflang="tr" href="https://bilalgurkansanli.com/">
+<link rel="alternate" hreflang="en" href="https://bilalgurkansanli.com/">
+<link rel="alternate" hreflang="de" href="https://bilalgurkansanli.com/">
+<link rel="alternate" hreflang="x-default" href="https://bilalgurkansanli.com/">
+<!-- BIO: Google Search Console HTML tag verification. -->
+<meta name="google-site-verification" content="d4oVNQX4HaOIueb3jf6qlABfiN8DP9if0zajg9qkehI">
+
+<!-- BIO: Social preview metadata uses the shared portfolio cover image when Pro Mode is linked directly. -->
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Bilal Gürkan Şanlı">
+<meta property="og:title" content="Bilal Gürkan Şanlı | Portfolio (Pro Mode)">
+<meta property="og:description" content="Bilal Gürkan Şanlı — İnternet ve Ağ Teknolojileri öğrencisi. Pro Mode: interaktif 3D kokpit portfolyo deneyimi; frontend, siber güvenlik ve yapay zeka odaklı.">
+<meta property="og:url" content="https://bilalgurkansanli.com/pro-mode/">
+<meta property="og:image" content="https://bilalgurkansanli.com/assets/og-cover.webp">
+<meta property="og:image:type" content="image/webp">
+<meta property="og:image:alt" content="Bilal Gürkan Şanlı Pro Mode portfolyo kapak görseli">
+<meta property="og:image:width" content="1920">
+<meta property="og:image:height" content="1080">
+<meta property="og:locale" content="tr_TR">
+<meta property="og:locale:alternate" content="en_US">
+<meta property="og:locale:alternate" content="de_DE">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Bilal Gürkan Şanlı | Portfolio (Pro Mode)">
+<meta name="twitter:description" content="Bilal Gürkan Şanlı — İnternet ve Ağ Teknolojileri öğrencisi. Pro Mode: interaktif 3D kokpit portfolyo deneyimi; frontend, siber güvenlik ve yapay zeka odaklı.">
+<meta name="twitter:image" content="https://bilalgurkansanli.com/assets/og-cover.webp">
+<meta name="twitter:image:alt" content="Bilal Gürkan Şanlı Pro Mode portfolyo kapak görseli">
+
+<!-- BIO: Implementation note for this section. -->
+<link rel="icon" type="image/svg+xml" href="../assets/default/common/favicon.svg">
+<link rel="icon" type="image/webp" href="../assets/default/common/bio-logo.webp">
+<link rel="apple-touch-icon" href="../assets/default/common/bio-logo.webp">
+<link rel="manifest" href="../site.webmanifest">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Share+Tech+Mono&display=swap" rel="stylesheet">
+<!-- BIO: Shared UI (toolbar / volume / music player chrome) -->
+<link rel="stylesheet" href="../styles.css">
+<!-- BIO: Pro Mode-specific layers -->
+<link rel="stylesheet" href="styles.css">
+<script type="importmap">
+{
+  "imports": {
+    "three": "https://unpkg.com/three@0.170.0/build/three.module.js",
+    "three/addons/": "https://unpkg.com/three@0.170.0/examples/jsm/"
+  }
+}
+</script>
+</head>
+<body class="pro-body">
+<!-- BIO: Skip link + semantic overview for AT / structured document (kokpit aria-hidden). -->
+<a href="#pro-overview" id="pro-skip-overview" class="skip-link">Özet içeriğe atla</a>
+<main id="pro-overview" class="visually-hidden" tabindex="-1" lang="tr">
+  <h1 id="pro-overview-h1">Bilal Gürkan Şanlı — Pro Mode portfolyosu</h1>
+  <p id="pro-overview-lead">
+    İnteraktif üç boyutlu kokpit arayüzü.
+    Masaüstü: fare tekerleği veya klavye (↑ ↓, W / S, Page Up / Page Down).
+    Mobilde kokpit kullanımı için yatay tutmanız önerilir; gyro ile yan bakış için sensör izni istenebilir; gezegenler arasında dikey kaydırma kullanılır.
+  </p>
+  <p id="pro-overview-section-list"></p>
+  <nav id="pro-overview-nav" aria-label="Site bağlantıları">
+    <ul>
+      <li><a id="pro-overview-default-link" href="../default-mode/">Varsayılan portfolyo görünümüne dön</a></li>
+    </ul>
+  </nav>
+  <section aria-labelledby="pro-a11y-cockpit-h2">
+    <h2 id="pro-a11y-cockpit-h2">Üç boyutlu kokpit</h2>
+    <p id="pro-overview-cockpit-lead">
+      Görsel içerik tam ekran arka planda sunulur; bu özet ekran okuyucular ve yapılandırılmış gezinme içindir.
+    </p>
+  </section>
+</main>
+
+<!-- BIO: Implementation note for this section. -->
+<div id="pro-entry-veil"></div>
+
+<!-- BIO: Custom cursor -->
+<div id="cur"></div>
+
+<!-- BIO: Cockpit layout, rendering, and interaction note. -->
+<div id="cockpit" aria-hidden="true">
+  <!-- BIO: WebGL layer: cockpit-optimized.glb (desktop) or cockpit-mobile.glb (mobile); else WebP fallback. -->
+  <div id="cockpit-3d-wrap" aria-hidden="true"></div>
+  <img
+    id="cockpit-img"
+    src="../assets/pro/cockpit/cockpit.webp"
+    alt=""
+    decoding="async"
+    fetchpriority="high"
+  />
+  <div class="ck-vignette"></div>
+  <!-- BIO: Implementation note for this section. -->
+  <div id="pro-lang-fallback" class="pro-lang-fallback" hidden></div>
+</div>
+
+<!-- BIO: Cockpit layout, rendering, and interaction note. -->
+
+<!-- BIO: Implementation note for this section. -->
+<div id="main-vol">
+  <span id="main-vol-icon">🔊</span>
+  <div id="main-vol-blocks"></div>
+  <span id="main-vol-pct">70%</span>
+
+  <div class="mv-sep"></div>
+
+  <div id="mini-player">
+    <div class="mp-row mp-controls">
+      <button id="mp-prev" class="mp-btn" title="Previous" aria-label="Previous track">
+        <svg width="10" height="10" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false"><path d="M6 6h2v12H6zm3.5 6l8.5 6V6z"/></svg>
+      </button>
+      <button id="mp-play" class="mp-btn mp-btn-lg" title="Play / Pause" aria-label="Play or pause">
+        <svg class="mp-ico-play"  width="10" height="10" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false"><path d="M8 5v14l11-7z"/></svg>
+        <svg class="mp-ico-pause" width="10" height="10" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false" style="display:none"><path d="M6 5h4v14H6zm8 0h4v14h-4z"/></svg>
+      </button>
+      <button id="mp-next" class="mp-btn" title="Next" aria-label="Next track">
+        <svg width="10" height="10" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false"><path d="M16 6h2v12h-2zM6 18l8.5-6L6 6z"/></svg>
+      </button>
+    </div>
+    <div class="mp-row mp-progress-row">
+      <span id="mp-cur" class="mp-time">0:00</span>
+      <div id="mp-progress"><div id="mp-progress-fill"></div>
+        <input type="range" id="mp-seek" class="bgs-mp-seek-range" min="0" max="1000" step="1" value="0" aria-label="Playback position" />
+      </div>
+      <span id="mp-dur" class="mp-time">0:00</span>
+    </div>
+  </div>
+</div>
+<!-- BIO: Map overlay behavior and interaction note. -->
+
+<!-- BIO: Pong mini-game (opens from cockpit invite button; see pong-mini.js) -->
+<div id="pro-pong-overlay" class="pro-pong-overlay" hidden aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="pro-pong-title">
+  <div class="pro-pong-panel">
+    <h2 id="pro-pong-title" class="pro-pong-title">Pong vs Alien</h2>
+    <button type="button" id="pro-pong-close" class="pro-pong-close" aria-label="Close game">×</button>
+    <div id="pro-pong-ready" class="pro-pong-ready">
+      <p id="pro-pong-ready-q" class="pro-pong-ready-q">Ready?</p>
+      <p id="pro-pong-gate-hint" class="pro-pong-gate-hint" hidden></p>
+      <p id="pro-pong-ready-controls" class="pro-pong-ready-controls"></p>
+      <button type="button" id="pro-pong-start" class="pro-pong-play-again">Start</button>
+    </div>
+    <div class="pro-pong-scores">
+      <span><span id="pro-pong-label-you">You</span> <strong id="pro-pong-score-you">0</strong></span>
+      <span><span id="pro-pong-label-alien">Alien</span> <strong id="pro-pong-score-ai">0</strong></span>
+    </div>
+    <div class="pro-pong-stage">
+      <canvas id="pro-pong-canvas" width="640" height="360" aria-label="Pong playfield"></canvas>
+    </div>
+    <!-- BIO: Implementation note for this section. -->
+    <div id="pro-pong-mirror-prep" class="pro-pong-mirror-prep" hidden aria-hidden="true">
+      <p id="pro-pong-mirror-prep-title" class="pro-pong-mirror-prep-title"></p>
+      <p id="pro-pong-mirror-prep-body" class="pro-pong-mirror-prep-body"></p>
+      <p id="pro-pong-mirror-prep-q" class="pro-pong-mirror-prep-q"></p>
+      <button type="button" id="pro-pong-mirror-prep-btn" class="pro-pong-play-again"></button>
+    </div>
+    <p id="pro-pong-game-hint" class="pro-pong-hint pro-pong-game-hint" hidden></p>
+    <p id="pro-pong-end-msg" class="pro-pong-end-msg" hidden></p>
+    <button type="button" id="pro-pong-play-again" class="pro-pong-play-again">Play again</button>
+  </div>
+</div>
+
+<!-- BIO: Default Mode exit confirmation (toolbar / cockpit) -->
+<div id="pro-default-exit" role="dialog" aria-modal="true" aria-labelledby="pdx-title" aria-describedby="pdx-sub" aria-hidden="true">
+  <div id="pdx-backdrop"></div>
+  <div id="pdx-panel" data-stage="1">
+    <div class="pc-scan"></div>
+    <span class="pc-corner tl"></span>
+    <span class="pc-corner tr"></span>
+    <span class="pc-corner bl"></span>
+    <span class="pc-corner br"></span>
+    <div id="pdx-stage-label"></div>
+    <div id="pdx-title"></div>
+    <div id="pdx-sub"></div>
+    <div id="pdx-buttons">
+      <button type="button" id="pdx-yes" class="pc-btn pc-yes"></button>
+      <button type="button" id="pdx-no" class="pc-btn pc-no"></button>
+    </div>
+    <div id="pdx-dots">
+      <span class="pc-dot"></span>
+      <span class="pc-dot"></span>
+      <span class="pc-dot"></span>
+    </div>
+  </div>
+</div>
+
+<!-- BIO: Default exit → meteor + glass (then intro2); DOM ids prefixed pdx- vs splash meteor-hit -->
+<div id="pdx-meteor-hit" aria-hidden="true">
+  <div id="pdx-meteor-predark"></div>
+  <img id="pdx-meteor-img" src="../assets/default/intro/meteor.webp" alt="" draggable="false">
+  <div id="pdx-meteor-flash"></div>
+  <svg id="pdx-screen-crack" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none"></svg>
+  <div id="pdx-meteor-dust"></div>
+  <div id="pdx-screen-black"></div>
+</div>
+
+<script
+  src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"
+  integrity="sha384-g4NTh/Iv5PPU4xPyhEWqPcwtNXOvdaDI8LLnyYfyNZOjKJeYQyjzQ9X5275eBjpt"
+  crossorigin="anonymous"
+></script>
+<script type="module" src="cockpit-3d.js"></script>
+<script src="script.js"></script>
+<script>
+(function(){
+  function proDesktopLoadPong() {
+    try {
+      if (typeof window === 'undefined' || typeof matchMedia === 'undefined') return false;
+      const coarse = matchMedia('(pointer: coarse)').matches;
+      const narrow = matchMedia('(max-width: 820px)').matches;
+      var ua=/Android|iPhone|iPad|iPod|Mobile/i.test(navigator.userAgent||'');
+      return !(coarse || (narrow && ua));
+    } catch (_e) { return true; }
+  }
+  if (!proDesktopLoadPong()) return;
+  var s = document.createElement('script');
+  s.type = 'module';
+  s.src = 'pong-mini.js';
+  document.body.appendChild(s);
+})();
+</script>
+
+<!-- BIO: Umami analytics (page views; Umami Cloud — no cookies by default). -->
+<script defer src="https://cloud.umami.is/script.js" data-website-id="2fdefa91-52ae-4008-b0cf-c2e07f98a23d"></script>
+</body>
+</html>

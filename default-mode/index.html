@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<!-- BIO: Göreli varlıklar (/assets …) kokpite dönüşte /default-mode/ URL sinde doğru yüklensin. -->
+<base href="/">
+<style>
+/* BIO: /default-mode/ fast path — never show BIO loading overlay; runs before styles.css / deferred script to avoid first-paint flash. */
+#intro, #splash {
+  display: none !important;
+  opacity: 0 !important;
+  visibility: hidden !important;
+  pointer-events: none !important;
+}
+</style>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>Bilal Gürkan Şanlı | Portfolio (Default Mode)</title>
+
+<!-- BIO: Implementation note for this section. -->
+<meta name="description" content="Bilal Gürkan Şanlı — İnternet ve Ağ Teknolojileri öğrencisi. Frontend, siber güvenlik ve yapay zeka odaklı interaktif portfolyo.">
+<meta name="author" content="Bilal Gürkan Şanlı">
+<meta name="keywords" content="Bilal Gürkan Şanlı, portfolio, frontend developer, siber güvenlik, web developer, Yeditepe Üniversitesi, internet ve ağ teknolojileri">
+<meta name="theme-color" content="#020408">
+<meta name="color-scheme" content="dark light">
+<link rel="canonical" href="https://bilalgurkansanli.com/default-mode/">
+<!-- BIO: Google Search Console HTML tag verification. -->
+<meta name="google-site-verification" content="d4oVNQX4HaOIueb3jf6qlABfiN8DP9if0zajg9qkehI">
+
+<!-- BIO: Implementation note for this section. -->
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Bilal Gürkan Şanlı">
+<meta property="og:title" content="Bilal Gürkan Şanlı | Portfolio">
+<meta property="og:description" content="İnteraktif siberpunk portfolyo — frontend, siber güvenlik ve yapay zeka projeleri.">
+<meta property="og:url" content="https://bilalgurkansanli.com/default-mode/">
+<meta property="og:image" content="https://bilalgurkansanli.com/assets/og-cover.webp">
+<meta property="og:image:type" content="image/webp">
+<meta property="og:image:alt" content="Bilal Gürkan Şanlı portfolyo kapak görseli">
+<meta property="og:image:width" content="1920">
+<meta property="og:image:height" content="1080">
+<meta property="og:locale" content="tr_TR">
+<meta property="og:locale:alternate" content="en_US">
+<meta property="og:locale:alternate" content="de_DE">
+
+<!-- BIO: Implementation note for this section. -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Bilal Gürkan Şanlı | Portfolio">
+<meta name="twitter:description" content="İnteraktif siberpunk portfolyo — frontend, siber güvenlik ve yapay zeka projeleri.">
+<meta name="twitter:image" content="https://bilalgurkansanli.com/assets/og-cover.webp">
+<meta name="twitter:image:alt" content="Bilal Gürkan Şanlı portfolyo kapak görseli">
+<link rel="image_src" href="https://bilalgurkansanli.com/assets/og-cover.webp">
+
+<!-- BIO: Implementation note for this section. -->
+<link rel="icon" type="image/svg+xml" href="assets/default/common/favicon.svg">
+<link rel="icon" type="image/webp" href="assets/default/common/bio-logo.webp">
+<link rel="apple-touch-icon" href="assets/default/common/bio-logo.webp">
+<link rel="manifest" href="site.webmanifest">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="BGS">
+<meta name="mobile-web-app-capable" content="yes">
+
+<!-- BIO: Implementation note for this section. -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Share+Tech+Mono&display=swap" rel="stylesheet">
+
+<!-- BIO: Implementation note for this section. -->
+<link rel="stylesheet" href="styles.css">
+
+<!-- BIO: Implementation note for this section. -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Bilal Gürkan Şanlı",
+  "alternateName": "Bilal Gurkan Sanli",
+  "url": "https://bilalgurkansanli.com",
+  "image": [
+    "https://bilalgurkansanli.com/assets/default/common/bilal2.webp",
+    "https://bilalgurkansanli.com/assets/seo/websitepicturedefault.webp",
+    "https://bilalgurkansanli.com/assets/seo/websitepicturepro.webp"
+  ],
+  "jobTitle": "Internet & Network Technologies Student",
+  "alumniOf": {
+    "@type": "CollegeOrUniversity",
+    "name": "Yeditepe University",
+    "sameAs": "https://www.yeditepe.edu.tr/"
+  },
+  "sameAs": [
+    "https://www.linkedin.com/in/bilalgurkansanli/",
+    "https://github.com/bilalgurkansanli"
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "Bilal Gürkan Şanlı | Portfolio",
+  "url": "https://bilalgurkansanli.com/default-mode/",
+  "image": "https://bilalgurkansanli.com/assets/og-cover.webp",
+  "inLanguage": ["tr", "en", "de"],
+  "author": { "@type": "Person", "name": "Bilal Gürkan Şanlı" }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "Bilal Gürkan Şanlı | Portfolio",
+  "url": "https://bilalgurkansanli.com/default-mode/",
+  "inLanguage": ["tr", "en", "de"],
+  "primaryImageOfPage": {
+    "@type": "ImageObject",
+    "url": "https://bilalgurkansanli.com/assets/og-cover.webp",
+    "contentUrl": "https://bilalgurkansanli.com/assets/og-cover.webp",
+    "caption": "Bilal Gürkan Şanlı interaktif portfolyo kapak görseli"
+  },
+  "associatedMedia": [
+    {
+      "@type": "ImageObject",
+      "url": "https://bilalgurkansanli.com/assets/seo/websitepicturedefault.webp",
+      "contentUrl": "https://bilalgurkansanli.com/assets/seo/websitepicturedefault.webp",
+      "caption": "Bilal Gürkan Şanlı Default Mode portfolyo arayüzü"
+    },
+    {
+      "@type": "ImageObject",
+      "url": "https://bilalgurkansanli.com/assets/seo/websitepicturepro.webp",
+      "contentUrl": "https://bilalgurkansanli.com/assets/seo/websitepicturepro.webp",
+      "caption": "Bilal Gürkan Şanlı Pro Mode 3D kokpit portfolyo deneyimi"
+    }
+  ]
+}
+</script>
+
+<script>
+/* BIO: /default-mode/ always uses the fast portfolio path — hide BIO loading overlay before first paint (refresh vs returning-from-Pro). */
+(function () {
+  try {
+    document.documentElement.classList.add('bgs-default-route');
+    if (sessionStorage.getItem('bgs_returning_from_pro')) {
+      document.documentElement.classList.add('returning-from-pro');
+    }
+  } catch (e) {}
+})();
+</script>
+</head>
+<body>
+
+<!-- BIO: Skip link + semantic overview for screen readers (SVG tree is role=application). -->
+<a href="#default-overview" id="default-skip-overview" class="skip-link">Özet içeriğe atla</a>
+<main id="default-overview" class="visually-hidden" tabindex="-1">
+  <h1 id="default-overview-h1">Bilal Gürkan Şanlı — Portfolio (varsayılan görünüm)</h1>
+  <p id="default-overview-lead">
+    İnteraktif düğüm ağacına düğümlerden tıklayarak gezilir; içerik hologram panelinde açılır ve metin seçilebilir.
+    Üst araç çubuğundan dil, harici bağlantılar ve Pro Mode kullanılabilir.
+  </p>
+  <nav id="default-overview-nav" aria-label="Hızlı bağlantılar">
+    <ul>
+      <li><a id="default-overview-pro-link" href="pro-mode/">Üç boyutlu Pro Mode kokpit deneyimi</a></li>
+    </ul>
+  </nav>
+  <section aria-labelledby="default-a11y-tree-h2">
+    <h2 id="default-a11y-tree-h2">Portfolyo ağacı ve arka plan</h2>
+    <p id="default-overview-tree-note">Tam ekran SVG düğüm grafiği ana gezinmedir. Arkadaki izgara, parçacık ve imleç izi tuval katmanları yalnızca görsel efekt içindir.</p>
+  </section>
+</main>
+
+<!-- BIO: Custom cursor -->
+<div id="cur"></div>
+
+<!-- BIO: Grid trail canvas (behind everything) -->
+<canvas id="grid-trail" aria-hidden="true"></canvas>
+
+<!-- BIO: Particle canvas -->
+<canvas id="pc" aria-hidden="true"></canvas>
+
+<!-- BIO: Cursor trail canvas -->
+<canvas id="cursor-trail" aria-hidden="true"></canvas>
+
+<!-- BIO: Corner decorations -->
+<div class="cor tl"></div>
+<div class="cor tr"></div>
+<div class="cor bl"></div>
+<div class="cor br"></div>
+<div class="cor-dot dot-tl"></div>
+<div class="cor-dot dot-tr"></div>
+<div class="cor-dot dot-bl"></div>
+<div class="cor-dot dot-br"></div>
+
+<!-- BIO: HUD -->
+<div id="hud">
+  <div id="bc" role="status" aria-live="polite">ANA AĞAÇ</div>
+  <button id="bb" aria-label="Geri dön">◄ GERİ DÖN</button>
+</div>
+
+<!-- BIO: Main Volume Control -->
+<div id="main-vol">
+  <span id="main-vol-icon">🔊</span>
+  <div id="main-vol-blocks"></div>
+  <span id="main-vol-pct">70%</span>
+
+  <div class="mv-sep"></div>
+
+  <!-- BIO: Mini Music Player -->
+  <div id="mini-player">
+    <div class="mp-row mp-controls">
+      <button id="mp-prev" class="mp-btn" title="Previous" aria-label="Önceki parça">
+        <svg width="10" height="10" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false"><path d="M6 6h2v12H6zm3.5 6l8.5 6V6z"/></svg>
+      </button>
+      <button id="mp-play" class="mp-btn mp-btn-lg" title="Play / Pause" aria-label="Çal / duraklat">
+        <svg class="mp-ico-play"  width="10" height="10" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false"><path d="M8 5v14l11-7z"/></svg>
+        <svg class="mp-ico-pause" width="10" height="10" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false" style="display:none"><path d="M6 5h4v14H6zm8 0h4v14h-4z"/></svg>
+      </button>
+      <button id="mp-next" class="mp-btn" title="Next" aria-label="Sonraki parça">
+        <svg width="10" height="10" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false"><path d="M16 6h2v12h-2zM6 18l8.5-6L6 6z"/></svg>
+      </button>
+    </div>
+    <div class="mp-row mp-progress-row">
+      <span id="mp-cur" class="mp-time">0:00</span>
+      <div id="mp-progress"><div id="mp-progress-fill"></div>
+        <input type="range" id="mp-seek" class="bgs-mp-seek-range" min="0" max="1000" step="1" value="0" aria-label="Playback position" />
+      </div>
+      <span id="mp-dur" class="mp-time">0:00</span>
+    </div>
+  </div>
+</div>
+
+<!-- BIO: Language control and localization note. -->
+<nav id="toolbar" aria-label="Site araç çubuğu">
+  <!-- BIO: Implementation note for this section. -->
+  <button class="tb-mode" data-mode="pro">PRO MODE</button>
+  <div class="tb-sep" aria-hidden="true"></div>
+  <a class="tb-btn" href="https://www.linkedin.com/in/bilalgurkansanli/" target="_blank" rel="noopener" title="LinkedIn" aria-label="LinkedIn profili (yeni sekmede açılır)">
+    <svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false">
+      <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+    </svg>
+  </a>
+  <a class="tb-btn" href="https://github.com/bilalgurkansanli" target="_blank" rel="noopener" title="GitHub" aria-label="GitHub profili (yeni sekmede açılır)">
+    <svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false">
+      <path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/>
+    </svg>
+  </a>
+  <div class="tb-sep" aria-hidden="true"></div>
+  <button class="tb-lang" data-lang="tr" aria-label="Türkçe">TR</button>
+  <button class="tb-lang active" data-lang="en" aria-label="English">EN</button>
+  <button class="tb-lang" data-lang="de" aria-label="Deutsch">DE</button>
+  <div class="tb-sep" aria-hidden="true"></div>
+  <button class="tb-toggle" id="tb-trail" title="Cursor Trail" type="button" aria-label="İmleç izi efekti" aria-pressed="false">
+    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true" focusable="false">
+      <circle cx="12" cy="12" r="1.5"/><circle cx="6" cy="10" r="1" opacity=".6"/><circle cx="3" cy="7" r=".7" opacity=".3"/>
+      <path d="M12 12C9 11 5 8 2 5" stroke-dasharray="2 3" opacity=".4"/>
+    </svg>
+  </button>
+  <button class="tb-toggle" id="tb-grid" title="Grid Effect" type="button" aria-label="Izgara efekti" aria-pressed="false">
+    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" aria-hidden="true" focusable="false">
+      <rect x="3" y="3" rx="2" width="7" height="7"/><rect x="14" y="3" rx="2" width="7" height="7"/>
+      <rect x="3" y="14" rx="2" width="7" height="7"/><rect x="14" y="14" rx="2" width="7" height="7" opacity=".4"/>
+    </svg>
+  </button>
+  <button class="tb-toggle" id="tb-fs" title="Fullscreen" type="button" aria-label="Tam ekran" aria-pressed="false">
+    <svg class="fs-enter" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
+      <polyline points="4 9 4 4 9 4"/><polyline points="20 9 20 4 15 4"/>
+      <polyline points="4 15 4 20 9 20"/><polyline points="20 15 20 20 15 20"/>
+    </svg>
+    <svg class="fs-exit" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:none" aria-hidden="true" focusable="false">
+      <polyline points="9 4 9 9 4 9"/><polyline points="15 4 15 9 20 9"/>
+      <polyline points="9 20 9 15 4 15"/><polyline points="15 20 15 15 20 15"/>
+    </svg>
+  </button>
+</nav>
+
+<!-- BIO: Awwwards — mobilde sol üst; masaüstünde yığının altında sağda (CSS). -->
+<a id="bgs-awwwards-nominee-sotd" class="bgs-awwwards-nominee-sotd" href="https://www.awwwards.com/sites/bilal-gurkan-sanli-portfolio" target="_blank" rel="noopener noreferrer">
+  <img src="assets/default/awwwards-nominee-defaultmode.png" alt="" width="110" height="340" draggable="false" decoding="async" />
+</a>
+<!-- BIO: Varsayılan mod ödül yığını — Orpetron, Design Nominees (üstten alta). -->
+<div class="bgs-default-award-stack">
+  <a id="bgs-orpetron-sotd" class="bgs-orpetron-sotd" href="https://orpetron.com/sites/bilal-gurkan-sanli-portfolio/" target="_blank" rel="noopener noreferrer">
+    <img src="assets/pro/OrpetronSOTM.png" alt="" width="176" height="176" draggable="false" decoding="async" />
+  </a>
+  <a id="bgs-design-nominees-sotd" class="bgs-design-nominees-sotd" href="https://www.designnominees.com/sites/bilal-gurkan-sanli-portfolio" target="_blank" rel="noopener noreferrer">
+    <img src="assets/default/design-nominees-defaultmode.png" alt="" width="176" height="176" draggable="false" decoding="async" />
+  </a>
+</div>
+<div id="bgs-orpetron-sotd-tip" class="bgs-orpetron-sotd-tip" role="tooltip" hidden></div>
+<div id="bgs-design-nominees-sotd-tip" class="bgs-design-nominees-sotd-tip" role="tooltip" hidden></div>
+<div id="bgs-awwwards-nominee-sotd-tip" class="bgs-awwwards-nominee-sotd-tip" role="tooltip" hidden></div>
+
+<!-- BIO: Footer labels -->
+<footer role="contentinfo">
+<div id="footer-label">BILALGURKANSANLI.COM</div>
+<div id="status"></div>
+<div id="status-left"></div>
+</footer>
+
+<p id="bgs-a11y-vol-live" class="visually-hidden" aria-live="polite" aria-atomic="true"></p>
+<p id="bgs-default-landscape-hint" class="bgs-default-landscape-hint" role="status" aria-live="polite" hidden></p>
+
+<!-- BIO: Main SVG tree -->
+<svg id="svg" role="application" aria-label="Etkileşimli portfolyo ağacı — düğümlere dokunarak içerikleri açın">
+  <defs>
+    <!-- BIO: Glow filters per color -->
+    <filter id="f-cyan" x="-60%" y="-60%" width="220%" height="220%">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="5" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="f-strong" x="-80%" y="-80%" width="260%" height="260%">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="9" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <!-- BIO: Center gradient -->
+    <radialGradient id="grad-center" cx="50%" cy="50%" r="50%">
+      <stop offset="0%"   stop-color="#0d2035"/>
+      <stop offset="100%" stop-color="#020408"/>
+    </radialGradient>
+  </defs>
+  <!-- BIO: Implementation note for this section. -->
+  <g id="world">
+    <g id="cl"></g>
+    <g id="scl"></g>
+    <g id="nl"></g>
+    <g id="sl"></g>
+    <g id="fl"></g>
+  </g>
+</svg>
+
+<!-- BIO: Holographic Projection Rays -->
+<svg id="ray-svg" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"></svg>
+
+<!-- BIO: Hologram Panel -->
+<div id="holo" role="dialog" aria-modal="true" aria-labelledby="holo-title" aria-hidden="true">
+  <div id="holo-scan"></div>
+  <!-- BIO: Mobil alt sayfa — üst tutamaç; aşağı sürükleyerek kapatma (script.js). -->
+  <div id="holo-sheet-handle" aria-hidden="true"><span class="holo-sheet-handle-bar" aria-hidden="true"></span></div>
+  <div class="holo-corner" data-corner="tl"></div>
+  <div class="holo-corner" data-corner="tr"></div>
+  <div class="holo-corner" data-corner="bl"></div>
+  <div class="holo-corner" data-corner="br"></div>
+  <div id="holo-head">
+    <div id="holo-title"></div>
+    <button id="holo-close" aria-label="Paneli kapat">✕</button>
+  </div>
+  <div id="holo-body"></div>
+</div>
+
+<!-- BIO: Photo Viewer -->
+<div id="photo-viewer" role="dialog" aria-modal="true" aria-label="Fotoğraf görüntüleyici">
+  <div id="photo-viewer-inner">
+    <button id="photo-viewer-close" aria-label="Görüntüleyiciyi kapat">✕</button>
+    <button id="pv-prev" class="pv-nav" aria-label="Önceki fotoğraf">
+      <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><polyline points="15 18 9 12 15 6"/></svg>
+    </button>
+    <button id="pv-next" class="pv-nav" aria-label="Sonraki fotoğraf">
+      <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><polyline points="9 6 15 12 9 18"/></svg>
+    </button>
+    <img id="photo-viewer-img" src="" alt="">
+    <div id="photo-viewer-caption"></div>
+    <div id="pv-counter"></div>
+  </div>
+</div>
+
+<!-- BIO: Intro overlay -->
+<div id="intro">
+  <div id="intro-title">BIO</div>
+  <div id="intro-sub">SYSTEM LOADING</div>
+  <div id="intro-bar"><div id="intro-fill"></div></div>
+</div>
+
+<!-- BIO: Audio Visualizer Canvas -->
+<canvas id="audio-viz" aria-hidden="true"></canvas>
+<div id="viz-hit"></div>
+
+<!-- BIO: Splash Screen -->
+<div id="splash">
+  <div id="splash-vol-wrap">
+    <div id="splash-vol-bar">
+      <span id="splash-vol-icon">🔊</span>
+      <div id="splash-vol-blocks"></div>
+      <span id="splash-vol-pct">70%</span>
+    </div>
+    <p id="splash-vol-label">Adjust volume here &mdash; or drag the waveform while testing</p>
+    <button id="splash-vol-test">▶ TEST VOLUME</button>
+  </div>
+  <div id="splash-content">
+    <div id="splash-line"></div>
+    <h1 id="splash-title">BILAL GURKAN SANLI</h1>
+    <p id="splash-sub">Cybersecurity &amp; AI Student</p>
+    <div id="splash-line2"></div>
+  </div>
+  <div id="splash-start-wrap">
+    <button type="button" id="splash-start">START WITH PRO MODE</button>
+  </div>
+</div>
+
+<!-- BIO: Splash GPU hint — weak GPU before Pro payload (script.js + styles.css). -->
+<div id="splash-gpu-warn" role="dialog" aria-modal="true" aria-labelledby="sgw-title" aria-hidden="true">
+  <div id="sgw-backdrop"></div>
+  <div id="sgw-panel">
+    <div class="pc-scan"></div>
+    <span class="pc-corner tl"></span>
+    <span class="pc-corner tr"></span>
+    <span class="pc-corner bl"></span>
+    <span class="pc-corner br"></span>
+    <div id="sgw-stage-label"></div>
+    <div id="sgw-title"></div>
+    <div id="sgw-sub"></div>
+    <div id="sgw-buttons">
+      <button type="button" id="sgw-default" class="pc-btn pc-yes"></button>
+      <button type="button" id="sgw-pro" class="pc-btn pc-no"></button>
+    </div>
+  </div>
+</div>
+
+<!-- BIO: Video Intro -->
+<div id="intro-video">
+  <video id="intro-vid" src="assets/default/intro/intro1.mp4" playsinline preload="auto" aria-label="Açılış videosu"></video>
+  <button id="intro-skip" aria-label="Açılış videosunu atla">SKIP ▸</button>
+</div>
+
+<!-- BIO: Pro Mode integration note. -->
+<div id="meteor-hit" aria-hidden="true">
+  <div id="meteor-predark"></div>
+  <img id="meteor-img" src="assets/default/intro/meteor.webp" alt="" draggable="false">
+  <div id="meteor-flash"></div>
+  <svg id="screen-crack" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none"></svg>
+  <div id="meteor-dust"></div>
+  <div id="screen-black"></div>
+</div>
+
+<!-- BIO: Pro Mode intro video (plays after meteor impact, before cockpit) -->
+<div id="intro2-video" aria-hidden="true">
+  <video id="intro2-vid" src="assets/default/intro/intro2.mp4" playsinline preload="none" muted></video>
+  <button id="intro2-skip" class="anim-skip" aria-label="Transition video skip">SKIP ▸</button>
+</div>
+
+<!-- BIO: Pro Mode confirmation hologram -->
+<div id="pro-confirm" role="dialog" aria-modal="true" aria-labelledby="pc-title" aria-describedby="pc-sub" aria-hidden="true">
+  <div id="pc-backdrop"></div>
+  <div id="pc-edge-glitch">
+    <span class="pc-glitch-bar top"></span>
+    <span class="pc-glitch-bar bottom"></span>
+    <span class="pc-glitch-bar left"></span>
+    <span class="pc-glitch-bar right"></span>
+  </div>
+  <div id="pc-panel" data-stage="1">
+    <div class="pc-scan"></div>
+    <span class="pc-corner tl"></span>
+    <span class="pc-corner tr"></span>
+    <span class="pc-corner bl"></span>
+    <span class="pc-corner br"></span>
+    <div id="pc-stage-label"></div>
+    <div id="pc-title"></div>
+    <div id="pc-sub"></div>
+    <div id="pc-buttons">
+      <button id="pc-yes" class="pc-btn pc-yes"></button>
+      <button id="pc-no"  class="pc-btn pc-no"></button>
+    </div>
+    <div id="pc-dots">
+      <span class="pc-dot"></span>
+      <span class="pc-dot"></span>
+      <span class="pc-dot"></span>
+    </div>
+  </div>
+</div>
+
+<!-- BIO: GSAP -->
+<script
+  src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"
+  integrity="sha384-g4NTh/Iv5PPU4xPyhEWqPcwtNXOvdaDI8LLnyYfyNZOjKJeYQyjzQ9X5275eBjpt"
+  crossorigin="anonymous"
+></script>
+
+<script src="script.js" defer></script>
+
+<!-- BIO: Umami analytics (page views; Umami Cloud — no cookies by default). -->
+<script defer src="https://cloud.umami.is/script.js" data-website-id="2fdefa91-52ae-4008-b0cf-c2e07f98a23d"></script>
+</body>
+</html>
