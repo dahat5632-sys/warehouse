@@ -149,6 +149,9 @@ const PRO_ABOUT_UNIVERSITY_GLB_URL = proSubPlanetGlbHref(
 const PRO_HOBBIES_SHOOTING_GLB_URL = proSubPlanetGlbHref(
   '../assets/pro/hobbies/shooting-optimized.glb'
 );
+const PRO_HOBBIES_BASKETBALL_GLB_URL = proSubPlanetGlbHref(
+  '../assets/pro/hobbies/basketball-figure.glb'
+);
 /* BIO: Planet layout, label, and interaction note. */
 const PRO_CONTACT_MAIL_GLB_URL = proSubPlanetGlbHref(
   '../assets/pro/contact/mail-optimized.glb'
@@ -5725,8 +5728,8 @@ const PRO_SUB_DETAIL_REGISTRY = {
     },
     /* BIO: Scroll and navigation behavior note. */
     secondBuilder: {
-      type: 'procedural',
-      build: (rootGroup, cfg, onReady) => _buildProBasketballFigure(rootGroup, cfg, onReady),
+      type: 'glb',
+      glbUrl: PRO_HOBBIES_BASKETBALL_GLB_URL,
       modelName: 'proShootingFigure',
       /* BIO: Implementation note for this section. */
       modelPos: { x: -1, y: 0.05, z: 0 },
