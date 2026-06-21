@@ -1935,7 +1935,7 @@
       'pointer-events:none;transition:opacity .7s ease;';
     document.body.appendChild(veil);
     requestAnimationFrame(() => { veil.style.opacity = '1'; });
-    setTimeout(() => { window.location.href = '../default-mode/'; }, 720);
+    setTimeout(() => { window.location.href = '../'; }, 720);
   }
 
   function resetPdxExitModalPanelStyles() {
