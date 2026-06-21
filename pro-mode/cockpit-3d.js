@@ -482,9 +482,8 @@ function syncBioLogoStickerTint() {
 
 /* BIO: Implementation note for this section. */
 const COCKPIT_LANG_SCREENS = {
-  tr: { x: -0.117, y: 0.12, z: -0.147 },
-  en: { x: -0.07, y: 0.12, z: -0.16 },
-  de: { x: -0.02, y: 0.12, z: -0.17 }
+  en: { x: -0.052, y: 0.12, z: -0.175 },
+  de: { x: -0.025, y: 0.12, z: -0.17 }
 };
 
 /* BIO: Implementation note for this section. */
@@ -2498,7 +2497,7 @@ function getStoredLang() {
 /* BIO: Button layout and interaction note. */
 function getClockIntlLocale() {
   const lang = getStoredLang();
-  if (lang === 'tr') return 'tr-TR';
+  if (lang === 'tr') return 'en-GB';
   if (lang === 'de') return 'zh-CN';
   return 'en-GB';
 }
@@ -6292,7 +6291,8 @@ const _proSubTerminalSeen = new Set();
 
 function _proCurrentLang() {
   const v = (document.documentElement && document.documentElement.lang) || '';
-  if (v === 'tr' || v === 'de') return v;
+  if (v === 'tr') return 'en';
+  if (v === 'de') return v;
   return 'en';
 }
 

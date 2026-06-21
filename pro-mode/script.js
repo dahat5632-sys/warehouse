@@ -376,6 +376,8 @@
     mpNextAria: '下一首'
   };
 
+  delete UI.tr;
+
   let defaultExitModalOpen = false;
   let pdxFocusReturn = null;
   let intro2ExitInProgress = false;
@@ -445,6 +447,7 @@
   /** BIO: Mobil / aynı-sekme Pro geçişi — script.js BGS_VOL_SESSION_KEY ile ortak. */
   const STORAGE_VOL_SESSION = 'bgs_vol_session';
   let currentLang = (localStorage.getItem(STORAGE_LANG) || 'en');
+  if (currentLang === 'tr') currentLang = 'en';
   if (!UI[currentLang]) currentLang = 'en';
 
   const MAP_PLANETS = [

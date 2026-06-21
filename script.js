@@ -1089,7 +1089,8 @@ function persistVolumeToStorage(level) {
 (function readStoredLangFromSharedKey() {
   try {
     const s = localStorage.getItem(BGS_LANG_KEY);
-    if (s && UI[s]) currentLang = s;
+    if (s === 'tr') currentLang = 'en';
+    else if (s && UI[s]) currentLang = s;
   } catch (_) { /* BIO: noop */ }
 })();
 
@@ -2663,6 +2664,7 @@ function reExpand(savedMain) {
 }
 
 function setLang(lang) {
+  if (lang === 'tr') lang = 'en';
   currentLang = lang;
   try { localStorage.setItem(BGS_LANG_KEY, lang); } catch (_) { /* BIO: noop */ }
   document.documentElement.lang = lang;
