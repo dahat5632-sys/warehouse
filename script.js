@@ -864,6 +864,203 @@ const UI = {
   }
 };
 
+
+
+/* BIO: Repurpose the former German language slot as Chinese for this GitHub Pages copy. */
+function applyChineseLanguageSlotDefault() {
+  const cn = {
+    about: {
+      label: ['关于我'],
+      subs: {
+        edu: {
+          label: ['教育经历'],
+          title: '教育经历',
+          html: `
+            <div class="tl-wrap">
+              <div class="tl-item active">
+                <div class="tl-year">2024 - 2027</div>
+                <div class="tl-title">Yeditepe University</div>
+                <div class="tl-desc">互联网与网络技术</div>
+              </div>
+              <div class="tl-item">
+                <div class="tl-year">2020 - 2024</div>
+                <div class="tl-title">Guc Kardesler Anatolian High School</div>
+                <div class="tl-desc">高中教育</div>
+              </div>
+            </div>
+            <hr class="divider">
+            <div class="tl-section-title">证书</div>
+            <div class="tl-cert">
+              <a href="https://learn.microsoft.com/en-us/users/bilalanl-8550/credentials/38e863aaef982a2d?ref=https%3A%2F%2Fwww.linkedin.com%2F" target="_blank" rel="noopener">Microsoft Certified: Fabric Data Engineer Associate (2026)</a>
+              <a href="https://www.credly.com/badges/3852359e-8131-4422-9279-918a4f5c4c74" target="_blank" rel="noopener">Cisco AI Technical Practitioner (2026)</a>
+            </div>`
+        },
+        exp: {
+          label: ['经历'],
+          title: '经历',
+          html: `<p>我仍在持续学习和成长。随着经验积累，这一部分会继续更新。</p>`
+        },
+        bio: {
+          label: ['个人简介'],
+          title: '个人简介',
+          html: `
+            <p>你好，我是 <strong>周天爽</strong>，也可以叫我 <strong>Bio</strong>。</p>
+            <hr class="divider">
+            <p>我关注人工智能、AI 训练、网络安全和自动化工具，希望把复杂技术转化为稳定、可用、能解决实际问题的能力。</p>
+            <hr class="divider">
+            <p style="color:rgba(0,245,255,0.38);font-size:12px;font-style:italic">
+              工作之外，我也喜欢关注新技术、游戏、旅行和有挑战性的训练项目。
+            </p>`
+        }
+      }
+    },
+    projects: {
+      label: ['项目'],
+      subs: {
+        web: {
+          label: ['网络安全', '项目'],
+          title: '网络安全项目',
+          html: `<p><strong>项目</strong></p><ul><li>即将更新...</li><li>即将更新...</li><li>即将更新...</li></ul><hr class="divider"><p><strong>使用技术</strong></p><ul><li>Python</li><li>[待添加]</li><li>[待添加]</li></ul>`
+        },
+        mob: {
+          label: ['AI', '项目'],
+          title: 'AI 项目',
+          html: `<p><strong>项目</strong></p><ul><li>即将更新...</li><li>即将更新...</li></ul><hr class="divider"><p>项目详情待添加。</p>`
+        },
+        back: {
+          label: ['综合', '项目'],
+          title: '综合项目',
+          html: `<p><strong>项目</strong></p><ul><li>即将更新...</li><li>即将更新...</li></ul><hr class="divider"><p><strong>使用技术</strong></p><ul><li>Python</li><li>[待添加]</li><li>[待添加]</li></ul>`
+        }
+      }
+    },
+    hobbies: {
+      label: ['爱好'],
+      subs: {
+        esp: {
+          label: ['电子竞技'],
+          title: '电子竞技',
+          html: `<p><strong>喜欢的游戏</strong></p><ul><li>VALORANT</li><li>CS2</li></ul><hr class="divider"><p>电子竞技训练了我的沟通、协作、压力下决策和快速解决问题的能力。</p><hr class="divider"><p style="text-align:center"><a href="#" class="photo-link" data-gallery='[{"src":"assets/default/hobbies/espor.webp","cap":"第一次线下比赛，2021"},{"src":"assets/default/hobbies/espor3.webp","cap":"和团队一起参加电竞比赛。"}]' data-anim="astronaut">▻ 查看照片</a></p>`
+        },
+        sht: {
+          label: ['射击'],
+          title: '射击',
+          html: `<p>射击意味着耐心、自控和压力管理。专注于一个瞬间的能力，也能迁移到复杂问题的解决中。</p><hr class="divider"><p style="color:rgba(0,255,136,0.4);font-size:12px;font-style:italic">这是一项需要专注、耐心和纪律的运动。</p><hr class="divider"><p style="text-align:center"><a href="#" class="photo-link" data-gallery='[{"src":"assets/default/hobbies/shooting.webp","cap":"射击训练，2024"},{"src":"assets/default/hobbies/shooting2.webp","cap":"射击练习初期，2024"}]'>▻ 查看照片</a></p>`
+        },
+        tec: {
+          label: ['技术', '趋势'],
+          title: '技术趋势',
+          html: `<p><strong>关注领域</strong></p><ul><li>人工智能与大语言模型</li><li>网络安全新闻</li><li>AI 与安全应用</li><li>硬件与芯片架构</li><li>量子计算</li></ul><hr class="divider"><p>我喜欢跟踪技术趋势，并把这些变化转化为学习方向和项目灵感。</p>`
+        },
+        trv: {
+          label: ['旅行'],
+          title: '旅行',
+          html: `<p>我喜欢旅行和探索新地方。新的环境会带来新的经验、想法和观察角度。</p>`
+        }
+      }
+    },
+    skills: {
+      label: ['技能', '与兴趣'],
+      subs: {
+        ai: {
+          label: ['人工智能'],
+          title: '人工智能',
+          html: `<p><strong>工具与库</strong></p><ul><li>Python - scikit-learn, pandas, numpy</li><li>TensorFlow / PyTorch</li></ul><hr class="divider"><p><strong>已完成项目</strong></p><ul><li><a href="https://github.com/bilalgurkansanli/Health_Insurance_Cost_Prediction" target="_blank" rel="noopener">Health Insurance Cost Prediction</a><br><span>基于机器学习模型预测健康保险费用。</span></li></ul><hr class="divider"><p><strong>兴趣方向</strong></p><ul><li>自然语言处理</li><li>机器学习</li><li>生成式 AI</li></ul>`
+        },
+        sec: {
+          label: ['网络', '安全'],
+          title: '网络安全',
+          html: `<p><strong>兴趣方向</strong></p><ul><li>网络安全</li><li>渗透测试</li><li>漏洞分析</li><li>密码学</li></ul><hr class="divider"><p><strong>工具</strong></p><ul><li>Nmap / Zenmap</li><li>Metasploit</li><li>Burp Suite</li><li>[更多工具待添加]</li></ul><hr class="divider"><p>我正在持续学习安全攻防、自动化分析和 AI 辅助安全能力。</p>`
+        }
+      }
+    },
+    contact: {
+      label: ['联系'],
+      subs: {
+        mail: {
+          label: ['邮箱'],
+          title: '邮箱',
+          html: `<p>你可以通过邮箱联系我：</p><p style="font-size:18px;color:#00f5ff"><a href="mailto:bilalsanli@outlook.com">bilalsanli@outlook.com</a></p><p style="color:rgba(255,255,255,0.4);font-size:12px">合作、项目想法，或者简单打个招呼，都欢迎联系。</p>`
+        },
+        soc: {
+          label: ['社交媒体'],
+          title: '社交媒体',
+          html: `<p>你可以在社交媒体上找到我，也欢迎通过 LinkedIn 建立连接。</p><hr class="divider"><p>点击下方链接访问我的主页。</p>`
+        }
+      }
+    }
+  };
+
+  DATA.label.de = ['周天爽'];
+  for (const node of DATA.nodes || []) {
+    const nodeCn = cn[node.id];
+    if (!nodeCn) continue;
+    if (nodeCn.label) node.label.de = nodeCn.label;
+    for (const sub of node.subs || []) {
+      const subCn = nodeCn.subs && nodeCn.subs[sub.id];
+      if (!subCn) continue;
+      if (subCn.label) sub.label.de = subCn.label;
+      if (sub.title) sub.title.de = subCn.title;
+      if (sub.html && typeof sub.html === 'object') sub.html.de = subCn.html;
+    }
+  }
+
+  UI.de = {
+    tree: '主树',
+    back: '◄ 返回',
+    boot: '系统启动中',
+    skip: '跳过 ▸',
+    modeDefault: '默认模式',
+    modePro: '专业模式',
+    defaultLandscapeHint: '默认模式建议竖屏浏览。',
+    splashDesktopPro: '从专业模式开始',
+    splashTagline: '优秀的AI训练师',
+    splashGpuWarnLabel: '硬件',
+    splashGpuWarnTitle: '专业模式可能运行较慢',
+    splashGpuWarnBody: '你的设备图形性能可能不足以流畅运行 3D 驾驶舱。默认模式更轻量；仍可继续尝试专业模式。',
+    splashGpuDefaultBtn: '切换到默认模式',
+    splashGpuProBtn: '仍然尝试专业模式',
+    intro2SkipAria: '跳过过渡视频',
+    locale: 'zh-CN',
+    skipToOverview: '跳到摘要内容',
+    overviewTitle: '周天爽 - Portfolio（默认视图）',
+    overviewLead: '通过交互式节点树浏览内容；打开节点后，内容会显示在全息面板中。顶部工具栏可切换语言、访问外部链接和进入专业模式。',
+    overviewNavAria: '快速链接',
+    overviewProLink: '三维专业模式驾驶舱体验',
+    overviewTreeHeading: '作品集树与背景',
+    overviewTreeNote: '全屏 SVG 节点图是主要导航。背景网格、粒子和光标轨迹仅作为视觉效果。',
+    toolbarAria: '站点工具栏',
+    svgTreeAria: '交互式作品集树，可用键盘或鼠标打开节点',
+    masterVolAria: '主音量',
+    seekAria: '播放位置',
+    backAria: '返回',
+    holoCloseAria: '关闭面板',
+    linkedinAria: 'LinkedIn 主页（新标签页打开）',
+    githubAria: 'GitHub 主页（新标签页打开）',
+    trailToggleAria: '光标轨迹效果',
+    gridToggleAria: '网格效果',
+    fsEnterAria: '进入全屏',
+    fsExitAria: '退出全屏',
+    intro1SkipAria: '跳过开场视频',
+    mpPrevAria: '上一首',
+    mpPlayAria: '播放或暂停',
+    mpNextAria: '下一首',
+    regionHudAria: '状态栏',
+    regionMediaAria: '音量与迷你音乐播放器',
+    regionSplashVolAria: '欢迎屏幕 - 音量与测试',
+    regionSplashHeroAria: '欢迎屏幕 - 标题',
+    regionSplashStartAria: '欢迎屏幕 - 开始',
+    orpetronSotdTip: 'Orpetron 奖项',
+    orpetronSotdAria: '打开 Orpetron 奖项页面（新标签页）',
+    designNomineesSotdTip: 'Design Nominees 奖项',
+    designNomineesSotdAria: '打开 Design Nominees 奖项页面（新标签页）',
+    awwwardsNomineeTip: 'Awwwards 提名',
+    awwwardsNomineeAria: '打开 Awwwards 提名页面（新标签页）'
+  };
+}
+
+applyChineseLanguageSlotDefault();
+
 const BGS_LANG_KEY = 'bgs_lang';
 /** BIO: Ses seviyesi — Dil gibi saklanır; Default splash, Default toolbar ve Pro Mode ortak kullanır. */
 const BGS_VOL_KEY = 'bgs_vol';

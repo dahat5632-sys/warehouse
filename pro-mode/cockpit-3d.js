@@ -2499,7 +2499,7 @@ function getStoredLang() {
 function getClockIntlLocale() {
   const lang = getStoredLang();
   if (lang === 'tr') return 'tr-TR';
-  if (lang === 'de') return 'de-DE';
+  if (lang === 'de') return 'zh-CN';
   return 'en-GB';
 }
 
@@ -2509,7 +2509,7 @@ function syncLangButtonTextures() {
     const data = m.userData;
     if (!data._ctx) continue;
     const lang = data.lang;
-    const up = (lang || 'en').toString().toUpperCase();
+    const up = lang === 'de' ? '中文' : (lang || 'en').toString().toUpperCase();
     const h = data._uiHoverF != null ? data._uiHoverF : 0;
     drawLangButtonCanvas(data._ctx, LANG_CANVAS.w, LANG_CANVAS.h, up, active === lang, h);
     if (data._map) {
@@ -10199,6 +10199,91 @@ const _CENTER_LOOK_COPY = {
   }
 };
 
+
+
+/* BIO: Repurpose the former German language slot as Chinese for this GitHub Pages copy. */
+function applyChineseLanguageSlotCockpit() {
+  try {
+    COCKPIT_CANVAS_ARIA_BY_LANG.de = '三维驾驶舱视图。页面开头提供文字摘要。';
+  } catch (_) {}
+
+  try {
+    PRO_BIO_ID_CARD_TEXT.de = {
+      org: 'BIO 学院',
+      orgSub: '驾驶员档案',
+      clrLabel: '权限',
+      clrVal: 'A-7',
+      name: '姓名',
+      nameVal: '周天爽',
+      codename: '代号',
+      codenameVal: 'BIO',
+      role: '角色',
+      roleVal: 'AI 训练师',
+      focus: '方向',
+      focusVal: 'AI · 网络安全',
+      statCuriosity: '好奇心',
+      statFocus: '专注',
+      statCalm: '冷静',
+      statTeamwork: '协作',
+      statProactivity: '主动性',
+      statCreativity: '创造力',
+      idText: 'ID-2026-CN-04A7'
+    };
+  } catch (_) {}
+
+  const c = {
+    about: {
+      edu: { title: '教育经历', html: `
+        <div class="tl-wrap">
+          <div class="tl-item active"><div class="tl-year">2024 - 2027</div><div class="tl-title">Yeditepe University</div><div class="tl-desc">互联网与网络技术</div></div>
+          <div class="tl-item"><div class="tl-year">2020 - 2024</div><div class="tl-title">Guc Kardesler Anatolian High School</div><div class="tl-desc">高中教育</div></div>
+        </div><hr class="divider"><div class="tl-section-title">证书</div>
+        <div class="tl-cert"><a href="https://learn.microsoft.com/en-us/users/bilalanl-8550/credentials/38e863aaef982a2d" target="_blank" rel="noopener">Microsoft Certified: Fabric Data Engineer Associate (2026)</a><a href="https://www.credly.com/badges/3852359e-8131-4422-9279-918a4f5c4c74" target="_blank" rel="noopener">Cisco AI Technical Practitioner (2026)</a></div>` },
+      exp: { title: '经历', html: `<p>我仍在持续学习和成长。随着经验积累，这一部分会继续更新。</p>` },
+      bio: { title: '个人简介', html: `<p>你好，我是 <strong>周天爽</strong>，也可以叫我 <strong>Bio</strong>。</p><hr class="divider"><p>我关注人工智能、AI 训练、网络安全和自动化工具，希望把复杂技术转化为稳定、可用、能解决实际问题的能力。</p><hr class="divider"><p class="psh-note">工作之外，我也喜欢关注新技术、游戏、旅行和有挑战性的训练项目。</p>` }
+    },
+    projects: {
+      web: { title: '网络安全项目', html: `<p><strong>项目</strong></p><ul><li>即将更新...</li><li>即将更新...</li><li>即将更新...</li></ul><hr class="divider"><p><strong>使用技术</strong></p><ul><li>Python</li><li>[待添加]</li><li>[待添加]</li></ul>` },
+      mob: { title: 'AI 项目', html: `<p><strong>项目</strong></p><ul><li>即将更新...</li><li>即将更新...</li></ul><hr class="divider"><p>项目详情待添加。</p>` },
+      back: { title: '综合项目', html: `<p><strong>项目</strong></p><ul><li>即将更新...</li><li>即将更新...</li></ul><hr class="divider"><p><strong>使用技术</strong></p><ul><li>Python</li><li>[待添加]</li><li>[待添加]</li></ul>` }
+    },
+    hobbies: {
+      esp: { title: '电子竞技', html: `<p><strong>喜欢的游戏</strong></p><ul><li>VALORANT</li><li>CS2</li></ul><hr class="divider"><p>电子竞技训练了我的沟通、协作、压力下决策和快速解决问题的能力。</p>` },
+      sht: { title: '射击', html: `<p>射击意味着耐心、自控和压力管理。专注于一个瞬间的能力，也能迁移到复杂问题的解决中。</p><hr class="divider"><p class="psh-note">这是一项需要专注、耐心和纪律的运动。</p>` },
+      tec: { title: '技术趋势', html: `<p><strong>关注领域</strong></p><ul><li>人工智能与大语言模型</li><li>网络安全新闻</li><li>AI 与安全应用</li><li>硬件与芯片架构</li><li>量子计算</li></ul><hr class="divider"><p>我喜欢跟踪技术趋势，并把这些变化转化为学习方向和项目灵感。</p>` },
+      trv: { title: '旅行', html: `<p>我喜欢旅行和探索新地方。新的环境会带来新的经验、想法和观察角度。</p>` }
+    },
+    skills: {
+      ai: { title: '人工智能', html: `<p><strong>工具与库</strong></p><ul><li>Python - scikit-learn, pandas, numpy</li><li>TensorFlow / PyTorch</li></ul><hr class="divider"><p><strong>已完成项目</strong></p><ul><li><a href="https://github.com/bilalgurkansanli/Health_Insurance_Cost_Prediction" target="_blank" rel="noopener">Health Insurance Cost Prediction</a><br><span>基于机器学习模型预测健康保险费用。</span></li></ul><hr class="divider"><p><strong>兴趣方向</strong></p><ul><li>自然语言处理</li><li>机器学习</li><li>生成式 AI</li></ul>` },
+      sec: { title: '网络安全', html: `<p><strong>兴趣方向</strong></p><ul><li>网络安全</li><li>渗透测试</li><li>漏洞分析</li><li>密码学</li></ul><hr class="divider"><p><strong>工具</strong></p><ul><li>Nmap / Zenmap</li><li>Metasploit</li><li>Burp Suite</li><li>[更多工具待添加]</li></ul><hr class="divider"><p>我正在持续学习安全攻防、自动化分析和 AI 辅助安全能力。</p>` }
+    },
+    contact: {
+      mail: { title: '邮箱', html: `<p>你可以通过邮箱联系我：</p><p class="psh-mail"><a href="mailto:bilalsanli@outlook.com">bilalsanli@outlook.com</a></p><p class="psh-note">合作、项目想法，或者简单打个招呼，都欢迎联系。</p>` },
+      soc: { title: '社交媒体', html: `<p>你可以在社交媒体上找到我，也欢迎通过 LinkedIn 建立连接。</p><hr class="divider"><p class="psh-note">点击下方图标访问我的主页。</p>` }
+    }
+  };
+
+  try {
+    for (const [planet, subs] of Object.entries(c)) {
+      if (!PRO_SUB_CONTENT[planet]) continue;
+      for (const [sub, value] of Object.entries(subs)) {
+        if (!PRO_SUB_CONTENT[planet][sub]) continue;
+        PRO_SUB_CONTENT[planet][sub].de = value;
+      }
+    }
+  } catch (_) {}
+
+  try {
+    _CENTER_LOOK_COPY.de = {
+      lock: '锁定中心',
+      unlock: '自由视角',
+      pressedLabel: '驾驶舱视角已锁定中心，点击切换为自由视角'
+    };
+  } catch (_) {}
+}
+
+applyChineseLanguageSlotCockpit();
+
 function syncProMobileCenterLookToggleUi() {
   const btn = typeof document !== 'undefined' ? document.getElementById('bgs-pro-center-look-toggle') : null;
   if (!btn) return;
@@ -11421,7 +11506,7 @@ function injectProLangToolbarFallback() {
       btn.type = 'button';
       btn.className = 'tb-lang';
       btn.dataset.lang = code;
-      btn.textContent = code.toUpperCase();
+      btn.textContent = code === 'de' ? '中文' : code.toUpperCase();
       host.appendChild(btn);
     }
     host.removeAttribute('hidden');
