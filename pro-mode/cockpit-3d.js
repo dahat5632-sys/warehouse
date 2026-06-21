@@ -5976,19 +5976,19 @@ const PRO_SUB_CONTENT = {
     },
     bio: {
       tr: { title: 'HAKKIMDA', html: `
-        <p>Merhaba! Ben <strong>Bilal Gürkan Şanlı</strong>. Namıdiğer <strong>Bio</strong></p>
+        <p>Merhaba! Ben <strong>周天爽</strong>. Namıdiğer <strong>Bio</strong></p>
         <hr class="divider">
         <p>Siber Güvenlik ve Yapay Zeka alanlarına ilgi duyuyorum ve bu alanlarda her gün kendimi geliştirmek için çabalıyorum. Özellikle Yapay Zeka destekli Siber Güvenlik Sistemleri üzerine yoğunlaşarak, dijital dünyadaki tehditleri henüz gerçekleşmeden tespit edebilen akıllı botlar geliştirmeyi hedefliyorum.</p>
         <hr class="divider">
         <p class="psh-note">Bunların dışında hobi olarak E-Spor, Basketbol, Atıcılık sporlarına ilgi duyuyorum. Gezmeyi ve yeni yerler keşfetmeyi seviyorum. Genellikle sessiz bir kişiliğim var ama aramızdaki buzları kırdığımızda bazen de çok konuşabilirim :)</p>` },
       en: { title: 'ABOUT ME', html: `
-        <p>Hello! I'm <strong>Bilal Gürkan Şanlı</strong>. Also known as <strong>Bio</strong></p>
+        <p>Hello! I'm <strong>周天爽</strong>. Also known as <strong>Bio</strong></p>
         <hr class="divider">
         <p>I'm passionate about Cybersecurity and Artificial Intelligence, and I strive to improve myself in these fields every day. I'm particularly focused on AI-powered Cybersecurity Systems, aiming to develop intelligent bots that can detect digital threats before they even occur.</p>
         <hr class="divider">
         <p class="psh-note">Besides these, I'm interested in E-Sports, Basketball, and Shooting sports as hobbies. I love traveling and exploring new places. I'm generally a quiet person, but once we break the ice, I can be quite talkative sometimes :)</p>` },
       de: { title: 'ÜBER MICH', html: `
-        <p>Hallo! Ich bin <strong>Bilal Gürkan Şanlı</strong>. Auch bekannt als <strong>Bio</strong></p>
+        <p>Hallo! Ich bin <strong>周天爽</strong>. Auch bekannt als <strong>Bio</strong></p>
         <hr class="divider">
         <p>Ich interessiere mich für Cybersicherheit und Künstliche Intelligenz und arbeite jeden Tag daran, mich in diesen Bereichen weiterzuentwickeln. Mein besonderer Fokus liegt auf KI-gestützten Cybersicherheitssystemen, mit dem Ziel, intelligente Bots zu entwickeln, die digitale Bedrohungen erkennen, bevor sie auftreten.</p>
         <hr class="divider">
@@ -6649,7 +6649,7 @@ const PRO_BIO_ID_CARD_TEXT = {
     clrLabel: 'YETKİ',
     clrVal: 'A-7',
     name: 'AD',
-    nameVal: 'BİLAL GÜRKAN ŞANLI',
+    nameVal: '周天爽',
     codename: 'KOD ADI',
     codenameVal: 'BIO',
     role: 'GÖREV',
@@ -6670,7 +6670,7 @@ const PRO_BIO_ID_CARD_TEXT = {
     clrLabel: 'CLEARANCE',
     clrVal: 'A-7',
     name: 'NAME',
-    nameVal: 'BILAL GÜRKAN ŞANLI',
+    nameVal: '周天爽',
     codename: 'CODENAME',
     codenameVal: 'BIO',
     role: 'ROLE',
@@ -6691,7 +6691,7 @@ const PRO_BIO_ID_CARD_TEXT = {
     clrLabel: 'FREIGABE',
     clrVal: 'A-7',
     name: 'NAME',
-    nameVal: 'BİLAL GÜRKAN ŞANLI',
+    nameVal: '周天爽',
     codename: 'CODENAME',
     codenameVal: 'BIO',
     role: 'ROLLE',

@@ -98,7 +98,7 @@
       defaultExitNo: 'HAYIR',
       intro2ExitSkip: 'GEÇ ▸',
       a11ySkip: 'Özet içeriğe atla',
-      a11yOverviewTitle: 'Bilal Gürkan Şanlı — Pro Mode portfolyosu',
+      a11yOverviewTitle: '周天爽 — Pro Mode portfolyosu',
       a11yOverviewLead:
         'İnteraktif üç boyutlu kokpit. Masaüstünde fare tekerleği veya klavye (↑ ↓, W, S, Sayfa Yukarı / Aşağı). Mobilde kokpiti yatay kullanın; gyro için sensör izni istenebilir; gezegenler arasında dikey kaydırma.',
       a11yOverviewNavAria: 'Site bağlantıları',
@@ -189,7 +189,7 @@
       defaultExitNo: 'NO',
       intro2ExitSkip: 'SKIP ▸',
       a11ySkip: 'Skip to summary content',
-      a11yOverviewTitle: 'Bilal Gürkan Şanlı — Pro Mode portfolio',
+      a11yOverviewTitle: '周天爽 — Pro Mode portfolio',
       a11yOverviewLead:
         'Interactive 3D cockpit. Desktop: mouse wheel or keyboard (↑ ↓, W / S, Page Up / Down). Mobile: use landscape; gyro may ask for sensor permission; vertical swipe between planets.',
       a11yOverviewNavAria: 'Site links',
@@ -280,7 +280,7 @@
       defaultExitNo: 'NEIN',
       intro2ExitSkip: 'ÜBERSPRINGEN ▸',
       a11ySkip: 'Zur Zusammenfassung springen',
-      a11yOverviewTitle: 'Bilal Gürkan Şanlı — Portfolio im Pro‑Modus',
+      a11yOverviewTitle: '周天爽 — Portfolio im Pro‑Modus',
       a11yOverviewLead:
         'Interaktives 3D‑Cockpit. Desktop: Mausrad oder Tastatur (↑ ↓, W / S, Bild auf / ab). Mobil: Querformat; Gyro kann Sensorrechte anfragen; zwischen Planeten vertikal wischen.',
       a11yOverviewNavAria: 'Seiten‑Links',
