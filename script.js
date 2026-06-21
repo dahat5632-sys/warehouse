@@ -703,7 +703,7 @@ const UI = {
     modePro: 'PRO MOD',
     defaultLandscapeHint: 'Default Mode dikey olarak önerilir.',
     splashDesktopPro: 'PRO MODE İLE BAŞLA',
-    splashTagline: 'Siber Güvenlik ve Yapay Zeka Öğrencisi',
+    splashTagline: '优秀的AI训练师',
     splashGpuWarnLabel: 'DONANIM',
     splashGpuWarnTitle: 'Pro Mode bu cihazda kasabilir',
     splashGpuWarnBody:
@@ -759,7 +759,7 @@ const UI = {
     modePro: 'PRO MODE',
     defaultLandscapeHint: 'Default Mode is recommended in portrait.',
     splashDesktopPro: 'START WITH PRO MODE',
-    splashTagline: 'Cybersecurity & AI Student',
+    splashTagline: '优秀的AI训练师',
     splashGpuWarnLabel: 'HARDWARE',
     splashGpuWarnTitle: 'Pro Mode may run poorly on this device',
     splashGpuWarnBody:
@@ -815,7 +815,7 @@ const UI = {
     modePro: 'PRO-MODUS',
     defaultLandscapeHint: 'Standard‑Modus: Hochformat wird empfohlen.',
     splashDesktopPro: 'MIT PRO-MODUS STARTEN',
-    splashTagline: 'Student für Cybersicherheit & KI',
+    splashTagline: '优秀的AI训练师',
     splashGpuWarnLabel: 'HARDWARE',
     splashGpuWarnTitle: 'Der Pro-Modus kann auf diesem Gerät ruckeln',
     splashGpuWarnBody:
