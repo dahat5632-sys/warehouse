@@ -5725,8 +5725,8 @@ const PRO_SUB_DETAIL_REGISTRY = {
     },
     /* BIO: Scroll and navigation behavior note. */
     secondBuilder: {
-      type: 'glb',
-      glbUrl: PRO_HOBBIES_SHOOTING_GLB_URL,
+      type: 'procedural',
+      build: (rootGroup, cfg, onReady) => _buildProBasketballFigure(rootGroup, cfg, onReady),
       modelName: 'proShootingFigure',
       /* BIO: Implementation note for this section. */
       modelPos: { x: -1, y: 0.05, z: 0 },
@@ -7127,6 +7127,175 @@ function _buildProEduFallbackModel() {
   roof.position.y = maxDim * 0.14;
   g.add(body, roof);
   return g;
+}
+
+function _buildProBasketballFigure(rootGroup, cfg, onReady) {
+  if (!rootGroup) return;
+
+  const g = new THREE.Group();
+  g.name = (cfg && cfg.modelName) || 'proBasketballFigure';
+
+  const skinMat = new THREE.MeshStandardMaterial({
+    color: 0xb87552,
+    roughness: 0.48,
+    metalness: 0.02
+  });
+  const skinGlowMat = skinMat.clone();
+  skinGlowMat.emissive.setHex(0x1b0803);
+  skinGlowMat.emissiveIntensity = 0.08;
+
+  const uniformMat = new THREE.MeshStandardMaterial({
+    color: 0x05070c,
+    emissive: 0x00050a,
+    emissiveIntensity: 0.18,
+    roughness: 0.58,
+    metalness: 0.08
+  });
+  const clothMat = new THREE.MeshStandardMaterial({
+    color: 0x0b1020,
+    emissive: 0x00111a,
+    emissiveIntensity: 0.12,
+    roughness: 0.62,
+    metalness: 0.04
+  });
+  const whiteMat = new THREE.MeshStandardMaterial({
+    color: 0xf4f4ef,
+    emissive: 0x101010,
+    emissiveIntensity: 0.05,
+    roughness: 0.42
+  });
+  const hairMat = new THREE.MeshStandardMaterial({
+    color: 0x070707,
+    roughness: 0.86
+  });
+  const shoeMat = new THREE.MeshStandardMaterial({
+    color: 0x030408,
+    emissive: 0x00141a,
+    emissiveIntensity: 0.18,
+    roughness: 0.5,
+    metalness: 0.12
+  });
+  const cyanMat = new THREE.MeshStandardMaterial({
+    color: 0x00f5ff,
+    emissive: 0x00a8b8,
+    emissiveIntensity: 0.85,
+    roughness: 0.38,
+    metalness: 0.08
+  });
+
+  const addMesh = (name, geo, mat, pos, rot, scale) => {
+    const m = new THREE.Mesh(geo, mat);
+    m.name = name;
+    if (pos) m.position.set(pos.x || 0, pos.y || 0, pos.z || 0);
+    if (rot) m.rotation.set(rot.x || 0, rot.y || 0, rot.z || 0);
+    if (scale) m.scale.set(scale.x || 1, scale.y || 1, scale.z || 1);
+    g.add(m);
+    return m;
+  };
+
+  const limb = (name, radiusTop, radiusBottom, height, mat, pos, rot) =>
+    addMesh(
+      name,
+      new THREE.CylinderGeometry(radiusTop, radiusBottom, height, 28, 1),
+      mat,
+      pos,
+      rot
+    );
+
+  const torso = addMesh(
+    'blackSleevelessJersey',
+    new THREE.CylinderGeometry(0.34, 0.45, 1.08, 36, 1),
+    uniformMat,
+    { x: 0, y: 1.95, z: 0 },
+    null,
+    { x: 0.86, y: 1, z: 0.42 }
+  );
+
+  const chestMark = addMesh(
+    'dukeStyleChestMark',
+    new THREE.PlaneGeometry(0.26, 0.18),
+    whiteMat,
+    { x: 0, y: 2.06, z: 0.185 },
+    null
+  );
+  chestMark.renderOrder = 4;
+
+  addMesh(
+    'waistBand',
+    new THREE.CylinderGeometry(0.44, 0.47, 0.12, 36, 1),
+    clothMat,
+    { x: 0, y: 1.36, z: 0 },
+    null,
+    { x: 0.9, y: 1, z: 0.46 }
+  );
+  addMesh(
+    'blackShorts',
+    new THREE.CylinderGeometry(0.46, 0.56, 0.54, 36, 1),
+    clothMat,
+    { x: 0, y: 1.1, z: 0 },
+    null,
+    { x: 0.92, y: 1, z: 0.48 }
+  );
+  addMesh('leftShortPanel', new THREE.BoxGeometry(0.1, 0.38, 0.025), whiteMat, { x: -0.34, y: 1.05, z: 0.2 }, { z: -0.18 });
+  addMesh('rightShortPanel', new THREE.BoxGeometry(0.1, 0.38, 0.025), whiteMat, { x: 0.34, y: 1.05, z: 0.2 }, { z: 0.18 });
+
+  limb('neck', 0.12, 0.13, 0.18, skinGlowMat, { x: 0, y: 2.57, z: 0 });
+  addMesh('head', new THREE.SphereGeometry(0.27, 36, 24), skinGlowMat, { x: 0.01, y: 2.86, z: 0.02 }, null, { x: 0.9, y: 1.08, z: 0.82 });
+  addMesh('chin', new THREE.SphereGeometry(0.12, 24, 14), skinGlowMat, { x: 0.005, y: 2.68, z: 0.105 }, null, { x: 0.9, y: 0.58, z: 0.65 });
+
+  const hairRoot = new THREE.Group();
+  hairRoot.name = 'curlyHair';
+  const hairPoints = [
+    [-0.18, 3.07, -0.02, 0.13], [-0.06, 3.12, 0.03, 0.15], [0.08, 3.1, 0.02, 0.14],
+    [0.2, 3.04, -0.02, 0.12], [-0.27, 2.96, 0, 0.12], [0.27, 2.96, 0, 0.12],
+    [-0.12, 3.0, 0.12, 0.1], [0.12, 3.0, 0.12, 0.1], [0.0, 3.18, -0.03, 0.11]
+  ];
+  for (const [x, y, z, r] of hairPoints) {
+    const curl = new THREE.Mesh(new THREE.SphereGeometry(r, 16, 12), hairMat);
+    curl.position.set(x, y, z);
+    hairRoot.add(curl);
+  }
+  g.add(hairRoot);
+
+  addMesh('leftEye', new THREE.SphereGeometry(0.018, 12, 8), hairMat, { x: -0.075, y: 2.9, z: 0.23 });
+  addMesh('rightEye', new THREE.SphereGeometry(0.018, 12, 8), hairMat, { x: 0.08, y: 2.9, z: 0.23 });
+  addMesh('nose', new THREE.ConeGeometry(0.025, 0.08, 12), skinMat, { x: 0.005, y: 2.82, z: 0.26 }, { x: Math.PI / 2 });
+  addMesh('mouth', new THREE.BoxGeometry(0.12, 0.012, 0.01), hairMat, { x: 0.005, y: 2.72, z: 0.245 });
+
+  limb('leftUpperArm', 0.09, 0.08, 0.62, skinMat, { x: -0.43, y: 2.02, z: 0.03 }, { z: -0.16 });
+  limb('rightUpperArm', 0.09, 0.08, 0.62, skinMat, { x: 0.43, y: 2.02, z: 0.03 }, { z: 0.16 });
+  limb('leftForearm', 0.075, 0.065, 0.62, skinMat, { x: -0.53, y: 1.48, z: 0.02 }, { z: -0.08 });
+  limb('rightForearm', 0.075, 0.065, 0.62, skinMat, { x: 0.53, y: 1.48, z: 0.02 }, { z: 0.08 });
+  addMesh('leftHand', new THREE.SphereGeometry(0.075, 18, 12), skinMat, { x: -0.57, y: 1.13, z: 0.02 }, null, { x: 0.8, y: 1.1, z: 0.55 });
+  addMesh('rightHand', new THREE.SphereGeometry(0.075, 18, 12), skinMat, { x: 0.57, y: 1.13, z: 0.02 }, null, { x: 0.8, y: 1.1, z: 0.55 });
+
+  limb('leftThigh', 0.14, 0.12, 0.58, skinMat, { x: -0.19, y: 0.62, z: 0 }, { z: 0.03 });
+  limb('rightThigh', 0.14, 0.12, 0.58, skinMat, { x: 0.19, y: 0.62, z: 0 }, { z: -0.03 });
+  limb('leftCalf', 0.105, 0.075, 0.62, skinMat, { x: -0.19, y: 0.03, z: 0.01 }, { z: -0.02 });
+  limb('rightCalf', 0.105, 0.075, 0.62, skinMat, { x: 0.19, y: 0.03, z: 0.01 }, { z: 0.02 });
+  addMesh('leftShoe', new THREE.BoxGeometry(0.28, 0.11, 0.48), shoeMat, { x: -0.2, y: -0.34, z: 0.1 }, { x: 0.02 });
+  addMesh('rightShoe', new THREE.BoxGeometry(0.28, 0.11, 0.48), shoeMat, { x: 0.2, y: -0.34, z: 0.1 }, { x: 0.02 });
+  addMesh('leftShoeAccent', new THREE.BoxGeometry(0.16, 0.018, 0.012), whiteMat, { x: -0.2, y: -0.3, z: 0.345 }, { z: -0.28 });
+  addMesh('rightShoeAccent', new THREE.BoxGeometry(0.16, 0.018, 0.012), whiteMat, { x: 0.2, y: -0.3, z: 0.345 }, { z: 0.28 });
+
+  const baseRing = addMesh(
+    'cyanHoloBase',
+    new THREE.TorusGeometry(0.58, 0.01, 12, 96),
+    cyanMat,
+    { x: 0, y: -0.42, z: 0 },
+    { x: Math.PI / 2 }
+  );
+  baseRing.renderOrder = 2;
+
+  _normalizeProSubDetailModel(g, cfg);
+  rootGroup.add(g);
+  onReady({
+    model: g,
+    autoSpin: (model, dt, pageCfg) => {
+      if (!model) return;
+      model.rotation.y += dt * ((pageCfg && pageCfg.modelAutoRotateSpeed) || 0.25);
+    }
+  });
 }
 
 /* BIO: Implementation note for this section. */
