@@ -2773,7 +2773,7 @@ function goToProModeDirect() {
   } catch (_e) {
     /* BIO: noop */
   }
-  window.location.href = '/pro-mode/';
+  window.location.href = 'pro-mode/';
 }
 
 const pcSfx            = { open: null, warn: null, alarm: null, confirm: null, cancel: null, uibtn: null };
@@ -3286,7 +3286,7 @@ function finishProTransition() {
   } catch (_e) {
     /* BIO: noop */
   }
-  window.location.href = '/pro-mode/';
+  window.location.href = 'pro-mode/';
 }
 
 $pcYes.addEventListener('click', () => {
