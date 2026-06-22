@@ -442,13 +442,24 @@
   }
 
   const STORAGE_LANG = 'bgs_lang';
+  const STORAGE_LANG_DEFAULT_MIGRATION = 'bgs_lang_default_zh_v1';
   /** BIO: Ana site ile aynı anahtar (script.js BGS_VOL_KEY). */
   const STORAGE_VOL = 'bgs_vol';
   /** BIO: Mobil / aynı-sekme Pro geçişi — script.js BGS_VOL_SESSION_KEY ile ortak. */
   const STORAGE_VOL_SESSION = 'bgs_vol_session';
-  let currentLang = (localStorage.getItem(STORAGE_LANG) || 'en');
+  let currentLang = 'de';
+  try {
+    if (localStorage.getItem(STORAGE_LANG_DEFAULT_MIGRATION) !== '1') {
+      localStorage.setItem(STORAGE_LANG, 'de');
+      localStorage.setItem(STORAGE_LANG_DEFAULT_MIGRATION, '1');
+    } else {
+      currentLang = localStorage.getItem(STORAGE_LANG) || 'de';
+    }
+  } catch (_) {
+    currentLang = 'de';
+  }
   if (currentLang === 'tr') currentLang = 'en';
-  if (!UI[currentLang]) currentLang = 'en';
+  if (!UI[currentLang]) currentLang = 'de';
 
   const MAP_PLANETS = [
     { id: 'about', tex: '../assets/pro/aboutme/aboutme-texture.webp', shape: 'sphere' },
@@ -786,6 +797,7 @@
     const t = UI[lang] || UI.en;
     currentLang = lang;
     try { localStorage.setItem(STORAGE_LANG, lang); } catch (_) {}
+    try { localStorage.setItem(STORAGE_LANG_DEFAULT_MIGRATION, '1'); } catch (_) {}
     document.documentElement.lang = t.htmlLang;
 
     document.querySelectorAll('.tb-mode').forEach(btn => {

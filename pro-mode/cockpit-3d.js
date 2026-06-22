@@ -2491,9 +2491,9 @@ function onProUiStrings(e) {
 
 function getStoredLang() {
   try {
-    return localStorage.getItem('bgs_lang') || 'en';
+    return localStorage.getItem('bgs_lang') || 'de';
   } catch (_) {
-    return 'en';
+    return 'de';
   }
 }
 

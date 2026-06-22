@@ -690,7 +690,7 @@ const DATA = {
 };
 
 /* BIO: Implementation note for this section. */
-let currentLang  = 'en';
+let currentLang  = 'de';
 let currentTheme = 'dark';
 
 const UI = {
@@ -1062,6 +1062,7 @@ function applyChineseLanguageSlotDefault() {
 applyChineseLanguageSlotDefault();
 
 const BGS_LANG_KEY = 'bgs_lang';
+const BGS_LANG_DEFAULT_MIGRATION_KEY = 'bgs_lang_default_zh_v1';
 /** BIO: Ses seviyesi — Dil gibi saklanır; Default splash, Default toolbar ve Pro Mode ortak kullanır. */
 const BGS_VOL_KEY = 'bgs_vol';
 /** BIO: Aynı sekmede Pro\'ya geçerken (özellikle mobil) LS güvenilmezse ses yedeği — pro-mode/script.js ile aynı anahtar. */
@@ -1088,6 +1089,12 @@ function persistVolumeToStorage(level) {
 
 (function readStoredLangFromSharedKey() {
   try {
+    if (localStorage.getItem(BGS_LANG_DEFAULT_MIGRATION_KEY) !== '1') {
+      currentLang = 'de';
+      localStorage.setItem(BGS_LANG_KEY, 'de');
+      localStorage.setItem(BGS_LANG_DEFAULT_MIGRATION_KEY, '1');
+      return;
+    }
     const s = localStorage.getItem(BGS_LANG_KEY);
     if (s === 'tr') currentLang = 'en';
     else if (s && UI[s]) currentLang = s;
@@ -2667,6 +2674,7 @@ function setLang(lang) {
   if (lang === 'tr') lang = 'en';
   currentLang = lang;
   try { localStorage.setItem(BGS_LANG_KEY, lang); } catch (_) { /* BIO: noop */ }
+  try { localStorage.setItem(BGS_LANG_DEFAULT_MIGRATION_KEY, '1'); } catch (_) { /* BIO: noop */ }
   document.documentElement.lang = lang;
   document.querySelectorAll('.tb-lang').forEach(b =>
     b.classList.toggle('active', b.dataset.lang === lang)
