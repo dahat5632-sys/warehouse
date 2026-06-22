@@ -486,7 +486,7 @@ function syncBioLogoStickerTint() {
 /* BIO: Implementation note for this section. */
 const COCKPIT_LANG_SCREENS = {
   en: { x: -0.061, y: 0.12, z: -0.175 },
-  de: { x: -0.021, y: 0.12, z: -0.175 }
+  de: { x: 0.006, y: 0.108, z: -0.175 }
 };
 
 /* BIO: Implementation note for this section. */
