@@ -958,9 +958,9 @@ function applyChineseLanguageSlotDefault() {
           html: `<p><strong>工具与库</strong></p><ul><li>Python - scikit-learn, pandas, numpy</li><li>TensorFlow / PyTorch</li></ul><hr class="divider"><p><strong>已完成项目</strong></p><ul><li><a href="https://github.com/bilalgurkansanli/Health_Insurance_Cost_Prediction" target="_blank" rel="noopener">Health Insurance Cost Prediction</a><br><span>基于机器学习模型预测健康保险费用。</span></li></ul><hr class="divider"><p><strong>兴趣方向</strong></p><ul><li>自然语言处理</li><li>机器学习</li><li>生成式 AI</li></ul>`
         },
         sec: {
-          label: ['New energy', 'vehicles'],
-          title: 'New energy vehicles',
-          html: `<p><strong>研究兴趣领域</strong></p><ul><li>New energy vehicles</li><li>智能座舱</li><li>电池与电驱系统</li><li>自动驾驶与车联网</li></ul>`
+          label: ['新能源', '汽车'],
+          title: '新能源汽车',
+          html: `<p><strong>研究兴趣领域</strong></p><ul><li>新能源汽车</li><li>智能座舱</li><li>电池与电驱系统</li><li>自动驾驶与车联网</li></ul>`
         }
       }
     },

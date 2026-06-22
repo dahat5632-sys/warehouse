@@ -323,7 +323,7 @@
     hobbiesSubTec: '技术趋势',
     hobbiesSubTrv: '旅行',
     skillsSubAi: '人工智能',
-    skillsSubSec: 'New energy vehicles',
+    skillsSubSec: '新能源汽车',
     contactSubMail: '邮箱',
     contactSubSoc: '社交媒体',
     backLabel: '◄ 返回',
