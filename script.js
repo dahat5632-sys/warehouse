@@ -482,8 +482,8 @@ const DATA = {
         },
         {
           id: 'sec',
-          label: { tr: ['Siber', 'Güvenlik'], en: ['新能源', '汽车'], de: ['Cyber-', 'Sicherheit'] },
-          title: { tr: 'SİBER GÜVENLİK', en: '新能源汽车', de: 'CYBERSICHERHEIT' },
+          label: { tr: ['Siber', 'Güvenlik'], en: ['New energy', 'vehicles'], de: ['Cyber-', 'Sicherheit'] },
+          title: { tr: 'SİBER GÜVENLİK', en: 'New energy vehicles', de: 'CYBERSICHERHEIT' },
           html: {
             tr: `
             <p><strong>İlgi Alanları</strong></p>
@@ -504,23 +504,13 @@ const DATA = {
             <hr class="divider">
             <p>Şu an Cisco'nun CyberOps ve Ethical Hacking eğitimlerini alıyorum. Bu eğitimler sonrasındaysa sertifika sınavlarına girip sertifikalarımı alacağım.</p>`,
             en: `
-            <p><strong>研究兴趣领域与</strong></p>
+            <p><strong>研究兴趣领域</strong></p>
             <ul>
-              <li>新能源汽车</li>
+              <li>New energy vehicles</li>
               <li>智能座舱</li>
               <li>电池与电驱系统</li>
               <li>自动驾驶与车联网</li>
-            </ul>
-            <hr class="divider">
-            <p><strong>Tools I Use</strong></p>
-            <ul>
-              <li>Nmap / Zenmap</li>
-              <li>Metasploit</li>
-              <li>Burp Suite</li>
-              <li>[More tools to be added]</li>
-            </ul>
-            <hr class="divider">
-            <p>I'm currently taking Cisco's CyberOps and Ethical Hacking courses. After completing these, I will take the certification exams to earn my certifications.</p>`,
+            </ul>`,
             de: `
             <p><strong>Interessengebiete</strong></p>
             <ul>
@@ -968,9 +958,9 @@ function applyChineseLanguageSlotDefault() {
           html: `<p><strong>工具与库</strong></p><ul><li>Python - scikit-learn, pandas, numpy</li><li>TensorFlow / PyTorch</li></ul><hr class="divider"><p><strong>已完成项目</strong></p><ul><li><a href="https://github.com/bilalgurkansanli/Health_Insurance_Cost_Prediction" target="_blank" rel="noopener">Health Insurance Cost Prediction</a><br><span>基于机器学习模型预测健康保险费用。</span></li></ul><hr class="divider"><p><strong>兴趣方向</strong></p><ul><li>自然语言处理</li><li>机器学习</li><li>生成式 AI</li></ul>`
         },
         sec: {
-          label: ['新能源', '汽车'],
-          title: '新能源汽车',
-          html: `<p><strong>研究兴趣领域与</strong></p><ul><li>新能源汽车</li><li>智能座舱</li><li>电池与电驱系统</li><li>自动驾驶与车联网</li></ul><hr class="divider"><p><strong>工具</strong></p><ul><li>数据分析</li><li>AI 辅助研究</li><li>[更多工具待添加]</li></ul><hr class="divider"><p>我正在持续关注新能源汽车、智能化与 AI 技术在汽车产业中的应用。</p>`
+          label: ['New energy', 'vehicles'],
+          title: 'New energy vehicles',
+          html: `<p><strong>研究兴趣领域</strong></p><ul><li>New energy vehicles</li><li>智能座舱</li><li>电池与电驱系统</li><li>自动驾驶与车联网</li></ul>`
         }
       }
     },
