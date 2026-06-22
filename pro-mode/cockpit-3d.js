@@ -6168,9 +6168,9 @@ const PRO_SUB_CONTENT = {
         <ul><li>Nmap / Zenmap</li><li>Metasploit</li><li>Burp Suite</li><li>[Diğer araçlar eklenecek]</li></ul>
         <hr class="divider">
         <p>Şu an Cisco'nun CyberOps ve Ethical Hacking eğitimlerini alıyorum. Bu eğitimler sonrasındaysa sertifika sınavlarına girip sertifikalarımı alacağım.</p>` },
-      en: { title: 'CYBERSECURITY', html: `
-        <p><strong>Areas of Interest</strong></p>
-        <ul><li>Network security</li><li>Penetration testing</li><li>Vulnerability analysis (CVE)</li><li>Cryptography</li></ul>
+      en: { title: '新能源汽车', html: `
+        <p><strong>研究兴趣领域与</strong></p>
+        <ul><li>新能源汽车</li><li>智能座舱</li><li>电池与电驱系统</li><li>自动驾驶与车联网</li></ul>
         <hr class="divider">
         <p><strong>Tools I Use</strong></p>
         <ul><li>Nmap / Zenmap</li><li>Metasploit</li><li>Burp Suite</li><li>[More tools to be added]</li></ul>
@@ -10427,7 +10427,7 @@ function applyChineseLanguageSlotCockpit() {
     },
     skills: {
       ai: { title: '人工智能', html: `<p><strong>工具与库</strong></p><ul><li>Python - scikit-learn, pandas, numpy</li><li>TensorFlow / PyTorch</li></ul><hr class="divider"><p><strong>已完成项目</strong></p><ul><li><a href="https://github.com/bilalgurkansanli/Health_Insurance_Cost_Prediction" target="_blank" rel="noopener">Health Insurance Cost Prediction</a><br><span>基于机器学习模型预测健康保险费用。</span></li></ul><hr class="divider"><p><strong>兴趣方向</strong></p><ul><li>自然语言处理</li><li>机器学习</li><li>生成式 AI</li></ul>` },
-      sec: { title: '网络安全', html: `<p><strong>兴趣方向</strong></p><ul><li>网络安全</li><li>渗透测试</li><li>漏洞分析</li><li>密码学</li></ul><hr class="divider"><p><strong>工具</strong></p><ul><li>Nmap / Zenmap</li><li>Metasploit</li><li>Burp Suite</li><li>[更多工具待添加]</li></ul><hr class="divider"><p>我正在持续学习安全攻防、自动化分析和 AI 辅助安全能力。</p>` }
+      sec: { title: '新能源汽车', html: `<p><strong>研究兴趣领域与</strong></p><ul><li>新能源汽车</li><li>智能座舱</li><li>电池与电驱系统</li><li>自动驾驶与车联网</li></ul><hr class="divider"><p><strong>工具</strong></p><ul><li>数据分析</li><li>AI 辅助研究</li><li>[更多工具待添加]</li></ul><hr class="divider"><p>我正在持续关注新能源汽车、智能化与 AI 技术在汽车产业中的应用。</p>` }
     },
     contact: {
       mail: { title: '邮箱', html: `<p>你可以通过邮箱联系我：</p><p class="psh-mail"><a href="mailto:bilalsanli@outlook.com">bilalsanli@outlook.com</a></p><p class="psh-note">合作、项目想法，或者简单打个招呼，都欢迎联系。</p>` },
