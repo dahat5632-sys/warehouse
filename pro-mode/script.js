@@ -442,7 +442,7 @@
   }
 
   const STORAGE_LANG = 'bgs_lang';
-  const STORAGE_LANG_DEFAULT_MIGRATION = 'bgs_lang_default_zh_v1';
+  const STORAGE_LANG_DEFAULT_MIGRATION = 'bgs_lang_default_zh_v3';
   /** BIO: Ana site ile aynı anahtar (script.js BGS_VOL_KEY). */
   const STORAGE_VOL = 'bgs_vol';
   /** BIO: Mobil / aynı-sekme Pro geçişi — script.js BGS_VOL_SESSION_KEY ile ortak. */

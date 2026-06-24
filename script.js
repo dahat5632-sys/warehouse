@@ -9,35 +9,35 @@ const IS_MOBILE = (() => {
 })();
 if (IS_MOBILE && document.body) document.body.classList.add('is-mobile');
 
-/** Ana ağaç etkileşime hazır mı — intro / splash kapandıktan sonra true olur (Default Mode landscape ipucu vb.). */
+/** Ana a鑷抋鑾?etkile鑹me haz璋媟 m璋?閳?intro / splash kapand璋媖tan sonra true olur (Default Mode landscape ipucu vb.). */
 let siteReady = false;
 
 /* BIO: Implementation note for this section. */
 const DATA = {
-  label: { tr: ['周天爽'], en: ['周天爽'], de: ['周天爽'] },
+  label: { tr: ['\\u5468\\u5929\\u723d'], en: ['\\u5468\\u5929\\u723d'], de: ['\\u5468\\u5929\\u723d'] },
   nodes: [
     /* BIO: Implementation note for this section. */
     {
       id: 'about',
-      label: { tr: ['HAKKIMDA'], en: ['ABOUT ME'], de: ['ÜBER MICH'] },
+  label: { tr: ['\\u5468\\u5929\\u723d'], en: ['\\u5468\\u5929\\u723d'], de: ['\\u5468\\u5929\\u723d'] },
       color: '#ff6a00',
       subs: [
         {
           id: 'edu',
-          label: { tr: ['Eğitim'], en: ['Education'], de: ['Ausbildung'] },
-          title: { tr: 'EĞİTİM', en: 'EDUCATION', de: 'AUSBILDUNG' },
+  label: { tr: ['\\u5468\\u5929\\u723d'], en: ['\\u5468\\u5929\\u723d'], de: ['\\u5468\\u5929\\u723d'] },
+          title: { tr: 'E鑷戦檶T闄孧', en: 'EDUCATION', de: 'AUSBILDUNG' },
           html: {
             tr: `
             <div class="tl-wrap">
               <div class="tl-item active">
-                <div class="tl-year">2024 — 2027</div>
-                <div class="tl-title">Yeditepe Üniversitesi</div>
-                <div class="tl-desc">İnternet ve Ağ Teknolojileri</div>
+                <div class="tl-year">2024 閳?2027</div>
+                <div class="tl-title">Yeditepe 鑴簄iversitesi</div>
+                <div class="tl-desc">闄宯ternet ve A鑷?Teknolojileri</div>
               </div>
               <div class="tl-item">
-                <div class="tl-year">2020 — 2024</div>
-                <div class="tl-title">Güç Kardeşler Anadolu Lisesi</div>
-                <div class="tl-desc">Lise Eğitimi</div>
+                <div class="tl-year">2020 閳?2024</div>
+                <div class="tl-title">G鐪夎幗 Karde鑹er Anadolu Lisesi</div>
+                <div class="tl-desc">Lise E鑷抜timi</div>
               </div>
             </div>
             <hr class="divider">
@@ -49,13 +49,13 @@ const DATA = {
             en: `
             <div class="tl-wrap">
               <div class="tl-item active">
-                <div class="tl-year">2024 — 2027</div>
+                <div class="tl-year">2024 閳?2027</div>
                 <div class="tl-title">Yeditepe University</div>
                 <div class="tl-desc">Internet and Network Technologies</div>
               </div>
               <div class="tl-item">
-                <div class="tl-year">2020 — 2024</div>
-                <div class="tl-title">Güç Kardeşler Anatolian High School</div>
+                <div class="tl-year">2020 閳?2024</div>
+                <div class="tl-title">G鐪夎幗 Karde鑹er Anatolian High School</div>
                 <div class="tl-desc">High School Education</div>
               </div>
             </div>
@@ -68,13 +68,13 @@ const DATA = {
             de: `
             <div class="tl-wrap">
               <div class="tl-item active">
-                <div class="tl-year">2024 — 2027</div>
-                <div class="tl-title">Yeditepe Universität</div>
+                <div class="tl-year">2024 閳?2027</div>
+                <div class="tl-title">Yeditepe Universit鐩瞭</div>
                 <div class="tl-desc">Internet- und Netzwerktechnologien</div>
               </div>
               <div class="tl-item">
-                <div class="tl-year">2020 — 2024</div>
-                <div class="tl-title">Güç Kardeşler Anatolisches Gymnasium</div>
+                <div class="tl-year">2020 閳?2024</div>
+                <div class="tl-title">G鐪夎幗 Karde鑹er Anatolisches Gymnasium</div>
                 <div class="tl-desc">Gymnasiale Ausbildung</div>
               </div>
             </div>
@@ -89,10 +89,10 @@ const DATA = {
         {
           id: 'exp',
           label: { tr: ['Deneyim'], en: ['Experience'], de: ['Erfahrung'] },
-          title: { tr: 'DENEYİM', en: 'EXPERIENCE', de: 'ERFAHRUNG' },
+          title: { tr: 'DENEY闄孧', en: 'EXPERIENCE', de: 'ERFAHRUNG' },
           html: {
             tr: `
-            <p>Henüz öğrenciyim. Deneyim kazandıkça bu bölümü güncelleyeceğim.</p>`,
+            <p>Hen鐪墇 鏋氳噿renciyim. Deneyim kazand璋媖鑾絘 bu b鏋歭鐪塵鐪?g鐪塶celleyece鑷抜m.</p>`,
             en: `
             <p>I'm still a student. I'll update this section as I gain experience.</p>`,
             de: `
@@ -101,19 +101,19 @@ const DATA = {
         },
         {
           id: 'bio',
-          label: { tr: ['Hakkımda'], en: ['About Me'], de: ['Über mich'] },
-          title: { tr: 'HAKKIMDA', en: 'ABOUT ME', de: 'ÜBER MICH' },
+          label: { tr: ['Hakk璋媘da'], en: ['About Me'], de: ['鑴篵er mich'] },
+          title: { tr: 'HAKKIMDA', en: 'ABOUT ME', de: '鑴築ER MICH' },
           html: {
             tr: `
-            <p>Merhaba! Ben <strong>周天爽</strong>. Namıdiğer <strong>Bio</strong></p>
+            <p>Merhaba! Ben <strong>閸涖劌銇夐悥?/strong>. Nam璋媎i鑷抏r <strong>Bio</strong></p>
             <hr class="divider">
-            <p>Siber Güvenlik ve Yapay Zeka alanlarına ilgi duyuyorum ve bu alanlarda her gün kendimi geliştirmek için çabalıyorum. Özellikle Yapay Zeka destekli Siber Güvenlik Sistemleri üzerine yoğunlaşarak, dijital dünyadaki tehditleri henüz gerçekleşmeden tespit edebilen akıllı botlar geliştirmeyi hedefliyorum.</p>
+            <p>Siber G鐪塿enlik ve Yapay Zeka alanlar璋媙a ilgi duyuyorum ve bu alanlarda her g鐪塶 kendimi geli鑹irmek i鑾絠n 鑾絘bal璋媦orum. 鑴皕ellikle Yapay Zeka destekli Siber G鐪塿enlik Sistemleri 鐪墇erine yo鑷抲nla鑹rak, dijital d鐪塶yadaki tehditleri hen鐪墇 ger鑾絜kle鑹eden tespit edebilen ak璋媗l璋?botlar geli鑹irmeyi hedefliyorum.</p>
             <hr class="divider">
             <p style="color:rgba(0,245,255,0.38);font-size:12px;font-style:italic">
-              Bunların dışında hobi olarak E-Spor, Basketbol, Atıcılık sporlarına ilgi duyuyorum. Gezmeyi ve yeni yerler keşfetmeyi seviyorum. Genellikle sessiz bir kişiliğim var ama aramızdaki buzları kırdığımızda bazen de çok konuşabilirim :)
+              Bunlar璋媙 d璋嬭墽璋媙da hobi olarak E-Spor, Basketbol, At璋媍璋媗璋媖 sporlar璋媙a ilgi duyuyorum. Gezmeyi ve yeni yerler ke鑹etmeyi seviyorum. Genellikle sessiz bir ki鑹li鑷抜m var ama aram璋媧daki buzlar璋?k璋媟d璋嬭噿璋媘璋媧da bazen de 鑾給k konu鑹bilirim :)
             </p>`,
             en: `
-            <p>Hello! I'm <strong>周天爽</strong>. Also known as <strong>Bio</strong></p>
+            <p>Hello! I'm <strong>閸涖劌銇夐悥?/strong>. Also known as <strong>Bio</strong></p>
             <hr class="divider">
             <p>I'm passionate about Cybersecurity and Artificial Intelligence, and I strive to improve myself in these fields every day. I'm particularly focused on AI-powered Cybersecurity Systems, aiming to develop intelligent bots that can detect digital threats before they even occur.</p>
             <hr class="divider">
@@ -121,12 +121,12 @@ const DATA = {
               Besides these, I'm interested in E-Sports, Basketball, and Shooting sports as hobbies. I love traveling and exploring new places. I'm generally a quiet person, but once we break the ice, I can be quite talkative sometimes :)
             </p>`,
             de: `
-            <p>Hallo! Ich bin <strong>周天爽</strong>. Auch bekannt als <strong>Bio</strong></p>
+            <p>Hallo! Ich bin <strong>閸涖劌銇夐悥?/strong>. Auch bekannt als <strong>Bio</strong></p>
             <hr class="divider">
-            <p>Ich interessiere mich für Cybersicherheit und Künstliche Intelligenz und arbeite jeden Tag daran, mich in diesen Bereichen weiterzuentwickeln. Mein besonderer Fokus liegt auf KI-gestützten Cybersicherheitssystemen, mit dem Ziel, intelligente Bots zu entwickeln, die digitale Bedrohungen erkennen, bevor sie auftreten.</p>
+            <p>Ich interessiere mich f鐪塺 Cybersicherheit und K鐪塶stliche Intelligenz und arbeite jeden Tag daran, mich in diesen Bereichen weiterzuentwickeln. Mein besonderer Fokus liegt auf KI-gest鐪塼zten Cybersicherheitssystemen, mit dem Ziel, intelligente Bots zu entwickeln, die digitale Bedrohungen erkennen, bevor sie auftreten.</p>
             <hr class="divider">
             <p style="color:rgba(0,245,255,0.38);font-size:12px;font-style:italic">
-              Abgesehen davon interessiere ich mich für E-Sport, Basketball und Schießsport als Hobbys. Ich reise gerne und entdecke neue Orte. Ich bin generell eine ruhige Person, aber wenn das Eis gebrochen ist, kann ich manchmal auch sehr gesprächig sein :)
+              Abgesehen davon interessiere ich mich f鐪塺 E-Sport, Basketball und Schie鑴絪port als Hobbys. Ich reise gerne und entdecke neue Orte. Ich bin generell eine ruhige Person, aber wenn das Eis gebrochen ist, kann ich manchmal auch sehr gespr鐩瞔hig sein :)
             </p>`
           }
         }
@@ -136,23 +136,23 @@ const DATA = {
     /* BIO: Pro Mode integration note. */
     {
       id: 'projects',
-      label: { tr: ['PROJELERİM'], en: ['MY PROJECTS'], de: ['PROJEKTE'] },
+      label: { tr: ['PROJELER闄孧'], en: ['MY PROJECTS'], de: ['PROJEKTE'] },
       color: '#ff006e',
       subs: [
         {
           id: 'web',
-          label: { tr: ['Siber Güvenlik', 'Projeleri'], en: ['Cyber Security', 'Projects'], de: ['Cyber Security', 'Projekte'] },
-          title: { tr: 'SİBER GÜVENLİK PROJELERİ', en: 'CYBER SECURITY PROJECTS', de: 'CYBER SECURITY PROJEKTE' },
+          label: { tr: ['Siber G鐪塿enlik', 'Projeleri'], en: ['Cyber Security', 'Projects'], de: ['Cyber Security', 'Projekte'] },
+          title: { tr: 'CYBER SECURITY PROJECTS', en: 'CYBER SECURITY PROJECTS', de: 'CYBER SECURITY PROJECTS' },
           html: {
             tr: `
             <p><strong>Projeler</strong></p>
             <ul>
-              <li>Çok yakında...</li>
-              <li>Çok yakında...</li>
-              <li>Çok yakında...</li>
+              <li>鑴無k yak璋媙da...</li>
+              <li>鑴無k yak璋媙da...</li>
+              <li>鑴無k yak璋媙da...</li>
             </ul>
             <hr class="divider">
-            <p><strong>Kullandığım Teknolojiler</strong></p>
+            <p><strong>Kulland璋嬭噿璋媘 Teknolojiler</strong></p>
             <ul>
               <li>Python</li>
               <li>[eklenecek]</li>
@@ -183,24 +183,24 @@ const DATA = {
             <p><strong>Verwendete Technologien</strong></p>
             <ul>
               <li>Python</li>
-              <li>[wird hinzugefügt]</li>
-              <li>[wird hinzugefügt]</li>
+              <li>[wird hinzugef鐪塯t]</li>
+              <li>[wird hinzugef鐪塯t]</li>
             </ul>`
           }
         },
         {
           id: 'mob',
           label: { tr: ['Yapay Zeka', 'Projeleri'], en: ['AI', 'Projects'], de: ['KI-', 'Projekte'] },
-          title: { tr: 'YAPAY ZEKA PROJELERİ', en: 'AI PROJECTS', de: 'KI-PROJEKTE' },
+          title: { tr: 'AI PROJECTS', en: 'AI PROJECTS', de: 'AI PROJECTS' },
           html: {
             tr: `
             <p><strong>Projeler</strong></p>
             <ul>
-              <li>Çok yakında...</li>
-              <li>Çok yakında...</li>
+              <li>鑴無k yak璋媙da...</li>
+              <li>鑴無k yak璋媙da...</li>
             </ul>
             <hr class="divider">
-            <p>Projeler hakkında bilgiler eklenecek</p>`,
+            <p>Projeler hakk璋媙da bilgiler eklenecek</p>`,
             en: `
             <p><strong>Projects</strong></p>
             <ul>
@@ -216,7 +216,7 @@ const DATA = {
               <li>Kommt bald...</li>
             </ul>
             <hr class="divider">
-            <p>Projektdetails werden hinzugefügt</p>`
+            <p>Projektdetails werden hinzugef鐪塯t</p>`
           }
         },
         {
@@ -227,11 +227,11 @@ const DATA = {
             tr: `
             <p><strong>Projeler</strong></p>
             <ul>
-              <li>Çok yakında...</li>
-              <li>Çok yakında...</li>
+              <li>鑴無k yak璋媙da...</li>
+              <li>鑴無k yak璋媙da...</li>
             </ul>
             <hr class="divider">
-            <p><strong>Kullandığım Teknolojiler</strong></p>
+            <p><strong>Kulland璋嬭噿璋媘 Teknolojiler</strong></p>
             <ul>
               <li>Python</li>
               <li>[eklenecek]</li>
@@ -260,8 +260,8 @@ const DATA = {
             <p><strong>Verwendete Technologien</strong></p>
             <ul>
               <li>Python</li>
-              <li>[wird hinzugefügt]</li>
-              <li>[wird hinzugefügt]</li>
+              <li>[wird hinzugef鐪塯t]</li>
+              <li>[wird hinzugef鐪塯t]</li>
             </ul>`
           }
         }
@@ -271,7 +271,7 @@ const DATA = {
     /* BIO: Implementation note for this section. */
     {
       id: 'hobbies',
-      label: { tr: ['HOBİLERİM'], en: ['HOBBIES'], de: ['HOBBYS'] },
+      label: { tr: ['HOB闄孡ER闄孧'], en: ['HOBBIES'], de: ['HOBBYS'] },
       color: '#00ff88',
       subs: [
         {
@@ -286,9 +286,9 @@ const DATA = {
               <li>CS2</li>
             </ul>
             <hr class="divider">
-            <p>E-spor; bana iletişim, takım oyunu, stres altında soğukkanlı karar verme ve hızlı problem çözme yetisi kazandırdı. Rekabetçi arenada edindiğim bu disiplin, sadece oyunlarda değil, hayatta da bana yardımcı oldu.</p>
+            <p>E-spor; bana ileti鑹m, tak璋媘 oyunu, stres alt璋媙da so鑷抲kkanl璋?karar verme ve h璋媧l璋?problem 鑾芥灇zme yetisi kazand璋媟d璋? Rekabet鑾絠 arenada edindi鑷抜m bu disiplin, sadece oyunlarda de鑷抜l, hayatta da bana yard璋媘c璋?oldu.</p>
             <hr class="divider">
-            <p style="text-align:center"><a href="#" class="photo-link" data-gallery='[{"src":"assets/default/hobbies/espor.webp","cap":"İlk offline turnuvam, Küçükçekmece Belediyesi E-Spor Merkezi, 2021"},{"src":"assets/default/hobbies/espor3.webp","cap":"Küçükçekmece Espor Belediyesi Turnuvasında takımımla birlikte. (En soldaki benim.)"}]' data-anim="astronaut">▸ FOTOĞRAFLARA BAK</a></p>`,
+            <p style="text-align:center"><a href="#" class="photo-link" data-gallery='[{"src":"assets/default/hobbies/espor.webp","cap":"闄宭k offline turnuvam, K鐪夎幗鐪塳鑾絜kmece Belediyesi E-Spor Merkezi, 2021"},{"src":"assets/default/hobbies/espor3.webp","cap":"K鐪夎幗鐪塳鑾絜kmece Espor Belediyesi Turnuvas璋媙da tak璋媘璋媘la birlikte. (En soldaki benim.)"}]' data-anim="astronaut">閳?FOTO鑷慠AFLARA BAK</a></p>`,
             en: `
             <p><strong>Favorite Games</strong></p>
             <ul>
@@ -298,7 +298,7 @@ const DATA = {
             <hr class="divider">
             <p>E-sports taught me communication, teamwork, calm decision-making under pressure, and quick problem-solving. The discipline I gained in the competitive arena has helped me not only in games but also in life.</p>
             <hr class="divider">
-            <p style="text-align:center"><a href="#" class="photo-link" data-gallery='[{"src":"assets/default/hobbies/espor.webp","cap":"My first offline tournament, Küçükçekmece Municipality E-Sports Center, 2021"},{"src":"assets/default/hobbies/espor3.webp","cap":"With my team at the Küçükçekmece Municipality E-Sports Tournament. (I am the one on the far left.)"}]' data-anim="astronaut">▸ VIEW PHOTOS</a></p>`,
+            <p style="text-align:center"><a href="#" class="photo-link" data-gallery='[{"src":"assets/default/hobbies/espor.webp","cap":"My first offline tournament, K鐪夎幗鐪塳鑾絜kmece Municipality E-Sports Center, 2021"},{"src":"assets/default/hobbies/espor3.webp","cap":"With my team at the K鐪夎幗鐪塳鑾絜kmece Municipality E-Sports Tournament. (I am the one on the far left.)"}]' data-anim="astronaut">閳?VIEW PHOTOS</a></p>`,
             de: `
             <p><strong>Lieblingsspiele</strong></p>
             <ul>
@@ -306,24 +306,24 @@ const DATA = {
               <li>CS2</li>
             </ul>
             <hr class="divider">
-            <p>E-Sport hat mir Kommunikation, Teamarbeit, besonnene Entscheidungsfindung unter Druck und schnelles Problemlösen beigebracht. Die Disziplin, die ich in der kompetitiven Arena gewonnen habe, hat mir nicht nur in Spielen, sondern auch im Leben geholfen.</p>
+            <p>E-Sport hat mir Kommunikation, Teamarbeit, besonnene Entscheidungsfindung unter Druck und schnelles Probleml鏋歴en beigebracht. Die Disziplin, die ich in der kompetitiven Arena gewonnen habe, hat mir nicht nur in Spielen, sondern auch im Leben geholfen.</p>
             <hr class="divider">
-            <p style="text-align:center"><a href="#" class="photo-link" data-gallery='[{"src":"assets/default/hobbies/espor.webp","cap":"Mein erstes Offline-Turnier, Küçükçekmece Gemeinde E-Sport-Zentrum, 2021"},{"src":"assets/default/hobbies/espor3.webp","cap":"Mit meinem Team beim Küçükçekmece Gemeinde E-Sport-Turnier. (Ich bin ganz links.)"}]' data-anim="astronaut">▸ FOTOS ANSEHEN</a></p>`
+            <p style="text-align:center"><a href="#" class="photo-link" data-gallery='[{"src":"assets/default/hobbies/espor.webp","cap":"Mein erstes Offline-Turnier, K鐪夎幗鐪塳鑾絜kmece Gemeinde E-Sport-Zentrum, 2021"},{"src":"assets/default/hobbies/espor3.webp","cap":"Mit meinem Team beim K鐪夎幗鐪塳鑾絜kmece Gemeinde E-Sport-Turnier. (Ich bin ganz links.)"}]' data-anim="astronaut">閳?FOTOS ANSEHEN</a></p>`
           }
         },
         {
           id: 'sht',
-          label: { tr: ['Atıcılık'], en: ['Shooting'], de: ['Schießen'] },
-          title: { tr: 'ATICILIK', en: 'SHOOTING', de: 'SCHIEẞEN' },
+          label: { tr: ['At璋媍璋媗璋媖'], en: ['Shooting'], de: ['Schie鑴絜n'] },
+          title: { tr: 'ATICILIK', en: 'SHOOTING', de: 'SCHIE宀锋揩N' },
           html: {
             tr: `
-            <p>Atıcılık; sabır, özdenetim ve stres yönetimi demektir. 10m havalı tüfek branşında edindiğim bu 'tek bir ana odaklanma' yetisi, bugün karmaşık problemleri çözerken kullandığım en güçlü zihinsel aracım.</p>
+            <p>At璋媍璋媗璋媖; sab璋媟, 鏋歾denetim ve stres y鏋歯etimi demektir. 10m haval璋?t鐪塮ek bran鑹ц皨nda edindi鑷抜m bu 'tek bir ana odaklanma' yetisi, bug鐪塶 karma鑹ц皨k problemleri 鑾芥灇zerken kulland璋嬭噿璋媘 en g鐪夎幗l鐪?zihinsel arac璋媘.</p>
             <hr class="divider">
             <p style="color:rgba(0,255,136,0.4);font-size:12px;font-style:italic">
-              Konsantrasyon, sabır ve disiplin gerektiren bu sporu herkese tavsiye ederim. Bence bu sporu herkes en az bir kere de olsa deneyimlemeli. Çünkü hem zevkli hem de bir o kadar zorlu bir spor.
+              Konsantrasyon, sab璋媟 ve disiplin gerektiren bu sporu herkese tavsiye ederim. Bence bu sporu herkes en az bir kere de olsa deneyimlemeli. 鑴熺湁nk鐪?hem zevkli hem de bir o kadar zorlu bir spor.
             </p>
             <hr class="divider">
-            <p style="text-align:center"><a href="#" class="photo-link" data-gallery='[{"src":"assets/default/hobbies/shooting.webp","cap":"Poligonda atış talimi yaparken, 2024"},{"src":"assets/default/hobbies/shooting2.webp","cap":"Atıcılığın ilk başları... , 2024"}]'>▸ FOTOĞRAFLARA BAK</a></p>`,
+            <p style="text-align:center"><a href="#" class="photo-link" data-gallery='[{"src":"assets/default/hobbies/shooting.webp","cap":"Poligonda at璋嬭墽 talimi yaparken, 2024"},{"src":"assets/default/hobbies/shooting2.webp","cap":"At璋媍璋媗璋嬭噿璋媙 ilk ba鑹ar璋?.. , 2024"}]'>閳?FOTO鑷慠AFLARA BAK</a></p>`,
             en: `
             <p>Shooting means patience, self-control, and stress management. The ability to 'focus on a single moment' that I gained in the 10m air rifle discipline is the strongest mental tool I use today when solving complex problems.</p>
             <hr class="divider">
@@ -331,33 +331,33 @@ const DATA = {
               I recommend this sport, which requires concentration, patience, and discipline, to everyone. I think everyone should experience it at least once. Because it's both enjoyable and equally challenging.
             </p>
             <hr class="divider">
-            <p style="text-align:center"><a href="#" class="photo-link" data-gallery='[{"src":"assets/default/hobbies/shooting.webp","cap":"Shooting practice at the range, 2024"},{"src":"assets/default/hobbies/shooting2.webp","cap":"The early days of shooting... , 2024"}]'>▸ VIEW PHOTOS</a></p>`,
+            <p style="text-align:center"><a href="#" class="photo-link" data-gallery='[{"src":"assets/default/hobbies/shooting.webp","cap":"Shooting practice at the range, 2024"},{"src":"assets/default/hobbies/shooting2.webp","cap":"The early days of shooting... , 2024"}]'>閳?VIEW PHOTOS</a></p>`,
             de: `
-            <p>Schießsport bedeutet Geduld, Selbstbeherrschung und Stressbewältigung. Die Fähigkeit, mich auf einen einzigen Moment zu konzentrieren, die ich in der 10m-Luftgewehr-Disziplin erworben habe, ist heute mein stärkstes mentales Werkzeug beim Lösen komplexer Probleme.</p>
+            <p>Schie鑴絪port bedeutet Geduld, Selbstbeherrschung und Stressbew鐩瞝tigung. Die F鐩瞙igkeit, mich auf einen einzigen Moment zu konzentrieren, die ich in der 10m-Luftgewehr-Disziplin erworben habe, ist heute mein st鐩瞨kstes mentales Werkzeug beim L鏋歴en komplexer Probleme.</p>
             <hr class="divider">
             <p style="color:rgba(0,255,136,0.4);font-size:12px;font-style:italic">
               Ich empfehle diesen Sport, der Konzentration, Geduld und Disziplin erfordert, jedem. Ich denke, jeder sollte ihn mindestens einmal erleben. Denn er ist sowohl unterhaltsam als auch ebenso herausfordernd.
             </p>
             <hr class="divider">
-            <p style="text-align:center"><a href="#" class="photo-link" data-gallery='[{"src":"assets/default/hobbies/shooting.webp","cap":"Schießübung am Schießstand, 2024"},{"src":"assets/default/hobbies/shooting2.webp","cap":"Die Anfänge des Schießsports... , 2024"}]'>▸ FOTOS ANSEHEN</a></p>`
+            <p style="text-align:center"><a href="#" class="photo-link" data-gallery='[{"src":"assets/default/hobbies/shooting.webp","cap":"Schie鑴界湁bung am Schie鑴絪tand, 2024"},{"src":"assets/default/hobbies/shooting2.webp","cap":"Die Anf鐩瞡ge des Schie鑴絪ports... , 2024"}]'>閳?FOTOS ANSEHEN</a></p>`
           }
         },
         {
           id: 'tec',
           label: { tr: ['Teknoloji', 'Trendleri'], en: ['Tech', 'Trends'], de: ['Tech-', 'Trends'] },
-          title: { tr: 'TEKNOLOJİ TRENDLERİ', en: 'TECH TRENDS', de: 'TECH-TRENDS' },
+          title: { tr: 'TECH TRENDS', en: 'TECH TRENDS', de: 'TECH TRENDS' },
           html: {
             tr: `
-            <p><strong>Takip Ettiğim Alanlar</strong></p>
+            <p><strong>Takip Etti鑷抜m Alanlar</strong></p>
             <ul>
-              <li>Yapay Zeka &amp; LLM gelişmeleri</li>
-              <li>Siber güvenlik haberleri</li>
-              <li>Yeni siber güvenlik &amp; yapay zeka uygulamaları</li>
-              <li>Donanım &amp; yonga mimarisi</li>
+              <li>Yapay Zeka &amp; LLM geli鑹eleri</li>
+              <li>Siber g鐪塿enlik haberleri</li>
+              <li>Yeni siber g鐪塿enlik &amp; yapay zeka uygulamalar璋?/li>
+              <li>Donan璋媘 &amp; yonga mimarisi</li>
               <li>Kuantum Bilgisayar</li>
             </ul>
             <hr class="divider">
-            <p>Teknoloji trendlerini takip etmeyi çok seviyorum. Çünkü bu sayede yapay zeka, siber güvenlik ve diğer alanlarda kendimi geliştirebilecek fikirleri kafamda oluşturabiliyorum. Ayrıca çok hızlı ilerleyen teknolojileri kaçırmayarak kendimi geliştiriyorum.</p>`,
+            <p>Teknoloji trendlerini takip etmeyi 鑾給k seviyorum. 鑴熺湁nk鐪?bu sayede yapay zeka, siber g鐪塿enlik ve di鑷抏r alanlarda kendimi geli鑹irebilecek fikirleri kafamda olu鑹urabiliyorum. Ayr璋媍a 鑾給k h璋媧l璋?ilerleyen teknolojileri ka鑾借皨rmayarak kendimi geli鑹iriyorum.</p>`,
             en: `
             <p><strong>Areas I Follow</strong></p>
             <ul>
@@ -372,14 +372,14 @@ const DATA = {
             de: `
             <p><strong>Bereiche, denen ich folge</strong></p>
             <ul>
-              <li>Künstliche Intelligenz &amp; LLM-Entwicklungen</li>
+              <li>K鐪塶stliche Intelligenz &amp; LLM-Entwicklungen</li>
               <li>Cybersicherheits-Nachrichten</li>
               <li>Neue Cybersicherheits- &amp; KI-Anwendungen</li>
               <li>Hardware &amp; Chiparchitektur</li>
               <li>Quantencomputer</li>
             </ul>
             <hr class="divider">
-            <p>Ich verfolge sehr gerne Technologietrends. Dadurch kann ich Ideen entwickeln, um mich in den Bereichen Künstliche Intelligenz, Cybersicherheit und anderen Feldern weiterzuentwickeln. Außerdem halte ich mich durch die schnell fortschreitenden Technologien stets auf dem Laufenden.</p>`
+            <p>Ich verfolge sehr gerne Technologietrends. Dadurch kann ich Ideen entwickeln, um mich in den Bereichen K鐪塶stliche Intelligenz, Cybersicherheit und anderen Feldern weiterzuentwickeln. Au鑴絜rdem halte ich mich durch die schnell fortschreitenden Technologien stets auf dem Laufenden.</p>`
           }
         },
         {
@@ -388,11 +388,11 @@ const DATA = {
           title: { tr: 'SEYAHAT', en: 'TRAVEL', de: 'REISEN' },
           html: {
             tr: `
-            <p>Seyahat etmeyi ve yeni yerler keşfetmeyi seviyorum. Çünkü her yeni yere gittiğimde yeni fikirler ve deneyimler kazanıyorum. Ayrıca yeni yerlere gidince sanki beynimin farklı yerlerini kullanıyormuş gibi hissediyorum.</p>`,
+            <p>Seyahat etmeyi ve yeni yerler ke鑹etmeyi seviyorum. 鑴熺湁nk鐪?her yeni yere gitti鑷抜mde yeni fikirler ve deneyimler kazan璋媦orum. Ayr璋媍a yeni yerlere gidince sanki beynimin farkl璋?yerlerini kullan璋媦ormu鑹?gibi hissediyorum.</p>`,
             en: `
             <p>I love traveling and exploring new places. Because every time I visit a new place, I gain new ideas and experiences. Also, when I go to new places, I feel like I'm using different parts of my brain.</p>`,
             de: `
-            <p>Ich liebe es zu reisen und neue Orte zu entdecken. Denn jedes Mal, wenn ich einen neuen Ort besuche, gewinne ich neue Ideen und Erfahrungen. Außerdem habe ich das Gefühl, verschiedene Teile meines Gehirns zu nutzen, wenn ich neue Orte besuche.</p>`
+            <p>Ich liebe es zu reisen und neue Orte zu entdecken. Denn jedes Mal, wenn ich einen neuen Ort besuche, gewinne ich neue Ideen und Erfahrungen. Au鑴絜rdem habe ich das Gef鐪塰l, verschiedene Teile meines Gehirns zu nutzen, wenn ich neue Orte besuche.</p>`
           }
         }
       ]
@@ -401,39 +401,39 @@ const DATA = {
     /* BIO: Implementation note for this section. */
     {
       id: 'skills',
-      label: { tr: ['YETENEKLERİM', 've İLGİLERİM'], en: ['SKILLS &', 'INTERESTS'], de: ['FÄHIGKEITEN', '& INTERESSEN'] },
+      label: { tr: ['YETENEKLER闄孧', 've 闄孡G闄孡ER闄孧'], en: ['SKILLS &', 'INTERESTS'], de: ['F鑴汬IGKEITEN', '& INTERESSEN'] },
       color: '#bf00ff',
       subs: [
         {
           id: 'ai',
-          label: { tr: ['Yapay Zeka'], en: ['人工智能'], de: ['Künstliche', 'Intelligenz'] },
-          title: { tr: 'YAPAY ZEKA', en: '人工智能', de: 'KÜNSTLICHE INTELLIGENZ' },
+          label: { tr: ['Yapay Zeka'], en: ['娴滃搫浼愰弲楦垮厴'], de: ['K鐪塶stliche', 'Intelligenz'] },
+          title: { tr: 'YAPAY ZEKA', en: '娴滃搫浼愰弲楦垮厴', de: 'K鑴篘STLICHE INTELLIGENZ' },
           html: {
             tr: `
-            <p><strong>Kütüphaneler &amp; Araçlar</strong></p>
+            <p><strong>K鐪塼鐪塸haneler &amp; Ara鑾絣ar</strong></p>
             <ul>
               <li>Obsidian</li>
               <li>Codex, VS Code, Gemini, Claude Code</li>
             </ul>
             <hr class="divider">
-            <p><strong>Tamamladığım Projeler</strong></p>
+            <p><strong>Tamamlad璋嬭噿璋媘 Projeler</strong></p>
             <ul>
               <li>
                 <a href="https://github.com/bilalgurkansanli/Health_Insurance_Cost_Prediction" target="_blank" rel="noopener">Health Insurance Cost Prediction</a><br>
                 <span>
-                  ML modelleriyle kişisel özelliklere dayalı sağlık sigortası maliyeti tahmini <strong>(Denetimli Öğrenme)</strong>
+                  ML modelleriyle ki鑹sel 鏋歾elliklere dayal璋?sa鑷抣璋媖 sigortas璋?maliyeti tahmini <strong>(Denetimli 鑴拌噿renme)</strong>
                 </span>
               </li>
             </ul>
             <hr class="divider">
-            <p><strong>İlgi Alanları</strong></p>
+            <p><strong>闄宭gi Alanlar璋?/strong></p>
             <ul>
-              <li>Doğal Dil İşleme (NLP)</li>
-              <li>Makine Öğrenmesi</li>
-              <li>Üretken Yapay Zeka (GenAI)</li>
+              <li>Do鑷抋l Dil 闄岃墽leme (NLP)</li>
+              <li>Makine 鑴拌噿renmesi</li>
+              <li>鑴簉etken Yapay Zeka (GenAI)</li>
             </ul>`,
             en: `
-            <p><strong>知识库和工具</strong></p>
+            <p><strong>閻儴鐦戞惔鎾虫嫲瀹搞儱鍙?/strong></p>
             <ul>
               <li>Obsidian</li>
               <li>Codex, VS Code, Gemini, Claude Code</li>
@@ -467,14 +467,14 @@ const DATA = {
               <li>
                 <a href="https://github.com/bilalgurkansanli/Health_Insurance_Cost_Prediction" target="_blank" rel="noopener">Health Insurance Cost Prediction</a><br>
                 <span>
-                  Krankenversicherungskostenvorhersage basierend auf persönlichen Merkmalen mit ML-Modellen <strong>(Überwachtes Lernen)</strong>
+                  Krankenversicherungskostenvorhersage basierend auf pers鏋歯lichen Merkmalen mit ML-Modellen <strong>(鑴篵erwachtes Lernen)</strong>
                 </span>
               </li>
             </ul>
             <hr class="divider">
             <p><strong>Interessengebiete</strong></p>
             <ul>
-              <li>Natürliche Sprachverarbeitung (NLP)</li>
+              <li>Nat鐪塺liche Sprachverarbeitung (NLP)</li>
               <li>Maschinelles Lernen</li>
               <li>Generative KI (GenAI)</li>
             </ul>`
@@ -482,34 +482,34 @@ const DATA = {
         },
         {
           id: 'sec',
-          label: { tr: ['Siber', 'Güvenlik'], en: ['新能源', '汽车'], de: ['Cyber-', 'Sicherheit'] },
-          title: { tr: 'SİBER GÜVENLİK', en: '新能源汽车', de: 'CYBERSICHERHEIT' },
+          label: { tr: ['Siber', 'Guvenlik'], en: ['\\u65b0\\u80fd\\u6e90', '\\u6c7d\\u8f66'], de: ['Cyber-', 'Sicherheit'] },
+          title: { tr: 'SIBER GUVENLIK', en: '\\u65b0\\u80fd\\u6e90\\u6c7d\\u8f66', de: 'CYBERSICHERHEIT' },
           html: {
             tr: `
-            <p><strong>İlgi Alanları</strong></p>
+            <p><strong>闄宭gi Alanlar璋?/strong></p>
             <ul>
-              <li>Ağ güvenliği</li>
+              <li>A鑷?g鐪塿enli鑷抜</li>
               <li>Penetrasyon testi</li>
-              <li>Güvenlik açığı analizi (CVE)</li>
+              <li>G鐪塿enlik a鑾借皨鑷掕皨 analizi (CVE)</li>
               <li>Kriptografi</li>
             </ul>
             <hr class="divider">
-            <p><strong>Kullandığım Araçlar</strong></p>
+            <p><strong>Kulland璋嬭噿璋媘 Ara鑾絣ar</strong></p>
             <ul>
               <li>Nmap / Zenmap</li>
               <li>Metasploit</li>
               <li>Burp Suite</li>
-              <li>[Diğer araçlar eklenecek]</li>
+              <li>[Di鑷抏r ara鑾絣ar eklenecek]</li>
             </ul>
             <hr class="divider">
-            <p>Şu an Cisco'nun CyberOps ve Ethical Hacking eğitimlerini alıyorum. Bu eğitimler sonrasındaysa sertifika sınavlarına girip sertifikalarımı alacağım.</p>`,
+            <p>鑹 an Cisco'nun CyberOps ve Ethical Hacking e鑷抜timlerini al璋媦orum. Bu e鑷抜timler sonras璋媙daysa sertifika s璋媙avlar璋媙a girip sertifikalar璋媘璋?alaca鑷掕皨m.</p>`,
             en: `
-            <p><strong>研究兴趣领域</strong></p>
+            <p><strong>閻梻鈹掗崗纾嬪彯妫板棗鐓?/strong></p>
             <ul>
-              <li>新能源汽车</li>
-              <li>智能座舱</li>
-              <li>电池与电驱系统</li>
-              <li>自动驾驶与车联网</li>
+              <li>閺傛媽鍏樺┃鎰嫰鏉?/li>
+              <li>閺呴缚鍏樻惔褑鍩?/li>
+              <li>閻㈠灚鐫滄稉搴ｆ暩妞硅京閮寸紒?/li>
+              <li>閼奉亜濮╂す楣冣敀娑撳氦婧呴懕鏃傜秹</li>
             </ul>`,
             de: `
             <p><strong>Interessengebiete</strong></p>
@@ -525,10 +525,10 @@ const DATA = {
               <li>Nmap / Zenmap</li>
               <li>Metasploit</li>
               <li>Burp Suite</li>
-              <li>[Weitere Werkzeuge werden hinzugefügt]</li>
+              <li>[Weitere Werkzeuge werden hinzugef鐪塯t]</li>
             </ul>
             <hr class="divider">
-            <p>Ich absolviere derzeit Ciscos CyberOps- und Ethical-Hacking-Kurse. Danach werde ich die Zertifizierungsprüfungen ablegen, um meine Zertifikate zu erhalten.</p>`
+            <p>Ich absolviere derzeit Ciscos CyberOps- und Ethical-Hacking-Kurse. Danach werde ich die Zertifizierungspr鐪塮ungen ablegen, um meine Zertifikate zu erhalten.</p>`
           }
         }
       ]
@@ -537,7 +537,7 @@ const DATA = {
     /* BIO: Implementation note for this section. */
     {
       id: 'contact',
-      label: { tr: ['İLETİŞİM'], en: ['CONTACT'], de: ['KONTAKT'] },
+      label: { tr: ['闄孡ET闄岃墻闄孧'], en: ['CONTACT'], de: ['KONTAKT'] },
       color: '#ffee00',
       subs: [
         {
@@ -546,25 +546,25 @@ const DATA = {
           title: { tr: 'E-POSTA', en: 'EMAIL', de: 'E-MAIL' },
           html: {
             tr: `
-            <p>Bana e-posta ile ulaşabilirsiniz:</p>
+            <p>Bana e-posta ile ula鑹bilirsiniz:</p>
             <hr class="divider">
             <p>
-              <a href="mailto:bilalsanli@outlook.com"
+              <a href="mailto:dahat5632@gmail.com"
                  style="color:#ffee00;text-shadow:0 0 12px #ffee00;font-size:14px;border-bottom:1px solid rgba(255,238,0,0.4)">
-                bilalsanli@outlook.com
+                dahat5632@gmail.com
               </a>
             </p>
             <hr class="divider">
             <p style="color:rgba(255,238,0,0.45);font-size:12px">
-              İş birliği teklifleri, proje fikirleri veya sadece merhaba demek için yazmaktan çekinmeyin.
+              闄岃墽 birli鑷抜 teklifleri, proje fikirleri veya sadece merhaba demek i鑾絠n yazmaktan 鑾絜kinmeyin.
             </p>`,
             en: `
             <p>You can reach me via email:</p>
             <hr class="divider">
             <p>
-              <a href="mailto:bilalsanli@outlook.com"
+              <a href="mailto:dahat5632@gmail.com"
                  style="color:#ffee00;text-shadow:0 0 12px #ffee00;font-size:14px;border-bottom:1px solid rgba(255,238,0,0.4)">
-                bilalsanli@outlook.com
+                dahat5632@gmail.com
               </a>
             </p>
             <hr class="divider">
@@ -572,17 +572,17 @@ const DATA = {
               Don't hesitate to write for collaboration offers, project ideas, or just to say hello.
             </p>`,
             de: `
-            <p>Sie können mich per E-Mail erreichen:</p>
+            <p>Sie k鏋歯nen mich per E-Mail erreichen:</p>
             <hr class="divider">
             <p>
-              <a href="mailto:bilalsanli@outlook.com"
+              <a href="mailto:dahat5632@gmail.com"
                  style="color:#ffee00;text-shadow:0 0 12px #ffee00;font-size:14px;border-bottom:1px solid rgba(255,238,0,0.4)">
-                bilalsanli@outlook.com
+                dahat5632@gmail.com
               </a>
             </p>
             <hr class="divider">
             <p style="color:rgba(255,238,0,0.45);font-size:12px">
-              Zögern Sie nicht, mir für Kooperationsangebote, Projektideen oder einfach nur um Hallo zu sagen zu schreiben.
+              Z鏋歡ern Sie nicht, mir f鐪塺 Kooperationsangebote, Projektideen oder einfach nur um Hallo zu sagen zu schreiben.
             </p>`
           }
         },
@@ -592,7 +592,7 @@ const DATA = {
           title: { tr: 'SOSYAL MEDYA', en: 'SOCIAL MEDIA', de: 'SOZIALE MEDIEN' },
           html: {
             tr: `
-            <p>Beni sosyal medyada bulun. LinkedIn'de bağlantı atmaktan çekinmeyin.</p>
+            <p>Beni sosyal medyada bulun. LinkedIn'de ba鑷抣ant璋?atmaktan 鑾絜kinmeyin.</p>
             <hr class="divider">
             <p><strong style="color:#ffee00">LinkedIn</strong></p>
             <a href="https://www.linkedin.com/in/bilalgurkansanli/" target="_blank" rel="noopener"
@@ -646,7 +646,7 @@ const DATA = {
               <span style="font-size:12px">github.com/bilalgurkansanli</span>
             </a>`,
             de: `
-            <p>Finden Sie mich in sozialen Medien. Zögern Sie nicht, sich auf LinkedIn zu vernetzen.</p>
+            <p>Finden Sie mich in sozialen Medien. Z鏋歡ern Sie nicht, sich auf LinkedIn zu vernetzen.</p>
             <hr class="divider">
             <p><strong style="color:#ffee00">LinkedIn</strong></p>
             <a href="https://www.linkedin.com/in/bilalgurkansanli/" target="_blank" rel="noopener"
@@ -685,81 +685,81 @@ let currentTheme = 'dark';
 
 const UI = {
   tr: {
-    tree: 'ANA AĞAÇ',
-    back: '◄ GERİ DÖN',
-    boot: 'SİSTEM BAŞLATILIYOR',
-    skip: 'GEÇ ▸',
+    tree: 'ANA AGAC',
+    back: '閳?GER闄?D鑴癗',
+    boot: 'S闄孲TEM BA鑹ATILIYOR',
+    skip: 'SKIP',
     modeDefault: 'VARSAYILAN MOD',
     modePro: 'PRO MOD',
-    defaultLandscapeHint: 'Default Mode dikey olarak önerilir.',
-    splashDesktopPro: 'PRO MODE İLE BAŞLA',
-    splashTagline: '优秀的AI训练师',
+    defaultLandscapeHint: 'Default Mode dikey olarak 鏋歯erilir.',
+    splashDesktopPro: 'PRO MODE 闄孡E BA鑹A',
+    splashTagline: 'AI Trainer',
     splashGpuWarnLabel: 'DONANIM',
     splashGpuWarnTitle: 'Pro Mode bu cihazda kasabilir',
     splashGpuWarnBody:
-      'GPU / grafik özellikleriniz tam 3D kokpit için yetersiz görünebilir. Varsayılan mod daha akıcıdır ve girişte intro1 videosunu gösterir. Varsayılan mod için ilk düğmeye, Pro Mode\'u denemek için ikinciye dokunun.',
-    splashGpuDefaultBtn: 'DEFAULT MODE\'A GEÇ',
-    splashGpuProBtn: 'YİNE DE PRO MODE',
-    intro2SkipAria: 'Geçiş videosunu atla',
+      'GPU / grafik 鏋歾ellikleriniz tam 3D kokpit i鑾絠n yetersiz g鏋歳鐪塶ebilir. Varsay璋媗an mod daha ak璋媍璋媎璋媟 ve giri鑹e intro1 videosunu g鏋歴terir. Varsay璋媗an mod i鑾絠n ilk d鐪夎噿meye, Pro Mode\'u denemek i鑾絠n ikinciye dokunun.',
+    splashGpuDefaultBtn: 'DEFAULT MODE',
+    splashGpuProBtn: 'Y闄孨E DE PRO MODE',
+    intro2SkipAria: 'Ge鑾絠鑹?videosunu atla',
     locale: 'tr-TR',
-    skipToOverview: 'Özet içeriğe atla',
-    overviewTitle: '周天爽 — Portfolyo (varsayılan görünüm)',
+    skipToOverview: '鑴皕et i鑾絜ri鑷抏 atla',
+    overviewTitle: '閸涖劌銇夐悥?閳?Portfolyo (varsay璋媗an g鏋歳鐪塶鐪塵)',
     overviewLead:
-      'Etkileşimli düğüm ağacında gezinmek için düğümleri Tab ile seçip Enter veya Space ile açın; içerik hologram panelinde gösterilir ve metin seçilebilir. Üst araç çubuğundan dil, dış bağlantılar ve Pro Mode kullanılabilir.',
-    overviewNavAria: 'Hızlı bağlantılar',
-    overviewProLink: 'Üç boyutlu Pro Mode kokpit deneyimi',
-    overviewTreeHeading: 'Portfolyo ağacı ve arka plan',
+      'Etkile鑹mli d鐪夎噿鐪塵 a鑷抋c璋媙da gezinmek i鑾絠n d鐪夎噿鐪塵leri Tab ile se鑾絠p Enter veya Space ile a鑾借皨n; i鑾絜rik hologram panelinde g鏋歴terilir ve metin se鑾絠lebilir. 鑴簊t ara鑾?鑾絬bu鑷抲ndan dil, d璋嬭墽 ba鑷抣ant璋媗ar ve Pro Mode kullan璋媗abilir.',
+    overviewNavAria: 'H璋媧l璋?ba鑷抣ant璋媗ar',
+    overviewProLink: '鑴鸿幗 boyutlu Pro Mode kokpit deneyimi',
+    overviewTreeHeading: 'Portfolyo a鑷抋c璋?ve arka plan',
     overviewTreeNote:
-      'Tam ekran SVG düğüm grafiği ana gezinmedir. Arkadaki izgara, parçacık ve imleç izi tuval katmanları yalnızca görsel efekt içindir.',
-    toolbarAria: 'Site araç çubuğu',
+      'Tam ekran SVG d鐪夎噿鐪塵 grafi鑷抜 ana gezinmedir. Arkadaki izgara, par鑾絘c璋媖 ve imle鑾?izi tuval katmanlar璋?yaln璋媧ca g鏋歳sel efekt i鑾絠ndir.',
+    toolbarAria: 'Site ara鑾?鑾絬bu鑷抲',
     svgTreeAria:
-      'Etkileşimli portfolyo ağacı — düğümleri Tab ve Enter veya Space ile veya fare ile açın',
+      'Etkile鑹mli portfolyo a鑷抋c璋?閳?d鐪夎噿鐪塵leri Tab ve Enter veya Space ile veya fare ile a鑾借皨n',
     masterVolAria: 'Ana ses seviyesi',
-    seekAria: 'Çalma konumu',
-    backAria: 'Geri dön',
+    seekAria: '鑴焌lma konumu',
+    backAria: 'Geri d鏋歯',
     holoCloseAria: 'Paneli kapat',
-    linkedinAria: 'LinkedIn profili (yeni sekmede açılır)',
-    githubAria: 'GitHub profili (yeni sekmede açılır)',
-    trailToggleAria: 'İmleç izi efekti',
+    linkedinAria: 'LinkedIn profili (yeni sekmede a鑾借皨l璋媟)',
+    githubAria: 'GitHub profili (yeni sekmede a鑾借皨l璋媟)',
+    trailToggleAria: '闄宮le鑾?izi efekti',
     gridToggleAria: 'Izgara efekti',
     fsEnterAria: 'Tam ekran',
-    fsExitAria: 'Tam ekrandan çık',
-    intro1SkipAria: 'Açılış videosunu atla',
-    mpPrevAria: 'Önceki parça',
-    mpPlayAria: 'Çal veya duraklat',
-    mpNextAria: 'Sonraki parça',
-    regionHudAria: 'Durum şeridi — gezinilen ağaç',
-    regionMediaAria: 'Ses ve küçük müzik çalar',
-    regionSplashVolAria: 'Karşılama ekranı — ses ve test',
-    regionSplashHeroAria: 'Karşılama ekranı — başlık',
-    regionSplashStartAria: 'Karşılama ekranı — başlatma',
-    orpetronSotdTip: 'Orpetron Ödülü',
-    orpetronSotdAria: 'Orpetron ödül sayfasına git — yeni sekmede açılır',
-    designNomineesSotdTip: 'Design Nominees Ödülü',
-    designNomineesSotdAria: 'Design Nominees ödül sayfasına git — yeni sekmede açılır',
+    fsExitAria: 'Tam ekrandan 鑾借皨k',
+    intro1SkipAria: 'A鑾借皨l璋嬭墽 videosunu atla',
+    mpPrevAria: '鑴皀ceki par鑾絘',
+    mpPlayAria: '鑴焌l veya duraklat',
+    mpNextAria: 'Sonraki par鑾絘',
+    regionHudAria: 'Status bar',
+    regionMediaAria: 'Ses ve k鐪夎幗鐪塳 m鐪墇ik 鑾絘lar',
+    regionSplashVolAria: 'Kar鑹ц皨lama ekran璋?閳?ses ve test',
+    regionSplashHeroAria: 'Kar鑹ц皨lama ekran璋?閳?ba鑹璋媖',
+    regionSplashStartAria: 'Kar鑹ц皨lama ekran璋?閳?ba鑹atma',
+    orpetronSotdTip: 'Orpetron Award',
+    orpetronSotdAria: 'Orpetron 鏋歞鐪塴 sayfas璋媙a git 閳?yeni sekmede a鑾借皨l璋媟',
+    designNomineesSotdTip: 'Design Nominees Award',
+    designNomineesSotdAria: 'Design Nominees 鏋歞鐪塴 sayfas璋媙a git 閳?yeni sekmede a鑾借皨l璋媟',
     awwwardsNomineeTip: 'Awwwards Nominee',
-    awwwardsNomineeAria: 'Awwwards nominee sayfasına git — yeni sekmede açılır'
+    awwwardsNomineeAria: 'Awwwards nominee sayfas璋媙a git 閳?yeni sekmede a鑾借皨l璋媟'
   },
   en: {
     tree: 'MAIN TREE',
-    back: '◄ GO BACK',
+    back: '閳?GO BACK',
     boot: 'SYSTEM STARTING',
-    skip: 'SKIP ▸',
+    skip: 'SKIP',
     modeDefault: 'DEFAULT MODE',
     modePro: 'PRO MODE',
     defaultLandscapeHint: 'Default Mode is recommended in portrait.',
     splashDesktopPro: 'START WITH PRO MODE',
-    splashTagline: '优秀的AI训练师',
+    splashTagline: 'AI Trainer',
     splashGpuWarnLabel: 'HARDWARE',
     splashGpuWarnTitle: 'Pro Mode may run poorly on this device',
     splashGpuWarnBody:
-      'Your GPU / graphics tier looks limited or could not be read (common on phones). Default Mode is smoother and starts with the intro (intro1) video — first button. Tap the second button to try Pro anyway.',
+      'Your GPU / graphics tier looks limited or could not be read (common on phones). Default Mode is smoother and starts with the intro (intro1) video 閳?first button. Tap the second button to try Pro anyway.',
     splashGpuDefaultBtn: 'SWITCH TO DEFAULT MODE',
     splashGpuProBtn: 'TRY PRO MODE ANYWAY',
     intro2SkipAria: 'Skip transition video',
     locale: 'en-GB',
     skipToOverview: 'Skip to summary content',
-    overviewTitle: '周天爽 — Portfolio (default view)',
+    overviewTitle: '閸涖劌銇夐悥?閳?Portfolio (default view)',
     overviewLead:
       'Navigate the interactive node tree: Tab to a node, then press Enter or Space to open it; content appears in the hologram panel with selectable text. Use the top toolbar for language, external links, and Pro Mode.',
     overviewNavAria: 'Quick links',
@@ -769,7 +769,7 @@ const UI = {
       'The full-screen SVG node graph is the main navigation. The grid, particle, and cursor-trail canvases are decorative only.',
     toolbarAria: 'Site toolbar',
     svgTreeAria:
-      'Interactive portfolio tree — open nodes with Tab and Enter or Space, or with the pointer',
+      'Interactive portfolio tree 閳?open nodes with Tab and Enter or Space, or with the pointer',
     masterVolAria: 'Master volume',
     seekAria: 'Playback position',
     backAria: 'Go back',
@@ -784,73 +784,73 @@ const UI = {
     mpPrevAria: 'Previous track',
     mpPlayAria: 'Play or pause',
     mpNextAria: 'Next track',
-    regionHudAria: 'Status strip — current navigation tree',
+    regionHudAria: 'Status bar',
     regionMediaAria: 'Volume and mini music player',
-    regionSplashVolAria: 'Welcome screen — volume and test',
-    regionSplashHeroAria: 'Welcome screen — headline',
-    regionSplashStartAria: 'Welcome screen — start',
+    regionSplashVolAria: 'Welcome screen 閳?volume and test',
+    regionSplashHeroAria: 'Welcome screen 閳?headline',
+    regionSplashStartAria: 'Welcome screen 閳?start',
     orpetronSotdTip: 'Orpetron Award',
-    orpetronSotdAria: 'Open Orpetron award feature — opens in a new tab',
+    orpetronSotdAria: 'Open Orpetron award feature 閳?opens in a new tab',
     designNomineesSotdTip: 'Design Nominees Award',
-    designNomineesSotdAria: 'Open Design Nominees award feature — opens in a new tab',
+    designNomineesSotdAria: 'Open Design Nominees award feature 閳?opens in a new tab',
     awwwardsNomineeTip: 'Awwwards Nominee',
-    awwwardsNomineeAria: 'Open Awwwards nominee feature — opens in a new tab'
+    awwwardsNomineeAria: 'Open Awwwards nominee feature 閳?opens in a new tab'
   },
   de: {
     tree: 'HAUPTBAUM',
-    back: '◄ ZURÜCK',
+    back: '閳?ZUR鑴篊K',
     boot: 'SYSTEM STARTET',
-    skip: 'ÜBERSPRINGEN ▸',
+    skip: 'SKIP',
     modeDefault: 'STANDARD-MODUS',
     modePro: 'PRO-MODUS',
-    defaultLandscapeHint: 'Standard‑Modus: Hochformat wird empfohlen.',
+    defaultLandscapeHint: 'Standard閳ユ厷odus: Hochformat wird empfohlen.',
     splashDesktopPro: 'MIT PRO-MODUS STARTEN',
-    splashTagline: '优秀的AI训练师',
+    splashTagline: 'AI Trainer',
     splashGpuWarnLabel: 'HARDWARE',
-    splashGpuWarnTitle: 'Der Pro-Modus kann auf diesem Gerät ruckeln',
+    splashGpuWarnTitle: 'Der Pro-Modus kann auf diesem Ger鐩瞭 ruckeln',
     splashGpuWarnBody:
-      'Ihre GPU wirkt eingeschränkt oder konnte nicht ermittelt werden (häufig auf Mobilgeräten). Der Standard‑Modus ist flüssiger und startet mit dem Intro‑Video (intro1) — erster Knopf. Für Pro trotzdem den zweiten Knopf wählen.',
+      'Ihre GPU wirkt eingeschr鐩瞡kt oder konnte nicht ermittelt werden (h鐩瞮fig auf Mobilger鐩瞭en). Der Standard閳ユ厷odus ist fl鐪塻siger und startet mit dem Intro閳ユ叆ideo (intro1) 閳?erster Knopf. F鐪塺 Pro trotzdem den zweiten Knopf w鐩瞙len.',
     splashGpuDefaultBtn: 'ZUM STANDARD-MODUS',
     splashGpuProBtn: 'PRO-MODUS TROTZDEM',
-    intro2SkipAria: 'Übergangsvideo überspringen',
+    intro2SkipAria: '鑴篵ergangsvideo 鐪塨erspringen',
     locale: 'de-DE',
     skipToOverview: 'Zur Zusammenfassung springen',
-    overviewTitle: '周天爽 — Portfolio (Standardansicht)',
+    overviewTitle: '閸涖劌銇夐悥?閳?Portfolio (Standardansicht)',
     overviewLead:
-      'Im interaktiven Knotenbaum navigieren: Mit Tab fokussieren, mit Enter oder Leertaste öffnen; Inhalte erscheinen im Hologramm‑Panel mit markierbarem Text. Oben: Sprache, externe Links und Pro‑Modus.',
+      'Im interaktiven Knotenbaum navigieren: Mit Tab fokussieren, mit Enter oder Leertaste 鏋歠fnen; Inhalte erscheinen im Hologramm閳ユ厼anel mit markierbarem Text. Oben: Sprache, externe Links und Pro閳ユ厷odus.',
     overviewNavAria: 'Schnellzugriff',
-    overviewProLink: 'Dreidimensionales Pro‑Modus‑Cockpit',
-    overviewTreeHeading: 'Portfolio‑Baum und Hintergrund',
+    overviewProLink: 'Dreidimensionales Pro閳ユ厷odus閳ユ厤ockpit',
+    overviewTreeHeading: 'Portfolio閳ユ厠aum und Hintergrund',
     overviewTreeNote:
-      'Der SVG‑Knotengraph im Vollbild ist die Hauptnavigation. Raster-, Partikel- und Cursor‑Spur‑Ebenen sind rein dekorativ.',
+      'Der SVG閳ユ厴notengraph im Vollbild ist die Hauptnavigation. Raster-, Partikel- und Cursor閳ユ叀pur閳ユ厫benen sind rein dekorativ.',
     toolbarAria: 'Seitenleiste',
     svgTreeAria:
-      'Interaktiver Portfolio‑Baum — Knoten mit Tab und Enter oder Leertaste oder mit der Maus öffnen',
-    masterVolAria: 'Gesamtlautstärke',
+      'Interaktiver Portfolio閳ユ厠aum 閳?Knoten mit Tab und Enter oder Leertaste oder mit der Maus 鏋歠fnen',
+    masterVolAria: 'Gesamtlautst鐩瞨ke',
     seekAria: 'Wiedergabeposition',
-    backAria: 'Zurück',
-    holoCloseAria: 'Panel schließen',
-    linkedinAria: 'LinkedIn‑Profil (öffnet in neuem Tab)',
-    githubAria: 'GitHub‑Profil (öffnet in neuem Tab)',
-    trailToggleAria: 'Cursor‑Spur‑Effekt',
-    gridToggleAria: 'Raster‑Effekt',
+    backAria: 'Zur鐪塩k',
+    holoCloseAria: 'Panel schlie鑴絜n',
+    linkedinAria: 'LinkedIn閳ユ厼rofil (鏋歠fnet in neuem Tab)',
+    githubAria: 'GitHub閳ユ厼rofil (鏋歠fnet in neuem Tab)',
+    trailToggleAria: 'Cursor閳ユ叀pur閳ユ厫ffekt',
+    gridToggleAria: 'Raster閳ユ厫ffekt',
     fsEnterAria: 'Vollbild',
     fsExitAria: 'Vollbild beenden',
-    intro1SkipAria: 'Intro‑Video überspringen',
+    intro1SkipAria: 'Intro閳ユ叆ideo 鐪塨erspringen',
     mpPrevAria: 'Vorheriger Titel',
     mpPlayAria: 'Wiedergabe oder Pause',
-    mpNextAria: 'Nächster Titel',
-    regionHudAria: 'Status‑Leiste — aktueller Navigationsbaum',
-    regionMediaAria: 'Lautstärke und Mini‑Musikplayer',
-    regionSplashVolAria: 'Begrüßung — Lautstärke und Test',
-    regionSplashHeroAria: 'Begrüßung — Überschrift',
-    regionSplashStartAria: 'Begrüßung — Start',
-    orpetronSotdTip: 'Orpetron-Auszeichnung',
-    orpetronSotdAria: 'Orpetron‑Auszeichnungsseite — öffnet in neuem Tab',
-    designNomineesSotdTip: 'Design-Nominees-Auszeichnung',
-    designNomineesSotdAria: 'Design-Nominees‑Auszeichnungsseite — öffnet in neuem Tab',
+    mpNextAria: 'N鐩瞔hster Titel',
+    regionHudAria: 'Status bar',
+    regionMediaAria: 'Lautst鐩瞨ke und Mini閳ユ厷usikplayer',
+    regionSplashVolAria: 'Begr鐪夎劷ung 閳?Lautst鐩瞨ke und Test',
+    regionSplashHeroAria: 'Begr鐪夎劷ung 閳?鑴篵erschrift',
+    regionSplashStartAria: 'Begr鐪夎劷ung 閳?Start',
+    orpetronSotdTip: 'Orpetron Award',
+    orpetronSotdAria: 'Orpetron閳ユ厜uszeichnungsseite 閳?鏋歠fnet in neuem Tab',
+    designNomineesSotdTip: 'Design Nominees Award',
+    designNomineesSotdAria: 'Design-Nominees閳ユ厜uszeichnungsseite 閳?鏋歠fnet in neuem Tab',
     awwwardsNomineeTip: 'Awwwards Nominee',
-    awwwardsNomineeAria: 'Awwwards‑Nominee‑Seite — öffnet in neuem Tab'
+    awwwardsNomineeAria: 'Awwwards閳ユ厸ominee閳ユ叀eite 閳?鏋歠fnet in neuem Tab'
   }
 };
 
@@ -858,204 +858,68 @@ const UI = {
 
 /* BIO: Repurpose the former German language slot as Chinese for this GitHub Pages copy. */
 function applyChineseLanguageSlotDefault() {
-  const cn = {
-    about: {
-      label: ['关于我'],
-      subs: {
-        edu: {
-          label: ['教育经历'],
-          title: '教育经历',
-          html: `
-            <div class="tl-wrap">
-              <div class="tl-item active">
-                <div class="tl-year">2024 - 2027</div>
-                <div class="tl-title">Yeditepe University</div>
-                <div class="tl-desc">互联网与网络技术</div>
-              </div>
-              <div class="tl-item">
-                <div class="tl-year">2020 - 2024</div>
-                <div class="tl-title">Guc Kardesler Anatolian High School</div>
-                <div class="tl-desc">高中教育</div>
-              </div>
-            </div>
-            <hr class="divider">
-            <div class="tl-section-title">证书</div>
-            <div class="tl-cert">
-              <a href="https://learn.microsoft.com/en-us/users/bilalanl-8550/credentials/38e863aaef982a2d?ref=https%3A%2F%2Fwww.linkedin.com%2F" target="_blank" rel="noopener">Microsoft Certified: Fabric Data Engineer Associate (2026)</a>
-              <a href="https://www.credly.com/badges/3852359e-8131-4422-9279-918a4f5c4c74" target="_blank" rel="noopener">Cisco AI Technical Practitioner (2026)</a>
-            </div>`
-        },
-        exp: {
-          label: ['经历'],
-          title: '经历',
-          html: `<p>我仍在持续学习和成长。随着经验积累，这一部分会继续更新。</p>`
-        },
-        bio: {
-          label: ['个人简介'],
-          title: '个人简介',
-          html: `
-            <p>你好，我是 <strong>周天爽</strong>，也可以叫我 <strong>Bio</strong>。</p>
-            <hr class="divider">
-            <p>我关注人工智能、AI 训练、网络安全和自动化工具，希望把复杂技术转化为稳定、可用、能解决实际问题的能力。</p>
-            <hr class="divider">
-            <p style="color:rgba(0,245,255,0.38);font-size:12px;font-style:italic">
-              工作之外，我也喜欢关注新技术、游戏、旅行和有挑战性的训练项目。
-            </p>`
-        }
-      }
-    },
-    projects: {
-      label: ['项目'],
-      subs: {
-        web: {
-          label: ['网络安全', '项目'],
-          title: '网络安全项目',
-          html: `<p><strong>项目</strong></p><ul><li>即将更新...</li><li>即将更新...</li><li>即将更新...</li></ul><hr class="divider"><p><strong>使用技术</strong></p><ul><li>Python</li><li>[待添加]</li><li>[待添加]</li></ul>`
-        },
-        mob: {
-          label: ['AI', '项目'],
-          title: 'AI 项目',
-          html: `<p><strong>项目</strong></p><ul><li>即将更新...</li><li>即将更新...</li></ul><hr class="divider"><p>项目详情待添加。</p>`
-        },
-        back: {
-          label: ['综合', '项目'],
-          title: '综合项目',
-          html: `<p><strong>项目</strong></p><ul><li>即将更新...</li><li>即将更新...</li></ul><hr class="divider"><p><strong>使用技术</strong></p><ul><li>Python</li><li>[待添加]</li><li>[待添加]</li></ul>`
-        }
-      }
-    },
-    hobbies: {
-      label: ['爱好'],
-      subs: {
-        esp: {
-          label: ['电子竞技'],
-          title: '电子竞技',
-          html: `<p><strong>喜欢的游戏</strong></p><ul><li>VALORANT</li><li>CS2</li></ul><hr class="divider"><p>电子竞技训练了我的沟通、协作、压力下决策和快速解决问题的能力。</p><hr class="divider"><p style="text-align:center"><a href="#" class="photo-link" data-gallery='[{"src":"assets/default/hobbies/espor.webp","cap":"第一次线下比赛，2021"},{"src":"assets/default/hobbies/espor3.webp","cap":"和团队一起参加电竞比赛。"}]' data-anim="astronaut">▻ 查看照片</a></p>`
-        },
-        sht: {
-          label: ['射击'],
-          title: '射击',
-          html: `<p>射击意味着耐心、自控和压力管理。专注于一个瞬间的能力，也能迁移到复杂问题的解决中。</p><hr class="divider"><p style="color:rgba(0,255,136,0.4);font-size:12px;font-style:italic">这是一项需要专注、耐心和纪律的运动。</p><hr class="divider"><p style="text-align:center"><a href="#" class="photo-link" data-gallery='[{"src":"assets/default/hobbies/shooting.webp","cap":"射击训练，2024"},{"src":"assets/default/hobbies/shooting2.webp","cap":"射击练习初期，2024"}]'>▻ 查看照片</a></p>`
-        },
-        tec: {
-          label: ['技术', '趋势'],
-          title: '技术趋势',
-          html: `<p><strong>关注领域</strong></p><ul><li>人工智能与大语言模型</li><li>网络安全新闻</li><li>AI 与安全应用</li><li>硬件与芯片架构</li><li>量子计算</li></ul><hr class="divider"><p>我喜欢跟踪技术趋势，并把这些变化转化为学习方向和项目灵感。</p>`
-        },
-        trv: {
-          label: ['旅行'],
-          title: '旅行',
-          html: `<p>我喜欢旅行和探索新地方。新的环境会带来新的经验、想法和观察角度。</p>`
-        }
-      }
-    },
-    skills: {
-      label: ['技能', '与兴趣'],
-      subs: {
-        ai: {
-          label: ['人工智能'],
-          title: '人工智能',
-          html: `<p><strong>知识库和工具</strong></p><ul><li>Obsidian</li><li>Codex, VS Code, Gemini, Claude Code</li></ul><hr class="divider"><p><strong>已完成项目</strong></p><ul><li><a href="https://github.com/bilalgurkansanli/Health_Insurance_Cost_Prediction" target="_blank" rel="noopener">Health Insurance Cost Prediction</a><br><span>基于机器学习模型预测健康保险费用。</span></li></ul><hr class="divider"><p><strong>兴趣方向</strong></p><ul><li>自然语言处理</li><li>机器学习</li><li>生成式 AI</li></ul>`
-        },
-        sec: {
-          label: ['新能源', '汽车'],
-          title: '新能源汽车',
-          html: `<p><strong>研究兴趣领域</strong></p><ul><li>新能源汽车</li><li>智能座舱</li><li>电池与电驱系统</li><li>自动驾驶与车联网</li></ul>`
-        }
-      }
-    },
-    contact: {
-      label: ['联系'],
-      subs: {
-        mail: {
-          label: ['邮箱'],
-          title: '邮箱',
-          html: `<p>你可以通过邮箱联系我：</p><p style="font-size:18px;color:#00f5ff"><a href="mailto:bilalsanli@outlook.com">bilalsanli@outlook.com</a></p><p style="color:rgba(255,255,255,0.4);font-size:12px">合作、项目想法，或者简单打个招呼，都欢迎联系。</p>`
-        },
-        soc: {
-          label: ['社交媒体'],
-          title: '社交媒体',
-          html: `<p>你可以在社交媒体上找到我，也欢迎通过 LinkedIn 建立连接。</p><hr class="divider"><p>点击下方链接访问我的主页。</p>`
-        }
-      }
-    }
-  };
-
-  DATA.label.de = ['周天爽'];
-  for (const node of DATA.nodes || []) {
-    const nodeCn = cn[node.id];
-    if (!nodeCn) continue;
-    if (nodeCn.label) node.label.de = nodeCn.label;
-    for (const sub of node.subs || []) {
-      const subCn = nodeCn.subs && nodeCn.subs[sub.id];
-      if (!subCn) continue;
-      if (subCn.label) sub.label.de = subCn.label;
-      if (sub.title) sub.title.de = subCn.title;
-      if (sub.html && typeof sub.html === 'object') sub.html.de = subCn.html;
-    }
-  }
-
+  DATA.label.de = ['\u5468\u5929\u723d'];
   UI.de = {
-    tree: '主树',
-    back: '◄ 返回',
-    boot: '系统启动中',
-    skip: '跳过 ▸',
-    modeDefault: '默认模式',
-    modePro: '专业模式',
-    defaultLandscapeHint: '默认模式建议竖屏浏览。',
-    splashDesktopPro: '从专业模式开始',
-    splashTagline: '优秀的AI训练师',
-    splashGpuWarnLabel: '硬件',
-    splashGpuWarnTitle: '专业模式可能运行较慢',
-    splashGpuWarnBody: '你的设备图形性能可能不足以流畅运行 3D 驾驶舱。默认模式更轻量；仍可继续尝试专业模式。',
-    splashGpuDefaultBtn: '切换到默认模式',
-    splashGpuProBtn: '仍然尝试专业模式',
-    intro2SkipAria: '跳过过渡视频',
+    tree: '\u4e3b\u6811',
+    back: '\u8fd4\u56de',
+    boot: '\u7cfb\u7edf\u542f\u52a8\u4e2d',
+    skip: '\u8df3\u8fc7',
+    modeDefault: '\u9ed8\u8ba4\u6a21\u5f0f',
+    modePro: '\u4e13\u4e1a\u6a21\u5f0f',
+    defaultLandscapeHint: '\u9ed8\u8ba4\u6a21\u5f0f\u5efa\u8bae\u7ad6\u5c4f\u6d4f\u89c8\u3002',
+    splashDesktopPro: '\u4ece\u4e13\u4e1a\u6a21\u5f0f\u5f00\u59cb',
+    splashTagline: '\u4f18\u79c0\u7684AI\u8bad\u7ec3\u5e08',
+    splashGpuWarnLabel: '\u786c\u4ef6',
+    splashGpuWarnTitle: '\u4e13\u4e1a\u6a21\u5f0f\u53ef\u80fd\u8fd0\u884c\u8f83\u6162',
+    splashGpuWarnBody: '\u4f60\u7684\u8bbe\u5907\u56fe\u5f62\u6027\u80fd\u53ef\u80fd\u4e0d\u8db3\u4ee5\u6d41\u7545\u8fd0\u884c 3D \u9a7e\u9a76\u8231\u3002',
+    splashGpuDefaultBtn: '\u5207\u6362\u5230\u9ed8\u8ba4\u6a21\u5f0f',
+    splashGpuProBtn: '\u4ecd\u7136\u5c1d\u8bd5\u4e13\u4e1a\u6a21\u5f0f',
+    intro2SkipAria: '\u8df3\u8fc7\u8fc7\u6e21\u89c6\u9891',
     locale: 'zh-CN',
-    skipToOverview: '跳到摘要内容',
-    overviewTitle: '周天爽 - Portfolio（默认视图）',
-    overviewLead: '通过交互式节点树浏览内容；打开节点后，内容会显示在全息面板中。顶部工具栏可切换语言、访问外部链接和进入专业模式。',
-    overviewNavAria: '快速链接',
-    overviewProLink: '三维专业模式驾驶舱体验',
-    overviewTreeHeading: '作品集树与背景',
-    overviewTreeNote: '全屏 SVG 节点图是主要导航。背景网格、粒子和光标轨迹仅作为视觉效果。',
-    toolbarAria: '站点工具栏',
-    svgTreeAria: '交互式作品集树，可用键盘或鼠标打开节点',
-    masterVolAria: '主音量',
+    skipToOverview: '\u8df3\u5230\u6458\u8981\u5185\u5bb9',
+    overviewTitle: '\u5468\u5929\u723d - Portfolio',
+    overviewLead: '\u901a\u8fc7\u4ea4\u4e92\u5f0f\u8282\u70b9\u6811\u6d4f\u89c8\u5185\u5bb9\u3002',
+    overviewNavAria: '\u5feb\u901f\u94fe\u63a5',
+    overviewProLink: '\u4e09\u7ef4\u4e13\u4e1a\u6a21\u5f0f\u9a7e\u9a76\u8231\u4f53\u9a8c',
+    overviewTreeHeading: '\u4f5c\u54c1\u96c6\u6811\u4e0e\u80cc\u666f',
+    overviewTreeNote: '\u5168\u5c4f\u8282\u70b9\u56fe\u662f\u4e3b\u8981\u5bfc\u822a\u3002',
+    toolbarAria: '\u7ad9\u70b9\u5de5\u5177\u680f',
+    svgTreeAria: '\u4ea4\u4e92\u5f0f\u4f5c\u54c1\u96c6\u6811',
+    masterVolAria: '\u4e3b\u97f3\u91cf',
     seekAria: '播放位置',
-    backAria: '返回',
-    holoCloseAria: '关闭面板',
-    linkedinAria: 'LinkedIn 主页（新标签页打开）',
-    githubAria: 'GitHub 主页（新标签页打开）',
-    trailToggleAria: '光标轨迹效果',
-    gridToggleAria: '网格效果',
-    fsEnterAria: '进入全屏',
-    fsExitAria: '退出全屏',
-    intro1SkipAria: '跳过开场视频',
-    mpPrevAria: '上一首',
-    mpPlayAria: '播放或暂停',
-    mpNextAria: '下一首',
-    regionHudAria: '状态栏',
-    regionMediaAria: '音量与迷你音乐播放器',
-    regionSplashVolAria: '欢迎屏幕 - 音量与测试',
-    regionSplashHeroAria: '欢迎屏幕 - 标题',
-    regionSplashStartAria: '欢迎屏幕 - 开始',
-    orpetronSotdTip: 'Orpetron 奖项',
-    orpetronSotdAria: '打开 Orpetron 奖项页面（新标签页）',
-    designNomineesSotdTip: 'Design Nominees 奖项',
-    designNomineesSotdAria: '打开 Design Nominees 奖项页面（新标签页）',
-    awwwardsNomineeTip: 'Awwwards 提名',
-    awwwardsNomineeAria: '打开 Awwwards 提名页面（新标签页）'
+    backAria: '\u8fd4\u56de',
+    holoCloseAria: '\u5173\u95ed\u9762\u677f',
+    linkedinAria: 'LinkedIn',
+    githubAria: 'GitHub',
+    trailToggleAria: '\u5149\u6807\u8f68\u8ff9\u6548\u679c',
+    gridToggleAria: '\u7f51\u683c\u6548\u679c',
+    fsEnterAria: '\u8fdb\u5165\u5168\u5c4f',
+    fsExitAria: '\u9000\u51fa\u5168\u5c4f',
+    intro1SkipAria: '\u8df3\u8fc7\u5f00\u573a\u89c6\u9891',
+    mpPrevAria: '\u4e0a\u4e00\u9996',
+    mpPlayAria: '\u64ad\u653e\u6216\u6682\u505c',
+    mpNextAria: '\u4e0b\u4e00\u9996',
+    regionHudAria: 'Status bar',
+    regionMediaAria: '\u97f3\u91cf\u4e0e\u8ff7\u4f60\u97f3\u4e50\u64ad\u653e\u5668',
+    regionSplashVolAria: '\u6b22\u8fce\u5c4f\u5e55 - \u97f3\u91cf',
+    regionSplashHeroAria: '\u6b22\u8fce\u5c4f\u5e55 - \u6807\u9898',
+    regionSplashStartAria: '\u6b22\u8fce\u5c4f\u5e55 - \u5f00\u59cb',
+    orpetronSotdTip: 'Orpetron Award',
+    orpetronSotdAria: 'Orpetron',
+    designNomineesSotdTip: 'Design Nominees Award',
+    designNomineesSotdAria: 'Design Nominees',
+    awwwardsNomineeTip: 'Awwwards',
+    awwwardsNomineeAria: 'Awwwards'
   };
 }
 
 applyChineseLanguageSlotDefault();
 
 const BGS_LANG_KEY = 'bgs_lang';
-const BGS_LANG_DEFAULT_MIGRATION_KEY = 'bgs_lang_default_zh_v1';
-/** BIO: Ses seviyesi — Dil gibi saklanır; Default splash, Default toolbar ve Pro Mode ortak kullanır. */
+const BGS_LANG_DEFAULT_MIGRATION_KEY = 'bgs_lang_default_zh_v3';
+/** BIO: Ses seviyesi 閳?Dil gibi saklan璋媟; Default splash, Default toolbar ve Pro Mode ortak kullan璋媟. */
 const BGS_VOL_KEY = 'bgs_vol';
-/** BIO: Aynı sekmede Pro\'ya geçerken (özellikle mobil) LS güvenilmezse ses yedeği — pro-mode/script.js ile aynı anahtar. */
+/** BIO: Ayn璋?sekmede Pro\'ya ge鑾絜rken (鏋歾ellikle mobil) LS g鐪塿enilmezse ses yede鑷抜 閳?pro-mode/script.js ile ayn璋?anahtar. */
 const BGS_VOL_SESSION_KEY = 'bgs_vol_session';
 
 function readStoredVolume01() {
@@ -1349,7 +1213,7 @@ const $bb     = document.getElementById('bb');
 
 /* BIO: Implementation note for this section. */
 function _bcSyncRoot() {
-  $bc.classList.toggle('at-root', !$bc.textContent.includes('›'));
+  $bc.classList.toggle('at-root', !$bc.textContent.includes('>'));
 }
 _bcSyncRoot();
 new MutationObserver(_bcSyncRoot).observe($bc, {
@@ -1386,7 +1250,7 @@ const $ifill  = document.getElementById('intro-fill');
 
 let globalVolume = readStoredVolume01();
 
-/* BIO: After splash Start / Fullscreen, intro1 ends → navigate straight to /pro-mode/ */
+/* BIO: After splash Start / Fullscreen, intro1 ends 閳?navigate straight to /pro-mode/ */
 let splashIntentDirectPro = false;
 
 /* BIO: Audio, SFX, and mini-player behavior note. */
@@ -1724,7 +1588,7 @@ function renderRoot(anim = true) {
     }
   });
 
-  /* BIO: SVG paint order follows DOM order — move center above mains so avatar/hair is not covered by overlaps (e.g. About Me). */
+  /* BIO: SVG paint order follows DOM order 閳?move center above mains so avatar/hair is not covered by overlaps (e.g. About Me). */
   $nl.appendChild(cg);
 
   if (anim) {
@@ -1749,7 +1613,7 @@ function expandNode(nd, nx, ny, ang, anim = true) {
 
   if (S.level === 1 && S.main && S.main.id === nd.id) {
     gsap.to($world, { x: expandBaseWorldX, y: expandBaseWorldY, duration: 0.35, ease: 'power2.inOut' });
-    $bc.textContent = `${UI[currentLang].tree}  ›  ${L(nd.label).join(' ')}`;
+    $bc.textContent = `${UI[currentLang].tree}  閳? ${L(nd.label).join(' ')}`;
     return;
   }
 
@@ -1790,7 +1654,7 @@ function expandNode(nd, nx, ny, ang, anim = true) {
   }
 
   S.level = 1; S.main = nd; S.mainAng = ang; S.mainNx = nx; S.mainNy = ny;
-  $bc.textContent = `${UI[currentLang].tree}  ›  ${L(nd.label).join(' ')}`;
+  $bc.textContent = `${UI[currentLang].tree}  閳? ${L(nd.label).join(' ')}`;
   $bb.textContent = UI[currentLang].back;
   $bb.style.display = 'block';
 
@@ -1932,10 +1796,10 @@ function openPanel(sub, color, sx, sy, subAng = 0) {
   const gap    = 20;
 
   if (IS_MOBILE) {
-    // BIO: ── Mobile: holo lives as a bottom-sheet positioned by CSS ──
+    // BIO: 閳光偓閳光偓 Mobile: holo lives as a bottom-sheet positioned by CSS 閳光偓閳光偓
     // BIO: Don't pan the world toward an off-screen panel; just keep the
     // BIO: selected node centred (already set by expandNode). Skip rays
-    // BIO: entirely — they assume free-floating panel geometry.
+    // BIO: entirely 閳?they assume free-floating panel geometry.
     $holo.style.left = '';
     $holo.style.top  = '';
 
@@ -1956,13 +1820,13 @@ function openPanel(sub, color, sx, sy, subAng = 0) {
       };
     });
 
-    // BIO: Slide up from below — the natural gesture for a bottom sheet.
+    // BIO: Slide up from below 閳?the natural gesture for a bottom sheet.
     gsap.fromTo($holo,
       { opacity: 0, y: 40, scale: 0.98 },
       { opacity: 1, y: 0,  scale: 1, duration: 0.32, ease: 'power3.out' }
     );
   } else {
-    // BIO: ── Camera pan: always relative to the base expand position, never accumulates ──
+    // BIO: 閳光偓閳光偓 Camera pan: always relative to the base expand position, never accumulates 閳光偓閳光偓
     const cosA = Math.cos(subAng);
     const sinA = Math.sin(subAng);
 
@@ -1995,7 +1859,7 @@ function openPanel(sub, color, sx, sy, subAng = 0) {
     const screenX = sx + targetWorldX;
     const screenY = sy + targetWorldY;
 
-    // BIO: ── Panel position: centre along subAng at panelDist from node ──
+    // BIO: 閳光偓閳光偓 Panel position: centre along subAng at panelDist from node 閳光偓閳光偓
     const panelCX = screenX + panelDist * cosA;
     const panelCY = screenY + panelDist * sinA;
 
@@ -2026,7 +1890,7 @@ function openPanel(sub, color, sx, sy, subAng = 0) {
     const hr = $holo.getBoundingClientRect();
     drawRays(screenX, screenY, hr.left, hr.top, hr.width, hr.height, color, rayOpts);
 
-    // BIO: ── Record corner bracket screen positions (after final-pose transform) ──────────────
+    // BIO: 閳光偓閳光偓 Record corner bracket screen positions (after final-pose transform) 閳光偓閳光偓閳光偓閳光偓閳光偓閳光偓閳光偓閳光偓閳光偓閳光偓閳光偓閳光偓閳光偓閳光偓
     cornerPositions = {};
     $holo.querySelectorAll('.holo-corner').forEach(el => {
       const r = el.getBoundingClientRect();
@@ -2038,7 +1902,7 @@ function openPanel(sub, color, sx, sy, subAng = 0) {
       };
     });
 
-    // BIO: ── Animate in — slight delay so pan and panel open overlap naturally ──
+    // BIO: 閳光偓閳光偓 Animate in 閳?slight delay so pan and panel open overlap naturally 閳光偓閳光偓
     gsap.fromTo($holo,
       { opacity: 0, scale: 0.35, x: fromX, y: fromY,
         z: -60, rotateX: 12, transformPerspective: 800 },
@@ -2071,7 +1935,7 @@ function openPanel(sub, color, sx, sy, subAng = 0) {
     }
   });
 
-  // BIO: ── Typewriter title ────────────────────────────
+  // BIO: 閳光偓閳光偓 Typewriter title 閳光偓閳光偓閳光偓閳光偓閳光偓閳光偓閳光偓閳光偓閳光偓閳光偓閳光偓閳光偓閳光偓閳光偓閳光偓閳光偓閳光偓閳光偓閳光偓閳光偓閳光偓閳光偓閳光偓閳光偓閳光偓閳光偓閳光偓閳光偓
   const titleText = `[ ${L(sub.title)} ]`;
   const twDelay   = Math.max(18, Math.floor(400 / titleText.length));
   let i = 0;
@@ -2086,8 +1950,8 @@ function openPanel(sub, color, sx, sy, subAng = 0) {
     }
   }, twDelay);
 
-  // BIO: ── Breadcrumb ───────────────────────────────────
-  if (S.main) $bc.textContent = `${UI[currentLang].tree}  ›  ${L(S.main.label).join(' ')}  ›  ${L(sub.label).join(' ')}`;
+  // BIO: 閳光偓閳光偓 Breadcrumb 閳光偓閳光偓閳光偓閳光偓閳光偓閳光偓閳光偓閳光偓閳光偓閳光偓閳光偓閳光偓閳光偓閳光偓閳光偓閳光偓閳光偓閳光偓閳光偓閳光偓閳光偓閳光偓閳光偓閳光偓閳光偓閳光偓閳光偓閳光偓閳光偓閳光偓閳光偓閳光偓閳光偓閳光偓閳光偓
+  if (S.main) $bc.textContent = `${UI[currentLang].tree}  閳? ${L(S.main.label).join(' ')}  閳? ${L(sub.label).join(' ')}`;
 }
 
 /* BIO: Hologram panel behavior and rendering note. */
@@ -2127,7 +1991,7 @@ function drawRays(x1, y1, rectLeft, rectTop, pW, pH, color, opts = {}) {
   const wrapper = document.createElementNS(SVGNS, 'g');
   const defs    = document.createElementNS(SVGNS, 'defs');
 
-  // BIO: ── Shared gradient: bright at node, transparent at panel edge ──
+  // BIO: 閳光偓閳光偓 Shared gradient: bright at node, transparent at panel edge 閳光偓閳光偓
   const grad = document.createElementNS(SVGNS, 'linearGradient');
   grad.setAttribute('id', 'ray-grad');
   grad.setAttribute('gradientUnits', 'userSpaceOnUse');
@@ -2146,7 +2010,7 @@ function drawRays(x1, y1, rectLeft, rectTop, pW, pH, color, opts = {}) {
   grad.appendChild(mkStop('100%', '0.0'));
   defs.appendChild(grad);
 
-  // BIO: ── Blur filters: soft ambient / mid volume / hot core ──
+  // BIO: 閳光偓閳光偓 Blur filters: soft ambient / mid volume / hot core 閳光偓閳光偓
   const mkFilter = (id, std) => {
     const f = document.createElementNS(SVGNS, 'filter');
     f.setAttribute('id', id);
@@ -2180,7 +2044,7 @@ function drawRays(x1, y1, rectLeft, rectTop, pW, pH, color, opts = {}) {
 
   wrapper.appendChild(defs);
 
-  // BIO: ── Helper: cone triangle at fraction f of full fan-width ──
+  // BIO: 閳光偓閳光偓 Helper: cone triangle at fraction f of full fan-width 閳光偓閳光偓
   const conePts = (f) => {
     const ax = midX + (c1.x - midX) * f;
     const ay = midY + (c1.y - midY) * f;
@@ -2197,18 +2061,18 @@ function drawRays(x1, y1, rectLeft, rectTop, pW, pH, color, opts = {}) {
     return p;
   };
 
-  // BIO: Layer 1 — wide ambient spill (full fan, heavy blur, very dim)
+  // BIO: Layer 1 閳?wide ambient spill (full fan, heavy blur, very dim)
   wrapper.appendChild(mkPoly(conePts(1.0), color,             '0.18', 'ray-soft'));
-  // BIO: Layer 2 — main beam volume (full fan, medium blur, gradient)
+  // BIO: Layer 2 閳?main beam volume (full fan, medium blur, gradient)
   wrapper.appendChild(mkPoly(conePts(1.0), 'url(#ray-grad)', '0.30', 'ray-mid'));
-  // BIO: Layer 3 — tighter inner beam (55% fan, slight blur, gradient)
+  // BIO: Layer 3 閳?tighter inner beam (55% fan, slight blur, gradient)
   wrapper.appendChild(mkPoly(conePts(0.55), 'url(#ray-grad)', '0.50', 'ray-hot'));
-  // BIO: Layer 4 — hot core strip (20% fan, slight blur, solid color)
+  // BIO: Layer 4 閳?hot core strip (20% fan, slight blur, solid color)
   wrapper.appendChild(mkPoly(conePts(0.20), color,             '0.75', 'ray-hot'));
-  // BIO: Layer 5 — laser centre (5% fan, no blur, pure solid)
+  // BIO: Layer 5 閳?laser centre (5% fan, no blur, pure solid)
   wrapper.appendChild(mkPoly(conePts(0.05), color,             '0.95', null));
 
-  // BIO: ── Scan sweep (moves from node toward panel, repeating) ────
+  // BIO: 閳光偓閳光偓 Scan sweep (moves from node toward panel, repeating) 閳光偓閳光偓閳光偓閳光偓
   const scanGlow = document.createElementNS(SVGNS, 'polygon');
   scanGlow.setAttribute('fill', color);
   scanGlow.setAttribute('fill-opacity', '0');
@@ -2319,7 +2183,7 @@ function closeHolo() {
   holoOpen = false;
   currentSubId = null;
   if (S.main) {
-    $bc.textContent = `${UI[currentLang].tree}  ›  ${L(S.main.label).join(' ')}`;
+    $bc.textContent = `${UI[currentLang].tree}  閳? ${L(S.main.label).join(' ')}`;
     gsap.to($world, { x: expandBaseWorldX, y: expandBaseWorldY, duration: 0.4, ease: 'power2.inOut' });
   }
 }
@@ -2329,12 +2193,12 @@ $holoClose.addEventListener('click', () => {
   closeHolo();
 });
 
-/* BIO: Mobil — hologram üst tutamacından aşağı sürükleyerek kapatma (alt sayfa UX). */
+/* BIO: Mobil 閳?hologram 鐪塻t tutamac璋媙dan a鑹鑷掕皨 s鐪塺鐪塳leyerek kapatma (alt sayfa UX). */
 (function bindMobileHoloSheetSwipe() {
   if (!IS_MOBILE || !$holoSheetHandle) return;
 
   const CLOSE_DIST_PX = 80;
-  /** px/ms — hızlı aşağı fırlatma ile kapat */
+  /** px/ms 閳?h璋媧l璋?a鑹鑷掕皨 f璋媟latma ile kapat */
   const CLOSE_VEL = 0.45;
 
   let drag = null;
@@ -2436,7 +2300,7 @@ document.addEventListener('keydown', e => {
 
 function holoOrderedFocusTargets() {
   if (!$holo || holoOpen === false) return [];
-  /* BIO: Hidden via display:none when closed — gsap animation may still hide — check computed style where possible. */
+  /* BIO: Hidden via display:none when closed 閳?gsap animation may still hide 閳?check computed style where possible. */
   const styleDisplay = typeof window.getComputedStyle === 'function' ? window.getComputedStyle($holo).display : $holo.style.display;
   if (styleDisplay === 'none') return [];
   const out = [];
@@ -2740,19 +2604,19 @@ document.querySelectorAll('.tb-mode').forEach(btn => {
 /* BIO: Audio, SFX, and mini-player behavior note. */
 const PRO_CONFIRM = {
   tr: [
-    { label: 'ONAY  /  01',           title: "PRO MOD'A GEÇMEK İSTİYOR MUSUN?",     sub: 'Farklı bir dünyaya geçiş yapacaksın.',                      yes: 'EVET',        no: 'HAYIR' },
-    { label: 'UYARI  /  02',          title: 'EMİN MİSİN? GERİ DÖNÜŞÜ KOLAY DEĞİL.',                                                  yes: 'EVET, EMİNİM', no: 'İPTAL' },
-    { label: '⚠  SON UYARI  /  03',   title: 'SON ŞANS. HAZIR MISIN?',               sub: 'Bu son soruşum. Cevap kesin mi?',                           yes: 'FIRLAT',       no: 'VAZGEÇ' }
+    { label: 'ONAY  /  01',           title: "PRO MOD'A GE鑴烳EK 闄孲T闄孻OR MUSUN?",     sub: 'Farkl璋?bir d鐪塶yaya ge鑾絠鑹?yapacaks璋媙.',                      yes: 'EVET',        no: 'HAYIR' },
+    { label: 'UYARI  /  02',          title: 'EM闄孨 M闄孲闄孨? GER闄?D鑴癗鑴鸿墻鑴?KOLAY DE鑷戦檶L.',                                                  yes: 'EVET, EM闄孨闄孧', no: '闄孭TAL' },
+    { label: 'FINAL WARNING / 03', title: 'LAST CHANCE. READY?', sub: 'This is the final question. Are you sure?', yes: 'LAUNCH', no: 'CANCEL' }
   ],
   en: [
     { label: 'CONFIRM  /  01',        title: 'DO YOU WANT TO SWITCH TO PRO MODE?',   sub: 'You are about to enter a different world.',                 yes: 'YES',          no: 'NO' },
     { label: 'WARNING  /  02',        title: 'ARE YOU SURE? NOT EASY TO UNDO.',                                                                      yes: 'YES, I AM SURE', no: 'CANCEL' },
-    { label: '⚠  FINAL WARNING  /  03', title: 'LAST CHANCE. READY?',                sub: 'This is my final question. Is the answer final?',           yes: 'LAUNCH',       no: 'ABORT' }
+    { label: '閳? FINAL WARNING  /  03', title: 'LAST CHANCE. READY?',                sub: 'This is my final question. Is the answer final?',           yes: 'LAUNCH',       no: 'ABORT' }
   ],
   de: [
-    { label: 'BESTÄTIGEN  /  01',     title: 'WILLST DU IN DEN PRO-MODUS WECHSELN?', sub: 'Du betrittst gleich eine andere Welt.',                     yes: 'JA',           no: 'NEIN' },
-    { label: 'ACHTUNG  /  02',        title: 'BIST DU SICHER? NICHT LEICHT RÜCKGÄNGIG.',                                                             yes: 'JA, SICHER',   no: 'ABBRECHEN' },
-    { label: '⚠  LETZTE WARNUNG  /  03', title: 'LETZTE CHANCE. BEREIT?',             sub: 'Das ist meine letzte Frage. Entscheidung endgültig.',       yes: 'STARTEN',      no: 'VERWERFEN' }
+    { label: 'BEST鑴汿IGEN  /  01',     title: 'WILLST DU IN DEN PRO-MODUS WECHSELN?', sub: 'Du betrittst gleich eine andere Welt.',                     yes: 'JA',           no: 'NEIN' },
+    { label: 'ACHTUNG  /  02',        title: 'BIST DU SICHER? NICHT LEICHT R鑴篊KG鑴汵GIG.',                                                             yes: 'JA, SICHER',   no: 'ABBRECHEN' },
+    { label: '閳? LETZTE WARNUNG  /  03', title: 'LETZTE CHANCE. BEREIT?',             sub: 'Das ist meine letzte Frage. Entscheidung endg鐪塴tig.',       yes: 'STARTEN',      no: 'VERWERFEN' }
   ]
 };
 
@@ -2766,18 +2630,18 @@ const $pcNo    = document.getElementById('pc-no');
 
 /* BIO: Hologram panel behavior and rendering note. */
 const PRO_CONFIRM_SUB2_LOADING = {
-  tr: 'Pro Mode veri boyutu hesaplanıyor…',
-  en: 'Calculating Pro Mode download size…',
-  de: 'Pro-Modus-Datenmenge wird ermittelt…'
+  tr: 'Calculating Pro Mode download size...',
+  en: 'Calculating Pro Mode download size...',
+  de: '正在计算专业模式下载大小...'
 };
 const PRO_CONFIRM_SUB2_FALLBACK = {
-  tr: 'Pro Mode çok veri indirir. Emin misin?',
+  tr: 'Pro Mode 鑾給k veri indirir. Emin misin?',
   en: 'Pro Mode downloads a lot of data. Are you sure?',
-  de: 'Pro Mode lädt viele Daten. Bist du sicher?'
+  de: 'Pro Mode l鐩瞕t viele Daten. Bist du sicher?'
 };
 /* BIO: Implementation note for this section. */
 const PRO_CONFIRM_SUB2_WITH_MB = {
-  tr: 'Pro Mode {mb} MB içeriyor, emin misin?',
+  tr: 'Pro Mode {mb} MB i鑾絜riyor, emin misin?',
   en: 'Pro Mode contains {mb} MB. Are you sure?',
   de: 'Pro Mode umfasst ca. {mb} MB. Bist du sicher?'
 };
@@ -2994,7 +2858,7 @@ function pcPlay(name, mix = 0.55) {
 }
 
 /* BIO: Audio, SFX, and mini-player behavior note. */
-const PC_ALARM_VOLUME = 0.10;   // BIO: tuned lower — plays on every pulse
+const PC_ALARM_VOLUME = 0.10;   // BIO: tuned lower 閳?plays on every pulse
 let pcAlarmListener = null;
 
 function startPcAlarmLoop() {
@@ -3039,7 +2903,7 @@ function pcRenderStage(n) {
   $pcYes.textContent   = data.yes;
   $pcNo.textContent    = data.no;
   if      (n === 1) pcPlay('open',  0.55);
-  // BIO: Stage 2 intentionally silent — drama without the extra sting
+  // BIO: Stage 2 intentionally silent 閳?drama without the extra sting
   else if (n === 3) startPcAlarmLoop();   // BIO: loops until confirm / cancel
   if ($pcWrap && $pcWrap.classList.contains('open')) {
     window.requestAnimationFrame(() => {
@@ -3092,7 +2956,7 @@ function openProConfirm() {
   });
 
   // BIO: Warm intro2.mp4 up in the background while the user
-  // BIO: reads the 3-stage drama — so playback is instant later.
+  // BIO: reads the 3-stage drama 閳?so playback is instant later.
   try {
     const v = document.getElementById('intro2-vid');
     if (v && v.preload !== 'auto') {
@@ -3144,7 +3008,7 @@ function closeProConfirm(confirmed) {
     if (typeof window.resumeMusicForProConfirm === 'function') {
       window.resumeMusicForProConfirm();
     }
-    // BIO: PRO was never activated — DEFAULT stays active, nothing else to revert.
+    // BIO: PRO was never activated 閳?DEFAULT stays active, nothing else to revert.
   }
 }
 
@@ -3260,8 +3124,8 @@ function runMeteorImpact() {
     const cx = vw / 2;
     const cy = vh * 0.48;
 
-    // BIO: meteor starting position — off-screen top-right
-    // BIO: img width is 640 (420 on mobile) → centre it with half-width offset
+    // BIO: meteor starting position 閳?off-screen top-right
+    // BIO: img width is 640 (420 on mobile) 閳?centre it with half-width offset
     const meteorW = $meteorImg.offsetWidth || 640;
     const startX  = vw + 160;
     const startY  = -vh * 0.45;
@@ -3285,7 +3149,7 @@ function runMeteorImpact() {
 
     const tl = gsap.timeline({ onComplete: () => resolve() });
 
-    // BIO: 0) pre-impact darkening — shadow creeps in from the meteor's direction
+    // BIO: 0) pre-impact darkening 閳?shadow creeps in from the meteor's direction
     // BIO: Starts subtle, ramps up quickly as the meteor nears the ground.
     tl.to($meteorPredark, { opacity: 0.6, duration: 0.45, ease: 'power2.in'  }, 0.05);
     tl.to($meteorPredark, { opacity: 0.9, duration: 0.12, ease: 'power2.out' }, 0.5);
@@ -3306,7 +3170,7 @@ function runMeteorImpact() {
     tl.to($meteorImg,   { opacity: 0, duration: 0.15, ease: 'power1.out' }, 0.5);
     tl.to($meteorFlash, { opacity: 0, duration: 0.45, ease: 'power2.in'  }, 0.65);
 
-    // BIO: 3) camera shake + impact sfx + dust burst (meteor boom → glass shatter)
+    // BIO: 3) camera shake + impact sfx + dust burst (meteor boom 閳?glass shatter)
     tl.add(() => {
       playMeteorCrashSfx();
       spawnMeteorDust(cx, cy);
@@ -3328,9 +3192,9 @@ function runMeteorImpact() {
       ease: 'power2.out'
     }, 0.52);
 
-    // BIO: 5) darkening cascades straight out of the impact — no pause.
+    // BIO: 5) darkening cascades straight out of the impact 閳?no pause.
     // BIO: Black starts fading in while the last cracks are still drawing,
-    // BIO: so impact → dust → cracks → darkness reads as one continuous beat.
+    // BIO: so impact 閳?dust 閳?cracks 閳?darkness reads as one continuous beat.
     tl.to($screenBlack,  { opacity: 1, duration: 1.2, ease: 'power2.inOut' }, 0.85);
     tl.to($screenCrack,  { opacity: 0, duration: 0.6, ease: 'power2.inOut' }, 1.35);
     tl.to($meteorPredark,{ opacity: 0, duration: 0.5, ease: 'power2.out'  }, 1.7);
@@ -3442,7 +3306,7 @@ function playIntro2() {
 
     const p = $intro2Vid.play();
     if (p && p.catch) p.catch(() => {
-      // BIO: autoplay blocked → fall back to muted playback
+      // BIO: autoplay blocked 閳?fall back to muted playback
       $intro2Vid.muted = true;
       $intro2Vid.play().catch(() => {});
     });
@@ -3465,7 +3329,7 @@ function playIntro2() {
 
 /* BIO: Cockpit layout, rendering, and interaction note. */
 function finishProTransition() {
-  // BIO: Do not fade #intro2-video — opacity tween lets Main Tree / layers below show through.
+  // BIO: Do not fade #intro2-video 閳?opacity tween lets Main Tree / layers below show through.
   // BIO: Meteor stack keeps #screen-black at 1; tear intro2 down instantly then navigate.
   try {
     gsap.killTweensOf($intro2Wrap);
@@ -3489,7 +3353,7 @@ function finishProTransition() {
 $pcYes.addEventListener('click', () => {
   if ($pcPanel.classList.contains('launching')) return;
   if (pcStage < 3) {
-    pcPlay('uibtn', 0.75);                    // BIO: YES on stage 1 & 2 → audible click
+    pcPlay('uibtn', 0.75);                    // BIO: YES on stage 1 & 2 閳?audible click
     pcRenderStage(pcStage + 1);
   } else {
     closeProConfirm(true);
@@ -3677,7 +3541,7 @@ const THROW_CONFIGS = {
   alien: {
     video: 'assets/default/interactions/alien-throw.mp4',
     charW: 500,
-    /** BIO: Mobil dar genişlikte video sağ kenara yakınsın; varsayılan 80px fazla içeri çektiği için sola kaçıyordu. */
+    /** BIO: Mobil dar geni鑹ikte video sa鑷?kenara yak璋媙s璋媙; varsay璋媗an 80px fazla i鑾絜ri 鑾絜kti鑷抜 i鑾絠n sola ka鑾借皨yordu. */
     charRightMobile: '6px',
     throwTime: 3.3,
     proj: 'assets/default/interactions/crumpledpaper.webp', projW: 75,
@@ -4004,7 +3868,7 @@ function playAlienThrow(gallery, configKey) {
   }
 }
 
-// BIO: ── Click handler for .photo-link ──
+// BIO: 閳光偓閳光偓 Click handler for .photo-link 閳光偓閳光偓
 let alienAnimPlaying = false;
 
 document.addEventListener('click', e => {
@@ -4029,11 +3893,11 @@ document.addEventListener('click', e => {
   }
 });
 
-// BIO: ── Gallery nav buttons ──
+// BIO: 閳光偓閳光偓 Gallery nav buttons 閳光偓閳光偓
 $pvPrev.addEventListener('click', e => { e.stopPropagation(); navigateGallery(-1); });
 $pvNext.addEventListener('click', e => { e.stopPropagation(); navigateGallery(1); });
 
-// BIO: ── Close photo viewer ──
+// BIO: 閳光偓閳光偓 Close photo viewer 閳光偓閳光偓
 document.getElementById('photo-viewer-close').addEventListener('click', closePhotoViewer);
 
 $photoViewer.addEventListener('click', e => {
@@ -4043,7 +3907,7 @@ $photoViewer.addEventListener('click', e => {
   }
 });
 
-// BIO: ── Keyboard navigation ──
+// BIO: 閳光偓閳光偓 Keyboard navigation 閳光偓閳光偓
 document.addEventListener('keydown', e => {
   if (!$photoViewer.classList.contains('active')) return;
   if (e.key === 'ArrowLeft')  { e.preventDefault(); navigateGallery(-1); }
@@ -4219,7 +4083,7 @@ function playUfoIntro() {
 let planeFlying = false;
 let killPlane   = null;
 
-/** Mobil Default Mode — ağaç hazırken yatayda dikey kullanım önerisi (#bgs-default-landscape-hint). */
+/** Mobil Default Mode 閳?a鑷抋鑾?haz璋媟ken yatayda dikey kullan璋媘 鏋歯erisi (#bgs-default-landscape-hint). */
 function syncDefaultLandscapeHint() {
   const el = document.getElementById('bgs-default-landscape-hint');
   if (!el || !IS_MOBILE) return;
@@ -4431,7 +4295,7 @@ updateStatusDate();
     updateBlocks(splashBlocks, SPLASH_BLOCKS);
     updateBlocks(mainBlocks, MAIN_BLOCKS);
     const pct = Math.round(globalVolume * 100) + '%';
-    const icon = globalVolume === 0 ? '🔇' : '🔊';
+    const icon = globalVolume === 0 ? '棣冩敧' : '棣冩敯';
     $splashPct.textContent = pct;
     $splashIcon.textContent = icon;
     $mainVolPct.textContent = pct;
@@ -4624,7 +4488,7 @@ updateStatusDate();
   $volTest.addEventListener('click', () => {
     if (!testAudio.paused) {
       $volTest.classList.remove('playing');
-      $volTest.textContent = '▶ TEST VOLUME';
+      $volTest.textContent = '閳?TEST VOLUME';
       if (fadeTween) { fadeTween.kill(); fadeTween = null; }
       fadeProxy.v = testAudio.volume;
       fadeTween = gsap.to(fadeProxy, {
@@ -4650,11 +4514,11 @@ updateStatusDate();
       onComplete: () => { fadeTween = null; }
     });
     $volTest.classList.add('playing');
-    $volTest.textContent = '■ STOP';
+    $volTest.textContent = '閳?STOP';
   });
   testAudio.addEventListener('ended', () => {
     $volTest.classList.remove('playing');
-    $volTest.textContent = '▶ TEST VOLUME';
+    $volTest.textContent = '閳?TEST VOLUME';
     if (fadeTween) { fadeTween.kill(); fadeTween = null; }
     stopViz();
   });
@@ -4732,7 +4596,7 @@ updateStatusDate();
 
   if (returningFromPro || enteringDefaultPortfolioPath) {
     try {
-      // BIO: Splash / intro1 atlanır — Pro dönüşünde intro2 zaten kokpite geçilir; /default-mode/ içinde ise yenilemede doğrudan ağaç.
+      // BIO: Splash / intro1 atlan璋媟 閳?Pro d鏋歯鐪夎墽鐪塶de intro2 zaten kokpite ge鑾絠lir; /default-mode/ i鑾絠nde ise yenilemede do鑷抮udan a鑷抋鑾?
       $intro.style.display = 'none';
       $splash.style.display = 'none';
       try {
@@ -4795,7 +4659,7 @@ updateStatusDate();
     );
   }, 1400);
 
-  } /* BIO: end kök (/) ilk ziyaret splash; /default-mode/ yüklemesi üst blokta kısaltılır */
+  } /* BIO: end k鏋歬 (/) ilk ziyaret splash; /default-mode/ y鐪塳lemesi 鐪塻t blokta k璋媠alt璋媗璋媟 */
 
   /* BIO: Button layout and interaction note. */
   function startSite() {
@@ -4813,7 +4677,7 @@ updateStatusDate();
     const p = $introVid.play();
     if (p) p.catch(() => {
       $introVid.muted = true;
-      $soundIcon.textContent = '🔇';
+      $soundIcon.textContent = '棣冩敧';
       $soundLabel.textContent = 'SOUND OFF';
       $introVid.play();
     });
@@ -4851,7 +4715,7 @@ updateStatusDate();
     }
   }
 
-  /* BIO: Masaüstü: düşük tier (<=1) → uyarı. Mobilde sık sık tier null olduğundan bilinmeyeni de uyarıyla aynı yere bağlarız. */
+  /* BIO: Masa鐪塻t鐪? d鐪夎墽鐪塳 tier (<=1) 閳?uyar璋? Mobilde s璋媖 s璋媖 tier null oldu鑷抲ndan bilinmeyeni de uyar璋媦la ayn璋?yere ba鑷抣ar璋媧. */
   function shouldOpenSplashGpuWarnModal(tier) {
     const lowMeasured = tier !== null && tier <= 1;
     const unknownMob  = tier === null && IS_MOBILE;
@@ -4946,7 +4810,7 @@ updateStatusDate();
     const directPro = splashIntentDirectPro;
     if (directPro) splashIntentDirectPro = false;
 
-    /* BIO: Direct Pro path: full-screen veil — hiding #intro-video alone lets Main Tree paint for a frame before navigation. */
+    /* BIO: Direct Pro path: full-screen veil 閳?hiding #intro-video alone lets Main Tree paint for a frame before navigation. */
     if (directPro) {
       try {
         $introVid.pause();
@@ -5000,7 +4864,7 @@ updateStatusDate();
   if ($introSound) {
     $introSound.addEventListener('click', () => {
       $introVid.muted = !$introVid.muted;
-      if ($soundIcon)  $soundIcon.textContent  = $introVid.muted ? '🔇' : '🔊';
+      if ($soundIcon)  $soundIcon.textContent  = $introVid.muted ? '棣冩敧' : '棣冩敯';
       if ($soundLabel) $soundLabel.textContent = $introVid.muted ? 'SOUND OFF' : 'SOUND';
     });
   }
@@ -5031,7 +4895,7 @@ updateStatusDate();
   let mpFadeTween = null;
   const MP_FADE_IN  = 0.2;
   const MP_FADE_OUT = 0.2;
-  const mpFadeProxy = { v: 1 };   // BIO: 0 = silent, 1 = full (× globalVolume)
+  const mpFadeProxy = { v: 1 };   // BIO: 0 = silent, 1 = full (鑴?globalVolume)
 
   function mpApplyFadedVolume() {
     if (musicAudio) musicAudio.volume = Math.min(1, globalVolume * mpFadeProxy.v);

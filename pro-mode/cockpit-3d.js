@@ -1,4 +1,4 @@
-/* BIO: Cockpit layout, rendering, and interaction note. */
+﻿/* BIO: Cockpit layout, rendering, and interaction note. */
 import * as THREE from 'three';
 import { mergeGeometries } from 'three/addons/utils/BufferGeometryUtils.js';
 import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
@@ -18,7 +18,7 @@ function detectProMobileViewport() {
 }
 const IS_PRO_MOBILE_VIEWPORT = detectProMobileViewport();
 
-/** BIO: Mobil başlangıç — ağır JS blokları arasında requestIdleCallback / setTimeout ile nefes. */
+/** BIO: Mobil ba艧lang谋莽 鈥?a臒谋r JS bloklar谋 aras谋nda requestIdleCallback / setTimeout ile nefes. */
 async function yieldProMobileStartupSlice() {
   if (!IS_PRO_MOBILE_VIEWPORT) return;
   await new Promise(resolve => {
@@ -30,7 +30,7 @@ async function yieldProMobileStartupSlice() {
   });
 }
 
-/** BIO: KTX2 yan yol: aynı göreli yol için .webp → .ktx2 */
+/** BIO: KTX2 yan yol: ayn谋 g枚reli yol i莽in .webp 鈫?.ktx2 */
 function _proHrefToMobKtx2(webpHref) {
   let u = typeof webpHref === 'string' ? webpHref : '';
   u = u.replace(/\.webp([?#].*)?$/i, '.ktx2$1');
@@ -38,12 +38,12 @@ function _proHrefToMobKtx2(webpHref) {
   return u;
 }
 
-/** BIO: Mobil Offscreen Worker geçişi için canvas meta (transferControl çağrılmadan). */
+/** BIO: Mobil Offscreen Worker ge莽i艧i i莽in canvas meta (transferControl 莽a臒r谋lmadan). */
 function annotateProMobThreeCanvasForOffscreen(rendererInstance) {
   if (!IS_PRO_MOBILE_VIEWPORT || !rendererInstance?.domElement) return;
   const el = rendererInstance.domElement;
   const canXfer = typeof el.transferControlToOffscreen === 'function';
-  /* BIO: Renderer kurulumu gelecek Worker + OffscreenCanvas ile hizalı; alpha desktop ile ayrılmıştır. */
+  /* BIO: Renderer kurulumu gelecek Worker + OffscreenCanvas ile hizal谋; alpha desktop ile ayr谋lm谋艧t谋r. */
   try {
     el.dataset.bgsThreeOffsurfaceReady = canXfer ? '1' : '0';
     el.dataset.bgsThreeContextFlags = JSON.stringify({
@@ -51,10 +51,10 @@ function annotateProMobThreeCanvasForOffscreen(rendererInstance) {
       antialias: !IS_PRO_MOBILE_VIEWPORT,
       powerPreference: 'high-performance'
     });
-  } catch (_) { /* BIO: küçük hedefli — atla */ }
+  } catch (_) { /* BIO: k眉莽眉k hedefli 鈥?atla */ }
 }
 
-/** BIO: Mobil Pro — dynamic DPR tavanı 1.2; masaüstü max 2. */
+/** BIO: Mobil Pro 鈥?dynamic DPR tavan谋 1.2; masa眉st眉 max 2. */
 function proMobilePerfRendererDpr() {
   if (typeof window === 'undefined') return 1;
   const dpr = window.devicePixelRatio || 1;
@@ -74,7 +74,7 @@ const COCKPIT_GLB_MOBILE_URL = new URL(
 ).href;
 const GLB_URL = IS_PRO_MOBILE_VIEWPORT ? COCKPIT_GLB_MOBILE_URL : COCKPIT_GLB_DESKTOP_URL;
 
-/** BIO: Mobil Pro — alt gezegen GLB (-mobile; gltf-transform optimize, meshopt + WebP). Kokpit ile aynı örüntü. */
+/** BIO: Mobil Pro 鈥?alt gezegen GLB (-mobile; gltf-transform optimize, meshopt + WebP). Kokpit ile ayn谋 枚r眉nt眉. */
 function proSubPlanetGlbHref(optimizedRelative) {
   const rel =
     IS_PRO_MOBILE_VIEWPORT && optimizedRelative.includes('-optimized.glb')
@@ -113,7 +113,7 @@ const COCKPIT_STICKER_ORPETRON_SOTD_URL = new URL(
   '../assets/pro/OrpetronSOTM.png',
   import.meta.url
 ).href;
-/* BIO: Orpetron “Site of the Day” write-up — opens in a new tab when the decal is clicked. */
+/* BIO: Orpetron 鈥淪ite of the Day鈥?write-up 鈥?opens in a new tab when the decal is clicked. */
 const COCKPIT_ORPETRON_SOTD_PAGE_URL =
   'https://orpetron.com/sites/bilal-gurkan-sanli-portfolio/';
 const COCKPIT_STICKER_DESIGN_NOMINEES_URL = new URL(
@@ -124,10 +124,10 @@ const COCKPIT_STICKER_AWWWARDS_NOMINEE_URL = new URL(
   '../assets/default/awwwards-nominee-defaultmode.png',
   import.meta.url
 ).href;
-/* BIO: Design Nominees Site of the Day — opens in a new tab when the decal is clicked. */
+/* BIO: Design Nominees Site of the Day 鈥?opens in a new tab when the decal is clicked. */
 const COCKPIT_DESIGN_NOMINEES_PAGE_URL =
   'https://www.designnominees.com/sites/bilal-gurkan-sanli-portfolio';
-/* BIO: Awwwards Nominee — opens in a new tab when the decal is clicked. */
+/* BIO: Awwwards Nominee 鈥?opens in a new tab when the decal is clicked. */
 const COCKPIT_AWWWARDS_NOMINEE_PAGE_URL =
   'https://www.awwwards.com/sites/bilal-gurkan-sanli-portfolio';
 /* BIO: Pilot ID card portrait on About Me sub-planet (CSS3D panel). */
@@ -259,8 +259,8 @@ const SHOOTING_STAR_CONFIG = {
   /* BIO: Implementation note for this section. */
   lengthMul: 2.8,
   /* BIO: Implementation note for this section. */
-  angleMinRad: Math.PI + 0.25,  // BIO: ~194°
-  angleMaxRad: Math.PI + 1.10,  // BIO: ~243°
+  angleMinRad: Math.PI + 0.25,  // BIO: ~194掳
+  angleMaxRad: Math.PI + 1.10,  // BIO: ~243掳
   /* BIO: Implementation note for this section. */
   /* BIO: Implementation note for this section. */
   segments: 32,
@@ -271,7 +271,7 @@ const SHOOTING_STAR_CONFIG = {
 };
 
 const LOOK_SMOOTH = 0.08;
-/** BIO: Mobil merkez-kilidi açıkken curYaw/curPitch merkeze daha hızlı yakınsın. */
+/** BIO: Mobil merkez-kilidi a莽谋kken curYaw/curPitch merkeze daha h谋zl谋 yak谋ns谋n. */
 const LOOK_SMOOTH_CENTER_LOCK = 0.2;
 /* BIO: Implementation note for this section. */
 const MAX_YAW = 0.74;
@@ -285,16 +285,16 @@ const CAMERA_EYE_FRAC = -0.055;
 const CAMERA_SHIFT_Z_FRAC = 0;
 /* BIO: Implementation note for this section. */
 const LOOK_DEPTH_FRAC = 1.8;
-/* BIO: cockpit-mobile.glb daha kompakt; kamerayı sahneye (negatif X) yaklaştırıp hologram metinleri kadrajda tut. */
+/* BIO: cockpit-mobile.glb daha kompakt; kameray谋 sahneye (negatif X) yakla艧t谋r谋p hologram metinleri kadrajda tut. */
 const PRO_MOBILE_CAMERA_FORWARD_FRAC = 0.05;
 
 /* BIO: Implementation note for this section. */
 const RENDER_EXPOSURE = 1.35;
 /* BIO: Implementation note for this section. */
 const CLEAR_COLOR = 0x000000;
-/* BIO: WebGL canvas accessibility — keyed by document.documentElement lang (ISO 639-1). */
+/* BIO: WebGL canvas accessibility 鈥?keyed by document.documentElement lang (ISO 639-1). */
 const COCKPIT_CANVAS_ARIA_BY_LANG = {
-  tr: 'Üç boyutlu kokpit görünümü. Metin özeti sayfanın başında.',
+  tr: '脺莽 boyutlu kokpit g枚r眉n眉m眉. Metin 枚zeti sayfan谋n ba艧谋nda.',
   en: 'Three-dimensional cockpit view. A text summary is at the start of the page.',
   de: 'Dreidimensionale Cockpit-Ansicht. Eine Textzusammenfassung steht am Seitenanfang.'
 };
@@ -499,7 +499,7 @@ const COCKPIT_TOOLBAR_SCREENS = {
   default: { x: -0.13, y: -0.14, z: -0.176 },
   map: { x: -0.04, y: -0.14, z: -0.21 }
 };
-/** BIO: Mobil — MAP ile DEFAULT kokpit ekseninde x’e göre tam karşı yüzeye (aynı y/z). */
+/** BIO: Mobil 鈥?MAP ile DEFAULT kokpit ekseninde x鈥檈 g枚re tam kar艧谋 y眉zeye (ayn谋 y/z). */
 function toolbarScreenPosition(actionId) {
   if (
     IS_PRO_MOBILE_VIEWPORT &&
@@ -515,9 +515,9 @@ function toolbarScreenPosition(actionId) {
 const TOOLBAR_PLANE = { w: 0.088, h: 0.036 };
 const TOOLBAR_CANVAS = { w: 500, h: 112 };
 const COCKPIT_TOOLBAR_PLANE_ROT = { x: 0, y: 0.55, z: -0.1 };
-/** BIO: Mobil toolbar rotasyonu — sadece değişecek eksenleri yazın; kalanları COCKPIT_TOOLBAR_PLANE_ROT ile birleştirilir (Three.js Euler, rad). */
+/** BIO: Mobil toolbar rotasyonu 鈥?sadece de臒i艧ecek eksenleri yaz谋n; kalanlar谋 COCKPIT_TOOLBAR_PLANE_ROT ile birle艧tirilir (Three.js Euler, rad). */
 const COCKPIT_TOOLBAR_PLANE_ROT_MOBILE_BY_ACTION = {
-  // Örnek: karşı taraftaki Map düzlemi için önce y’yi negatifle deneyin: map: { y: -0.55 }
+  // 脰rnek: kar艧谋 taraftaki Map d眉zlemi i莽in 枚nce y鈥檡i negatifle deneyin: map: { y: -0.55 }
   // default: { y: 0.5 },
   map: { x: 0, y: -3.55, z: 0 }
 };
@@ -555,23 +555,23 @@ const COCKPIT_STICKER_DECALS = {
     rot: { x: 0, y: 2.7, z: 0 },
     widthMul: 0.05
   },
-  /* ── Pro Mode: Orpetron 3D çıkartma — COCKPIT_STICKER_DECALS.orpetronSotd
-   *  pos.x  → sol (−) / sağ (+)   |  pos.y  → aşağı (−) / yukarı (+)
-   *  pos.z  → arkaya (−) / öne (+) |  rot    → radyan (y ≈ 2.7 = panele dönük)
-   *  widthMul → BOYUT (küçült = daha küçük rozet; maxDim ile çarpılır) */
+  /* 鈹€鈹€ Pro Mode: Orpetron 3D 莽谋kartma 鈥?COCKPIT_STICKER_DECALS.orpetronSotd
+   *  pos.x  鈫?sol (鈭? / sa臒 (+)   |  pos.y  鈫?a艧a臒谋 (鈭? / yukar谋 (+)
+   *  pos.z  鈫?arkaya (鈭? / 枚ne (+) |  rot    鈫?radyan (y 鈮?2.7 = panele d枚n眉k)
+   *  widthMul 鈫?BOYUT (k眉莽眉lt = daha k眉莽眉k rozet; maxDim ile 莽arp谋l谋r) */
   orpetronSotd: {
     pos: { x: -0.11, y: -0.085, z: 0.21 },
     rot: { x: 0, y: 2.7, z: 0 },
     widthMul: 0.06
   },
-  /* ── Pro Mode: Awwwards Nominee — Orpetron’un ÜSTÜ; COCKPIT_STICKER_DECALS.awwwardsNominee
-   *  pos.y artır (ör. −0.04) = yukarı | widthMul = rozet genişliği */
+  /* 鈹€鈹€ Pro Mode: Awwwards Nominee 鈥?Orpetron鈥檜n 脺ST脺; COCKPIT_STICKER_DECALS.awwwardsNominee
+   *  pos.y art谋r (枚r. 鈭?.04) = yukar谋 | widthMul = rozet geni艧li臒i */
   awwwardsNominee: {
     pos: { x: -0.11, y: 0.01, z: 0.215 },
     rot: { x: 0, y: 2.8, z: 0 },
     widthMul: 0.02
   },
-  /* BIO: frog + Orpetron arası üst panel — pos/rot/widthMul ile ince ayar. */
+  /* BIO: frog + Orpetron aras谋 眉st panel 鈥?pos/rot/widthMul ile ince ayar. */
   designNominees: {
     pos: { x: -0.062, y: -0.04, z: 0.215 },
     rot: { x: 0, y: 2.9, z: 0 },
@@ -692,7 +692,7 @@ const COCKPIT_PRO_CONTACT_SUB = {
 };
 
 let renderer;
-/* BIO: Mobil KTX2 yolu + masaüstü TextureLoader için ortak yükleme. */
+/* BIO: Mobil KTX2 yolu + masa眉st眉 TextureLoader i莽in ortak y眉kleme. */
 let _proMobileKtx2Loader = null;
 const _proSharedTextureLoader = new THREE.TextureLoader();
 
@@ -733,7 +733,7 @@ function ensureProMobileKtx2Loader() {
   }
 }
 
-/** BIO: Mobil: her renk dokusu önce .ktx2 (aynı göreli yol); 404 ise WebP decode. */
+/** BIO: Mobil: her renk dokusu 枚nce .ktx2 (ayn谋 g枚reli yol); 404 ise WebP decode. */
 function loadProRgbTexturePreferKtx2(assetHref, onLoaded, onProgress, onError) {
   const apply = tex => {
     finalizeProRgbTexture(tex);
@@ -785,7 +785,7 @@ let _gyroDoEListener = false;
 let _gyroNeutralDeg = null;
 let _gyroFilteredDeg = null;
 const GYRO_REL_DEG_SMOOTH = 0.18;
-/* BIO: Derece basina kokpit yaw kazanci; ~1 sönük, ~2.85 ile yaklasik 14–15 derece tilt MAX_YAW civari. */
+/* BIO: Derece basina kokpit yaw kazanci; ~1 s枚n眉k, ~2.85 ile yaklasik 14鈥?5 derece tilt MAX_YAW civari. */
 const GYRO_YAW_SENS = 2.95;
 let _proScrollTouchBound = false;
 let _tsSwipeId = null;
@@ -836,7 +836,7 @@ const proAboutSubPickMeshes = [];
 const proAboutSubLabelSprites = [];
 const proAboutSubLabelTexts = { edu: 'Education', exp: 'Experience', bio: 'About Me' };
 let aboutBackMesh = null;
-let aboutBackLabelText = '◄ GO BACK';
+let aboutBackLabelText = '鈼?GO BACK';
 /* BIO: Planet layout, label, and interaction note. */
 let proAboutMode = 'idle';
 let proAboutAnim = { t: 0, duration: 0.55 };
@@ -883,7 +883,7 @@ let skillsSubRoot = null;
 const proSkillsSubGroups = [];
 const proSkillsSubLabelSprites = [];
 const proSkillsSubLabelTexts = {
-  ai: '人工智能',
+  ai: '浜哄伐鏅鸿兘',
   sec: 'Cyber Security'
 };
 let proSkillsMode = 'idle';
@@ -1723,7 +1723,7 @@ const _qYaw = new THREE.Quaternion();
 const _qPitch = new THREE.Quaternion();
 const _ray = new THREE.Raycaster();
 const _ndc = new THREE.Vector2();
-/** BIO: Decal-alpha raycasts — Mesh.prototype kullanımına geçici sonuç alanı (ayırma yapılmıyor). */
+/** BIO: Decal-alpha raycasts 鈥?Mesh.prototype kullan谋m谋na ge莽ici sonu莽 alan谋 (ay谋rma yap谋lm谋yor). */
 const _stickerPickRayTmp = [];
 
 /* BIO: Implementation note for this section. */
@@ -1779,7 +1779,7 @@ const COCKPIT_WELCOME_SCREEN = { x: -0.15, y: 0, z: 0 };
 const COCKPIT_WELCOME_PLANE = { w: 0.55, h: 0.23 };
 const COCKPIT_WELCOME_ROT = { x: 0, y: 1.6, z: 0 };
 const WELCOME_TITLE_CANVAS = { w: 1900, h: 960 };
-/** BIO: Mobil ilk ekran metni — daha büyük düzlem + daha yüksek canvas DPR. */
+/** BIO: Mobil ilk ekran metni 鈥?daha b眉y眉k d眉zlem + daha y眉ksek canvas DPR. */
 const WELCOME_TITLE_CANVAS_MOBILE = { w: 1560, h: 1000 };
 const WELCOME_MOBILE_PLANE_MUL = { w: 1.26, h: 1.36 };
 const WELCOME_FADE_IN_SEC = 1.1;
@@ -1889,7 +1889,7 @@ function createCockpitUiFaceMaterial(map) {
 }
 
 const COCKPIT_STICKER_PICK_ALPHA_MIN = 34;
-/** BIO: KTX sıkıştırılmış doku için raster okunamazsa Orpetron rozet UV’si (~daire) dar hitbox. */
+/** BIO: KTX s谋k谋艧t谋r谋lm谋艧 doku i莽in raster okunamazsa Orpetron rozet UV鈥檚i (~daire) dar hitbox. */
 const COCKPIT_ORPETRON_STICKER_UV_ELLIPSE_R2 = 0.195;
 
 function cockpitStickerUvPickPasses(mesh, hit) {
@@ -1898,7 +1898,7 @@ function cockpitStickerUvPickPasses(mesh, hit) {
   const pick = mesh.userData._stickerPick;
   if (pick && pick.data && pick.w > 1 && pick.h > 1) {
     const x = Math.max(0, Math.min(pick.w - 1, Math.round(uv.x * (pick.w - 1))));
-    /* BIO: üç.js UV ↔ canvas satır sırası; ters seçimde hep şeffaf okunursa uv.y ile değiştir. */
+    /* BIO: 眉莽.js UV 鈫?canvas sat谋r s谋ras谋; ters se莽imde hep 艧effaf okunursa uv.y ile de臒i艧tir. */
     const y = Math.max(0, Math.min(pick.h - 1, Math.round((1 - uv.y) * (pick.h - 1))));
     const a = pick.data[y * pick.w * 4 + x * 4 + 3];
     if (a < COCKPIT_STICKER_PICK_ALPHA_MIN) return false;
@@ -1965,7 +1965,7 @@ function createCockpitWelcomeMaterial(map) {
   });
 }
 
-/** BIO: Mobil HUD canvas — düşük DPR ile metin bulanıktı; 1.85 tavan ile denge. */
+/** BIO: Mobil HUD canvas 鈥?d眉艧眉k DPR ile metin bulan谋kt谋; 1.85 tavan ile denge. */
 function getCockpitCanvasDpr() {
   const r = typeof window !== 'undefined' && window.devicePixelRatio;
   const raw = r && r > 0 ? r : 1;
@@ -2037,7 +2037,7 @@ function drawVolSliderCanvas2d(ctx) {
   ctx.font = '26px "Segoe UI",sans-serif';
   ctx.textAlign = 'left';
   ctx.textBaseline = 'middle';
-  ctx.fillText(snap.iconMute ? '🔇' : '🔊', L.icon.x, L.icon.y + L.icon.h * 0.5);
+  ctx.fillText(snap.iconMute ? '馃攪' : '馃攰', L.icon.x, L.icon.y + L.icon.h * 0.5);
 
   const b = L.blocks;
   const gap = 2;
@@ -2104,10 +2104,10 @@ function drawVolPlayerCanvas2d(ctx) {
   const cy = L.play.y + L.play.h * 0.5;
   const cyPrev = L.prev.y + L.prev.h * 0.5;
   const cyNext = L.next.y + L.next.h * 0.5;
-  ctx.fillText('⏮', L.prev.x + L.prev.w * 0.5, cyPrev);
+  ctx.fillText('鈴?, L.prev.x + L.prev.w * 0.5, cyPrev);
   const playing = snap.music && !snap.music.paused;
-  ctx.fillText(playing ? '⏸' : '▶', L.play.x + L.play.w * 0.5, cy);
-  ctx.fillText('⏭', L.next.x + L.next.w * 0.5, cyNext);
+  ctx.fillText(playing ? '鈴? : '鈻?, L.play.x + L.play.w * 0.5, cy);
+  ctx.fillText('鈴?, L.next.x + L.next.w * 0.5, cyNext);
 
   const p = L.progress;
   const dur = snap.music.dur;
@@ -2511,7 +2511,7 @@ function syncLangButtonTextures() {
     const data = m.userData;
     if (!data._ctx) continue;
     const lang = data.lang;
-    const up = lang === 'de' ? '中文' : (lang || 'en').toString().toUpperCase();
+    const up = lang === 'de' ? '涓枃' : (lang || 'en').toString().toUpperCase();
     const h = data._uiHoverF != null ? data._uiHoverF : 0;
     drawLangButtonCanvas(data._ctx, LANG_CANVAS.w, LANG_CANVAS.h, up, active === lang, h);
     if (data._map) {
@@ -2562,7 +2562,7 @@ function isPointerOverProMapOpen(clientX, clientY) {
   return !!hit.closest('#pro-map-overlay');
 }
 
-/* BIO: Tooltip metinleri — document.documentElement.lang ile seçilir (_proCurrentLang). */
+/* BIO: Tooltip metinleri 鈥?document.documentElement.lang ile se莽ilir (_proCurrentLang). */
 const PRO_COCKPIT_STICKER_HINT_COPY = {
   frog: {
     tr: 'Sticker',
@@ -2570,12 +2570,12 @@ const PRO_COCKPIT_STICKER_HINT_COPY = {
     de: 'Sticker'
   },
   orpetronSotd: {
-    tr: 'Orpetron Ödülü',
+    tr: 'Orpetron 脰d眉l眉',
     en: 'Orpetron Award',
     de: 'Orpetron-Auszeichnung'
   },
   designNominees: {
-    tr: 'Design Nominees Ödülü',
+    tr: 'Design Nominees 脰d眉l眉',
     en: 'Design Nominees Award',
     de: 'Design-Nominees-Auszeichnung'
   },
@@ -2632,7 +2632,7 @@ function tryHandleCockpitAwardStickerClick(e, obj) {
   return true;
 }
 
-/* BIO: Sol tıklama ile aynı pick sırası; orta tık `auxclick` ile gelir (`click` ateşlenmez). */
+/* BIO: Sol t谋klama ile ayn谋 pick s谋ras谋; orta t谋k `auxclick` ile gelir (`click` ate艧lenmez). */
 function cockpitTryAwardStickerFromMiddleClick(e, clientX, clientY) {
   if (
     (!_cockpitOrpetronSotdDecalMesh &&
@@ -2684,7 +2684,7 @@ function onCockpitUiAuxclick(e) {
   cockpitTryAwardStickerFromMiddleClick(e, e.clientX, e.clientY);
 }
 
-/* BIO: Frog + ödül çıkartmaları için ortak araç ipucu. */
+/* BIO: Frog + 枚d眉l 莽谋kartmalar谋 i莽in ortak ara莽 ipucu. */
 function updateFrogStickerHint(clientX, clientY) {
   if (!camera || !renderer) {
     setFrogStickerHintVisible(false);
@@ -3096,7 +3096,7 @@ function onTouchEndCockpitUi() {
 /* BIO: Pause heavy WebGL/CSS3D work during Default exit modal / intro2 (video + renderer = jank). */
 let _cockpitRenderPaused = false;
 let _cockpitMobileRafScheduled = false;
-/** BIO: Mobil IntersectionObserver; tam ekranda genelde sürekli kesişir — sekme yokluğu document.hidden ile. */
+/** BIO: Mobil IntersectionObserver; tam ekranda genelde s眉rekli kesi艧ir 鈥?sekme yoklu臒u document.hidden ile. */
 let _cockpitMobileIoIntersecting = true;
 
 function _cockpitMobileShouldThrottleAnimate() {
@@ -3107,7 +3107,7 @@ function _cockpitMobileShouldThrottleAnimate() {
   return false;
 }
 
-/** BIO: RAF zinciri kesildiğinde (sekme arka plan / görünmez sarmalayıcı) yeniden başlatır. */
+/** BIO: RAF zinciri kesildi臒inde (sekme arka plan / g枚r眉nmez sarmalay谋c谋) yeniden ba艧lat谋r. */
 function kickCockpitMobileAnimateChain() {
   if (!IS_PRO_MOBILE_VIEWPORT) return;
   if (_cockpitMobileRafScheduled) return;
@@ -3132,7 +3132,7 @@ function setupCockpitMobileRafObservers(wrapEl) {
     { passive: true }
   );
 
-  /* BIO: Dokunulabilir yüzeye kaydırılırsa veya gizlenirse RAF’ı düşür. */
+  /* BIO: Dokunulabilir y眉zeye kayd谋r谋l谋rsa veya gizlenirse RAF鈥櫮?d眉艧眉r. */
   try {
     if (!wrapEl || typeof IntersectionObserver === 'undefined') return;
     const io = new IntersectionObserver(
@@ -3165,7 +3165,7 @@ if (typeof window !== 'undefined') {
 }
 
 function animate() {
-  /* BIO: Masüstü — mevcut davranış korunur. Mobil — zincir uygun değilse durur (sekme arka plan / görünmez). */
+  /* BIO: Mas眉st眉 鈥?mevcut davran谋艧 korunur. Mobil 鈥?zincir uygun de臒ilse durur (sekme arka plan / g枚r眉nmez). */
   if (!IS_PRO_MOBILE_VIEWPORT) {
     requestAnimationFrame(animate);
   } else {
@@ -3679,7 +3679,7 @@ function addCockpitUfo(worldScene, maxDim) {
     },
     undefined,
     err => {
-      console.warn('[cockpit-3d] UFO glb yüklenemedi:', err?.message || err);
+      console.warn('[cockpit-3d] UFO glb y眉klenemedi:', err?.message || err);
     }
   );
 }
@@ -5614,12 +5614,12 @@ const PRO_SUB_DETAIL_REGISTRY = {
       stroke: 'rgba(255,175,102,.45)'
     },
     labelText: {
-      tr: 'Yeditepe Üniversitesi 3D Modeli (Temsili)',
+      tr: 'Yeditepe 脺niversitesi 3D Modeli (Temsili)',
       en: 'Yeditepe University 3D Model (Representative)',
-      de: 'Yeditepe Universität 3D-Modell (Symbolisch)'
+      de: 'Yeditepe Universit盲t 3D-Modell (Symbolisch)'
     },
     scrollHintText: {
-      tr: '3D modeli görmek için kaydırın',
+      tr: '3D modeli g枚rmek i莽in kayd谋r谋n',
       en: 'Scroll to see the 3D model',
       de: 'Scrollen, um das 3D-Modell zu sehen'
     },
@@ -5659,12 +5659,12 @@ const PRO_SUB_DETAIL_REGISTRY = {
       stroke: 'rgba(255,175,102,.45)'
     },
     labelText: {
-      tr: 'Pilot Kimlik Kartı',
+      tr: 'Pilot Kimlik Kart谋',
       en: 'Pilot Identity Card',
-      de: 'Pilot-Identitätsausweis'
+      de: 'Pilot-Identit盲tsausweis'
     },
     scrollHintText: {
-      tr: 'Pilot kimlik kartını görmek için kaydırın',
+      tr: 'Pilot kimlik kart谋n谋 g枚rmek i莽in kayd谋r谋n',
       en: 'Scroll to see the pilot ID card',
       de: 'Scrollen, um den Pilotenausweis zu sehen'
     },
@@ -5702,12 +5702,12 @@ const PRO_SUB_DETAIL_REGISTRY = {
       stroke: 'rgba(92,255,168,.45)'
     },
     labelText: {
-      tr: 'Atış Arşivi',
+      tr: 'At谋艧 Ar艧ivi',
       en: 'Shooting Archive',
-      de: 'Schieß-Archiv'
+      de: 'Schie脽-Archiv'
     },
     scrollHintText: {
-      tr: 'Fotoğrafları ve 3D modeli görmek için kaydırın',
+      tr: 'Foto臒raflar谋 ve 3D modeli g枚rmek i莽in kayd谋r谋n',
       en: 'Scroll to see the photos and the 3D model',
       de: 'Scrollen, um die Fotos und das 3D-Modell zu sehen'
     },
@@ -5718,9 +5718,9 @@ const PRO_SUB_DETAIL_REGISTRY = {
     /* BIO: Scroll and navigation behavior note. */
     photoObjectPosition: { p2: 'center 18%' },
     wallText: {
-      tr: { title: 'ATIŞ ARŞİVİ', p1: 'Poligonda atış talimi · 2024', p2: 'Atıcılığın ilk başları · 2024' },
-      en: { title: 'SHOOTING ARCHIVE', p1: 'Practice at the range · 2024', p2: 'The early days of shooting · 2024' },
-      de: { title: 'SCHIESS-ARCHIV', p1: 'Schießübung am Stand · 2024', p2: 'Die Anfänge des Schießsports · 2024' }
+      tr: { title: 'ATI艦 AR艦陌V陌', p1: 'Poligonda at谋艧 talimi 路 2024', p2: 'At谋c谋l谋臒谋n ilk ba艧lar谋 路 2024' },
+      en: { title: 'SHOOTING ARCHIVE', p1: 'Practice at the range 路 2024', p2: 'The early days of shooting 路 2024' },
+      de: { title: 'SCHIESS-ARCHIV', p1: 'Schie脽眉bung am Stand 路 2024', p2: 'Die Anf盲nge des Schie脽sports 路 2024' }
     },
     builder: {
       type: 'procedural',
@@ -5739,9 +5739,9 @@ const PRO_SUB_DETAIL_REGISTRY = {
       /* BIO: Implementation note for this section. */
       labelPos: { x: -1, y: 0.4, z: 0 },
       labelText: {
-        tr: 'Atıcılık 3D Figürüm',
+        tr: 'At谋c谋l谋k 3D Fig眉r眉m',
         en: 'My Shooting 3D Figure',
-        de: 'Meine 3D-Schießfigur'
+        de: 'Meine 3D-Schie脽figur'
       },
       /* BIO: Implementation note for this section. */
       labelPxWidth: 960,
@@ -5778,12 +5778,12 @@ const PRO_SUB_DETAIL_REGISTRY = {
       stroke: 'rgba(92,255,168,.45)'
     },
     labelText: {
-      tr: 'E-Spor Arşivi',
+      tr: 'E-Spor Ar艧ivi',
       en: 'E-Sports Archive',
       de: 'E-Sport-Archiv'
     },
     scrollHintText: {
-      tr: 'Fotoğrafları görmek için kaydırın',
+      tr: 'Foto臒raflar谋 g枚rmek i莽in kayd谋r谋n',
       en: 'Scroll to see the photos',
       de: 'Scrollen, um die Fotos zu sehen'
     },
@@ -5793,19 +5793,19 @@ const PRO_SUB_DETAIL_REGISTRY = {
     },
     wallText: {
       tr: {
-        title: 'E-SPOR ARŞİVİ',
-        p1: 'İlk offline turnuvam · Küçükçekmece, 2021',
-        p2: 'Takımımla turnuvada · (En soldaki benim)'
+        title: 'E-SPOR AR艦陌V陌',
+        p1: '陌lk offline turnuvam 路 K眉莽眉k莽ekmece, 2021',
+        p2: 'Tak谋m谋mla turnuvada 路 (En soldaki benim)'
       },
       en: {
         title: 'E-SPORTS ARCHIVE',
-        p1: 'My first offline tournament · Küçükçekmece, 2021',
-        p2: 'With my team at the tournament · (I am on the far left)'
+        p1: 'My first offline tournament 路 K眉莽眉k莽ekmece, 2021',
+        p2: 'With my team at the tournament 路 (I am on the far left)'
       },
       de: {
         title: 'E-SPORT-ARCHIV',
-        p1: 'Mein erstes Offline-Turnier · Küçükçekmece, 2021',
-        p2: 'Mit meinem Team beim Turnier · (Ich bin ganz links)'
+        p1: 'Mein erstes Offline-Turnier 路 K眉莽眉k莽ekmece, 2021',
+        p2: 'Mit meinem Team beim Turnier 路 (Ich bin ganz links)'
       }
     },
     builder: {
@@ -5842,7 +5842,7 @@ const PRO_SUB_STATIC_DECOR_REGISTRY = {
         glowColor: '#ff6a00',
         glowScaleMul: 2.4,
         hoverScale: 1.18,
-        onClick: { type: 'href', href: 'mailto:bilalsanli@outlook.com' }
+        onClick: { type: 'href', href: 'mailto:dahat5632@gmail.com' }
       }
     ]
   },
@@ -5913,17 +5913,17 @@ const PRO_SUB_TERMINAL_CONFIG = {
 const PRO_SUB_CONTENT = {
   about: {
     edu: {
-      tr: { title: 'EĞİTİM', html: `
+      tr: { title: 'E臑陌T陌M', html: `
         <div class="tl-wrap">
           <div class="tl-item active">
-            <div class="tl-year">2024 — 2027</div>
-            <div class="tl-title">Yeditepe Üniversitesi</div>
-            <div class="tl-desc">İnternet ve Ağ Teknolojileri</div>
+            <div class="tl-year">2024 鈥?2027</div>
+            <div class="tl-title">Yeditepe 脺niversitesi</div>
+            <div class="tl-desc">陌nternet ve A臒 Teknolojileri</div>
           </div>
           <div class="tl-item">
-            <div class="tl-year">2020 — 2024</div>
-            <div class="tl-title">Güç Kardeşler Anadolu Lisesi</div>
-            <div class="tl-desc">Lise Eğitimi</div>
+            <div class="tl-year">2020 鈥?2024</div>
+            <div class="tl-title">G眉莽 Karde艧ler Anadolu Lisesi</div>
+            <div class="tl-desc">Lise E臒itimi</div>
           </div>
         </div>
         <hr class="divider">
@@ -5935,13 +5935,13 @@ const PRO_SUB_CONTENT = {
       en: { title: 'EDUCATION', html: `
         <div class="tl-wrap">
           <div class="tl-item active">
-            <div class="tl-year">2024 — 2027</div>
+            <div class="tl-year">2024 鈥?2027</div>
             <div class="tl-title">Yeditepe University</div>
             <div class="tl-desc">Internet and Network Technologies</div>
           </div>
           <div class="tl-item">
-            <div class="tl-year">2020 — 2024</div>
-            <div class="tl-title">Güç Kardeşler Anatolian High School</div>
+            <div class="tl-year">2020 鈥?2024</div>
+            <div class="tl-title">G眉莽 Karde艧ler Anatolian High School</div>
             <div class="tl-desc">High School Education</div>
           </div>
         </div>
@@ -5954,13 +5954,13 @@ const PRO_SUB_CONTENT = {
       de: { title: 'AUSBILDUNG', html: `
         <div class="tl-wrap">
           <div class="tl-item active">
-            <div class="tl-year">2024 — 2027</div>
-            <div class="tl-title">Yeditepe Universität</div>
+            <div class="tl-year">2024 鈥?2027</div>
+            <div class="tl-title">Yeditepe Universit盲t</div>
             <div class="tl-desc">Internet- und Netzwerktechnologien</div>
           </div>
           <div class="tl-item">
-            <div class="tl-year">2020 — 2024</div>
-            <div class="tl-title">Güç Kardeşler Anatolisches Gymnasium</div>
+            <div class="tl-year">2020 鈥?2024</div>
+            <div class="tl-title">G眉莽 Karde艧ler Anatolisches Gymnasium</div>
             <div class="tl-desc">Gymnasiale Ausbildung</div>
           </div>
         </div>
@@ -5972,38 +5972,38 @@ const PRO_SUB_CONTENT = {
         </div>` }
     },
     exp: {
-      tr: { title: 'DENEYİM', html: `<p>Henüz öğrenciyim. Deneyim kazandıkça bu bölümü güncelleyeceğim.</p>` },
+      tr: { title: 'DENEY陌M', html: `<p>Hen眉z 枚臒renciyim. Deneyim kazand谋k莽a bu b枚l眉m眉 g眉ncelleyece臒im.</p>` },
       en: { title: 'EXPERIENCE', html: `<p>I'm still a student. I'll update this section as I gain experience.</p>` },
       de: { title: 'ERFAHRUNG', html: `<p>Ich bin noch Student. Ich werde diesen Bereich aktualisieren, sobald ich Erfahrung gesammelt habe.</p>` }
     },
     bio: {
       tr: { title: 'HAKKIMDA', html: `
-        <p>Merhaba! Ben <strong>周天爽</strong>. Namıdiğer <strong>Bio</strong></p>
+        <p>Merhaba! Ben <strong>鍛ㄥぉ鐖?/strong>. Nam谋di臒er <strong>Bio</strong></p>
         <hr class="divider">
-        <p>Siber Güvenlik ve Yapay Zeka alanlarına ilgi duyuyorum ve bu alanlarda her gün kendimi geliştirmek için çabalıyorum. Özellikle Yapay Zeka destekli Siber Güvenlik Sistemleri üzerine yoğunlaşarak, dijital dünyadaki tehditleri henüz gerçekleşmeden tespit edebilen akıllı botlar geliştirmeyi hedefliyorum.</p>
+        <p>Siber G眉venlik ve Yapay Zeka alanlar谋na ilgi duyuyorum ve bu alanlarda her g眉n kendimi geli艧tirmek i莽in 莽abal谋yorum. 脰zellikle Yapay Zeka destekli Siber G眉venlik Sistemleri 眉zerine yo臒unla艧arak, dijital d眉nyadaki tehditleri hen眉z ger莽ekle艧meden tespit edebilen ak谋ll谋 botlar geli艧tirmeyi hedefliyorum.</p>
         <hr class="divider">
-        <p class="psh-note">Bunların dışında hobi olarak E-Spor, Basketbol, Atıcılık sporlarına ilgi duyuyorum. Gezmeyi ve yeni yerler keşfetmeyi seviyorum. Genellikle sessiz bir kişiliğim var ama aramızdaki buzları kırdığımızda bazen de çok konuşabilirim :)</p>` },
+        <p class="psh-note">Bunlar谋n d谋艧谋nda hobi olarak E-Spor, Basketbol, At谋c谋l谋k sporlar谋na ilgi duyuyorum. Gezmeyi ve yeni yerler ke艧fetmeyi seviyorum. Genellikle sessiz bir ki艧ili臒im var ama aram谋zdaki buzlar谋 k谋rd谋臒谋m谋zda bazen de 莽ok konu艧abilirim :)</p>` },
       en: { title: 'ABOUT ME', html: `
-        <p>Hello! I'm <strong>周天爽</strong>. Also known as <strong>Bio</strong></p>
+        <p>Hello! I'm <strong>鍛ㄥぉ鐖?/strong>. Also known as <strong>Bio</strong></p>
         <hr class="divider">
         <p>I'm passionate about Cybersecurity and Artificial Intelligence, and I strive to improve myself in these fields every day. I'm particularly focused on AI-powered Cybersecurity Systems, aiming to develop intelligent bots that can detect digital threats before they even occur.</p>
         <hr class="divider">
         <p class="psh-note">Besides these, I'm interested in E-Sports, Basketball, and Shooting sports as hobbies. I love traveling and exploring new places. I'm generally a quiet person, but once we break the ice, I can be quite talkative sometimes :)</p>` },
-      de: { title: 'ÜBER MICH', html: `
-        <p>Hallo! Ich bin <strong>周天爽</strong>. Auch bekannt als <strong>Bio</strong></p>
+      de: { title: '脺BER MICH', html: `
+        <p>Hallo! Ich bin <strong>鍛ㄥぉ鐖?/strong>. Auch bekannt als <strong>Bio</strong></p>
         <hr class="divider">
-        <p>Ich interessiere mich für Cybersicherheit und Künstliche Intelligenz und arbeite jeden Tag daran, mich in diesen Bereichen weiterzuentwickeln. Mein besonderer Fokus liegt auf KI-gestützten Cybersicherheitssystemen, mit dem Ziel, intelligente Bots zu entwickeln, die digitale Bedrohungen erkennen, bevor sie auftreten.</p>
+        <p>Ich interessiere mich f眉r Cybersicherheit und K眉nstliche Intelligenz und arbeite jeden Tag daran, mich in diesen Bereichen weiterzuentwickeln. Mein besonderer Fokus liegt auf KI-gest眉tzten Cybersicherheitssystemen, mit dem Ziel, intelligente Bots zu entwickeln, die digitale Bedrohungen erkennen, bevor sie auftreten.</p>
         <hr class="divider">
-        <p class="psh-note">Abgesehen davon interessiere ich mich für E-Sport, Basketball und Schießsport als Hobbys. Ich reise gerne und entdecke neue Orte. Ich bin generell eine ruhige Person, aber wenn das Eis gebrochen ist, kann ich manchmal auch sehr gesprächig sein :)</p>` }
+        <p class="psh-note">Abgesehen davon interessiere ich mich f眉r E-Sport, Basketball und Schie脽sport als Hobbys. Ich reise gerne und entdecke neue Orte. Ich bin generell eine ruhige Person, aber wenn das Eis gebrochen ist, kann ich manchmal auch sehr gespr盲chig sein :)</p>` }
     }
   },
   projects: {
     web: {
-      tr: { title: 'SİBER GÜVENLİK PROJELERİ', html: `
+      tr: { title: 'S陌BER G脺VENL陌K PROJELER陌', html: `
         <p><strong>Projeler</strong></p>
-        <ul><li>Çok yakında...</li><li>Çok yakında...</li><li>Çok yakında...</li></ul>
+        <ul><li>脟ok yak谋nda...</li><li>脟ok yak谋nda...</li><li>脟ok yak谋nda...</li></ul>
         <hr class="divider">
-        <p><strong>Kullandığım Teknolojiler</strong></p>
+        <p><strong>Kulland谋臒谋m Teknolojiler</strong></p>
         <ul><li>Python</li><li>[eklenecek]</li><li>[eklenecek]</li></ul>` },
       en: { title: 'CYBER SECURITY PROJECTS', html: `
         <p><strong>Projects</strong></p>
@@ -6016,14 +6016,14 @@ const PRO_SUB_CONTENT = {
         <ul><li>Kommt bald...</li><li>Kommt bald...</li><li>Kommt bald...</li></ul>
         <hr class="divider">
         <p><strong>Verwendete Technologien</strong></p>
-        <ul><li>Python</li><li>[wird hinzugefügt]</li><li>[wird hinzugefügt]</li></ul>` }
+        <ul><li>Python</li><li>[wird hinzugef眉gt]</li><li>[wird hinzugef眉gt]</li></ul>` }
     },
     mob: {
-      tr: { title: 'YAPAY ZEKA PROJELERİ', html: `
+      tr: { title: 'YAPAY ZEKA PROJELER陌', html: `
         <p><strong>Projeler</strong></p>
-        <ul><li>Çok yakında...</li><li>Çok yakında...</li></ul>
+        <ul><li>脟ok yak谋nda...</li><li>脟ok yak谋nda...</li></ul>
         <hr class="divider">
-        <p>Projeler hakkında bilgiler eklenecek</p>` },
+        <p>Projeler hakk谋nda bilgiler eklenecek</p>` },
       en: { title: 'AI PROJECTS', html: `
         <p><strong>Projects</strong></p>
         <ul><li>Coming soon...</li><li>Coming soon...</li></ul>
@@ -6033,14 +6033,14 @@ const PRO_SUB_CONTENT = {
         <p><strong>Projekte</strong></p>
         <ul><li>Kommt bald...</li><li>Kommt bald...</li></ul>
         <hr class="divider">
-        <p>Projektdetails werden hinzugefügt</p>` }
+        <p>Projektdetails werden hinzugef眉gt</p>` }
     },
     back: {
       tr: { title: 'KARMA PROJELER', html: `
         <p><strong>Projeler</strong></p>
-        <ul><li>Çok yakında...</li><li>Çok yakında...</li></ul>
+        <ul><li>脟ok yak谋nda...</li><li>脟ok yak谋nda...</li></ul>
         <hr class="divider">
-        <p><strong>Kullandığım Teknolojiler</strong></p>
+        <p><strong>Kulland谋臒谋m Teknolojiler</strong></p>
         <ul><li>Python</li><li>[eklenecek]</li><li>[eklenecek]</li></ul>` },
       en: { title: 'MIXED PROJECTS', html: `
         <p><strong>Projects</strong></p>
@@ -6053,7 +6053,7 @@ const PRO_SUB_CONTENT = {
         <ul><li>Kommt bald...</li><li>Kommt bald...</li></ul>
         <hr class="divider">
         <p><strong>Verwendete Technologien</strong></p>
-        <ul><li>Python</li><li>[wird hinzugefügt]</li><li>[wird hinzugefügt]</li></ul>` }
+        <ul><li>Python</li><li>[wird hinzugef眉gt]</li><li>[wird hinzugef眉gt]</li></ul>` }
     }
   },
   hobbies: {
@@ -6062,7 +6062,7 @@ const PRO_SUB_CONTENT = {
         <p><strong>Favori Oyunlar</strong></p>
         <ul><li>VALORANT</li><li>CS2</li></ul>
         <hr class="divider">
-        <p>E-spor; bana iletişim, takım oyunu, stres altında soğukkanlı karar verme ve hızlı problem çözme yetisi kazandırdı. Rekabetçi arenada edindiğim bu disiplin, sadece oyunlarda değil, hayatta da bana yardımcı oldu.</p>` },
+        <p>E-spor; bana ileti艧im, tak谋m oyunu, stres alt谋nda so臒ukkanl谋 karar verme ve h谋zl谋 problem 莽枚zme yetisi kazand谋rd谋. Rekabet莽i arenada edindi臒im bu disiplin, sadece oyunlarda de臒il, hayatta da bana yard谋mc谋 oldu.</p>` },
       en: { title: 'E-SPORTS', html: `
         <p><strong>Favorite Games</strong></p>
         <ul><li>VALORANT</li><li>CS2</li></ul>
@@ -6072,34 +6072,34 @@ const PRO_SUB_CONTENT = {
         <p><strong>Lieblingsspiele</strong></p>
         <ul><li>VALORANT</li><li>CS2</li></ul>
         <hr class="divider">
-        <p>E-Sport hat mir Kommunikation, Teamarbeit, besonnene Entscheidungsfindung unter Druck und schnelles Problemlösen beigebracht. Die Disziplin, die ich in der kompetitiven Arena gewonnen habe, hat mir nicht nur in Spielen, sondern auch im Leben geholfen.</p>` }
+        <p>E-Sport hat mir Kommunikation, Teamarbeit, besonnene Entscheidungsfindung unter Druck und schnelles Probleml枚sen beigebracht. Die Disziplin, die ich in der kompetitiven Arena gewonnen habe, hat mir nicht nur in Spielen, sondern auch im Leben geholfen.</p>` }
     },
     sht: {
       tr: { title: 'ATICILIK', html: `
-        <p>Atıcılık; sabır, özdenetim ve stres yönetimi demektir. 10m havalı tüfek branşında edindiğim bu 'tek bir ana odaklanma' yetisi, bugün karmaşık problemleri çözerken kullandığım en güçlü zihinsel aracım.</p>
+        <p>At谋c谋l谋k; sab谋r, 枚zdenetim ve stres y枚netimi demektir. 10m haval谋 t眉fek bran艧谋nda edindi臒im bu 'tek bir ana odaklanma' yetisi, bug眉n karma艧谋k problemleri 莽枚zerken kulland谋臒谋m en g眉莽l眉 zihinsel arac谋m.</p>
         <hr class="divider">
-        <p class="psh-note">Konsantrasyon, sabır ve disiplin gerektiren bu sporu herkese tavsiye ederim. Bence bu sporu herkes en az bir kere de olsa deneyimlemeli. Çünkü hem zevkli hem de bir o kadar zorlu bir spor.</p>` },
+        <p class="psh-note">Konsantrasyon, sab谋r ve disiplin gerektiren bu sporu herkese tavsiye ederim. Bence bu sporu herkes en az bir kere de olsa deneyimlemeli. 脟眉nk眉 hem zevkli hem de bir o kadar zorlu bir spor.</p>` },
       en: { title: 'SHOOTING', html: `
         <p>Shooting means patience, self-control, and stress management. The ability to 'focus on a single moment' that I gained in the 10m air rifle discipline is the strongest mental tool I use today when solving complex problems.</p>
         <hr class="divider">
         <p class="psh-note">I recommend this sport, which requires concentration, patience, and discipline, to everyone. I think everyone should experience it at least once. Because it's both enjoyable and equally challenging.</p>` },
-      de: { title: 'SCHIEẞEN', html: `
-        <p>Schießsport bedeutet Geduld, Selbstbeherrschung und Stressbewältigung. Die Fähigkeit, mich auf einen einzigen Moment zu konzentrieren, die ich in der 10m-Luftgewehr-Disziplin erworben habe, ist heute mein stärkstes mentales Werkzeug beim Lösen komplexer Probleme.</p>
+      de: { title: 'SCHIE岷濫N', html: `
+        <p>Schie脽sport bedeutet Geduld, Selbstbeherrschung und Stressbew盲ltigung. Die F盲higkeit, mich auf einen einzigen Moment zu konzentrieren, die ich in der 10m-Luftgewehr-Disziplin erworben habe, ist heute mein st盲rkstes mentales Werkzeug beim L枚sen komplexer Probleme.</p>
         <hr class="divider">
         <p class="psh-note">Ich empfehle diesen Sport, der Konzentration, Geduld und Disziplin erfordert, jedem. Ich denke, jeder sollte ihn mindestens einmal erleben. Denn er ist sowohl unterhaltsam als auch ebenso herausfordernd.</p>` }
     },
     tec: {
-      tr: { title: 'TEKNOLOJİ TRENDLERİ', html: `
-        <p><strong>Takip Ettiğim Alanlar</strong></p>
+      tr: { title: 'TEKNOLOJ陌 TRENDLER陌', html: `
+        <p><strong>Takip Etti臒im Alanlar</strong></p>
         <ul>
-          <li>Yapay Zeka &amp; LLM gelişmeleri</li>
-          <li>Siber güvenlik haberleri</li>
-          <li>Yeni siber güvenlik &amp; yapay zeka uygulamaları</li>
-          <li>Donanım &amp; yonga mimarisi</li>
+          <li>Yapay Zeka &amp; LLM geli艧meleri</li>
+          <li>Siber g眉venlik haberleri</li>
+          <li>Yeni siber g眉venlik &amp; yapay zeka uygulamalar谋</li>
+          <li>Donan谋m &amp; yonga mimarisi</li>
           <li>Kuantum Bilgisayar</li>
         </ul>
         <hr class="divider">
-        <p>Teknoloji trendlerini takip etmeyi çok seviyorum. Çünkü bu sayede yapay zeka, siber güvenlik ve diğer alanlarda kendimi geliştirebilecek fikirleri kafamda oluşturabiliyorum. Ayrıca çok hızlı ilerleyen teknolojileri kaçırmayarak kendimi geliştiriyorum.</p>` },
+        <p>Teknoloji trendlerini takip etmeyi 莽ok seviyorum. 脟眉nk眉 bu sayede yapay zeka, siber g眉venlik ve di臒er alanlarda kendimi geli艧tirebilecek fikirleri kafamda olu艧turabiliyorum. Ayr谋ca 莽ok h谋zl谋 ilerleyen teknolojileri ka莽谋rmayarak kendimi geli艧tiriyorum.</p>` },
       en: { title: 'TECH TRENDS', html: `
         <p><strong>Areas I Follow</strong></p>
         <ul>
@@ -6114,34 +6114,34 @@ const PRO_SUB_CONTENT = {
       de: { title: 'TECH-TRENDS', html: `
         <p><strong>Bereiche, denen ich folge</strong></p>
         <ul>
-          <li>Künstliche Intelligenz &amp; LLM-Entwicklungen</li>
+          <li>K眉nstliche Intelligenz &amp; LLM-Entwicklungen</li>
           <li>Cybersicherheits-Nachrichten</li>
           <li>Neue Cybersicherheits- &amp; KI-Anwendungen</li>
           <li>Hardware &amp; Chiparchitektur</li>
           <li>Quantencomputer</li>
         </ul>
         <hr class="divider">
-        <p>Ich verfolge sehr gerne Technologietrends. Dadurch kann ich Ideen entwickeln, um mich in den Bereichen Künstliche Intelligenz, Cybersicherheit und anderen Feldern weiterzuentwickeln. Außerdem halte ich mich durch die schnell fortschreitenden Technologien stets auf dem Laufenden.</p>` }
+        <p>Ich verfolge sehr gerne Technologietrends. Dadurch kann ich Ideen entwickeln, um mich in den Bereichen K眉nstliche Intelligenz, Cybersicherheit und anderen Feldern weiterzuentwickeln. Au脽erdem halte ich mich durch die schnell fortschreitenden Technologien stets auf dem Laufenden.</p>` }
     },
     trv: {
-      tr: { title: 'SEYAHAT', html: `<p>Seyahat etmeyi ve yeni yerler keşfetmeyi seviyorum. Çünkü her yeni yere gittiğimde yeni fikirler ve deneyimler kazanıyorum. Ayrıca yeni yerlere gidince sanki beynimin farklı yerlerini kullanıyormuş gibi hissediyorum.</p>` },
+      tr: { title: 'SEYAHAT', html: `<p>Seyahat etmeyi ve yeni yerler ke艧fetmeyi seviyorum. 脟眉nk眉 her yeni yere gitti臒imde yeni fikirler ve deneyimler kazan谋yorum. Ayr谋ca yeni yerlere gidince sanki beynimin farkl谋 yerlerini kullan谋yormu艧 gibi hissediyorum.</p>` },
       en: { title: 'TRAVEL', html: `<p>I love traveling and exploring new places. Because every time I visit a new place, I gain new ideas and experiences. Also, when I go to new places, I feel like I'm using different parts of my brain.</p>` },
-      de: { title: 'REISEN', html: `<p>Ich liebe es zu reisen und neue Orte zu entdecken. Denn jedes Mal, wenn ich einen neuen Ort besuche, gewinne ich neue Ideen und Erfahrungen. Außerdem habe ich das Gefühl, verschiedene Teile meines Gehirns zu nutzen, wenn ich neue Orte besuche.</p>` }
+      de: { title: 'REISEN', html: `<p>Ich liebe es zu reisen und neue Orte zu entdecken. Denn jedes Mal, wenn ich einen neuen Ort besuche, gewinne ich neue Ideen und Erfahrungen. Au脽erdem habe ich das Gef眉hl, verschiedene Teile meines Gehirns zu nutzen, wenn ich neue Orte besuche.</p>` }
     }
   },
   skills: {
     ai: {
       tr: { title: 'YAPAY ZEKA', html: `
-        <p><strong>Kütüphaneler &amp; Araçlar</strong></p>
+        <p><strong>K眉t眉phaneler &amp; Ara莽lar</strong></p>
         <ul><li>Obsidian</li><li>Codex, VS Code, Gemini, Claude Code</li></ul>
         <hr class="divider">
-        <p><strong>Tamamladığım Projeler</strong></p>
-        <ul><li><a href="https://github.com/bilalgurkansanli/Health_Insurance_Cost_Prediction" target="_blank" rel="noopener">Health Insurance Cost Prediction</a><br><span>ML modelleriyle kişisel özelliklere dayalı sağlık sigortası maliyeti tahmini <strong>(Denetimli Öğrenme)</strong></span></li></ul>
+        <p><strong>Tamamlad谋臒谋m Projeler</strong></p>
+        <ul><li><a href="https://github.com/bilalgurkansanli/Health_Insurance_Cost_Prediction" target="_blank" rel="noopener">Health Insurance Cost Prediction</a><br><span>ML modelleriyle ki艧isel 枚zelliklere dayal谋 sa臒l谋k sigortas谋 maliyeti tahmini <strong>(Denetimli 脰臒renme)</strong></span></li></ul>
         <hr class="divider">
-        <p><strong>İlgi Alanları</strong></p>
-        <ul><li>Doğal Dil İşleme (NLP)</li><li>Makine Öğrenmesi</li><li>Üretken Yapay Zeka (GenAI)</li></ul>` },
-      en: { title: '人工智能', html: `
-        <p><strong>知识库和工具</strong></p>
+        <p><strong>陌lgi Alanlar谋</strong></p>
+        <ul><li>Do臒al Dil 陌艧leme (NLP)</li><li>Makine 脰臒renmesi</li><li>脺retken Yapay Zeka (GenAI)</li></ul>` },
+      en: { title: '浜哄伐鏅鸿兘', html: `
+        <p><strong>鐭ヨ瘑搴撳拰宸ュ叿</strong></p>
         <ul><li>Obsidian</li><li>Codex, VS Code, Gemini, Claude Code</li></ul>
         <hr class="divider">
         <p><strong>Completed Projects</strong></p>
@@ -6149,64 +6149,64 @@ const PRO_SUB_CONTENT = {
         <hr class="divider">
         <p><strong>Areas of Interest</strong></p>
         <ul><li>Natural Language Processing (NLP)</li><li>Machine Learning</li><li>Generative AI (GenAI)</li></ul>` },
-      de: { title: 'KÜNSTLICHE INTELLIGENZ', html: `
+      de: { title: 'K脺NSTLICHE INTELLIGENZ', html: `
         <p><strong>Bibliotheken &amp; Werkzeuge</strong></p>
         <ul><li>Obsidian</li><li>Codex, VS Code, Gemini, Claude Code</li></ul>
         <hr class="divider">
         <p><strong>Abgeschlossene Projekte</strong></p>
-        <ul><li><a href="https://github.com/bilalgurkansanli/Health_Insurance_Cost_Prediction" target="_blank" rel="noopener">Health Insurance Cost Prediction</a><br><span>Krankenversicherungskostenvorhersage basierend auf persönlichen Merkmalen mit ML-Modellen <strong>(Überwachtes Lernen)</strong></span></li></ul>
+        <ul><li><a href="https://github.com/bilalgurkansanli/Health_Insurance_Cost_Prediction" target="_blank" rel="noopener">Health Insurance Cost Prediction</a><br><span>Krankenversicherungskostenvorhersage basierend auf pers枚nlichen Merkmalen mit ML-Modellen <strong>(脺berwachtes Lernen)</strong></span></li></ul>
         <hr class="divider">
         <p><strong>Interessengebiete</strong></p>
-        <ul><li>Natürliche Sprachverarbeitung (NLP)</li><li>Maschinelles Lernen</li><li>Generative KI (GenAI)</li></ul>` }
+        <ul><li>Nat眉rliche Sprachverarbeitung (NLP)</li><li>Maschinelles Lernen</li><li>Generative KI (GenAI)</li></ul>` }
     },
     sec: {
-      tr: { title: 'SİBER GÜVENLİK', html: `
-        <p><strong>İlgi Alanları</strong></p>
-        <ul><li>Ağ güvenliği</li><li>Penetrasyon testi</li><li>Güvenlik açığı analizi (CVE)</li><li>Kriptografi</li></ul>
+      tr: { title: 'S陌BER G脺VENL陌K', html: `
+        <p><strong>陌lgi Alanlar谋</strong></p>
+        <ul><li>A臒 g眉venli臒i</li><li>Penetrasyon testi</li><li>G眉venlik a莽谋臒谋 analizi (CVE)</li><li>Kriptografi</li></ul>
         <hr class="divider">
-        <p><strong>Kullandığım Araçlar</strong></p>
-        <ul><li>Nmap / Zenmap</li><li>Metasploit</li><li>Burp Suite</li><li>[Diğer araçlar eklenecek]</li></ul>
+        <p><strong>Kulland谋臒谋m Ara莽lar</strong></p>
+        <ul><li>Nmap / Zenmap</li><li>Metasploit</li><li>Burp Suite</li><li>[Di臒er ara莽lar eklenecek]</li></ul>
         <hr class="divider">
-        <p>Şu an Cisco'nun CyberOps ve Ethical Hacking eğitimlerini alıyorum. Bu eğitimler sonrasındaysa sertifika sınavlarına girip sertifikalarımı alacağım.</p>` },
-      en: { title: '新能源汽车', html: `
-        <p><strong>研究兴趣领域</strong></p>
-        <ul><li>新能源汽车</li><li>智能座舱</li><li>电池与电驱系统</li><li>自动驾驶与车联网</li></ul>` },
+        <p>艦u an Cisco'nun CyberOps ve Ethical Hacking e臒itimlerini al谋yorum. Bu e臒itimler sonras谋ndaysa sertifika s谋navlar谋na girip sertifikalar谋m谋 alaca臒谋m.</p>` },
+      en: { title: '鏂拌兘婧愭苯杞?, html: `
+        <p><strong>鐮旂┒鍏磋叮棰嗗煙</strong></p>
+        <ul><li>鏂拌兘婧愭苯杞?/li><li>鏅鸿兘搴ц埍</li><li>鐢垫睜涓庣數椹辩郴缁?/li><li>鑷姩椹鹃┒涓庤溅鑱旂綉</li></ul>` },
       de: { title: 'CYBERSICHERHEIT', html: `
         <p><strong>Interessengebiete</strong></p>
         <ul><li>Netzwerksicherheit</li><li>Penetrationstests</li><li>Schwachstellenanalyse (CVE)</li><li>Kryptographie</li></ul>
         <hr class="divider">
         <p><strong>Verwendete Werkzeuge</strong></p>
-        <ul><li>Nmap / Zenmap</li><li>Metasploit</li><li>Burp Suite</li><li>[Weitere Werkzeuge werden hinzugefügt]</li></ul>
+        <ul><li>Nmap / Zenmap</li><li>Metasploit</li><li>Burp Suite</li><li>[Weitere Werkzeuge werden hinzugef眉gt]</li></ul>
         <hr class="divider">
-        <p>Ich absolviere derzeit Ciscos CyberOps- und Ethical-Hacking-Kurse. Danach werde ich die Zertifizierungsprüfungen ablegen, um meine Zertifikate zu erhalten.</p>` }
+        <p>Ich absolviere derzeit Ciscos CyberOps- und Ethical-Hacking-Kurse. Danach werde ich die Zertifizierungspr眉fungen ablegen, um meine Zertifikate zu erhalten.</p>` }
     }
   },
   contact: {
     mail: {
       tr: { title: 'E-POSTA', html: `
-        <p>Bana e-posta ile ulaşabilirsiniz:</p>
-        <p class="psh-mail"><a href="mailto:bilalsanli@outlook.com">bilalsanli@outlook.com</a></p>
-        <p class="psh-note">İş birliği teklifleri, proje fikirleri veya sadece merhaba demek için yazmaktan çekinmeyin.</p>` },
+        <p>Bana e-posta ile ula艧abilirsiniz:</p>
+        <p class="psh-mail"><a href="mailto:dahat5632@gmail.com">dahat5632@gmail.com</a></p>
+        <p class="psh-note">陌艧 birli臒i teklifleri, proje fikirleri veya sadece merhaba demek i莽in yazmaktan 莽ekinmeyin.</p>` },
       en: { title: 'EMAIL', html: `
         <p>You can reach me via email:</p>
-        <p class="psh-mail"><a href="mailto:bilalsanli@outlook.com">bilalsanli@outlook.com</a></p>
+        <p class="psh-mail"><a href="mailto:dahat5632@gmail.com">dahat5632@gmail.com</a></p>
         <p class="psh-note">Don't hesitate to write for collaboration offers, project ideas, or just to say hello.</p>` },
       de: { title: 'E-MAIL', html: `
-        <p>Sie können mich per E-Mail erreichen:</p>
-        <p class="psh-mail"><a href="mailto:bilalsanli@outlook.com">bilalsanli@outlook.com</a></p>
-        <p class="psh-note">Zögern Sie nicht, mir für Kooperationsangebote, Projektideen oder einfach nur um Hallo zu sagen zu schreiben.</p>` }
+        <p>Sie k枚nnen mich per E-Mail erreichen:</p>
+        <p class="psh-mail"><a href="mailto:dahat5632@gmail.com">dahat5632@gmail.com</a></p>
+        <p class="psh-note">Z枚gern Sie nicht, mir f眉r Kooperationsangebote, Projektideen oder einfach nur um Hallo zu sagen zu schreiben.</p>` }
     },
     soc: {
       tr: { title: 'SOSYAL MEDYA', html: `
-        <p>Beni sosyal medyada bulun. LinkedIn'de bağlantı atmaktan çekinmeyin.</p>
+        <p>Beni sosyal medyada bulun. LinkedIn'de ba臒lant谋 atmaktan 莽ekinmeyin.</p>
         <hr class="divider">
-        <p class="psh-note">Aşağıdaki ikonlara tıklayarak profillerime ulaşabilirsiniz.</p>` },
+        <p class="psh-note">A艧a臒谋daki ikonlara t谋klayarak profillerime ula艧abilirsiniz.</p>` },
       en: { title: 'SOCIAL MEDIA', html: `
         <p>Find me on social media. Don't hesitate to connect on LinkedIn.</p>
         <hr class="divider">
         <p class="psh-note">Click the icons below to visit my profiles.</p>` },
       de: { title: 'SOZIALE MEDIEN', html: `
-        <p>Finden Sie mich in sozialen Medien. Zögern Sie nicht, sich auf LinkedIn zu vernetzen.</p>
+        <p>Finden Sie mich in sozialen Medien. Z枚gern Sie nicht, sich auf LinkedIn zu vernetzen.</p>
         <hr class="divider">
         <p class="psh-note">Klicken Sie auf die Symbole unten, um zu meinen Profilen zu gelangen.</p>` }
     }
@@ -6290,8 +6290,8 @@ const _proSubTerminalSeen = new Set();
 function _proCurrentLang() {
   const v = (document.documentElement && document.documentElement.lang) || '';
   if (v === 'tr') return 'en';
-  if (v === 'de') return v;
-  return 'en';
+  if (v === 'en') return 'en';
+  return 'de';
 }
 
 function ensureProSubHoloCss() {
@@ -6318,7 +6318,7 @@ function ensureProSubHoloCss() {
     /* BIO: Hologram panel behavior and rendering note. */
     '.pro-sub-holo-3d .psh-body ul{list-style:none;padding:0;margin:0 0 10px;}',
     '.pro-sub-holo-3d .psh-body ul li{position:relative;padding:0 0 4px 16px;line-height:1.55;}',
-    '.pro-sub-holo-3d .psh-body ul li::before{content:"▸";position:absolute;left:0;top:0;color:var(--theme);opacity:.8;}',
+    '.pro-sub-holo-3d .psh-body ul li::before{content:"鈻?;position:absolute;left:0;top:0;color:var(--theme);opacity:.8;}',
     '.pro-sub-holo-3d .psh-body a{color:var(--theme);text-decoration:none;text-shadow:0 0 10px color-mix(in srgb,var(--theme) 40%,transparent);border-bottom:1px dashed color-mix(in srgb,var(--theme) 35%,transparent);transition:opacity .2s,border-color .2s;}',
     '.pro-sub-holo-3d .psh-body a:hover{opacity:.85;border-bottom-color:var(--theme);}',
     '.pro-sub-holo-3d .psh-body hr.divider,.pro-sub-holo-3d .psh-body hr{border:none;border-top:1px solid color-mix(in srgb,var(--theme) 25%,transparent);margin:12px 0;}',
@@ -6642,25 +6642,25 @@ function _maybeSnapProSubDetailCarousel() {
 
 const PRO_BIO_ID_CARD_TEXT = {
   tr: {
-    org: 'BIO AKADEMİSİ',
-    orgSub: 'PİLOT KÜNYESİ',
-    clrLabel: 'YETKİ',
+    org: 'BIO AKADEM陌S陌',
+    orgSub: 'P陌LOT K脺NYES陌',
+    clrLabel: 'YETK陌',
     clrVal: 'A-7',
     name: 'AD',
-    nameVal: '周天爽',
+    nameVal: '鍛ㄥぉ鐖?,
     codename: 'KOD ADI',
     codenameVal: 'BIO',
-    role: 'GÖREV',
-    roleVal: 'ÖĞRENCİ',
+    role: 'G脰REV',
+    roleVal: '脰臑RENC陌',
     focus: 'ALAN',
-    focusVal: 'YAPAY ZEKA · SİBER GÜVENLİK',
+    focusVal: 'YAPAY ZEKA 路 S陌BER G脺VENL陌K',
     statCuriosity: 'MERAK',
     statFocus: 'ODAK',
-    statCalm: 'SAKİNLİK',
-    statTeamwork: 'TAKIM ÇALIŞMASI',
-    statProactivity: 'PROAKTİFLİK',
+    statCalm: 'SAK陌NL陌K',
+    statTeamwork: 'TAKIM 脟ALI艦MASI',
+    statProactivity: 'PROAKT陌FL陌K',
     statCreativity: 'YARATICILIK',
-    idText: 'KIMLIK-2026-Σ-04A7'
+    idText: 'KIMLIK-2026-危-04A7'
   },
   en: {
     org: 'BIO ACADEMY',
@@ -6668,20 +6668,20 @@ const PRO_BIO_ID_CARD_TEXT = {
     clrLabel: 'CLEARANCE',
     clrVal: 'A-7',
     name: 'NAME',
-    nameVal: '周天爽',
+    nameVal: '鍛ㄥぉ鐖?,
     codename: 'CODENAME',
     codenameVal: 'BIO',
     role: 'ROLE',
     roleVal: 'STUDENT',
     focus: 'FOCUS',
-    focusVal: 'AI · CYBERSEC',
+    focusVal: 'AI 路 CYBERSEC',
     statCuriosity: 'CURIOSITY',
     statFocus: 'FOCUS',
     statCalm: 'CALM',
     statTeamwork: 'TEAMWORK',
     statProactivity: 'PROACTIVITY',
     statCreativity: 'CREATIVITY',
-    idText: 'ID-2026-Σ-04A7'
+    idText: 'ID-2026-危-04A7'
   },
   de: {
     org: 'BIO-AKADEMIE',
@@ -6689,20 +6689,20 @@ const PRO_BIO_ID_CARD_TEXT = {
     clrLabel: 'FREIGABE',
     clrVal: 'A-7',
     name: 'NAME',
-    nameVal: '周天爽',
+    nameVal: '鍛ㄥぉ鐖?,
     codename: 'CODENAME',
     codenameVal: 'BIO',
     role: 'ROLLE',
     roleVal: 'STUDENT',
     focus: 'FOKUS',
-    focusVal: 'KI · CYBERSEC',
+    focusVal: 'KI 路 CYBERSEC',
     statCuriosity: 'NEUGIER',
     statFocus: 'FOKUS',
     statCalm: 'RUHE',
     statTeamwork: 'TEAMWORK',
-    statProactivity: 'PROAKTIVITÄT',
-    statCreativity: 'KREATIVITÄT',
-    idText: 'ID-2026-Σ-04A7'
+    statProactivity: 'PROAKTIVIT脛T',
+    statCreativity: 'KREATIVIT脛T',
+    idText: 'ID-2026-危-04A7'
   }
 };
 
@@ -9837,7 +9837,7 @@ function isProBlockingExitFlow() {
   }
 }
 
-/* BIO: Dokunmayla carousel adımı için biriken px eşiği — düşük = daha hızlı geçiş (masaüstü tekerleği etkilenmez). */
+/* BIO: Dokunmayla carousel ad谋m谋 i莽in biriken px e艧i臒i 鈥?d眉艧眉k = daha h谋zl谋 ge莽i艧 (masa眉st眉 tekerle臒i etkilenmez). */
 const PRO_MOBILE_SWIPE_PIXEL_STEP = 34;
 
 function canBeginProScrollAt(clientX, clientY) {
@@ -9895,8 +9895,8 @@ function snapProOrientationBucket(angleDeg) {
 }
 
 /**
- * Asphalt vari: yalnızca yan yalpa (direksiyon) — pitch/alpha kullanılmaz.
- * Portrait 0°/180°: gamma. Landscape 90°/270°: beta (ekran dönüşüne göre işaret).
+ * Asphalt vari: yaln谋zca yan yalpa (direksiyon) 鈥?pitch/alpha kullan谋lmaz.
+ * Portrait 0掳/180掳: gamma. Landscape 90掳/270掳: beta (ekran d枚n眉艧眉ne g枚re i艧aret).
  */
 function proMobileSteeringLateralDegrees(ev) {
   const beta = typeof ev.beta === 'number' && Number.isFinite(ev.beta) ? ev.beta : NaN;
@@ -9976,7 +9976,7 @@ async function tryProLockLandscapeOrientation() {
       await so.lock('landscape-primary');
       return true;
     } catch (_err) {
-      /* BIO: iOS Safari and locked-down contexts often reject — fall through. */
+      /* BIO: iOS Safari and locked-down contexts often reject 鈥?fall through. */
     }
   }
   try {
@@ -10052,10 +10052,10 @@ function injectProMobileLandscapeGate() {
 
   const copy = {
     tr: {
-      title: 'Yatay mod önerilir',
+      title: 'Yatay mod 枚nerilir',
       msg:
-        'Mobil Pro kokpit yatay tutulduğunda daha rahattır. Telefonunuzu yan çevirin veya yatay kilidini deneyin.',
-      primary: 'Yataya geç',
+        'Mobil Pro kokpit yatay tutuldu臒unda daha rahatt谋r. Telefonunuzu yan 莽evirin veya yatay kilidini deneyin.',
+      primary: 'Yataya ge莽',
       secondary: 'Dikeyde devam'
     },
     en: {
@@ -10068,7 +10068,7 @@ function injectProMobileLandscapeGate() {
     de: {
       title: 'Querformat empfohlen',
       msg:
-        'Der mobile Pro‑Kokpit funktioniert im Querformat am besten. Drehen Sie das Gerät oder sperren Sie die Ausrichtung.',
+        'Der mobile Pro鈥慘okpit funktioniert im Querformat am besten. Drehen Sie das Ger盲t oder sperren Sie die Ausrichtung.',
       primary: 'Quer aktivieren',
       secondary: 'Hochformat nutzen'
     }
@@ -10187,8 +10187,8 @@ function injectProMobileGyroBanner() {
   const copy = {
     tr: {
       msg:
-        'Sağ/sol kokpit bakışı için hareket sensörünü açmanız önerilir. İzin verin veya tek parmakla bakış için atlayın.',
-      enable: 'Sensörleri etkinleştir (önerilen)',
+        'Sa臒/sol kokpit bak谋艧谋 i莽in hareket sens枚r眉n眉 a莽man谋z 枚nerilir. 陌zin verin veya tek parmakla bak谋艧 i莽in atlay谋n.',
+      enable: 'Sens枚rleri etkinle艧tir (枚nerilen)',
       skip: 'Atla'
     },
     en: {
@@ -10199,9 +10199,9 @@ function injectProMobileGyroBanner() {
     },
     de: {
       msg:
-        'Für Kopf-Schwenk links/rechts wird die Aktivierung des Bewegungs­sensors empfohlen. Erlauben oder überspringen (Ein-Finger-Blick).',
+        'F眉r Kopf-Schwenk links/rechts wird die Aktivierung des Bewegungs颅sensors empfohlen. Erlauben oder 眉berspringen (Ein-Finger-Blick).',
       enable: 'Sensor aktivieren (empfohlen)',
-      skip: 'Überspringen'
+      skip: '脺berspringen'
     }
   };
   const tc = copy[lang] || copy.en;
@@ -10244,7 +10244,7 @@ function injectProMobileGyroBanner() {
   });
 
   btn.addEventListener('click', async () => {
-    /* BIO: Interaction-gated permission — iOS Safari 13+ requires a user gesture. */
+    /* BIO: Interaction-gated permission 鈥?iOS Safari 13+ requires a user gesture. */
     try {
       if (
         typeof DeviceOrientationEvent !== 'undefined' &&
@@ -10351,18 +10351,18 @@ function bindProMobileSwipeCarousel() {
 const _CENTER_LOOK_COPY = {
   tr: {
     lock: 'Merkeze kilitle',
-    unlock: 'Serbest bakış',
-    pressedLabel: 'Kokpit bakışı merkezde — serbest için dokunun'
+    unlock: 'Serbest bak谋艧',
+    pressedLabel: 'Kokpit bak谋艧谋 merkezde 鈥?serbest i莽in dokunun'
   },
   en: {
     lock: 'Lock to center',
     unlock: 'Free look',
-    pressedLabel: 'Cockpit view locked to center — tap for free look'
+    pressedLabel: 'Cockpit view locked to center 鈥?tap for free look'
   },
   de: {
     lock: 'Ansicht zentrieren',
     unlock: 'Frei schwenken',
-    pressedLabel: 'Kokpit auf Mitte fixiert — tippen für freien Blick'
+    pressedLabel: 'Kokpit auf Mitte fixiert 鈥?tippen f眉r freien Blick'
   }
 };
 
@@ -10371,62 +10371,62 @@ const _CENTER_LOOK_COPY = {
 /* BIO: Repurpose the former German language slot as Chinese for this GitHub Pages copy. */
 function applyChineseLanguageSlotCockpit() {
   try {
-    COCKPIT_CANVAS_ARIA_BY_LANG.de = '三维驾驶舱视图。页面开头提供文字摘要。';
+    COCKPIT_CANVAS_ARIA_BY_LANG.de = '涓夌淮椹鹃┒鑸辫鍥俱€傞〉闈㈠紑澶存彁渚涙枃瀛楁憳瑕併€?;
   } catch (_) {}
 
   try {
     PRO_BIO_ID_CARD_TEXT.de = {
-      org: 'BIO 学院',
-      orgSub: '驾驶员档案',
-      clrLabel: '权限',
+      org: 'BIO 瀛﹂櫌',
+      orgSub: '椹鹃┒鍛樻。妗?,
+      clrLabel: '鏉冮檺',
       clrVal: 'A-7',
-      name: '姓名',
-      nameVal: '周天爽',
-      codename: '代号',
+      name: '濮撳悕',
+      nameVal: '鍛ㄥぉ鐖?,
+      codename: '浠ｅ彿',
       codenameVal: 'BIO',
-      role: '角色',
-      roleVal: 'AI 训练师',
-      focus: '方向',
-      focusVal: 'AI · 网络安全',
-      statCuriosity: '好奇心',
-      statFocus: '专注',
-      statCalm: '冷静',
-      statTeamwork: '协作',
-      statProactivity: '主动性',
-      statCreativity: '创造力',
+      role: '瑙掕壊',
+      roleVal: 'AI 璁粌甯?,
+      focus: '鏂瑰悜',
+      focusVal: 'AI 路 缃戠粶瀹夊叏',
+      statCuriosity: '濂藉蹇?,
+      statFocus: '涓撴敞',
+      statCalm: '鍐烽潤',
+      statTeamwork: '鍗忎綔',
+      statProactivity: '涓诲姩鎬?,
+      statCreativity: '鍒涢€犲姏',
       idText: 'ID-2026-CN-04A7'
     };
   } catch (_) {}
 
   const c = {
     about: {
-      edu: { title: '教育经历', html: `
+      edu: { title: '鏁欒偛缁忓巻', html: `
         <div class="tl-wrap">
-          <div class="tl-item active"><div class="tl-year">2024 - 2027</div><div class="tl-title">Yeditepe University</div><div class="tl-desc">互联网与网络技术</div></div>
-          <div class="tl-item"><div class="tl-year">2020 - 2024</div><div class="tl-title">Guc Kardesler Anatolian High School</div><div class="tl-desc">高中教育</div></div>
-        </div><hr class="divider"><div class="tl-section-title">证书</div>
+          <div class="tl-item active"><div class="tl-year">2024 - 2027</div><div class="tl-title">Yeditepe University</div><div class="tl-desc">浜掕仈缃戜笌缃戠粶鎶€鏈?/div></div>
+          <div class="tl-item"><div class="tl-year">2020 - 2024</div><div class="tl-title">Guc Kardesler Anatolian High School</div><div class="tl-desc">楂樹腑鏁欒偛</div></div>
+        </div><hr class="divider"><div class="tl-section-title">璇佷功</div>
         <div class="tl-cert"><a href="https://learn.microsoft.com/en-us/users/bilalanl-8550/credentials/38e863aaef982a2d" target="_blank" rel="noopener">Microsoft Certified: Fabric Data Engineer Associate (2026)</a><a href="https://www.credly.com/badges/3852359e-8131-4422-9279-918a4f5c4c74" target="_blank" rel="noopener">Cisco AI Technical Practitioner (2026)</a></div>` },
-      exp: { title: '经历', html: `<p>我仍在持续学习和成长。随着经验积累，这一部分会继续更新。</p>` },
-      bio: { title: '个人简介', html: `<p>你好，我是 <strong>周天爽</strong>，也可以叫我 <strong>Bio</strong>。</p><hr class="divider"><p>我关注人工智能、AI 训练、网络安全和自动化工具，希望把复杂技术转化为稳定、可用、能解决实际问题的能力。</p><hr class="divider"><p class="psh-note">工作之外，我也喜欢关注新技术、游戏、旅行和有挑战性的训练项目。</p>` }
+      exp: { title: '缁忓巻', html: `<p>鎴戜粛鍦ㄦ寔缁涔犲拰鎴愰暱銆傞殢鐫€缁忛獙绉疮锛岃繖涓€閮ㄥ垎浼氱户缁洿鏂般€?/p>` },
+      bio: { title: '涓汉绠€浠?, html: `<p>浣犲ソ锛屾垜鏄?<strong>鍛ㄥぉ鐖?/strong>锛屼篃鍙互鍙垜 <strong>Bio</strong>銆?/p><hr class="divider"><p>鎴戝叧娉ㄤ汉宸ユ櫤鑳姐€丄I 璁粌銆佺綉缁滃畨鍏ㄥ拰鑷姩鍖栧伐鍏凤紝甯屾湜鎶婂鏉傛妧鏈浆鍖栦负绋冲畾銆佸彲鐢ㄣ€佽兘瑙ｅ喅瀹為檯闂鐨勮兘鍔涖€?/p><hr class="divider"><p class="psh-note">宸ヤ綔涔嬪锛屾垜涔熷枩娆㈠叧娉ㄦ柊鎶€鏈€佹父鎴忋€佹梾琛屽拰鏈夋寫鎴樻€х殑璁粌椤圭洰銆?/p>` }
     },
     projects: {
-      web: { title: '网络安全项目', html: `<p><strong>项目</strong></p><ul><li>即将更新...</li><li>即将更新...</li><li>即将更新...</li></ul><hr class="divider"><p><strong>使用技术</strong></p><ul><li>Python</li><li>[待添加]</li><li>[待添加]</li></ul>` },
-      mob: { title: 'AI 项目', html: `<p><strong>项目</strong></p><ul><li>即将更新...</li><li>即将更新...</li></ul><hr class="divider"><p>项目详情待添加。</p>` },
-      back: { title: '综合项目', html: `<p><strong>项目</strong></p><ul><li>即将更新...</li><li>即将更新...</li></ul><hr class="divider"><p><strong>使用技术</strong></p><ul><li>Python</li><li>[待添加]</li><li>[待添加]</li></ul>` }
+      web: { title: '缃戠粶瀹夊叏椤圭洰', html: `<p><strong>椤圭洰</strong></p><ul><li>鍗冲皢鏇存柊...</li><li>鍗冲皢鏇存柊...</li><li>鍗冲皢鏇存柊...</li></ul><hr class="divider"><p><strong>浣跨敤鎶€鏈?/strong></p><ul><li>Python</li><li>[寰呮坊鍔燷</li><li>[寰呮坊鍔燷</li></ul>` },
+      mob: { title: 'AI 椤圭洰', html: `<p><strong>椤圭洰</strong></p><ul><li>鍗冲皢鏇存柊...</li><li>鍗冲皢鏇存柊...</li></ul><hr class="divider"><p>椤圭洰璇︽儏寰呮坊鍔犮€?/p>` },
+      back: { title: '缁煎悎椤圭洰', html: `<p><strong>椤圭洰</strong></p><ul><li>鍗冲皢鏇存柊...</li><li>鍗冲皢鏇存柊...</li></ul><hr class="divider"><p><strong>浣跨敤鎶€鏈?/strong></p><ul><li>Python</li><li>[寰呮坊鍔燷</li><li>[寰呮坊鍔燷</li></ul>` }
     },
     hobbies: {
-      esp: { title: '电子竞技', html: `<p><strong>喜欢的游戏</strong></p><ul><li>VALORANT</li><li>CS2</li></ul><hr class="divider"><p>电子竞技训练了我的沟通、协作、压力下决策和快速解决问题的能力。</p>` },
-      sht: { title: '射击', html: `<p>射击意味着耐心、自控和压力管理。专注于一个瞬间的能力，也能迁移到复杂问题的解决中。</p><hr class="divider"><p class="psh-note">这是一项需要专注、耐心和纪律的运动。</p>` },
-      tec: { title: '技术趋势', html: `<p><strong>关注领域</strong></p><ul><li>人工智能与大语言模型</li><li>网络安全新闻</li><li>AI 与安全应用</li><li>硬件与芯片架构</li><li>量子计算</li></ul><hr class="divider"><p>我喜欢跟踪技术趋势，并把这些变化转化为学习方向和项目灵感。</p>` },
-      trv: { title: '旅行', html: `<p>我喜欢旅行和探索新地方。新的环境会带来新的经验、想法和观察角度。</p>` }
+      esp: { title: '鐢靛瓙绔炴妧', html: `<p><strong>鍠滄鐨勬父鎴?/strong></p><ul><li>VALORANT</li><li>CS2</li></ul><hr class="divider"><p>鐢靛瓙绔炴妧璁粌浜嗘垜鐨勬矡閫氥€佸崗浣溿€佸帇鍔涗笅鍐崇瓥鍜屽揩閫熻В鍐抽棶棰樼殑鑳藉姏銆?/p>` },
+      sht: { title: '灏勫嚮', html: `<p>灏勫嚮鎰忓懗鐫€鑰愬績銆佽嚜鎺у拰鍘嬪姏绠＄悊銆備笓娉ㄤ簬涓€涓灛闂寸殑鑳藉姏锛屼篃鑳借縼绉诲埌澶嶆潅闂鐨勮В鍐充腑銆?/p><hr class="divider"><p class="psh-note">杩欐槸涓€椤归渶瑕佷笓娉ㄣ€佽€愬績鍜岀邯寰嬬殑杩愬姩銆?/p>` },
+      tec: { title: '鎶€鏈秼鍔?, html: `<p><strong>鍏虫敞棰嗗煙</strong></p><ul><li>浜哄伐鏅鸿兘涓庡ぇ璇█妯″瀷</li><li>缃戠粶瀹夊叏鏂伴椈</li><li>AI 涓庡畨鍏ㄥ簲鐢?/li><li>纭欢涓庤姱鐗囨灦鏋?/li><li>閲忓瓙璁＄畻</li></ul><hr class="divider"><p>鎴戝枩娆㈣窡韪妧鏈秼鍔匡紝骞舵妸杩欎簺鍙樺寲杞寲涓哄涔犳柟鍚戝拰椤圭洰鐏垫劅銆?/p>` },
+      trv: { title: '鏃呰', html: `<p>鎴戝枩娆㈡梾琛屽拰鎺㈢储鏂板湴鏂广€傛柊鐨勭幆澧冧細甯︽潵鏂扮殑缁忛獙銆佹兂娉曞拰瑙傚療瑙掑害銆?/p>` }
     },
     skills: {
-      ai: { title: '人工智能', html: `<p><strong>知识库和工具</strong></p><ul><li>Obsidian</li><li>Codex, VS Code, Gemini, Claude Code</li></ul><hr class="divider"><p><strong>已完成项目</strong></p><ul><li><a href="https://github.com/bilalgurkansanli/Health_Insurance_Cost_Prediction" target="_blank" rel="noopener">Health Insurance Cost Prediction</a><br><span>基于机器学习模型预测健康保险费用。</span></li></ul><hr class="divider"><p><strong>兴趣方向</strong></p><ul><li>自然语言处理</li><li>机器学习</li><li>生成式 AI</li></ul>` },
-      sec: { title: '新能源汽车', html: `<p><strong>研究兴趣领域</strong></p><ul><li>新能源汽车</li><li>智能座舱</li><li>电池与电驱系统</li><li>自动驾驶与车联网</li></ul>` }
+      ai: { title: '浜哄伐鏅鸿兘', html: `<p><strong>鐭ヨ瘑搴撳拰宸ュ叿</strong></p><ul><li>Obsidian</li><li>Codex, VS Code, Gemini, Claude Code</li></ul><hr class="divider"><p><strong>宸插畬鎴愰」鐩?/strong></p><ul><li><a href="https://github.com/bilalgurkansanli/Health_Insurance_Cost_Prediction" target="_blank" rel="noopener">Health Insurance Cost Prediction</a><br><span>鍩轰簬鏈哄櫒瀛︿範妯″瀷棰勬祴鍋ュ悍淇濋櫓璐圭敤銆?/span></li></ul><hr class="divider"><p><strong>鍏磋叮鏂瑰悜</strong></p><ul><li>鑷劧璇█澶勭悊</li><li>鏈哄櫒瀛︿範</li><li>鐢熸垚寮?AI</li></ul>` },
+      sec: { title: '鏂拌兘婧愭苯杞?, html: `<p><strong>鐮旂┒鍏磋叮棰嗗煙</strong></p><ul><li>鏂拌兘婧愭苯杞?/li><li>鏅鸿兘搴ц埍</li><li>鐢垫睜涓庣數椹辩郴缁?/li><li>鑷姩椹鹃┒涓庤溅鑱旂綉</li></ul>` }
     },
     contact: {
-      mail: { title: '邮箱', html: `<p>你可以通过邮箱联系我：</p><p class="psh-mail"><a href="mailto:bilalsanli@outlook.com">bilalsanli@outlook.com</a></p><p class="psh-note">合作、项目想法，或者简单打个招呼，都欢迎联系。</p>` },
-      soc: { title: '社交媒体', html: `<p>你可以在社交媒体上找到我，也欢迎通过 LinkedIn 建立连接。</p><hr class="divider"><p class="psh-note">点击下方图标访问我的主页。</p>` }
+      mail: { title: '閭', html: `<p>浣犲彲浠ラ€氳繃閭鑱旂郴鎴戯細</p><p class="psh-mail"><a href="mailto:dahat5632@gmail.com">dahat5632@gmail.com</a></p><p class="psh-note">鍚堜綔銆侀」鐩兂娉曪紝鎴栬€呯畝鍗曟墦涓嫑鍛硷紝閮芥杩庤仈绯汇€?/p>` },
+      soc: { title: '绀句氦濯掍綋', html: `<p>浣犲彲浠ュ湪绀句氦濯掍綋涓婃壘鍒版垜锛屼篃娆㈣繋閫氳繃 LinkedIn 寤虹珛杩炴帴銆?/p><hr class="divider"><p class="psh-note">鐐瑰嚮涓嬫柟鍥炬爣璁块棶鎴戠殑涓婚〉銆?/p>` }
     }
   };
 
@@ -10442,9 +10442,9 @@ function applyChineseLanguageSlotCockpit() {
 
   try {
     _CENTER_LOOK_COPY.de = {
-      lock: '锁定中心',
-      unlock: '自由视角',
-      pressedLabel: '驾驶舱视角已锁定中心，点击切换为自由视角'
+      lock: '閿佸畾涓績',
+      unlock: '鑷敱瑙嗚',
+      pressedLabel: '椹鹃┒鑸辫瑙掑凡閿佸畾涓績锛岀偣鍑诲垏鎹负鑷敱瑙嗚'
     };
   } catch (_) {}
 }
@@ -11291,7 +11291,7 @@ function addCockpitStickerDecals(modelRoot, maxDim) {
         }
         const mesh = new THREE.Mesh(geo, mat);
         mesh.name = 'cockpitStickerDecal_' + key;
-        /* BIO: Logo is display-only (no cockpit raycasts); frog + ödül çıkartmaları pickable (hover, tooltip, outbound link). */
+        /* BIO: Logo is display-only (no cockpit raycasts); frog + 枚d眉l 莽谋kartmalar谋 pickable (hover, tooltip, outbound link). */
         if (key === 'logo') {
           mesh.raycast = function () {
             /* BIO: Implementation note for this section. */
@@ -11328,13 +11328,13 @@ function addCockpitStickerDecals(modelRoot, maxDim) {
           spec.pos.z * maxDim
         );
         mesh.rotation.set(spec.rot.x, spec.rot.y, spec.rot.z);
-        /* BIO: Ödül çıkartması hover — _uiBasePos position.set SONRAsı kaydedilir; aksi halde (0,0,0)a yapışır. */
+        /* BIO: 脰d眉l 莽谋kartmas谋 hover 鈥?_uiBasePos position.set SONRAs谋 kaydedilir; aksi halde (0,0,0)a yap谋艧谋r. */
         if (key === 'orpetronSotd' || key === 'awwwardsNominee' || key === 'designNominees') {
           mesh.userData._uiBasePos = mesh.position.clone();
           mesh.userData._uiHoverZMax = 0;
           mesh.userData._cockpitStickerHoverScale = 0.06;
         }
-        /* BIO: alphaTest pikseli gizler; Raycaster düz dörtgende çarpar — raster/KTX düşüşünde UV elips. */
+        /* BIO: alphaTest pikseli gizler; Raycaster d眉z d枚rtgende 莽arpar 鈥?raster/KTX d眉艧眉艧眉nde UV elips. */
         if (key === 'frog' || key === 'orpetronSotd' || key === 'awwwardsNominee' || key === 'designNominees') {
           const rasterOk = cacheCockpitStickerPickRaster(mesh, tex);
           if (
@@ -11673,7 +11673,7 @@ function injectProLangToolbarFallback() {
       btn.type = 'button';
       btn.className = 'tb-lang';
       btn.dataset.lang = code;
-      btn.textContent = code === 'de' ? '中文' : code.toUpperCase();
+      btn.textContent = code === 'de' ? '涓枃' : code.toUpperCase();
       host.appendChild(btn);
     }
     host.removeAttribute('hidden');
