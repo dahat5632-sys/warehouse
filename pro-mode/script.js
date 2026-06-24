@@ -136,7 +136,7 @@
       hobbiesSubTec: 'Tech Trends',
       hobbiesSubTrv: 'Travel',
       skillsSubAi: 'Artificial Intelligence',
-      skillsSubSec: 'New energy vehicles',
+      skillsSubSec: '新能源汽车',
       contactSubMail: 'E-mail',
       contactSubSoc: 'Social Media',
       backLabel:   '◄ GO BACK',

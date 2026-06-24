@@ -6168,9 +6168,9 @@ const PRO_SUB_CONTENT = {
         <ul><li>Nmap / Zenmap</li><li>Metasploit</li><li>Burp Suite</li><li>[Diğer araçlar eklenecek]</li></ul>
         <hr class="divider">
         <p>Şu an Cisco'nun CyberOps ve Ethical Hacking eğitimlerini alıyorum. Bu eğitimler sonrasındaysa sertifika sınavlarına girip sertifikalarımı alacağım.</p>` },
-      en: { title: 'New energy vehicles', html: `
+      en: { title: '新能源汽车', html: `
         <p><strong>研究兴趣领域</strong></p>
-        <ul><li>New energy vehicles</li><li>智能座舱</li><li>电池与电驱系统</li><li>自动驾驶与车联网</li></ul>` },
+        <ul><li>新能源汽车</li><li>智能座舱</li><li>电池与电驱系统</li><li>自动驾驶与车联网</li></ul>` },
       de: { title: 'CYBERSICHERHEIT', html: `
         <p><strong>Interessengebiete</strong></p>
         <ul><li>Netzwerksicherheit</li><li>Penetrationstests</li><li>Schwachstellenanalyse (CVE)</li><li>Kryptographie</li></ul>

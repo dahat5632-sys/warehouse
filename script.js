@@ -482,8 +482,8 @@ const DATA = {
         },
         {
           id: 'sec',
-          label: { tr: ['Siber', 'Güvenlik'], en: ['New energy', 'vehicles'], de: ['Cyber-', 'Sicherheit'] },
-          title: { tr: 'SİBER GÜVENLİK', en: 'New energy vehicles', de: 'CYBERSICHERHEIT' },
+          label: { tr: ['Siber', 'Güvenlik'], en: ['新能源', '汽车'], de: ['Cyber-', 'Sicherheit'] },
+          title: { tr: 'SİBER GÜVENLİK', en: '新能源汽车', de: 'CYBERSICHERHEIT' },
           html: {
             tr: `
             <p><strong>İlgi Alanları</strong></p>
@@ -506,7 +506,7 @@ const DATA = {
             en: `
             <p><strong>研究兴趣领域</strong></p>
             <ul>
-              <li>New energy vehicles</li>
+              <li>新能源汽车</li>
               <li>智能座舱</li>
               <li>电池与电驱系统</li>
               <li>自动驾驶与车联网</li>
