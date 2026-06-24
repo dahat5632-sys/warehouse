@@ -406,14 +406,14 @@ const DATA = {
       subs: [
         {
           id: 'ai',
-          label: { tr: ['Yapay Zeka'], en: ['Artificial', 'Intel.'], de: ['Künstliche', 'Intelligenz'] },
-          title: { tr: 'YAPAY ZEKA', en: 'ARTIFICIAL INTELLIGENCE', de: 'KÜNSTLICHE INTELLIGENZ' },
+          label: { tr: ['Yapay Zeka'], en: ['人工智能'], de: ['Künstliche', 'Intelligenz'] },
+          title: { tr: 'YAPAY ZEKA', en: '人工智能', de: 'KÜNSTLICHE INTELLIGENZ' },
           html: {
             tr: `
             <p><strong>Kütüphaneler &amp; Araçlar</strong></p>
             <ul>
-              <li>Python — scikit-learn, pandas, numpy</li>
-              <li>TensorFlow / PyTorch</li>
+              <li>Obsidian</li>
+              <li>Codex, VS Code, Gemini, Claude Code</li>
             </ul>
             <hr class="divider">
             <p><strong>Tamamladığım Projeler</strong></p>
@@ -433,10 +433,10 @@ const DATA = {
               <li>Üretken Yapay Zeka (GenAI)</li>
             </ul>`,
             en: `
-            <p><strong>Libraries &amp; Tools</strong></p>
+            <p><strong>知识库和工具</strong></p>
             <ul>
-              <li>Python — scikit-learn, pandas, numpy</li>
-              <li>TensorFlow / PyTorch</li>
+              <li>Obsidian</li>
+              <li>Codex, VS Code, Gemini, Claude Code</li>
             </ul>
             <hr class="divider">
             <p><strong>Completed Projects</strong></p>
@@ -458,8 +458,8 @@ const DATA = {
             de: `
             <p><strong>Bibliotheken &amp; Werkzeuge</strong></p>
             <ul>
-              <li>Python — scikit-learn, pandas, numpy</li>
-              <li>TensorFlow / PyTorch</li>
+              <li>Obsidian</li>
+              <li>Codex, VS Code, Gemini, Claude Code</li>
             </ul>
             <hr class="divider">
             <p><strong>Abgeschlossene Projekte</strong></p>
@@ -955,7 +955,7 @@ function applyChineseLanguageSlotDefault() {
         ai: {
           label: ['人工智能'],
           title: '人工智能',
-          html: `<p><strong>工具与库</strong></p><ul><li>Python - scikit-learn, pandas, numpy</li><li>TensorFlow / PyTorch</li></ul><hr class="divider"><p><strong>已完成项目</strong></p><ul><li><a href="https://github.com/bilalgurkansanli/Health_Insurance_Cost_Prediction" target="_blank" rel="noopener">Health Insurance Cost Prediction</a><br><span>基于机器学习模型预测健康保险费用。</span></li></ul><hr class="divider"><p><strong>兴趣方向</strong></p><ul><li>自然语言处理</li><li>机器学习</li><li>生成式 AI</li></ul>`
+          html: `<p><strong>知识库和工具</strong></p><ul><li>Obsidian</li><li>Codex, VS Code, Gemini, Claude Code</li></ul><hr class="divider"><p><strong>已完成项目</strong></p><ul><li><a href="https://github.com/bilalgurkansanli/Health_Insurance_Cost_Prediction" target="_blank" rel="noopener">Health Insurance Cost Prediction</a><br><span>基于机器学习模型预测健康保险费用。</span></li></ul><hr class="divider"><p><strong>兴趣方向</strong></p><ul><li>自然语言处理</li><li>机器学习</li><li>生成式 AI</li></ul>`
         },
         sec: {
           label: ['新能源', '汽车'],

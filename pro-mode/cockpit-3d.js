@@ -883,7 +883,7 @@ let skillsSubRoot = null;
 const proSkillsSubGroups = [];
 const proSkillsSubLabelSprites = [];
 const proSkillsSubLabelTexts = {
-  ai: 'Artificial Intelligence',
+  ai: '人工智能',
   sec: 'Cyber Security'
 };
 let proSkillsMode = 'idle';
@@ -6133,16 +6133,16 @@ const PRO_SUB_CONTENT = {
     ai: {
       tr: { title: 'YAPAY ZEKA', html: `
         <p><strong>Kütüphaneler &amp; Araçlar</strong></p>
-        <ul><li>Python — scikit-learn, pandas, numpy</li><li>TensorFlow / PyTorch</li></ul>
+        <ul><li>Obsidian</li><li>Codex, VS Code, Gemini, Claude Code</li></ul>
         <hr class="divider">
         <p><strong>Tamamladığım Projeler</strong></p>
         <ul><li><a href="https://github.com/bilalgurkansanli/Health_Insurance_Cost_Prediction" target="_blank" rel="noopener">Health Insurance Cost Prediction</a><br><span>ML modelleriyle kişisel özelliklere dayalı sağlık sigortası maliyeti tahmini <strong>(Denetimli Öğrenme)</strong></span></li></ul>
         <hr class="divider">
         <p><strong>İlgi Alanları</strong></p>
         <ul><li>Doğal Dil İşleme (NLP)</li><li>Makine Öğrenmesi</li><li>Üretken Yapay Zeka (GenAI)</li></ul>` },
-      en: { title: 'ARTIFICIAL INTELLIGENCE', html: `
-        <p><strong>Libraries &amp; Tools</strong></p>
-        <ul><li>Python — scikit-learn, pandas, numpy</li><li>TensorFlow / PyTorch</li></ul>
+      en: { title: '人工智能', html: `
+        <p><strong>知识库和工具</strong></p>
+        <ul><li>Obsidian</li><li>Codex, VS Code, Gemini, Claude Code</li></ul>
         <hr class="divider">
         <p><strong>Completed Projects</strong></p>
         <ul><li><a href="https://github.com/bilalgurkansanli/Health_Insurance_Cost_Prediction" target="_blank" rel="noopener">Health Insurance Cost Prediction</a><br><span>Health insurance cost prediction based on personal features using ML models <strong>(Supervised Learning)</strong></span></li></ul>
@@ -6151,7 +6151,7 @@ const PRO_SUB_CONTENT = {
         <ul><li>Natural Language Processing (NLP)</li><li>Machine Learning</li><li>Generative AI (GenAI)</li></ul>` },
       de: { title: 'KÜNSTLICHE INTELLIGENZ', html: `
         <p><strong>Bibliotheken &amp; Werkzeuge</strong></p>
-        <ul><li>Python — scikit-learn, pandas, numpy</li><li>TensorFlow / PyTorch</li></ul>
+        <ul><li>Obsidian</li><li>Codex, VS Code, Gemini, Claude Code</li></ul>
         <hr class="divider">
         <p><strong>Abgeschlossene Projekte</strong></p>
         <ul><li><a href="https://github.com/bilalgurkansanli/Health_Insurance_Cost_Prediction" target="_blank" rel="noopener">Health Insurance Cost Prediction</a><br><span>Krankenversicherungskostenvorhersage basierend auf persönlichen Merkmalen mit ML-Modellen <strong>(Überwachtes Lernen)</strong></span></li></ul>
@@ -10421,7 +10421,7 @@ function applyChineseLanguageSlotCockpit() {
       trv: { title: '旅行', html: `<p>我喜欢旅行和探索新地方。新的环境会带来新的经验、想法和观察角度。</p>` }
     },
     skills: {
-      ai: { title: '人工智能', html: `<p><strong>工具与库</strong></p><ul><li>Python - scikit-learn, pandas, numpy</li><li>TensorFlow / PyTorch</li></ul><hr class="divider"><p><strong>已完成项目</strong></p><ul><li><a href="https://github.com/bilalgurkansanli/Health_Insurance_Cost_Prediction" target="_blank" rel="noopener">Health Insurance Cost Prediction</a><br><span>基于机器学习模型预测健康保险费用。</span></li></ul><hr class="divider"><p><strong>兴趣方向</strong></p><ul><li>自然语言处理</li><li>机器学习</li><li>生成式 AI</li></ul>` },
+      ai: { title: '人工智能', html: `<p><strong>知识库和工具</strong></p><ul><li>Obsidian</li><li>Codex, VS Code, Gemini, Claude Code</li></ul><hr class="divider"><p><strong>已完成项目</strong></p><ul><li><a href="https://github.com/bilalgurkansanli/Health_Insurance_Cost_Prediction" target="_blank" rel="noopener">Health Insurance Cost Prediction</a><br><span>基于机器学习模型预测健康保险费用。</span></li></ul><hr class="divider"><p><strong>兴趣方向</strong></p><ul><li>自然语言处理</li><li>机器学习</li><li>生成式 AI</li></ul>` },
       sec: { title: '新能源汽车', html: `<p><strong>研究兴趣领域</strong></p><ul><li>新能源汽车</li><li>智能座舱</li><li>电池与电驱系统</li><li>自动驾驶与车联网</li></ul>` }
     },
     contact: {

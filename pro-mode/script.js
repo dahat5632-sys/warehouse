@@ -135,7 +135,7 @@
       hobbiesSubSht: 'Shooting',
       hobbiesSubTec: 'Tech Trends',
       hobbiesSubTrv: 'Travel',
-      skillsSubAi: 'Artificial Intelligence',
+      skillsSubAi: '人工智能',
       skillsSubSec: '新能源汽车',
       contactSubMail: 'E-mail',
       contactSubSoc: 'Social Media',
