@@ -6168,9 +6168,9 @@ const PRO_SUB_CONTENT = {
         <ul><li>Nmap / Zenmap</li><li>Metasploit</li><li>Burp Suite</li><li>[Di臒er ara莽lar eklenecek]</li></ul>
         <hr class="divider">
         <p>艦u an Cisco'nun CyberOps ve Ethical Hacking e臒itimlerini al谋yorum. Bu e臒itimler sonras谋ndaysa sertifika s谋navlar谋na girip sertifikalar谋m谋 alaca臒谋m.</p>` },
-      en: { title: '鏂拌兘婧愭苯杞?, html: `
-        <p><strong>鐮旂┒鍏磋叮棰嗗煙</strong></p>
-        <ul><li>鏂拌兘婧愭苯杞?/li><li>鏅鸿兘搴ц埍</li><li>鐢垫睜涓庣數椹辩郴缁?/li><li>鑷姩椹鹃┒涓庤溅鑱旂綉</li></ul>` },
+      en: { title: '新能源汽车', html: `
+        <p><strong>研究兴趣领域</strong></p>
+        <ul><li>新能源汽车</li><li>智能座舱</li><li>电池与电驱系统</li><li>自动驾驶与车联网</li></ul>` },
       de: { title: 'CYBERSICHERHEIT', html: `
         <p><strong>Interessengebiete</strong></p>
         <ul><li>Netzwerksicherheit</li><li>Penetrationstests</li><li>Schwachstellenanalyse (CVE)</li><li>Kryptographie</li></ul>
@@ -6647,7 +6647,7 @@ const PRO_BIO_ID_CARD_TEXT = {
     clrLabel: 'YETK陌',
     clrVal: 'A-7',
     name: 'AD',
-    nameVal: '鍛ㄥぉ鐖?,
+    nameVal: '周天爽',
     codename: 'KOD ADI',
     codenameVal: 'BIO',
     role: 'G脰REV',
@@ -6668,7 +6668,7 @@ const PRO_BIO_ID_CARD_TEXT = {
     clrLabel: 'CLEARANCE',
     clrVal: 'A-7',
     name: 'NAME',
-    nameVal: '鍛ㄥぉ鐖?,
+    nameVal: '周天爽',
     codename: 'CODENAME',
     codenameVal: 'BIO',
     role: 'ROLE',
@@ -6689,7 +6689,7 @@ const PRO_BIO_ID_CARD_TEXT = {
     clrLabel: 'FREIGABE',
     clrVal: 'A-7',
     name: 'NAME',
-    nameVal: '鍛ㄥぉ鐖?,
+    nameVal: '周天爽',
     codename: 'CODENAME',
     codenameVal: 'BIO',
     role: 'ROLLE',
@@ -10371,62 +10371,62 @@ const _CENTER_LOOK_COPY = {
 /* BIO: Repurpose the former German language slot as Chinese for this GitHub Pages copy. */
 function applyChineseLanguageSlotCockpit() {
   try {
-    COCKPIT_CANVAS_ARIA_BY_LANG.de = '涓夌淮椹鹃┒鑸辫鍥俱€傞〉闈㈠紑澶存彁渚涙枃瀛楁憳瑕併€?;
+    COCKPIT_CANVAS_ARIA_BY_LANG.de = '三维驾驶舱视图。页面开头提供文字摘要。';
   } catch (_) {}
 
   try {
     PRO_BIO_ID_CARD_TEXT.de = {
-      org: 'BIO 瀛﹂櫌',
-      orgSub: '椹鹃┒鍛樻。妗?,
-      clrLabel: '鏉冮檺',
+      org: 'BIO 学院',
+      orgSub: '驾驶员档案',
+      clrLabel: '权限',
       clrVal: 'A-7',
-      name: '濮撳悕',
-      nameVal: '鍛ㄥぉ鐖?,
-      codename: '浠ｅ彿',
+      name: '姓名',
+      nameVal: '周天爽',
+      codename: '代号',
       codenameVal: 'BIO',
-      role: '瑙掕壊',
-      roleVal: 'AI 璁粌甯?,
-      focus: '鏂瑰悜',
-      focusVal: 'AI 路 缃戠粶瀹夊叏',
-      statCuriosity: '濂藉蹇?,
-      statFocus: '涓撴敞',
-      statCalm: '鍐烽潤',
-      statTeamwork: '鍗忎綔',
-      statProactivity: '涓诲姩鎬?,
-      statCreativity: '鍒涢€犲姏',
+      role: '角色',
+      roleVal: 'AI 训练师',
+      focus: '方向',
+      focusVal: 'AI · 新能源汽车',
+      statCuriosity: '好奇心',
+      statFocus: '专注',
+      statCalm: '冷静',
+      statTeamwork: '协作',
+      statProactivity: '主动性',
+      statCreativity: '创造力',
       idText: 'ID-2026-CN-04A7'
     };
   } catch (_) {}
 
   const c = {
     about: {
-      edu: { title: '鏁欒偛缁忓巻', html: `
+      edu: { title: '教育经历', html: `
         <div class="tl-wrap">
-          <div class="tl-item active"><div class="tl-year">2024 - 2027</div><div class="tl-title">Yeditepe University</div><div class="tl-desc">浜掕仈缃戜笌缃戠粶鎶€鏈?/div></div>
-          <div class="tl-item"><div class="tl-year">2020 - 2024</div><div class="tl-title">Guc Kardesler Anatolian High School</div><div class="tl-desc">楂樹腑鏁欒偛</div></div>
-        </div><hr class="divider"><div class="tl-section-title">璇佷功</div>
+          <div class="tl-item active"><div class="tl-year">2024 - 2027</div><div class="tl-title">Yeditepe University</div><div class="tl-desc">互联网与网络技术</div></div>
+          <div class="tl-item"><div class="tl-year">2020 - 2024</div><div class="tl-title">Guc Kardesler Anatolian High School</div><div class="tl-desc">高中教育</div></div>
+        </div><hr class="divider"><div class="tl-section-title">证书</div>
         <div class="tl-cert"><a href="https://learn.microsoft.com/en-us/users/bilalanl-8550/credentials/38e863aaef982a2d" target="_blank" rel="noopener">Microsoft Certified: Fabric Data Engineer Associate (2026)</a><a href="https://www.credly.com/badges/3852359e-8131-4422-9279-918a4f5c4c74" target="_blank" rel="noopener">Cisco AI Technical Practitioner (2026)</a></div>` },
-      exp: { title: '缁忓巻', html: `<p>鎴戜粛鍦ㄦ寔缁涔犲拰鎴愰暱銆傞殢鐫€缁忛獙绉疮锛岃繖涓€閮ㄥ垎浼氱户缁洿鏂般€?/p>` },
-      bio: { title: '涓汉绠€浠?, html: `<p>浣犲ソ锛屾垜鏄?<strong>鍛ㄥぉ鐖?/strong>锛屼篃鍙互鍙垜 <strong>Bio</strong>銆?/p><hr class="divider"><p>鎴戝叧娉ㄤ汉宸ユ櫤鑳姐€丄I 璁粌銆佺綉缁滃畨鍏ㄥ拰鑷姩鍖栧伐鍏凤紝甯屾湜鎶婂鏉傛妧鏈浆鍖栦负绋冲畾銆佸彲鐢ㄣ€佽兘瑙ｅ喅瀹為檯闂鐨勮兘鍔涖€?/p><hr class="divider"><p class="psh-note">宸ヤ綔涔嬪锛屾垜涔熷枩娆㈠叧娉ㄦ柊鎶€鏈€佹父鎴忋€佹梾琛屽拰鏈夋寫鎴樻€х殑璁粌椤圭洰銆?/p>` }
+      exp: { title: '经历', html: `<p>我仍在持续学习和成长。随着经验积累，这一部分会继续更新。</p>` },
+      bio: { title: '个人简介', html: `<p>你好，我是 <strong>周天爽</strong>，也可以叫我 <strong>Bio</strong>。</p><hr class="divider"><p>我关注人工智能、AI 训练、新能源汽车和自动化工具，希望把复杂技术转化为稳定、可用、能解决实际问题的能力。</p><hr class="divider"><p class="psh-note">工作之外，我也喜欢关注新技术、游戏、旅行和有挑战性的训练项目。</p>` }
     },
     projects: {
-      web: { title: '缃戠粶瀹夊叏椤圭洰', html: `<p><strong>椤圭洰</strong></p><ul><li>鍗冲皢鏇存柊...</li><li>鍗冲皢鏇存柊...</li><li>鍗冲皢鏇存柊...</li></ul><hr class="divider"><p><strong>浣跨敤鎶€鏈?/strong></p><ul><li>Python</li><li>[寰呮坊鍔燷</li><li>[寰呮坊鍔燷</li></ul>` },
-      mob: { title: 'AI 椤圭洰', html: `<p><strong>椤圭洰</strong></p><ul><li>鍗冲皢鏇存柊...</li><li>鍗冲皢鏇存柊...</li></ul><hr class="divider"><p>椤圭洰璇︽儏寰呮坊鍔犮€?/p>` },
-      back: { title: '缁煎悎椤圭洰', html: `<p><strong>椤圭洰</strong></p><ul><li>鍗冲皢鏇存柊...</li><li>鍗冲皢鏇存柊...</li></ul><hr class="divider"><p><strong>浣跨敤鎶€鏈?/strong></p><ul><li>Python</li><li>[寰呮坊鍔燷</li><li>[寰呮坊鍔燷</li></ul>` }
+      web: { title: '网站项目', html: `<p><strong>项目</strong></p><ul><li>即将更新...</li><li>即将更新...</li><li>即将更新...</li></ul><hr class="divider"><p><strong>使用技术</strong></p><ul><li>Python</li><li>待添加</li><li>待添加</li></ul>` },
+      mob: { title: 'AI 项目', html: `<p><strong>项目</strong></p><ul><li>即将更新...</li><li>即将更新...</li></ul><hr class="divider"><p>项目详情待添加。</p>` },
+      back: { title: '综合项目', html: `<p><strong>项目</strong></p><ul><li>即将更新...</li><li>即将更新...</li></ul><hr class="divider"><p><strong>使用技术</strong></p><ul><li>Python</li><li>待添加</li><li>待添加</li></ul>` }
     },
     hobbies: {
-      esp: { title: '鐢靛瓙绔炴妧', html: `<p><strong>鍠滄鐨勬父鎴?/strong></p><ul><li>VALORANT</li><li>CS2</li></ul><hr class="divider"><p>鐢靛瓙绔炴妧璁粌浜嗘垜鐨勬矡閫氥€佸崗浣溿€佸帇鍔涗笅鍐崇瓥鍜屽揩閫熻В鍐抽棶棰樼殑鑳藉姏銆?/p>` },
-      sht: { title: '灏勫嚮', html: `<p>灏勫嚮鎰忓懗鐫€鑰愬績銆佽嚜鎺у拰鍘嬪姏绠＄悊銆備笓娉ㄤ簬涓€涓灛闂寸殑鑳藉姏锛屼篃鑳借縼绉诲埌澶嶆潅闂鐨勮В鍐充腑銆?/p><hr class="divider"><p class="psh-note">杩欐槸涓€椤归渶瑕佷笓娉ㄣ€佽€愬績鍜岀邯寰嬬殑杩愬姩銆?/p>` },
-      tec: { title: '鎶€鏈秼鍔?, html: `<p><strong>鍏虫敞棰嗗煙</strong></p><ul><li>浜哄伐鏅鸿兘涓庡ぇ璇█妯″瀷</li><li>缃戠粶瀹夊叏鏂伴椈</li><li>AI 涓庡畨鍏ㄥ簲鐢?/li><li>纭欢涓庤姱鐗囨灦鏋?/li><li>閲忓瓙璁＄畻</li></ul><hr class="divider"><p>鎴戝枩娆㈣窡韪妧鏈秼鍔匡紝骞舵妸杩欎簺鍙樺寲杞寲涓哄涔犳柟鍚戝拰椤圭洰鐏垫劅銆?/p>` },
-      trv: { title: '鏃呰', html: `<p>鎴戝枩娆㈡梾琛屽拰鎺㈢储鏂板湴鏂广€傛柊鐨勭幆澧冧細甯︽潵鏂扮殑缁忛獙銆佹兂娉曞拰瑙傚療瑙掑害銆?/p>` }
+      esp: { title: '电子竞技', html: `<p><strong>喜欢的游戏</strong></p><ul><li>VALORANT</li><li>CS2</li></ul><hr class="divider"><p>电子竞技训练了我的沟通、协作、压力下决策和快速解决问题的能力。</p>` },
+      sht: { title: '射击', html: `<p>射击意味着耐心、自控和压力管理。专注于一个瞬间的能力，也能迁移到复杂问题的解决中。</p><hr class="divider"><p class="psh-note">这是一项需要专注、耐心和纪律的运动。</p>` },
+      tec: { title: '技术趋势', html: `<p><strong>关注领域</strong></p><ul><li>人工智能与大语言模型</li><li>新能源汽车</li><li>AI 与自动化应用</li><li>硬件与芯片架构</li><li>量子计算</li></ul><hr class="divider"><p>我喜欢跟踪技术趋势，并把这些变化转化为学习方向和项目灵感。</p>` },
+      trv: { title: '旅行', html: `<p>我喜欢旅行和探索新地方。新的环境会带来新的经验、想法和观察角度。</p>` }
     },
     skills: {
-      ai: { title: '浜哄伐鏅鸿兘', html: `<p><strong>鐭ヨ瘑搴撳拰宸ュ叿</strong></p><ul><li>Obsidian</li><li>Codex, VS Code, Gemini, Claude Code</li></ul><hr class="divider"><p><strong>宸插畬鎴愰」鐩?/strong></p><ul><li><a href="https://github.com/bilalgurkansanli/Health_Insurance_Cost_Prediction" target="_blank" rel="noopener">Health Insurance Cost Prediction</a><br><span>鍩轰簬鏈哄櫒瀛︿範妯″瀷棰勬祴鍋ュ悍淇濋櫓璐圭敤銆?/span></li></ul><hr class="divider"><p><strong>鍏磋叮鏂瑰悜</strong></p><ul><li>鑷劧璇█澶勭悊</li><li>鏈哄櫒瀛︿範</li><li>鐢熸垚寮?AI</li></ul>` },
-      sec: { title: '鏂拌兘婧愭苯杞?, html: `<p><strong>鐮旂┒鍏磋叮棰嗗煙</strong></p><ul><li>鏂拌兘婧愭苯杞?/li><li>鏅鸿兘搴ц埍</li><li>鐢垫睜涓庣數椹辩郴缁?/li><li>鑷姩椹鹃┒涓庤溅鑱旂綉</li></ul>` }
+      ai: { title: '人工智能', html: `<p><strong>知识库和工具</strong></p><ul><li>Obsidian</li><li>Codex, VS Code, Gemini, Claude Code</li></ul><hr class="divider"><p><strong>已完成项目</strong></p><ul><li><a href="https://github.com/bilalgurkansanli/Health_Insurance_Cost_Prediction" target="_blank" rel="noopener">Health Insurance Cost Prediction</a><br><span>基于机器学习模型预测健康保险费用。</span></li></ul><hr class="divider"><p><strong>兴趣方向</strong></p><ul><li>自然语言处理</li><li>机器学习</li><li>生成式 AI</li></ul>` },
+      sec: { title: '新能源汽车', html: `<p><strong>研究兴趣领域</strong></p><ul><li>新能源汽车</li><li>智能座舱</li><li>电池与电驱系统</li><li>自动驾驶与车联网</li></ul>` }
     },
     contact: {
-      mail: { title: '閭', html: `<p>浣犲彲浠ラ€氳繃閭鑱旂郴鎴戯細</p><p class="psh-mail"><a href="mailto:dahat5632@gmail.com">dahat5632@gmail.com</a></p><p class="psh-note">鍚堜綔銆侀」鐩兂娉曪紝鎴栬€呯畝鍗曟墦涓嫑鍛硷紝閮芥杩庤仈绯汇€?/p>` },
-      soc: { title: '绀句氦濯掍綋', html: `<p>浣犲彲浠ュ湪绀句氦濯掍綋涓婃壘鍒版垜锛屼篃娆㈣繋閫氳繃 LinkedIn 寤虹珛杩炴帴銆?/p><hr class="divider"><p class="psh-note">鐐瑰嚮涓嬫柟鍥炬爣璁块棶鎴戠殑涓婚〉銆?/p>` }
+      mail: { title: '邮箱', html: `<p>你可以通过邮箱联系我：</p><p class="psh-mail"><a href="mailto:dahat5632@gmail.com">dahat5632@gmail.com</a></p><p class="psh-note">合作、项目想法，或者简单打个招呼，都欢迎联系。</p>` },
+      soc: { title: '社交媒体', html: `<p>你可以在社交媒体上找到我，也欢迎通过 LinkedIn 建立连接。</p><hr class="divider"><p class="psh-note">点击下方图标访问我的主页。</p>` }
     }
   };
 
@@ -10442,9 +10442,9 @@ function applyChineseLanguageSlotCockpit() {
 
   try {
     _CENTER_LOOK_COPY.de = {
-      lock: '閿佸畾涓績',
-      unlock: '鑷敱瑙嗚',
-      pressedLabel: '椹鹃┒鑸辫瑙掑凡閿佸畾涓績锛岀偣鍑诲垏鎹负鑷敱瑙嗚'
+      lock: '锁定中心',
+      unlock: '自由视角',
+      pressedLabel: '驾驶舱视角已锁定中心，点击切换为自由视角'
     };
   } catch (_) {}
 }
