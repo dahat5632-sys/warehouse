@@ -2104,10 +2104,10 @@ function drawVolPlayerCanvas2d(ctx) {
   const cy = L.play.y + L.play.h * 0.5;
   const cyPrev = L.prev.y + L.prev.h * 0.5;
   const cyNext = L.next.y + L.next.h * 0.5;
-  ctx.fillText('鈴?, L.prev.x + L.prev.w * 0.5, cyPrev);
+  ctx.fillText('<<', L.prev.x + L.prev.w * 0.5, cyPrev);
   const playing = snap.music && !snap.music.paused;
-  ctx.fillText(playing ? '鈴? : '鈻?, L.play.x + L.play.w * 0.5, cy);
-  ctx.fillText('鈴?, L.next.x + L.next.w * 0.5, cyNext);
+  ctx.fillText(playing ? 'II' : '>', L.play.x + L.play.w * 0.5, cy);
+  ctx.fillText('>>', L.next.x + L.next.w * 0.5, cyNext);
 
   const p = L.progress;
   const dur = snap.music.dur;
