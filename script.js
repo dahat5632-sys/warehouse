@@ -105,7 +105,7 @@ const DATA = {
           title: { tr: 'HAKKIMDA', en: 'ABOUT ME', de: '鑴築ER MICH' },
           html: {
             tr: `
-            <p>Merhaba! Ben <strong>閸涖劌銇夐悥?/strong>. Nam璋媎i鑷抏r <strong>Bio</strong></p>
+            <p>Merhaba! Ben <strong>閸涖劌銇夐悥?/strong>. Nam璋媎i鑷抏r <strong>ZTS</strong></p>
             <hr class="divider">
             <p>Siber G鐪塿enlik ve Yapay Zeka alanlar璋媙a ilgi duyuyorum ve bu alanlarda her g鐪塶 kendimi geli鑹irmek i鑾絠n 鑾絘bal璋媦orum. 鑴皕ellikle Yapay Zeka destekli Siber G鐪塿enlik Sistemleri 鐪墇erine yo鑷抲nla鑹rak, dijital d鐪塶yadaki tehditleri hen鐪墇 ger鑾絜kle鑹eden tespit edebilen ak璋媗l璋?botlar geli鑹irmeyi hedefliyorum.</p>
             <hr class="divider">
@@ -113,7 +113,7 @@ const DATA = {
               Bunlar璋媙 d璋嬭墽璋媙da hobi olarak E-Spor, Basketbol, At璋媍璋媗璋媖 sporlar璋媙a ilgi duyuyorum. Gezmeyi ve yeni yerler ke鑹etmeyi seviyorum. Genellikle sessiz bir ki鑹li鑷抜m var ama aram璋媧daki buzlar璋?k璋媟d璋嬭噿璋媘璋媧da bazen de 鑾給k konu鑹bilirim :)
             </p>`,
             en: `
-            <p>Hello! I'm <strong>閸涖劌銇夐悥?/strong>. Also known as <strong>Bio</strong></p>
+            <p>Hello! I'm <strong>閸涖劌銇夐悥?/strong>. Also known as <strong>ZTS</strong></p>
             <hr class="divider">
             <p>I'm passionate about Cybersecurity and Artificial Intelligence, and I strive to improve myself in these fields every day. I'm particularly focused on AI-powered Cybersecurity Systems, aiming to develop intelligent bots that can detect digital threats before they even occur.</p>
             <hr class="divider">
@@ -121,7 +121,7 @@ const DATA = {
               Besides these, I'm interested in E-Sports, Basketball, and Shooting sports as hobbies. I love traveling and exploring new places. I'm generally a quiet person, but once we break the ice, I can be quite talkative sometimes :)
             </p>`,
             de: `
-            <p>Hallo! Ich bin <strong>閸涖劌銇夐悥?/strong>. Auch bekannt als <strong>Bio</strong></p>
+            <p>Hallo! Ich bin <strong>閸涖劌銇夐悥?/strong>. Auch bekannt als <strong>ZTS</strong></p>
             <hr class="divider">
             <p>Ich interessiere mich f鐪塺 Cybersicherheit und K鐪塶stliche Intelligenz und arbeite jeden Tag daran, mich in diesen Bereichen weiterzuentwickeln. Mein besonderer Fokus liegt auf KI-gest鐪塼zten Cybersicherheitssystemen, mit dem Ziel, intelligente Bots zu entwickeln, die digitale Bedrohungen erkennen, bevor sie auftreten.</p>
             <hr class="divider">
@@ -4193,7 +4193,7 @@ function schedulePlane() {
 schedulePlane();
 
 /* BIO: Implementation note for this section. */
-document.getElementById('status-left').textContent = 'BIO | PORTFOLIO';
+document.getElementById('status-left').textContent = 'ZTS | PORTFOLIO';
 updateStatusDate();
 
 (function startIntro() {

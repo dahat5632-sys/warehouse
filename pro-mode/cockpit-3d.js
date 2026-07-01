@@ -5978,19 +5978,19 @@ const PRO_SUB_CONTENT = {
     },
     bio: {
       tr: { title: 'HAKKIMDA', html: `
-        <p>Merhaba! Ben <strong>鍛ㄥぉ鐖?/strong>. Nam谋di臒er <strong>Bio</strong></p>
+        <p>Merhaba! Ben <strong>鍛ㄥぉ鐖?/strong>. Nam谋di臒er <strong>ZTS</strong></p>
         <hr class="divider">
         <p>Siber G眉venlik ve Yapay Zeka alanlar谋na ilgi duyuyorum ve bu alanlarda her g眉n kendimi geli艧tirmek i莽in 莽abal谋yorum. 脰zellikle Yapay Zeka destekli Siber G眉venlik Sistemleri 眉zerine yo臒unla艧arak, dijital d眉nyadaki tehditleri hen眉z ger莽ekle艧meden tespit edebilen ak谋ll谋 botlar geli艧tirmeyi hedefliyorum.</p>
         <hr class="divider">
         <p class="psh-note">Bunlar谋n d谋艧谋nda hobi olarak E-Spor, Basketbol, At谋c谋l谋k sporlar谋na ilgi duyuyorum. Gezmeyi ve yeni yerler ke艧fetmeyi seviyorum. Genellikle sessiz bir ki艧ili臒im var ama aram谋zdaki buzlar谋 k谋rd谋臒谋m谋zda bazen de 莽ok konu艧abilirim :)</p>` },
       en: { title: 'ABOUT ME', html: `
-        <p>Hello! I'm <strong>鍛ㄥぉ鐖?/strong>. Also known as <strong>Bio</strong></p>
+        <p>Hello! I'm <strong>鍛ㄥぉ鐖?/strong>. Also known as <strong>ZTS</strong></p>
         <hr class="divider">
         <p>I'm passionate about Cybersecurity and Artificial Intelligence, and I strive to improve myself in these fields every day. I'm particularly focused on AI-powered Cybersecurity Systems, aiming to develop intelligent bots that can detect digital threats before they even occur.</p>
         <hr class="divider">
         <p class="psh-note">Besides these, I'm interested in E-Sports, Basketball, and Shooting sports as hobbies. I love traveling and exploring new places. I'm generally a quiet person, but once we break the ice, I can be quite talkative sometimes :)</p>` },
       de: { title: '脺BER MICH', html: `
-        <p>Hallo! Ich bin <strong>鍛ㄥぉ鐖?/strong>. Auch bekannt als <strong>Bio</strong></p>
+        <p>Hallo! Ich bin <strong>鍛ㄥぉ鐖?/strong>. Auch bekannt als <strong>ZTS</strong></p>
         <hr class="divider">
         <p>Ich interessiere mich f眉r Cybersicherheit und K眉nstliche Intelligenz und arbeite jeden Tag daran, mich in diesen Bereichen weiterzuentwickeln. Mein besonderer Fokus liegt auf KI-gest眉tzten Cybersicherheitssystemen, mit dem Ziel, intelligente Bots zu entwickeln, die digitale Bedrohungen erkennen, bevor sie auftreten.</p>
         <hr class="divider">
@@ -6649,7 +6649,7 @@ const PRO_BIO_ID_CARD_TEXT = {
     name: 'AD',
     nameVal: '周天爽',
     codename: 'KOD ADI',
-    codenameVal: 'BIO',
+    codenameVal: 'ZTS',
     role: 'G脰REV',
     roleVal: '脰臑RENC陌',
     focus: 'ALAN',
@@ -6663,14 +6663,14 @@ const PRO_BIO_ID_CARD_TEXT = {
     idText: 'KIMLIK-2026-危-04A7'
   },
   en: {
-    org: 'BIO ACADEMY',
+    org: 'ZTS ACADEMY',
     orgSub: 'PILOT MANIFEST',
     clrLabel: 'CLEARANCE',
     clrVal: 'A-7',
     name: 'NAME',
     nameVal: '周天爽',
     codename: 'CODENAME',
-    codenameVal: 'BIO',
+    codenameVal: 'ZTS',
     role: 'ROLE',
     roleVal: 'STUDENT',
     focus: 'FOCUS',
@@ -6684,14 +6684,14 @@ const PRO_BIO_ID_CARD_TEXT = {
     idText: 'ID-2026-危-04A7'
   },
   de: {
-    org: 'BIO-AKADEMIE',
+    org: 'ZTS-AKADEMIE',
     orgSub: 'PILOT-AKTE',
     clrLabel: 'FREIGABE',
     clrVal: 'A-7',
     name: 'NAME',
     nameVal: '周天爽',
     codename: 'CODENAME',
-    codenameVal: 'BIO',
+    codenameVal: 'ZTS',
     role: 'ROLLE',
     roleVal: 'STUDENT',
     focus: 'FOKUS',
@@ -10383,7 +10383,7 @@ function applyChineseLanguageSlotCockpit() {
       name: '姓名',
       nameVal: '周天爽',
       codename: '代号',
-      codenameVal: 'BIO',
+      codenameVal: 'ZTS',
       role: '角色',
       roleVal: 'AI 训练师',
       focus: '方向',
@@ -10407,7 +10407,7 @@ function applyChineseLanguageSlotCockpit() {
         </div><hr class="divider"><div class="tl-section-title">证书</div>
         <div class="tl-cert"><a href="https://learn.microsoft.com/en-us/users/bilalanl-8550/credentials/38e863aaef982a2d" target="_blank" rel="noopener">Microsoft Certified: Fabric Data Engineer Associate (2026)</a><a href="https://www.credly.com/badges/3852359e-8131-4422-9279-918a4f5c4c74" target="_blank" rel="noopener">Cisco AI Technical Practitioner (2026)</a></div>` },
       exp: { title: '经历', html: `<p>我仍在持续学习和成长。随着经验积累，这一部分会继续更新。</p>` },
-      bio: { title: '个人简介', html: `<p>你好，我是 <strong>周天爽</strong>，也可以叫我 <strong>Bio</strong>。</p><hr class="divider"><p>我关注人工智能、AI 训练、新能源汽车和自动化工具，希望把复杂技术转化为稳定、可用、能解决实际问题的能力。</p><hr class="divider"><p class="psh-note">工作之外，我也喜欢关注新技术、游戏、旅行和有挑战性的训练项目。</p>` }
+      bio: { title: '个人简介', html: `<p>你好，我是 <strong>周天爽</strong>，也可以叫我 <strong>ZTS</strong>。</p><hr class="divider"><p>我关注人工智能、AI 训练、新能源汽车和自动化工具，希望把复杂技术转化为稳定、可用、能解决实际问题的能力。</p><hr class="divider"><p class="psh-note">工作之外，我也喜欢关注新技术、游戏、旅行和有挑战性的训练项目。</p>` }
     },
     projects: {
       web: { title: '网站项目', html: `<p><strong>项目</strong></p><ul><li>即将更新...</li><li>即将更新...</li><li>即将更新...</li></ul><hr class="divider"><p><strong>使用技术</strong></p><ul><li>Python</li><li>待添加</li><li>待添加</li></ul>` },
