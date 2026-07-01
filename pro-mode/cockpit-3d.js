@@ -127,8 +127,10 @@ const COCKPIT_STICKER_AWWWARDS_NOMINEE_URL = new URL(
   import.meta.url
 ).href;
 /* BIO: Design Nominees Site of the Day 鈥?opens in a new tab when the decal is clicked. */
-const COCKPIT_DESIGN_NOMINEES_PAGE_URL =
-  'https://www.designnominees.com/sites/bilal-gurkan-sanli-portfolio';
+const COCKPIT_DESIGN_NOMINEES_PAGE_URL = new URL(
+  '../assets/pro/common/design-nominees-reward-photo.jpg',
+  import.meta.url
+).href;
 /* BIO: Awwwards Nominee 鈥?opens in a new tab when the decal is clicked. */
 const COCKPIT_AWWWARDS_NOMINEE_PAGE_URL =
   'https://www.awwwards.com/sites/bilal-gurkan-sanli-portfolio';
@@ -2577,9 +2579,9 @@ const PRO_COCKPIT_STICKER_HINT_COPY = {
     de: 'Orpetron-Auszeichnung'
   },
   designNominees: {
-    tr: 'Design Nominees 脰d眉l眉',
-    en: 'Design Nominees Award',
-    de: 'Design-Nominees-Auszeichnung'
+    tr: 'REWARD',
+    en: 'REWARD',
+    de: 'REWARD'
   },
   awwwardsNominee: {
     tr: 'Awwwards Nominee',
