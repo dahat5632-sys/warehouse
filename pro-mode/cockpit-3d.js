@@ -2511,7 +2511,7 @@ function syncLangButtonTextures() {
     const data = m.userData;
     if (!data._ctx) continue;
     const lang = data.lang;
-    const up = lang === 'de' ? '涓枃' : (lang || 'en').toString().toUpperCase();
+    const up = lang === 'de' ? '中文' : (lang || 'en').toString().toUpperCase();
     const h = data._uiHoverF != null ? data._uiHoverF : 0;
     drawLangButtonCanvas(data._ctx, LANG_CANVAS.w, LANG_CANVAS.h, up, active === lang, h);
     if (data._map) {
@@ -6318,7 +6318,7 @@ function ensureProSubHoloCss() {
     /* BIO: Hologram panel behavior and rendering note. */
     '.pro-sub-holo-3d .psh-body ul{list-style:none;padding:0;margin:0 0 10px;}',
     '.pro-sub-holo-3d .psh-body ul li{position:relative;padding:0 0 4px 16px;line-height:1.55;}',
-    '.pro-sub-holo-3d .psh-body ul li::before{content:"鈻?;position:absolute;left:0;top:0;color:var(--theme);opacity:.8;}',
+    '.pro-sub-holo-3d .psh-body ul li::before{content:">";position:absolute;left:0;top:0;color:var(--theme);opacity:.8;}',
     '.pro-sub-holo-3d .psh-body a{color:var(--theme);text-decoration:none;text-shadow:0 0 10px color-mix(in srgb,var(--theme) 40%,transparent);border-bottom:1px dashed color-mix(in srgb,var(--theme) 35%,transparent);transition:opacity .2s,border-color .2s;}',
     '.pro-sub-holo-3d .psh-body a:hover{opacity:.85;border-bottom-color:var(--theme);}',
     '.pro-sub-holo-3d .psh-body hr.divider,.pro-sub-holo-3d .psh-body hr{border:none;border-top:1px solid color-mix(in srgb,var(--theme) 25%,transparent);margin:12px 0;}',
@@ -11673,7 +11673,7 @@ function injectProLangToolbarFallback() {
       btn.type = 'button';
       btn.className = 'tb-lang';
       btn.dataset.lang = code;
-      btn.textContent = code === 'de' ? '涓枃' : code.toUpperCase();
+      btn.textContent = code === 'de' ? '中文' : code.toUpperCase();
       host.appendChild(btn);
     }
     host.removeAttribute('hidden');
