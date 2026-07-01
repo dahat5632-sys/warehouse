@@ -114,8 +114,10 @@ const COCKPIT_STICKER_ORPETRON_SOTD_URL = new URL(
   import.meta.url
 ).href;
 /* BIO: Orpetron 鈥淪ite of the Day鈥?write-up 鈥?opens in a new tab when the decal is clicked. */
-const COCKPIT_ORPETRON_SOTD_PAGE_URL =
-  'https://orpetron.com/sites/bilal-gurkan-sanli-portfolio/';
+const COCKPIT_ORPETRON_SOTD_PAGE_URL = new URL(
+  '../assets/pro/common/orpetron-award-photo.jpg',
+  import.meta.url
+).href;
 const COCKPIT_STICKER_DESIGN_NOMINEES_URL = new URL(
   '../assets/pro/design-nominees.png',
   import.meta.url
