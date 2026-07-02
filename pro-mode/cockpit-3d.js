@@ -185,8 +185,8 @@ const PRO_HOBBIES_SUB_TEXTURE_URL = {
 const PRO_PHOTO_WALL_URLS = {
   shtP1: new URL('../assets/default/hobbies/shooting.webp', import.meta.url).href,
   shtP2: new URL('../assets/default/hobbies/shooting2.webp', import.meta.url).href,
-  espP1: new URL('../assets/default/hobbies/espor.webp', import.meta.url).href,
-  espP2: new URL('../assets/default/hobbies/espor3.webp', import.meta.url).href
+  espP1: new URL('../assets/default/hobbies/king-of-glory.jpg', import.meta.url).href,
+  espP2: new URL('../assets/default/hobbies/king-of-glory.jpg', import.meta.url).href
 };
 /* BIO: Planet layout, label, and interaction note. */
 const PRO_SKILLS_SUB_TEXTURE_URL = {
@@ -6067,17 +6067,17 @@ const PRO_SUB_CONTENT = {
     esp: {
       tr: { title: 'E-SPOR', html: `
         <p><strong>Favori Oyunlar</strong></p>
-        <ul><li>VALORANT</li><li>CS2</li></ul>
+        <ul><li>王者荣耀</li><li>王者荣耀</li></ul>
         <hr class="divider">
         <p>E-spor; bana ileti艧im, tak谋m oyunu, stres alt谋nda so臒ukkanl谋 karar verme ve h谋zl谋 problem 莽枚zme yetisi kazand谋rd谋. Rekabet莽i arenada edindi臒im bu disiplin, sadece oyunlarda de臒il, hayatta da bana yard谋mc谋 oldu.</p>` },
       en: { title: 'E-SPORTS', html: `
         <p><strong>Favorite Games</strong></p>
-        <ul><li>VALORANT</li><li>CS2</li></ul>
+        <ul><li>王者荣耀</li><li>王者荣耀</li></ul>
         <hr class="divider">
         <p>E-sports taught me communication, teamwork, calm decision-making under pressure, and quick problem-solving. The discipline I gained in the competitive arena has helped me not only in games but also in life.</p>` },
       de: { title: 'E-SPORT', html: `
         <p><strong>Lieblingsspiele</strong></p>
-        <ul><li>VALORANT</li><li>CS2</li></ul>
+        <ul><li>王者荣耀</li><li>王者荣耀</li></ul>
         <hr class="divider">
         <p>E-Sport hat mir Kommunikation, Teamarbeit, besonnene Entscheidungsfindung unter Druck und schnelles Probleml枚sen beigebracht. Die Disziplin, die ich in der kompetitiven Arena gewonnen habe, hat mir nicht nur in Spielen, sondern auch im Leben geholfen.</p>` }
     },
@@ -10428,7 +10428,7 @@ function applyChineseLanguageSlotCockpit() {
       back: { title: '综合项目', html: `<p><strong>项目</strong></p><ul><li>即将更新...</li><li>即将更新...</li></ul><hr class="divider"><p><strong>使用技术</strong></p><ul><li>Python</li><li>待添加</li><li>待添加</li></ul>` }
     },
     hobbies: {
-      esp: { title: '电子竞技', html: `<p><strong>喜欢的游戏</strong></p><ul><li>VALORANT</li><li>CS2</li></ul><hr class="divider"><p>电子竞技训练了我的沟通、协作、压力下决策和快速解决问题的能力。</p>` },
+      esp: { title: '电子竞技', html: `<p><strong>喜欢的游戏</strong></p><ul><li>王者荣耀</li><li>王者荣耀</li></ul><hr class="divider"><p>电子竞技训练了我的沟通、协作、压力下决策和快速解决问题的能力。</p>` },
       sht: { title: '篮球', html: `<p>篮球需要体能、节奏感、团队配合和临场判断。它训练了我的专注力、沟通能力以及在压力下快速决策的能力。</p><hr class="divider"><p class="psh-note">这是一项需要热情、耐心、纪律和协作的运动。</p>` },
       tec: { title: '技术趋势', html: `<p><strong>关注领域</strong></p><ul><li>人工智能与大语言模型</li><li>新能源汽车</li><li>AI 与自动化应用</li></ul><hr class="divider"><p>我喜欢跟踪技术趋势，并把这些变化转化为学习方向和项目灵感。</p>` },
       trv: { title: '旅行', html: `<p>我喜欢旅行和探索新地方。新的环境会带来新的经验、想法和观察角度。</p>` }
@@ -12079,3 +12079,4 @@ init().catch(err => {
   console.warn('[cockpit-3d] init error:', err);
   failFallback(document.getElementById('cockpit-3d-wrap'), document.getElementById('cockpit-img'));
 });
+
