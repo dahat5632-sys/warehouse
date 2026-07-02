@@ -5944,10 +5944,9 @@ const PRO_SUB_CONTENT = {
           </div>
         </div>
         <hr class="divider">
-        <div class="tl-section-title">Sertifikalar</div>
+        <div class="tl-section-title">获奖</div>
         <div class="tl-cert">
-          <a href="https://learn.microsoft.com/en-us/users/bilalanl-8550/credentials/38e863aaef982a2d" target="_blank" rel="noopener">Microsoft Certified: Fabric Data Engineer Associate (2026)</a>
-          <a href="https://www.credly.com/badges/3852359e-8131-4422-9279-918a4f5c4c74" target="_blank" rel="noopener">Cisco AI Technical Practitioner (2026)</a>
+          <a href="#" target="_blank" rel="noopener">湖北省新能源汽车故障诊断二等奖</a>
         </div>` },
       en: { title: 'EDUCATION', html: `
         <div class="tl-wrap">
@@ -5963,10 +5962,9 @@ const PRO_SUB_CONTENT = {
           </div>
         </div>
         <hr class="divider">
-        <div class="tl-section-title">Certifications</div>
+        <div class="tl-section-title">获奖</div>
         <div class="tl-cert">
-          <a href="https://learn.microsoft.com/en-us/users/bilalanl-8550/credentials/38e863aaef982a2d" target="_blank" rel="noopener">Microsoft Certified: Fabric Data Engineer Associate (2026)</a>
-          <a href="https://www.credly.com/badges/3852359e-8131-4422-9279-918a4f5c4c74" target="_blank" rel="noopener">Cisco AI Technical Practitioner (2026)</a>
+          <a href="#" target="_blank" rel="noopener">湖北省新能源汽车故障诊断二等奖</a>
         </div>` },
       de: { title: 'AUSBILDUNG', html: `
         <div class="tl-wrap">
@@ -5982,10 +5980,9 @@ const PRO_SUB_CONTENT = {
           </div>
         </div>
         <hr class="divider">
-        <div class="tl-section-title">Zertifikate</div>
+        <div class="tl-section-title">获奖</div>
         <div class="tl-cert">
-          <a href="https://learn.microsoft.com/en-us/users/bilalanl-8550/credentials/38e863aaef982a2d" target="_blank" rel="noopener">Microsoft Certified: Fabric Data Engineer Associate (2026)</a>
-          <a href="https://www.credly.com/badges/3852359e-8131-4422-9279-918a4f5c4c74" target="_blank" rel="noopener">Cisco AI Technical Practitioner (2026)</a>
+          <a href="#" target="_blank" rel="noopener">湖北省新能源汽车故障诊断二等奖</a>
         </div>` }
     },
     exp: {
@@ -10421,8 +10418,8 @@ function applyChineseLanguageSlotCockpit() {
         <div class="tl-wrap">
           <div class="tl-item active"><div class="tl-year">2022 - 2025</div><div class="tl-title">湖北科技职业学院</div><div class="tl-desc">互联网与网络技术</div></div>
           <div class="tl-item"><div class="tl-year">2019 - 2022</div><div class="tl-title">孝感一中</div><div class="tl-desc">高中教育</div></div>
-        </div><hr class="divider"><div class="tl-section-title">证书</div>
-        <div class="tl-cert"><a href="https://learn.microsoft.com/en-us/users/bilalanl-8550/credentials/38e863aaef982a2d" target="_blank" rel="noopener">Microsoft Certified: Fabric Data Engineer Associate (2026)</a><a href="https://www.credly.com/badges/3852359e-8131-4422-9279-918a4f5c4c74" target="_blank" rel="noopener">Cisco AI Technical Practitioner (2026)</a></div>` },
+        </div><hr class="divider"><div class="tl-section-title">获奖</div>
+        <div class="tl-cert"><a href="#" target="_blank" rel="noopener">湖北省新能源汽车故障诊断二等奖</a></div>` },
       exp: { title: '经历', html: `<p>我仍在持续学习和成长。随着经验积累，这一部分会继续更新。</p>` },
       bio: { title: '个人简介', html: `<p>你好，我是 <strong>周天爽</strong>，也可以叫我 <strong>ZTS</strong>。</p><hr class="divider"><p>我关注人工智能、AI 训练、新能源汽车和自动化工具，希望把复杂技术转化为稳定、可用、能解决实际问题的能力。</p><hr class="divider"><p class="psh-note">工作之外，我也喜欢关注新技术、游戏、旅行和有挑战性的训练项目。</p>` }
     },
