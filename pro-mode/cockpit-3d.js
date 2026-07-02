@@ -873,7 +873,7 @@ const proHobbiesSubLabelSprites = [];
 /* BIO: Default Mode integration note. */
 const proHobbiesSubLabelTexts = {
   esp: 'E-Sports',
-  sht: 'Shooting',
+  sht: 'Basketball',
   tec: 'Tech Trends',
   trv: 'Travel'
 };
@@ -5711,9 +5711,9 @@ const PRO_SUB_DETAIL_REGISTRY = {
       stroke: 'rgba(92,255,168,.45)'
     },
     labelText: {
-      tr: 'At谋艧 Ar艧ivi',
-      en: 'Shooting Archive',
-      de: 'Schie脽-Archiv'
+      tr: '篮球归档',
+      en: 'Basketball Archive',
+      de: '篮球归档'
     },
     scrollHintText: {
       tr: 'Foto臒raflar谋 ve 3D modeli g枚rmek i莽in kayd谋r谋n',
@@ -5724,12 +5724,13 @@ const PRO_SUB_DETAIL_REGISTRY = {
       p1: PRO_PHOTO_WALL_URLS.shtP1,
       p2: PRO_PHOTO_WALL_URLS.shtP2
     },
+    hidePhotoCards: true,
     /* BIO: Scroll and navigation behavior note. */
     photoObjectPosition: { p2: 'center 18%' },
     wallText: {
-      tr: { title: 'ATI艦 AR艦陌V陌', p1: 'Poligonda at谋艧 talimi 路 2024', p2: 'At谋c谋l谋臒谋n ilk ba艧lar谋 路 2024' },
-      en: { title: 'SHOOTING ARCHIVE', p1: 'Practice at the range 路 2024', p2: 'The early days of shooting 路 2024' },
-      de: { title: 'SCHIESS-ARCHIV', p1: 'Schie脽眉bung am Stand 路 2024', p2: 'Die Anf盲nge des Schie脽sports 路 2024' }
+      tr: { title: '篮球归档', p1: '', p2: '' },
+      en: { title: 'BASKETBALL ARCHIVE', p1: '', p2: '' },
+      de: { title: '篮球归档', p1: '', p2: '' }
     },
     builder: {
       type: 'procedural',
@@ -5748,9 +5749,9 @@ const PRO_SUB_DETAIL_REGISTRY = {
       /* BIO: Implementation note for this section. */
       labelPos: { x: -1, y: 0.4, z: 0 },
       labelText: {
-        tr: 'At谋c谋l谋k 3D Fig眉r眉m',
-        en: 'My Shooting 3D Figure',
-        de: 'Meine 3D-Schie脽figur'
+        tr: '我的篮球 3D 模型',
+        en: 'My Basketball 3D Figure',
+        de: '我的篮球 3D 模型'
       },
       /* BIO: Implementation note for this section. */
       labelPxWidth: 960,
@@ -5994,13 +5995,13 @@ const PRO_SUB_CONTENT = {
         <hr class="divider">
         <p>I'm passionate about Cybersecurity and Artificial Intelligence, and I strive to improve myself in these fields every day. I'm particularly focused on AI-powered Cybersecurity Systems, aiming to develop intelligent bots that can detect digital threats before they even occur.</p>
         <hr class="divider">
-        <p class="psh-note">Besides these, I'm interested in E-Sports, Basketball, and Shooting sports as hobbies. I love traveling and exploring new places. I'm generally a quiet person, but once we break the ice, I can be quite talkative sometimes :)</p>` },
+        <p class="psh-note">Besides these, I'm interested in E-Sports and Basketball as hobbies. I love traveling and exploring new places. I'm generally a quiet person, but once we break the ice, I can be quite talkative sometimes :)</p>` },
       de: { title: '脺BER MICH', html: `
         <p>Hallo! Ich bin <strong>鍛ㄥぉ鐖?/strong>. Auch bekannt als <strong>ZTS</strong></p>
         <hr class="divider">
         <p>Ich interessiere mich f眉r Cybersicherheit und K眉nstliche Intelligenz und arbeite jeden Tag daran, mich in diesen Bereichen weiterzuentwickeln. Mein besonderer Fokus liegt auf KI-gest眉tzten Cybersicherheitssystemen, mit dem Ziel, intelligente Bots zu entwickeln, die digitale Bedrohungen erkennen, bevor sie auftreten.</p>
         <hr class="divider">
-        <p class="psh-note">Abgesehen davon interessiere ich mich f眉r E-Sport, Basketball und Schie脽sport als Hobbys. Ich reise gerne und entdecke neue Orte. Ich bin generell eine ruhige Person, aber wenn das Eis gebrochen ist, kann ich manchmal auch sehr gespr盲chig sein :)</p>` }
+        <p class="psh-note">Abgesehen davon interessiere ich mich f眉r E-Sport und Basketball als Hobbys. Ich reise gerne und entdecke neue Orte. Ich bin generell eine ruhige Person, aber wenn das Eis gebrochen ist, kann ich manchmal auch sehr gespr盲chig sein :)</p>` }
     }
   },
   projects: {
@@ -6081,18 +6082,18 @@ const PRO_SUB_CONTENT = {
         <p>E-Sport hat mir Kommunikation, Teamarbeit, besonnene Entscheidungsfindung unter Druck und schnelles Probleml枚sen beigebracht. Die Disziplin, die ich in der kompetitiven Arena gewonnen habe, hat mir nicht nur in Spielen, sondern auch im Leben geholfen.</p>` }
     },
     sht: {
-      tr: { title: 'ATICILIK', html: `
-        <p>At谋c谋l谋k; sab谋r, 枚zdenetim ve stres y枚netimi demektir. 10m haval谋 t眉fek bran艧谋nda edindi臒im bu 'tek bir ana odaklanma' yetisi, bug眉n karma艧谋k problemleri 莽枚zerken kulland谋臒谋m en g眉莽l眉 zihinsel arac谋m.</p>
+      tr: { title: '篮球', html: `
+        <p>篮球需要体能、节奏感、团队配合和临场判断。它训练了我的专注力、沟通能力以及在压力下快速决策的能力。</p>
         <hr class="divider">
-        <p class="psh-note">Konsantrasyon, sab谋r ve disiplin gerektiren bu sporu herkese tavsiye ederim. Bence bu sporu herkes en az bir kere de olsa deneyimlemeli. 脟眉nk眉 hem zevkli hem de bir o kadar zorlu bir spor.</p>` },
-      en: { title: 'SHOOTING', html: `
-        <p>Shooting means patience, self-control, and stress management. The ability to 'focus on a single moment' that I gained in the 10m air rifle discipline is the strongest mental tool I use today when solving complex problems.</p>
+        <p class="psh-note">这是一项需要热情、耐心、纪律和协作的运动。</p>` },
+      en: { title: 'BASKETBALL', html: `
+        <p>Basketball requires physical fitness, rhythm, teamwork, and quick judgment. It trains my focus, communication, and ability to make fast decisions under pressure.</p>
         <hr class="divider">
-        <p class="psh-note">I recommend this sport, which requires concentration, patience, and discipline, to everyone. I think everyone should experience it at least once. Because it's both enjoyable and equally challenging.</p>` },
-      de: { title: 'SCHIE岷濫N', html: `
-        <p>Schie脽sport bedeutet Geduld, Selbstbeherrschung und Stressbew盲ltigung. Die F盲higkeit, mich auf einen einzigen Moment zu konzentrieren, die ich in der 10m-Luftgewehr-Disziplin erworben habe, ist heute mein st盲rkstes mentales Werkzeug beim L枚sen komplexer Probleme.</p>
+        <p class="psh-note">It is a sport that demands passion, patience, discipline, and collaboration.</p>` },
+      de: { title: '篮球', html: `
+        <p>篮球需要体能、节奏感、团队配合和临场判断。它训练了我的专注力、沟通能力以及在压力下快速决策的能力。</p>
         <hr class="divider">
-        <p class="psh-note">Ich empfehle diesen Sport, der Konzentration, Geduld und Disziplin erfordert, jedem. Ich denke, jeder sollte ihn mindestens einmal erleben. Denn er ist sowohl unterhaltsam als auch ebenso herausfordernd.</p>` }
+        <p class="psh-note">这是一项需要热情、耐心、纪律和协作的运动。</p>` }
     },
     tec: {
       tr: { title: 'TEKNOLOJ陌 TRENDLER陌', html: `
@@ -7000,6 +7001,9 @@ function _buildProPhotoWall(rootGroup, cfg, onReady) {
   setText('.ppw-title', t.title);
   setText('.ppw-cap[data-c="p1"]', t.p1);
   setText('.ppw-cap[data-c="p2"]', t.p2);
+  if (cfg.hidePhotoCards) {
+    el.querySelectorAll('.ppw-card').forEach(card => card.remove());
+  }
   const imgs = el.querySelectorAll('img');
   /* BIO: Photo and gallery behavior note. */
   const objPos = cfg.photoObjectPosition || {};
@@ -10422,7 +10426,7 @@ function applyChineseLanguageSlotCockpit() {
     },
     hobbies: {
       esp: { title: '电子竞技', html: `<p><strong>喜欢的游戏</strong></p><ul><li>VALORANT</li><li>CS2</li></ul><hr class="divider"><p>电子竞技训练了我的沟通、协作、压力下决策和快速解决问题的能力。</p>` },
-      sht: { title: '射击', html: `<p>射击意味着耐心、自控和压力管理。专注于一个瞬间的能力，也能迁移到复杂问题的解决中。</p><hr class="divider"><p class="psh-note">这是一项需要专注、耐心和纪律的运动。</p>` },
+      sht: { title: '篮球', html: `<p>篮球需要体能、节奏感、团队配合和临场判断。它训练了我的专注力、沟通能力以及在压力下快速决策的能力。</p><hr class="divider"><p class="psh-note">这是一项需要热情、耐心、纪律和协作的运动。</p>` },
       tec: { title: '技术趋势', html: `<p><strong>关注领域</strong></p><ul><li>人工智能与大语言模型</li><li>新能源汽车</li><li>AI 与自动化应用</li><li>硬件与芯片架构</li><li>量子计算</li></ul><hr class="divider"><p>我喜欢跟踪技术趋势，并把这些变化转化为学习方向和项目灵感。</p>` },
       trv: { title: '旅行', html: `<p>我喜欢旅行和探索新地方。新的环境会带来新的经验、想法和观察角度。</p>` }
     },
