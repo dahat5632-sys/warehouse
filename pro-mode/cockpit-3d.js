@@ -854,7 +854,7 @@ let projectsSubRoot = null;
 const proProjectsSubGroups = [];
 const proProjectsSubLabelSprites = [];
 const proProjectsSubLabelTexts = {
-  web: 'Cyber Security',
+  web: '新能源汽车',
   mob: 'Artificial Intelligence',
   back: 'Mixed Projects'
 };
@@ -12079,4 +12079,5 @@ init().catch(err => {
   console.warn('[cockpit-3d] init error:', err);
   failFallback(document.getElementById('cockpit-3d-wrap'), document.getElementById('cockpit-img'));
 });
+
 
