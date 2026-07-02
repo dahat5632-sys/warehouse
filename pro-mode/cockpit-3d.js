@@ -5618,9 +5618,9 @@ const PRO_SUB_DETAIL_REGISTRY = {
       stroke: 'rgba(255,175,102,.45)'
     },
     labelText: {
-      tr: 'Yeditepe 脺niversitesi 3D Modeli (Temsili)',
-      en: 'Yeditepe University 3D Model (Representative)',
-      de: 'Yeditepe Universit盲t 3D-Modell (Symbolisch)'
+      tr: '湖北科技职业学院 3D Modeli (Temsili)',
+      en: '湖北科技职业学院 3D Model (Representative)',
+      de: '湖北科技职业学院 3D-Modell (Symbolisch)'
     },
     scrollHintText: {
       tr: '3D modeli g枚rmek i莽in kayd谋r谋n',
@@ -5920,13 +5920,13 @@ const PRO_SUB_CONTENT = {
       tr: { title: 'E臑陌T陌M', html: `
         <div class="tl-wrap">
           <div class="tl-item active">
-            <div class="tl-year">2024 鈥?2027</div>
-            <div class="tl-title">Yeditepe 脺niversitesi</div>
+            <div class="tl-year">2022 - 2025</div>
+            <div class="tl-title">湖北科技职业学院</div>
             <div class="tl-desc">陌nternet ve A臒 Teknolojileri</div>
           </div>
           <div class="tl-item">
-            <div class="tl-year">2020 鈥?2024</div>
-            <div class="tl-title">G眉莽 Karde艧ler Anadolu Lisesi</div>
+            <div class="tl-year">2019 - 2022</div>
+            <div class="tl-title">孝感一中</div>
             <div class="tl-desc">Lise E臒itimi</div>
           </div>
         </div>
@@ -5939,13 +5939,13 @@ const PRO_SUB_CONTENT = {
       en: { title: 'EDUCATION', html: `
         <div class="tl-wrap">
           <div class="tl-item active">
-            <div class="tl-year">2024 鈥?2027</div>
-            <div class="tl-title">Yeditepe University</div>
+            <div class="tl-year">2022 - 2025</div>
+            <div class="tl-title">湖北科技职业学院</div>
             <div class="tl-desc">Internet and Network Technologies</div>
           </div>
           <div class="tl-item">
-            <div class="tl-year">2020 鈥?2024</div>
-            <div class="tl-title">G眉莽 Karde艧ler Anatolian High School</div>
+            <div class="tl-year">2019 - 2022</div>
+            <div class="tl-title">孝感一中</div>
             <div class="tl-desc">High School Education</div>
           </div>
         </div>
@@ -5958,13 +5958,13 @@ const PRO_SUB_CONTENT = {
       de: { title: 'AUSBILDUNG', html: `
         <div class="tl-wrap">
           <div class="tl-item active">
-            <div class="tl-year">2024 鈥?2027</div>
-            <div class="tl-title">Yeditepe Universit盲t</div>
+            <div class="tl-year">2022 - 2025</div>
+            <div class="tl-title">湖北科技职业学院</div>
             <div class="tl-desc">Internet- und Netzwerktechnologien</div>
           </div>
           <div class="tl-item">
-            <div class="tl-year">2020 鈥?2024</div>
-            <div class="tl-title">G眉莽 Karde艧ler Anatolisches Gymnasium</div>
+            <div class="tl-year">2019 - 2022</div>
+            <div class="tl-title">孝感一中</div>
             <div class="tl-desc">Gymnasiale Ausbildung</div>
           </div>
         </div>
@@ -10406,8 +10406,8 @@ function applyChineseLanguageSlotCockpit() {
     about: {
       edu: { title: '教育经历', html: `
         <div class="tl-wrap">
-          <div class="tl-item active"><div class="tl-year">2024 - 2027</div><div class="tl-title">Yeditepe University</div><div class="tl-desc">互联网与网络技术</div></div>
-          <div class="tl-item"><div class="tl-year">2020 - 2024</div><div class="tl-title">Guc Kardesler Anatolian High School</div><div class="tl-desc">高中教育</div></div>
+          <div class="tl-item active"><div class="tl-year">2022 - 2025</div><div class="tl-title">湖北科技职业学院</div><div class="tl-desc">互联网与网络技术</div></div>
+          <div class="tl-item"><div class="tl-year">2019 - 2022</div><div class="tl-title">孝感一中</div><div class="tl-desc">高中教育</div></div>
         </div><hr class="divider"><div class="tl-section-title">证书</div>
         <div class="tl-cert"><a href="https://learn.microsoft.com/en-us/users/bilalanl-8550/credentials/38e863aaef982a2d" target="_blank" rel="noopener">Microsoft Certified: Fabric Data Engineer Associate (2026)</a><a href="https://www.credly.com/badges/3852359e-8131-4422-9279-918a4f5c4c74" target="_blank" rel="noopener">Cisco AI Technical Practitioner (2026)</a></div>` },
       exp: { title: '经历', html: `<p>我仍在持续学习和成长。随着经验积累，这一部分会继续更新。</p>` },
