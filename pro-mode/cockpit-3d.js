@@ -2034,10 +2034,21 @@ function drawVolSliderCanvas2d(ctx) {
   const L = volSliderLayouts;
   const snap = getVolSnapshot();
   const th = getCockpitUiTheme();
+  const lang = getStoredLang();
+  const volumeLabel = lang === 'en' ? 'VOLUME' : '音量';
   const blocksN = snap.mainBlocks || 16;
   const activeB = Math.round(snap.vol * blocksN);
   ctx.clearRect(0, 0, W, H);
   drawCockpitHudPanelBg(ctx, 2, 2, W - 4, H - 4, Math.min(LANG_RADIUS_PX, H * 0.42), {});
+
+  ctx.textAlign = 'left';
+  ctx.textBaseline = 'top';
+  ctx.font = '700 16px "Microsoft YaHei", "Share Tech Mono", sans-serif';
+  ctx.shadowColor = `rgba(${th.brandRgb},0.65)`;
+  ctx.shadowBlur = 5;
+  ctx.fillStyle = th.textHi;
+  ctx.fillText(volumeLabel, L.blocks.x, 2);
+  ctx.shadowBlur = 0;
 
   ctx.fillStyle = snap.iconMute ? 'rgba(170, 210, 220, 0.92)' : th.textClock;
   ctx.font = '26px "Segoe UI",sans-serif';
