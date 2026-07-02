@@ -132,8 +132,10 @@ const COCKPIT_DESIGN_NOMINEES_PAGE_URL = new URL(
   import.meta.url
 ).href;
 /* BIO: Awwwards Nominee 鈥?opens in a new tab when the decal is clicked. */
-const COCKPIT_AWWWARDS_NOMINEE_PAGE_URL =
-  'https://www.awwwards.com/sites/bilal-gurkan-sanli-portfolio';
+const COCKPIT_AWWWARDS_NOMINEE_PAGE_URL = new URL(
+  '../assets/pro/common/awwwards-award-photo.png',
+  import.meta.url
+).href;
 /* BIO: Pilot ID card portrait on About Me sub-planet (CSS3D panel). */
 const PRO_BIO_PILOT_PORTRAIT_URL = new URL(
   '../assets/default/common/bilal2.webp',
@@ -2584,9 +2586,9 @@ const PRO_COCKPIT_STICKER_HINT_COPY = {
     de: 'REWARD'
   },
   awwwardsNominee: {
-    tr: 'Awwwards Nominee',
-    en: 'Awwwards Nominee',
-    de: 'Awwwards Nominee'
+    tr: 'AWARD',
+    en: 'AWARD',
+    de: 'AWARD'
   }
 };
 
