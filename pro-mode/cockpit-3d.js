@@ -10416,7 +10416,10 @@ function applyChineseLanguageSlotCockpit() {
           <div class="tl-item"><div class="tl-year">2019 - 2022</div><div class="tl-title">孝感一中</div><div class="tl-desc">高中教育</div></div>
         </div><hr class="divider"><div class="tl-section-title">获奖</div>
         <div class="tl-cert"><a href="#" target="_blank" rel="noopener">湖北省新能源汽车故障诊断二等奖</a></div>` },
-      exp: { title: '经历', html: `<p>我仍在持续学习和成长。随着经验积累，这一部分会继续更新。</p>` },
+      exp: { title: '经历', html: `<div class="tl-wrap">
+          <div class="tl-item active"><div class="tl-year">2025.06 - 2025.09</div><div class="tl-title">AI训练师</div><div class="tl-desc">萝卜运力科技有限公司</div></div>
+          <div class="tl-item"><div class="tl-year">2025.09 - 至今</div><div class="tl-title">AI训练师</div><div class="tl-desc">昆仑万维科技股份有限公司</div></div>
+        </div><hr class="divider"><p>我仍在持续学习和成长。随着经验积累，这一部分会继续更新。</p>` },
       bio: { title: '个人简介', html: `<p>你好，我是 <strong>周天爽</strong>，也可以叫我 <strong>ZTS</strong>。</p><hr class="divider"><p>我关注人工智能、AI 训练、新能源汽车和自动化工具，希望把复杂技术转化为稳定、可用、能解决实际问题的能力。</p><hr class="divider"><p class="psh-note">工作之外，我也喜欢关注新技术、游戏、旅行和有挑战性的训练项目。</p>` }
     },
     projects: {
