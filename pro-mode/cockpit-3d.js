@@ -10424,13 +10424,13 @@ function applyChineseLanguageSlotCockpit() {
     },
     projects: {
       web: { title: '网站项目', html: `<p><strong>项目</strong></p><ul><li>即将更新...</li><li>即将更新...</li><li>即将更新...</li></ul><hr class="divider"><p><strong>使用技术</strong></p><ul><li>Python</li><li>待添加</li><li>待添加</li></ul>` },
-      mob: { title: 'AI 项目', html: `<p><strong>项目</strong></p><ul><li>即将更新...</li><li>即将更新...</li></ul><hr class="divider"><p>项目详情待添加。</p>` },
+      mob: { title: 'AI 项目', html: `<p><strong>项目</strong></p><ul><li>天工开物多模态</li></ul><hr class="divider"><p>项目详情待添加。</p>` },
       back: { title: '综合项目', html: `<p><strong>项目</strong></p><ul><li>即将更新...</li><li>即将更新...</li></ul><hr class="divider"><p><strong>使用技术</strong></p><ul><li>Python</li><li>待添加</li><li>待添加</li></ul>` }
     },
     hobbies: {
       esp: { title: '电子竞技', html: `<p><strong>喜欢的游戏</strong></p><ul><li>VALORANT</li><li>CS2</li></ul><hr class="divider"><p>电子竞技训练了我的沟通、协作、压力下决策和快速解决问题的能力。</p>` },
       sht: { title: '篮球', html: `<p>篮球需要体能、节奏感、团队配合和临场判断。它训练了我的专注力、沟通能力以及在压力下快速决策的能力。</p><hr class="divider"><p class="psh-note">这是一项需要热情、耐心、纪律和协作的运动。</p>` },
-      tec: { title: '技术趋势', html: `<p><strong>关注领域</strong></p><ul><li>人工智能与大语言模型</li><li>新能源汽车</li><li>AI 与自动化应用</li><li>硬件与芯片架构</li><li>量子计算</li></ul><hr class="divider"><p>我喜欢跟踪技术趋势，并把这些变化转化为学习方向和项目灵感。</p>` },
+      tec: { title: '技术趋势', html: `<p><strong>关注领域</strong></p><ul><li>人工智能与大语言模型</li><li>新能源汽车</li><li>AI 与自动化应用</li></ul><hr class="divider"><p>我喜欢跟踪技术趋势，并把这些变化转化为学习方向和项目灵感。</p>` },
       trv: { title: '旅行', html: `<p>我喜欢旅行和探索新地方。新的环境会带来新的经验、想法和观察角度。</p>` }
     },
     skills: {
