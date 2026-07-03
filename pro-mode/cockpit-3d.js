@@ -890,7 +890,7 @@ const proSkillsSubGroups = [];
 const proSkillsSubLabelSprites = [];
 const proSkillsSubLabelTexts = {
   ai: '浜哄伐鏅鸿兘',
-  sec: 'Cyber Security'
+  sec: '新能源汽车'
 };
 let proSkillsMode = 'idle';
 let proSkillsAnim = { t: 0, duration: 0.55 };
@@ -6012,13 +6012,13 @@ const PRO_SUB_CONTENT = {
         <hr class="divider">
         <p><strong>Kulland谋臒谋m Teknolojiler</strong></p>
         <ul><li>Python</li><li>[eklenecek]</li><li>[eklenecek]</li></ul>` },
-      en: { title: 'CYBER SECURITY PROJECTS', html: `
+      en: { title: '新能源汽车项目', html: `
         <p><strong>Projects</strong></p>
         <ul><li>Coming soon...</li><li>Coming soon...</li><li>Coming soon...</li></ul>
         <hr class="divider">
         <p><strong>Technologies Used</strong></p>
         <ul><li>Python</li><li>[to be added]</li><li>[to be added]</li></ul>` },
-      de: { title: 'CYBER SECURITY PROJEKTE', html: `
+      de: { title: '新能源汽车项目', html: `
         <p><strong>Projekte</strong></p>
         <ul><li>Kommt bald...</li><li>Kommt bald...</li><li>Kommt bald...</li></ul>
         <hr class="divider">
@@ -12079,5 +12079,6 @@ init().catch(err => {
   console.warn('[cockpit-3d] init error:', err);
   failFallback(document.getElementById('cockpit-3d-wrap'), document.getElementById('cockpit-img'));
 });
+
 
 
