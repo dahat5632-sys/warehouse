@@ -1,4 +1,4 @@
-'use strict';
+﻿'use strict';
 
 /* BIO: Implementation note for this section. */
 const IS_MOBILE = (() => {
@@ -1447,7 +1447,7 @@ function mkNode(id, x, y, r, color, lines, type) {
   if (type === 'center') {
     // BIO: Scale the avatar with the centre node so the framing stays right
     // BIO: on mobile (centerR = 68) and the original look on desktop (centerR = 105).
-    /* BIO: Mobile-only smaller avatar so bilal2.webp does not dominate small screens. */
+    /* BIO: Mobile-only smaller avatar so bilal2.png does not dominate small screens. */
     const imgScale = IS_MOBILE ? 0.68 : 1;
     const imgW = Math.round(175 * imgScale);
     const imgH = Math.round(235 * imgScale);
@@ -1465,7 +1465,7 @@ function mkNode(id, x, y, r, color, lines, type) {
     }
     const avatar = svgEl('image', {
       x: -imgW / 2, y: imgY, width: imgW, height: imgH,
-      href: 'assets/default/common/bilal2.webp',
+      href: 'assets/default/common/bilal2.png',
       'clip-path': `url(#${clipId})`,
       preserveAspectRatio: 'xMidYMid slice',
       'pointer-events': 'none'
@@ -3919,7 +3919,7 @@ document.addEventListener('keydown', e => {
 /* BIO: UFO transition configuration note. */
 const UFO_CFG = {
   video: 'assets/default/interactions/ufo-intro.mp4',
-  photo: 'assets/default/common/bilal2.webp',
+  photo: 'assets/default/common/bilal2.png',
   ufoW: 420,
   photoW: 120,
   photoH: 160,
@@ -5055,3 +5055,4 @@ updateStatusDate();
     mpFadeIn();
   };
 })();
+
