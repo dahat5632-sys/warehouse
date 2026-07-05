@@ -859,6 +859,41 @@ const UI = {
 /* BIO: Repurpose the former German language slot as Chinese for this GitHub Pages copy. */
 function applyChineseLanguageSlotDefault() {
   DATA.label.de = ['\u5468\u5929\u723d'];
+  const zhNodeText = {
+    about: { label: ['\u5468\u5929\u723d'] },
+    edu: { label: ['\u6559\u80b2\u7ecf\u5386'], title: '\u6559\u80b2\u7ecf\u5386' },
+    exp: { label: ['\u7ecf\u5386'], title: '\u7ecf\u5386', html: `
+            <p>2025.06-2025.09 AI\u8bad\u7ec3\u5e08 \u841d\u535c\u8fd0\u529b\u79d1\u6280\u6709\u9650\u516c\u53f8</p>
+            <p>2025.09-\u81f3\u4eca AI\u8bad\u7ec3\u5e08 \u6606\u4ed1\u4e07\u7ef4\u79d1\u6280\u80a1\u4efd\u6709\u9650\u516c\u53f8</p>
+            <p>\u6211\u4ecd\u5728\u6301\u7eed\u5b66\u4e60\u548c\u6210\u957f\u3002\u968f\u7740\u7ecf\u9a8c\u79ef\u7d2f\uff0c\u8fd9\u4e00\u90e8\u5206\u4f1a\u7ee7\u7eed\u66f4\u65b0\u3002</p>` },
+    bio: { label: ['\u4e2a\u4eba\u7b80\u4ecb'], title: '\u4e2a\u4eba\u7b80\u4ecb' },
+    projects: { label: ['\u9879\u76ee'] },
+    web: { label: ['\u7f51\u7ad9', '\u9879\u76ee'], title: '\u7f51\u7ad9\u9879\u76ee' },
+    mob: { label: ['AI', '\u9879\u76ee'], title: 'AI \u9879\u76ee' },
+    back: { label: ['\u7efc\u5408', '\u9879\u76ee'], title: '\u7efc\u5408\u9879\u76ee' },
+    hobbies: { label: ['\u5174\u8da3\u7231\u597d'] },
+    esp: { label: ['\u7535\u5b50\u7ade\u6280'], title: '\u7535\u5b50\u7ade\u6280' },
+    sht: { label: ['\u7bee\u7403'], title: '\u7bee\u7403' },
+    tec: { label: ['\u6280\u672f\u8d8b\u52bf'], title: '\u6280\u672f\u8d8b\u52bf' },
+    trv: { label: ['\u65c5\u884c'], title: '\u65c5\u884c' },
+    skills: { label: ['\u6280\u80fd\u4e0e', '\u5174\u8da3'] },
+    ai: { label: ['\u4eba\u5de5\u667a\u80fd'], title: '\u4eba\u5de5\u667a\u80fd' },
+    sec: { label: ['\u65b0\u80fd\u6e90\u6c7d\u8f66'], title: '\u65b0\u80fd\u6e90\u6c7d\u8f66' },
+    contact: { label: ['\u8054\u7cfb'] },
+    mail: { label: ['\u90ae\u7bb1'], title: '\u90ae\u7bb1' },
+    soc: { label: ['\u793e\u4ea4\u5a92\u4f53'], title: '\u793e\u4ea4\u5a92\u4f53' }
+  };
+  const applyZh = node => {
+    const zh = zhNodeText[node.id];
+    if (zh) {
+      if (zh.label) node.label.de = zh.label;
+      if (zh.title) node.title.de = zh.title;
+      if (zh.html) node.html.de = zh.html;
+    }
+    (node.subs || []).forEach(applyZh);
+  };
+  DATA.nodes.forEach(applyZh);
+
   UI.de = {
     tree: '\u4e3b\u6811',
     back: '\u8fd4\u56de',
@@ -5055,4 +5090,6 @@ updateStatusDate();
     mpFadeIn();
   };
 })();
+
+
 
