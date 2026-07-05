@@ -668,12 +668,9 @@ const COCKPIT_PRO_PAIR_SUB_SCREENS = {
 /* BIO: Cockpit layout, rendering, and interaction note. */
 const COCKPIT_PRO_SKILLS_SUB = {
   screens: {
-    /* BIO: Implementation note for this section. */
-    ai: COCKPIT_PRO_PAIR_SUB_SCREENS.first,
-    /* BIO: Implementation note for this section. */
-    sec: COCKPIT_PRO_PAIR_SUB_SCREENS.second
+    ai: { x: -0.25, y: 0, z: 0 }
   },
-  order: ['ai', 'sec'],
+  order: ['ai'],
   planetRadiusMul: 0.092 * 0.48,
   label: {
     w: 0.14,
@@ -12079,6 +12076,7 @@ init().catch(err => {
   console.warn('[cockpit-3d] init error:', err);
   failFallback(document.getElementById('cockpit-3d-wrap'), document.getElementById('cockpit-img'));
 });
+
 
 
 
