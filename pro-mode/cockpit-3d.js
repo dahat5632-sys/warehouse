@@ -10468,7 +10468,7 @@ function applyChineseLanguageSlotCockpit() {
     },
     contact: {
       mail: { title: '邮箱', html: `<p>你可以通过邮箱联系我：</p><p class="psh-mail"><a href="mailto:dahat5632@gmail.com">dahat5632@gmail.com</a></p><p class="psh-note">合作、项目想法，或者简单打个招呼，都欢迎联系。</p>` },
-      soc: { title: '社交媒体', html: `<p>你可以在社交媒体上找到我，也欢迎通过 LinkedIn 建立连接。</p><hr class="divider"><p class="psh-note">点击下方图标访问我的主页。</p>` }
+      soc: { title: '社交媒体', html: `<p>微信：19858493168</p><p>小红书：63011307889</p>` }
     }
   };
 
