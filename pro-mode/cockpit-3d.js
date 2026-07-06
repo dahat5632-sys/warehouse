@@ -5861,34 +5861,7 @@ const PRO_SUB_STATIC_DECOR_REGISTRY = {
   'contact/soc': {
     enabled: true,
     holoCardYOffsetMul: 0.1,
-    models: [
-      {
-        textureUrl: PRO_CONTACT_WECHAT_TEXTURE_URL,
-        modelPos: { x: -0.5, y: -0.05, z: -0.14 },
-        modelRot: { x: 0, y: 1.57, z: 0 },
-        modelHeightMul: 0.13,
-        autoRotateSpeed: 0.45,
-        /* BIO: Language control and localization note. */
-        hitProxyPaddingMul: 1.0,
-        /* BIO: WeChat green glow for the replacement social icon. */
-        glowColor: '#07c160',
-        glowScaleMul: 2.4,
-        hoverScale: 1.18
-      },
-      {
-        glbUrl: PRO_CONTACT_GITHUB_GLB_URL,
-        modelPos: { x: -0.5, y: -0.05, z: 0.14 },
-        modelRot: { x: 0, y: 1.57, z: 0 },
-        modelHeightMul: 0.13,
-        autoRotateSpeed: 0.45,
-        hitProxyPaddingMul: 1.0,
-        /* BIO: Implementation note for this section. */
-        glowColor: '#ffffff',
-        glowScaleMul: 2.4,
-        hoverScale: 1.18,
-        onClick: { type: 'href', href: 'https://github.com/bilalgurkansanli' }
-      }
-    ]
+    models: []
   }
 };
 
