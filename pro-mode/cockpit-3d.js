@@ -165,6 +165,10 @@ const PRO_CONTACT_MAIL_GLB_URL = proSubPlanetGlbHref(
 const PRO_CONTACT_LINKEDIN_GLB_URL = proSubPlanetGlbHref(
   '../assets/pro/contact/linkedin-optimized.glb'
 );
+const PRO_CONTACT_WECHAT_TEXTURE_URL = new URL(
+  '../assets/pro/contact/wechat-logo.png',
+  import.meta.url
+).href;
 const PRO_CONTACT_GITHUB_GLB_URL = proSubPlanetGlbHref(
   '../assets/pro/contact/github-optimized.glb'
 );
@@ -5859,18 +5863,17 @@ const PRO_SUB_STATIC_DECOR_REGISTRY = {
     holoCardYOffsetMul: 0.1,
     models: [
       {
-        glbUrl: PRO_CONTACT_LINKEDIN_GLB_URL,
+        textureUrl: PRO_CONTACT_WECHAT_TEXTURE_URL,
         modelPos: { x: -0.5, y: -0.05, z: -0.14 },
         modelRot: { x: 0, y: 1.57, z: 0 },
         modelHeightMul: 0.13,
         autoRotateSpeed: 0.45,
         /* BIO: Language control and localization note. */
         hitProxyPaddingMul: 1.0,
-        /* BIO: LinkedIn marka mavisi. */
-        glowColor: '#0a66c2',
+        /* BIO: WeChat green glow for the replacement social icon. */
+        glowColor: '#07c160',
         glowScaleMul: 2.4,
-        hoverScale: 1.18,
-        onClick: { type: 'href', href: 'https://www.linkedin.com/in/bilalgurkansanli/' }
+        hoverScale: 1.18
       },
       {
         glbUrl: PRO_CONTACT_GITHUB_GLB_URL,
@@ -7766,7 +7769,7 @@ function _setupProSubStaticDecor(parentRoot) {
   loader.setMeshoptDecoder(MeshoptDecoder);
   for (let i = 0; i < models.length; i += 1) {
     const m = models[i];
-    if (!m || !m.glbUrl) continue;
+    if (!m || (!m.glbUrl && !m.textureUrl)) continue;
     const sub = new THREE.Group();
     sub.name = 'proSubStaticDecorEntry_' + i;
     const p = m.modelPos || { x: 0, y: 0, z: 0 };
@@ -7789,6 +7792,12 @@ function _setupProSubStaticDecor(parentRoot) {
     _proSubStaticDecorEntries.push(entry);
 
     _proSubStaticDecorLoading += 1;
+    if (m.textureUrl) {
+      buildProStaticTextureBoxModel(m, model => {
+        _onProSubStaticDecorLoaded({ scene: model }, m, entry);
+      });
+      continue;
+    }
     loader.load(
       m.glbUrl,
       gltf => _onProSubStaticDecorLoaded(gltf, m, entry),
@@ -7798,6 +7807,56 @@ function _setupProSubStaticDecor(parentRoot) {
       }
     );
   }
+}
+
+function buildProStaticTextureBoxModel(modelCfg, onReady) {
+  const group = new THREE.Group();
+  group.name = 'proSubStaticTextureBox';
+  const texUrl = modelCfg && modelCfg.textureUrl;
+  if (!texUrl) {
+    if (typeof onReady === 'function') onReady(group);
+    return group;
+  }
+  loadProRgbTexturePreferKtx2(
+    texUrl,
+    tex => {
+      tex.wrapS = THREE.ClampToEdgeWrapping;
+      tex.wrapT = THREE.ClampToEdgeWrapping;
+      try {
+        tex.anisotropy = renderer && renderer.capabilities
+          ? Math.min(8, renderer.capabilities.getMaxAnisotropy())
+          : 1;
+      } catch (_) { /* BIO: Texture anisotropy is optional. */ }
+      const sideColor = new THREE.Color(modelCfg.sideColor || '#07c160');
+      const frontMat = new THREE.MeshStandardMaterial({
+        map: tex,
+        color: 0xffffff,
+        emissive: sideColor,
+        emissiveIntensity: 0.08,
+        metalness: 0.14,
+        roughness: 0.34
+      });
+      const backMat = frontMat.clone();
+      backMat.map = tex;
+      const sideMat = new THREE.MeshStandardMaterial({
+        color: sideColor,
+        emissive: sideColor,
+        emissiveIntensity: 0.22,
+        metalness: 0.22,
+        roughness: 0.42
+      });
+      const geo = new THREE.BoxGeometry(1, 1, 0.16, 3, 3, 1);
+      const mesh = new THREE.Mesh(geo, [sideMat, sideMat, sideMat, sideMat, frontMat, backMat]);
+      mesh.name = 'proSubStaticTextureBoxMesh';
+      group.add(mesh);
+      if (typeof onReady === 'function') onReady(group);
+    },
+    undefined,
+    () => {
+      if (typeof onReady === 'function') onReady(group);
+    }
+  );
+  return group;
 }
 
 function _onProSubStaticDecorLoaded(gltf, modelCfg, entry) {
