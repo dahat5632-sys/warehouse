@@ -187,8 +187,8 @@ const PRO_HOBBIES_SUB_TEXTURE_URL = {
 };
 /* BIO: Planet layout, label, and interaction note. */
 const PRO_PHOTO_WALL_URLS = {
-  shtP1: new URL('../assets/default/hobbies/shooting.webp', import.meta.url).href,
-  shtP2: new URL('../assets/default/hobbies/shooting2.webp', import.meta.url).href,
+  shtP1: new URL('../assets/default/hobbies/basketball-archive-1.jpg', import.meta.url).href,
+  shtP2: new URL('../assets/default/hobbies/basketball-archive-2.jpg', import.meta.url).href,
   espP1: new URL('../assets/default/hobbies/king-of-glory.jpg', import.meta.url).href,
   espP2: new URL('../assets/default/hobbies/king-of-glory.jpg', import.meta.url).href
 };
@@ -5725,13 +5725,12 @@ const PRO_SUB_DETAIL_REGISTRY = {
       p1: PRO_PHOTO_WALL_URLS.shtP1,
       p2: PRO_PHOTO_WALL_URLS.shtP2
     },
-    hidePhotoCards: true,
     /* BIO: Scroll and navigation behavior note. */
     photoObjectPosition: { p2: 'center 18%' },
     wallText: {
-      tr: { title: '篮球归档', p1: '', p2: '' },
-      en: { title: 'BASKETBALL ARCHIVE', p1: '', p2: '' },
-      de: { title: '篮球归档', p1: '', p2: '' }
+      tr: { title: '篮球归档', p1: '篮球合影 01', p2: '篮球合影 02' },
+      en: { title: 'BASKETBALL ARCHIVE', p1: 'Basketball photo 01', p2: 'Basketball photo 02' },
+      de: { title: '篮球归档', p1: '篮球合影 01', p2: '篮球合影 02' }
     },
     builder: {
       type: 'procedural',
