@@ -572,17 +572,13 @@ const DATA = {
               Don't hesitate to write for collaboration offers, project ideas, or just to say hello.
             </p>`,
             de: `
-            <p>Sie k鏋歯nen mich per E-Mail erreichen:</p>
+            <p>E-Mail:</p>
             <hr class="divider">
             <p>
               <a href="mailto:dahat5632@gmail.com"
                  style="color:#ffee00;text-shadow:0 0 12px #ffee00;font-size:14px;border-bottom:1px solid rgba(255,238,0,0.4)">
                 dahat5632@gmail.com
               </a>
-            </p>
-            <hr class="divider">
-            <p style="color:rgba(255,238,0,0.45);font-size:12px">
-              Z鏋歡ern Sie nicht, mir f鐪塺 Kooperationsangebote, Projektideen oder einfach nur um Hallo zu sagen zu schreiben.
             </p>`
           }
         },
