@@ -1,4 +1,4 @@
-/* BIO: Cockpit layout, rendering, and interaction note. */
+﻿/* BIO: Cockpit layout, rendering, and interaction note. */
 (() => {
   'use strict';
 
@@ -319,7 +319,7 @@
     projectsSubMob: '人工智能',
     projectsSubBack: '综合项目',
     hobbiesSubEsp: '电子竞技',
-    hobbiesSubSht: '射击',
+    hobbiesSubSht: '篮球',
     hobbiesSubTec: '技术趋势',
     hobbiesSubTrv: '旅行',
     skillsSubAi: '人工智能',
