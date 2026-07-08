@@ -631,7 +631,7 @@ const COCKPIT_PRO_PROJECTS_SUB = {
     mob: { x: -0.3, y: 0, z: 0 },
     back: { x: -0.4, y: 0, z: -0.2 }
   },
-  order: ['web', 'mob', 'back'],
+  order: ['web', 'mob'],
   planetRadiusMul: 0.092 * 0.48,
   label: {
     w: 0.14,
