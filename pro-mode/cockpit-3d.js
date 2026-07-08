@@ -6116,7 +6116,7 @@ const PRO_SUB_CONTENT = {
         <ul><li>Obsidian</li><li>Codex, VS Code, Gemini, Claude Code</li></ul>
         <hr class="divider">
         <p><strong>Tamamlad谋臒谋m Projeler</strong></p>
-        <ul><li><a href="https://github.com/bilalgurkansanli/Health_Insurance_Cost_Prediction" target="_blank" rel="noopener">Health Insurance Cost Prediction</a><br><span>ML modelleriyle ki艧isel 枚zelliklere dayal谋 sa臒l谋k sigortas谋 maliyeti tahmini <strong>(Denetimli 脰臒renme)</strong></span></li></ul>
+        <ul><li>天工开物多模态模型</li></ul>
         <hr class="divider">
         <p><strong>陌lgi Alanlar谋</strong></p>
         <ul><li>Do臒al Dil 陌艧leme (NLP)</li><li>Makine 脰臒renmesi</li><li>脺retken Yapay Zeka (GenAI)</li></ul>` },
@@ -6125,7 +6125,7 @@ const PRO_SUB_CONTENT = {
         <ul><li>Obsidian</li><li>Codex, VS Code, Gemini, Claude Code</li></ul>
         <hr class="divider">
         <p><strong>Completed Projects</strong></p>
-        <ul><li><a href="https://github.com/bilalgurkansanli/Health_Insurance_Cost_Prediction" target="_blank" rel="noopener">Health Insurance Cost Prediction</a><br><span>Health insurance cost prediction based on personal features using ML models <strong>(Supervised Learning)</strong></span></li></ul>
+        <ul><li>天工开物多模态模型</li></ul>
         <hr class="divider">
         <p><strong>Areas of Interest</strong></p>
         <ul><li>Natural Language Processing (NLP)</li><li>Machine Learning</li><li>Generative AI (GenAI)</li></ul>` },
@@ -6134,7 +6134,7 @@ const PRO_SUB_CONTENT = {
         <ul><li>Obsidian</li><li>Codex, VS Code, Gemini, Claude Code</li></ul>
         <hr class="divider">
         <p><strong>Abgeschlossene Projekte</strong></p>
-        <ul><li><a href="https://github.com/bilalgurkansanli/Health_Insurance_Cost_Prediction" target="_blank" rel="noopener">Health Insurance Cost Prediction</a><br><span>Krankenversicherungskostenvorhersage basierend auf pers枚nlichen Merkmalen mit ML-Modellen <strong>(脺berwachtes Lernen)</strong></span></li></ul>
+        <ul><li>天工开物多模态模型</li></ul>
         <hr class="divider">
         <p><strong>Interessengebiete</strong></p>
         <ul><li>Nat眉rliche Sprachverarbeitung (NLP)</li><li>Maschinelles Lernen</li><li>Generative KI (GenAI)</li></ul>` }
@@ -10463,7 +10463,7 @@ function applyChineseLanguageSlotCockpit() {
       trv: { title: '旅行', html: `<p>我喜欢旅行和探索新地方。新的环境会带来新的经验、想法和观察角度。</p>` }
     },
     skills: {
-      ai: { title: '人工智能', html: `<p><strong>知识库和工具</strong></p><ul><li>Obsidian</li><li>Codex, VS Code, Gemini, Claude Code</li></ul><hr class="divider"><p><strong>已完成项目</strong></p><ul><li><a href="https://github.com/bilalgurkansanli/Health_Insurance_Cost_Prediction" target="_blank" rel="noopener">Health Insurance Cost Prediction</a><br><span>基于机器学习模型预测健康保险费用。</span></li></ul><hr class="divider"><p><strong>兴趣方向</strong></p><ul><li>自然语言处理</li><li>机器学习</li><li>生成式 AI</li></ul>` },
+      ai: { title: '人工智能', html: `<p><strong>知识库和工具</strong></p><ul><li>Obsidian</li><li>Codex, VS Code, Gemini, Claude Code</li></ul><hr class="divider"><p><strong>已完成项目</strong></p><ul><li>天工开物多模态模型</li></ul><hr class="divider"><p><strong>兴趣方向</strong></p><ul><li>自然语言处理</li><li>机器学习</li><li>生成式 AI</li></ul>` },
       sec: { title: '新能源汽车', html: `<p><strong>研究兴趣领域</strong></p><ul><li>新能源汽车</li><li>智能座舱</li><li>电池与电驱系统</li><li>自动驾驶与车联网</li></ul>` }
     },
     contact: {
