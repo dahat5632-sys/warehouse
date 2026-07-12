@@ -1,4 +1,4 @@
-﻿'use strict';
+'use strict';
 
 /* BIO: Implementation note for this section. */
 const IS_MOBILE = (() => {
@@ -868,7 +868,15 @@ function applyChineseLanguageSlotDefault() {
     mob: { label: ['AI', '\u9879\u76ee'], title: 'AI \u9879\u76ee' },
     back: { label: ['\u7efc\u5408', '\u9879\u76ee'], title: '\u7efc\u5408\u9879\u76ee' },
     hobbies: { label: ['\u5174\u8da3\u7231\u597d'] },
-    esp: { label: ['\u7535\u5b50\u7ade\u6280'], title: '\u7535\u5b50\u7ade\u6280' },
+    esp: { label: ['\u7535\u5b50\u7ade\u6280'], title: '\u7535\u5b50\u7ade\u6280', html: `
+            <p><strong>\u559c\u6b22\u7684\u6e38\u620f</strong></p>
+            <ul>
+              <li>\u738b\u8005\u8363\u8000</li>
+            </ul>
+            <hr class="divider">
+            <p>\u7535\u5b50\u7ade\u6280\u8bad\u7ec3\u4e86\u6211\u7684\u6c9f\u901a\u3001\u534f\u4f5c\u3001\u538b\u529b\u4e0b\u51b3\u7b56\u548c\u5feb\u901f\u89e3\u51b3\u95ee\u9898\u7684\u80fd\u529b\u3002</p>
+            <hr class="divider">
+            <p style="text-align:center"><a href="#" class="photo-link" data-gallery='[{"src":"assets/default/hobbies/king-of-glory.jpg","cap":"\u738b\u8005\u8363\u8000"}]'>\u67e5\u770b\u7167\u7247</a></p>` },
     sht: { label: ['\u7bee\u7403'], title: '\u7bee\u7403', html: `
             <p>\u7bee\u7403\u9700\u8981\u4f53\u80fd\u3001\u8282\u594f\u611f\u3001\u56e2\u961f\u914d\u5408\u548c\u4e34\u573a\u5224\u65ad\u3002\u5b83\u8bad\u7ec3\u4e86\u6211\u7684\u4e13\u6ce8\u529b\u3001\u534f\u4f5c\u80fd\u529b\u3001\u6297\u538b\u80fd\u529b\u548c\u5feb\u901f\u89e3\u51b3\u95ee\u9898\u7684\u80fd\u529b\u3002</p>
             <hr class="divider">
