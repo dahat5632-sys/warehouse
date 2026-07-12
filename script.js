@@ -333,13 +333,13 @@ const DATA = {
             <hr class="divider">
             <p style="text-align:center"><a href="#" class="photo-link" data-gallery='[{"src":"assets/default/hobbies/shooting.webp","cap":"Shooting practice at the range, 2024"},{"src":"assets/default/hobbies/shooting2.webp","cap":"The early days of shooting... , 2024"}]'>閳?VIEW PHOTOS</a></p>`,
             de: `
-            <p>Schie鑴絪port bedeutet Geduld, Selbstbeherrschung und Stressbew鐩瞝tigung. Die F鐩瞙igkeit, mich auf einen einzigen Moment zu konzentrieren, die ich in der 10m-Luftgewehr-Disziplin erworben habe, ist heute mein st鐩瞨kstes mentales Werkzeug beim L鏋歴en komplexer Probleme.</p>
+            <p>\u7bee\u7403\u9700\u8981\u4f53\u80fd\u3001\u8282\u594f\u611f\u3001\u56e2\u961f\u914d\u5408\u548c\u4e34\u573a\u5224\u65ad\u3002\u5b83\u8bad\u7ec3\u4e86\u6211\u7684\u4e13\u6ce8\u529b\u3001\u534f\u4f5c\u80fd\u529b\u3001\u6297\u538b\u80fd\u529b\u548c\u5feb\u901f\u89e3\u51b3\u95ee\u9898\u7684\u80fd\u529b\u3002</p>
             <hr class="divider">
             <p style="color:rgba(0,255,136,0.4);font-size:12px;font-style:italic">
-              Ich empfehle diesen Sport, der Konzentration, Geduld und Disziplin erfordert, jedem. Ich denke, jeder sollte ihn mindestens einmal erleben. Denn er ist sowohl unterhaltsam als auch ebenso herausfordernd.
+              \u6211\u559c\u6b22\u7bee\u7403\uff0c\u56e0\u4e3a\u5b83\u65e2\u8003\u9a8c\u4e2a\u4eba\u80fd\u529b\uff0c\u4e5f\u9700\u8981\u56e2\u961f\u914d\u5408\u3002\u6bcf\u4e00\u6b21\u8bad\u7ec3\u548c\u6bd4\u8d5b\u90fd\u4f1a\u8ba9\u6211\u66f4\u4e13\u6ce8\u3001\u66f4\u81ea\u5f8b\u3002
             </p>
             <hr class="divider">
-            <p style="text-align:center"><a href="#" class="photo-link" data-gallery='[{"src":"assets/default/hobbies/shooting.webp","cap":"Schie鑴界湁bung am Schie鑴絪tand, 2024"},{"src":"assets/default/hobbies/shooting2.webp","cap":"Die Anf鐩瞡ge des Schie鑴絪ports... , 2024"}]'>閳?FOTOS ANSEHEN</a></p>`
+            <p style="text-align:center"><a href="#" class="photo-link" data-gallery='[{"src":"assets/default/hobbies/basketball-01.jpg","cap":"\u7bee\u7403\u5408\u5f71 01"},{"src":"assets/default/hobbies/basketball-02.jpg","cap":"\u7bee\u7403\u5408\u5f71 02"}]'>\u67e5\u770b\u7167\u7247</a></p>            `
           }
         },
         {
@@ -869,7 +869,14 @@ function applyChineseLanguageSlotDefault() {
     back: { label: ['\u7efc\u5408', '\u9879\u76ee'], title: '\u7efc\u5408\u9879\u76ee' },
     hobbies: { label: ['\u5174\u8da3\u7231\u597d'] },
     esp: { label: ['\u7535\u5b50\u7ade\u6280'], title: '\u7535\u5b50\u7ade\u6280' },
-    sht: { label: ['\u7bee\u7403'], title: '\u7bee\u7403' },
+    sht: { label: ['\u7bee\u7403'], title: '\u7bee\u7403', html: `
+            <p>\u7bee\u7403\u9700\u8981\u4f53\u80fd\u3001\u8282\u594f\u611f\u3001\u56e2\u961f\u914d\u5408\u548c\u4e34\u573a\u5224\u65ad\u3002\u5b83\u8bad\u7ec3\u4e86\u6211\u7684\u4e13\u6ce8\u529b\u3001\u534f\u4f5c\u80fd\u529b\u3001\u6297\u538b\u80fd\u529b\u548c\u5feb\u901f\u89e3\u51b3\u95ee\u9898\u7684\u80fd\u529b\u3002</p>
+            <hr class="divider">
+            <p style="color:rgba(0,255,136,0.4);font-size:12px;font-style:italic">
+              \u6211\u559c\u6b22\u7bee\u7403\uff0c\u56e0\u4e3a\u5b83\u65e2\u8003\u9a8c\u4e2a\u4eba\u80fd\u529b\uff0c\u4e5f\u9700\u8981\u56e2\u961f\u914d\u5408\u3002\u6bcf\u4e00\u6b21\u8bad\u7ec3\u548c\u6bd4\u8d5b\u90fd\u4f1a\u8ba9\u6211\u66f4\u4e13\u6ce8\u3001\u66f4\u81ea\u5f8b\u3002
+            </p>
+            <hr class="divider">
+            <p style="text-align:center"><a href="#" class="photo-link" data-gallery='[{"src":"assets/default/hobbies/basketball-01.jpg","cap":"\u7bee\u7403\u5408\u5f71 01"},{"src":"assets/default/hobbies/basketball-02.jpg","cap":"\u7bee\u7403\u5408\u5f71 02"}]'>\u67e5\u770b\u7167\u7247</a></p>            ` },
     tec: { label: ['\u6280\u672f\u8d8b\u52bf'], title: '\u6280\u672f\u8d8b\u52bf' },
     trv: { label: ['\u65c5\u884c'], title: '\u65c5\u884c' },
     skills: { label: ['\u6280\u80fd\u4e0e', '\u5174\u8da3'] },
