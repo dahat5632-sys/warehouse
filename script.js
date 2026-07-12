@@ -885,7 +885,11 @@ function applyChineseLanguageSlotDefault() {
             </p>
             <hr class="divider">
             <p style="text-align:center"><a href="#" class="photo-link" data-gallery='[{"src":"assets/default/hobbies/basketball-01.jpg","cap":"\u7bee\u7403\u5408\u5f71 01"},{"src":"assets/default/hobbies/basketball-02.jpg","cap":"\u7bee\u7403\u5408\u5f71 02"}]'>\u67e5\u770b\u7167\u7247</a></p>            ` },
-    tec: { label: ['\u6280\u672f\u8d8b\u52bf'], title: '\u6280\u672f\u8d8b\u52bf' },
+    tec: {
+      label: ['\u6280\u672f\u8d8b\u52bf'],
+      title: '\u6280\u672f\u8d8b\u52bf',
+      html: `<p><strong>\u5173\u6ce8\u9886\u57df</strong></p><ul><li>\u4eba\u5de5\u667a\u80fd\u4e0e\u5927\u8bed\u8a00\u6a21\u578b\u53d1\u5c55</li><li>\u65b0\u80fd\u6e90\u6c7d\u8f66\u6280\u672f</li><li>\u667a\u80fd\u5ea7\u8231\u4e0e\u8f66\u8054\u7f51</li><li>\u7535\u6c60\u4e0e\u7535\u9a71\u7cfb\u7edf</li><li>\u81ea\u52a8\u9a7e\u9a76\u4e0e\u8f85\u52a9\u9a7e\u9a76</li></ul><hr class="divider"><p>\u6211\u559c\u6b22\u5173\u6ce8\u6280\u672f\u8d8b\u52bf\u3002\u65b0\u7684\u6280\u672f\u53d8\u5316\u80fd\u5e2e\u52a9\u6211\u6253\u5f00\u601d\u8def\uff0c\u4e5f\u8ba9\u6211\u6301\u7eed\u5b66\u4e60\u3001\u4fdd\u6301\u8fdb\u6b65\u3002</p>`
+    },
     trv: { label: ['\u65c5\u884c'], title: '\u65c5\u884c' },
     skills: { label: ['\u6280\u80fd\u4e0e', '\u5174\u8da3'] },
     ai: { label: ['\u4eba\u5de5\u667a\u80fd'], title: '\u4eba\u5de5\u667a\u80fd' },
