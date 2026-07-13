@@ -136,12 +136,12 @@ const DATA = {
     /* BIO: Pro Mode integration note. */
     {
       id: 'projects',
-      label: { tr: ['PROJELER闄孧'], en: ['MY PROJECTS'], de: ['PROJEKTE'] },
+      label: { tr: ['PROJELER闄孧'], en: ['MY PROJECTS'], de: ['项目'] },
       color: '#ff006e',
       subs: [
         {
           id: 'web',
-          label: { tr: ['Siber G鐪塿enlik', 'Projeleri'], en: ['Cyber Security', 'Projects'], de: ['Cyber Security', 'Projekte'] },
+          label: { tr: ['Siber G鐪塿enlik', 'Projeleri'], en: ['Cyber Security', 'Projects'], de: ['Cyber Security', '项目'] },
           title: { tr: 'CYBER SECURITY PROJECTS', en: 'CYBER SECURITY PROJECTS', de: 'CYBER SECURITY PROJECTS' },
           html: {
             tr: `
@@ -173,7 +173,7 @@ const DATA = {
               <li>[to be added]</li>
             </ul>`,
             de: `
-            <p><strong>Projekte</strong></p>
+            <p><strong>项目</strong></p>
             <ul>
               <li>Kommt bald...</li>
               <li>Kommt bald...</li>
@@ -190,7 +190,7 @@ const DATA = {
         },
         {
           id: 'mob',
-          label: { tr: ['Yapay Zeka', 'Projeleri'], en: ['AI', 'Projects'], de: ['KI-', 'Projekte'] },
+          label: { tr: ['Yapay Zeka', 'Projeleri'], en: ['AI', 'Projects'], de: ['KI-', '项目'] },
           title: { tr: 'AI PROJECTS', en: 'AI PROJECTS', de: 'AI PROJECTS' },
           html: {
             tr: `
@@ -210,7 +210,7 @@ const DATA = {
             <hr class="divider">
             <p>Project details to be added</p>`,
             de: `
-            <p><strong>Projekte</strong></p>
+            <p><strong>项目</strong></p>
             <ul>
               <li>Kommt bald...</li>
               <li>Kommt bald...</li>
@@ -221,8 +221,8 @@ const DATA = {
         },
         {
           id: 'back',
-          label: { tr: ['Karma', 'Projeler'], en: ['Mixed', 'Projects'], de: ['Gemischte', 'Projekte'] },
-          title: { tr: 'KARMA PROJELER', en: 'MIXED PROJECTS', de: 'GEMISCHTE PROJEKTE' },
+          label: { tr: ['Karma', 'Projeler'], en: ['Mixed', 'Projects'], de: ['Gemischte', '项目'] },
+          title: { tr: 'KARMA PROJELER', en: 'MIXED PROJECTS', de: 'GEMISCHTE 项目' },
           html: {
             tr: `
             <p><strong>Projeler</strong></p>
@@ -251,7 +251,7 @@ const DATA = {
               <li>[to be added]</li>
             </ul>`,
             de: `
-            <p><strong>Projekte</strong></p>
+            <p><strong>项目</strong></p>
             <ul>
               <li>Kommt bald...</li>
               <li>Kommt bald...</li>
@@ -462,7 +462,7 @@ const DATA = {
               <li>Codex, VS Code, Gemini, Claude Code</li>
             </ul>
             <hr class="divider">
-            <p><strong>Abgeschlossene Projekte</strong></p>
+            <p><strong>Abgeschlossene 项目</strong></p>
             <ul>
               <li>
                 <a href="https://github.com/bilalgurkansanli/Health_Insurance_Cost_Prediction" target="_blank" rel="noopener">Health Insurance Cost Prediction</a><br>
@@ -1521,7 +1521,7 @@ function mkNode(id, x, y, r, color, lines, type) {
       x: -imgW / 2, y: imgY, width: imgW, height: imgH,
       href: 'assets/default/common/bilal2.png',
       'clip-path': `url(#${clipId})`,
-      preserveAspectRatio: 'xMidYMid slice',
+      preserveAspectRatio: '项目idYMid slice',
       'pointer-events': 'none'
     });
     const avatarGroup = svgEl('g', { class: 'center-avatar' });
