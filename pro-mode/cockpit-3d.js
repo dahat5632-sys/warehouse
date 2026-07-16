@@ -1,4 +1,4 @@
-/* BIO: Cockpit layout, rendering, and interaction note. */
+﻿/* BIO: Cockpit layout, rendering, and interaction note. */
 import * as THREE from 'three';
 import { mergeGeometries } from 'three/addons/utils/BufferGeometryUtils.js';
 import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
@@ -12113,6 +12113,7 @@ init().catch(err => {
   console.warn('[cockpit-3d] init error:', err);
   failFallback(document.getElementById('cockpit-3d-wrap'), document.getElementById('cockpit-img'));
 });
+
 
 
 
