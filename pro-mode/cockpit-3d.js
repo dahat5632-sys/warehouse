@@ -1,4 +1,4 @@
-﻿/* BIO: Cockpit layout, rendering, and interaction note. */
+/* BIO: Cockpit layout, rendering, and interaction note. */
 import * as THREE from 'three';
 import { mergeGeometries } from 'three/addons/utils/BufferGeometryUtils.js';
 import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
@@ -128,7 +128,7 @@ const COCKPIT_STICKER_AWWWARDS_NOMINEE_URL = new URL(
 ).href;
 /* BIO: Design Nominees Site of the Day 鈥?opens in a new tab when the decal is clicked. */
 const COCKPIT_DESIGN_NOMINEES_PAGE_URL = new URL(
-  '../assets/pro/common/design-nominees-reward-photo.jpg',
+  '../assets/pro/common/design-nominees-award-photo-2026.jpg',
   import.meta.url
 ).href;
 /* BIO: Awwwards Nominee 鈥?opens in a new tab when the decal is clicked. */
