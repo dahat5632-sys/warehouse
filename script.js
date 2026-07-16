@@ -1,4 +1,4 @@
-﻿'use strict';
+'use strict';
 
 /* BIO: Implementation note for this section. */
 const IS_MOBILE = (() => {
@@ -406,77 +406,62 @@ const DATA = {
       subs: [
         {
           id: 'ai',
-          label: { tr: ['Yapay Zeka'], en: ['娴滃搫浼愰弲楦垮厴'], de: ['K鐪塶stliche', 'Intelligenz'] },
-          title: { tr: 'YAPAY ZEKA', en: '娴滃搫浼愰弲楦垮厴', de: 'K鑴篘STLICHE INTELLIGENZ' },
+          label: { tr: ['人工智能'], en: ['人工智能'], de: ['人工智能'] },
+          title: { tr: '人工智能', en: '人工智能', de: '人工智能' },
           html: {
             tr: `
-            <p><strong>K鐪塼鐪塸haneler &amp; Ara鑾絣ar</strong></p>
+            <p><strong>知识库和工具</strong></p>
             <ul>
               <li>Obsidian</li>
               <li>Codex, VS Code, Gemini, Claude Code</li>
             </ul>
             <hr class="divider">
-            <p><strong>Tamamlad璋嬭噿璋媘 Projeler</strong></p>
+            <p><strong>已完成项目</strong></p>
             <ul>
-              <li>
-                <a href="https://github.com/bilalgurkansanli/Health_Insurance_Cost_Prediction" target="_blank" rel="noopener">Health Insurance Cost Prediction</a><br>
-                <span>
-                  ML modelleriyle ki鑹sel 鏋歾elliklere dayal璋?sa鑷抣璋媖 sigortas璋?maliyeti tahmini <strong>(Denetimli 鑴拌噿renme)</strong>
-                </span>
-              </li>
+              <li>天工开物多模态模型</li>
             </ul>
             <hr class="divider">
-            <p><strong>闄宭gi Alanlar璋?/strong></p>
+            <p><strong>兴趣方向</strong></p>
             <ul>
-              <li>Do鑷抋l Dil 闄岃墽leme (NLP)</li>
-              <li>Makine 鑴拌噿renmesi</li>
-              <li>鑴簉etken Yapay Zeka (GenAI)</li>
+              <li>自然语言处理</li>
+              <li>机器学习</li>
+              <li>生成式 AI</li>
             </ul>`,
             en: `
-            <p><strong>閻儴鐦戞惔鎾虫嫲瀹搞儱鍙?/strong></p>
+            <p><strong>知识库和工具</strong></p>
             <ul>
               <li>Obsidian</li>
               <li>Codex, VS Code, Gemini, Claude Code</li>
             </ul>
             <hr class="divider">
-            <p><strong>Completed Projects</strong></p>
+            <p><strong>已完成项目</strong></p>
             <ul>
-              <li>
-                <a href="https://github.com/bilalgurkansanli/Health_Insurance_Cost_Prediction" target="_blank" rel="noopener">Health Insurance Cost Prediction</a><br>
-                <span>
-                  Health insurance cost prediction based on personal features using ML models <strong>(Supervised Learning)</strong>
-                </span>
-              </li>
+              <li>天工开物多模态模型</li>
             </ul>
             <hr class="divider">
-            <p><strong>Areas of Interest</strong></p>
+            <p><strong>兴趣方向</strong></p>
             <ul>
-              <li>Natural Language Processing (NLP)</li>
-              <li>Machine Learning</li>
-              <li>Generative AI (GenAI)</li>
+              <li>自然语言处理</li>
+              <li>机器学习</li>
+              <li>生成式 AI</li>
             </ul>`,
             de: `
-            <p><strong>Bibliotheken &amp; Werkzeuge</strong></p>
+            <p><strong>知识库和工具</strong></p>
             <ul>
               <li>Obsidian</li>
               <li>Codex, VS Code, Gemini, Claude Code</li>
             </ul>
             <hr class="divider">
-            <p><strong>Abgeschlossene 项目</strong></p>
+            <p><strong>已完成项目</strong></p>
             <ul>
-              <li>
-                <a href="https://github.com/bilalgurkansanli/Health_Insurance_Cost_Prediction" target="_blank" rel="noopener">Health Insurance Cost Prediction</a><br>
-                <span>
-                  Krankenversicherungskostenvorhersage basierend auf pers鏋歯lichen Merkmalen mit ML-Modellen <strong>(鑴篵erwachtes Lernen)</strong>
-                </span>
-              </li>
+              <li>天工开物多模态模型</li>
             </ul>
             <hr class="divider">
-            <p><strong>Interessengebiete</strong></p>
+            <p><strong>兴趣方向</strong></p>
             <ul>
-              <li>Nat鐪塺liche Sprachverarbeitung (NLP)</li>
-              <li>Maschinelles Lernen</li>
-              <li>Generative KI (GenAI)</li>
+              <li>自然语言处理</li>
+              <li>机器学习</li>
+              <li>生成式 AI</li>
             </ul>`
           }
         },
