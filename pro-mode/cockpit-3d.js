@@ -891,7 +891,7 @@ const proSkillsSubGroups = [];
 const proSkillsSubLabelSprites = [];
 const proSkillsSubLabelTexts = {
   ai: '浜哄伐鏅鸿兘',
-  sec: '新能源汽车'
+  sec: '我的AIGC作品'
 };
 let proSkillsMode = 'idle';
 let proSkillsAnim = { t: 0, duration: 0.55 };
