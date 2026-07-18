@@ -24,69 +24,65 @@ const DATA = {
       subs: [
         {
           id: 'edu',
-  label: { tr: ['\\u5468\\u5929\\u723d'], en: ['\\u5468\\u5929\\u723d'], de: ['\\u5468\\u5929\\u723d'] },
-          title: { tr: 'E鑷戦檶T闄孧', en: 'EDUCATION', de: 'AUSBILDUNG' },
+          label: { tr: ['教育经历'], en: ['教育经历'], de: ['教育经历'] },
+          title: { tr: '教育经历', en: '教育经历', de: '教育经历' },
           html: {
             tr: `
             <div class="tl-wrap">
               <div class="tl-item active">
-                <div class="tl-year">2024 閳?2027</div>
-                <div class="tl-title">Yeditepe 鑴簄iversitesi</div>
-                <div class="tl-desc">闄宯ternet ve A鑷?Teknolojileri</div>
+                <div class="tl-year">2022 - 2025</div>
+                <div class="tl-title">湖北科技职业学院</div>
+                <div class="tl-desc">互联网与网络技术</div>
               </div>
               <div class="tl-item">
-                <div class="tl-year">2020 閳?2024</div>
-                <div class="tl-title">G鐪夎幗 Karde鑹er Anadolu Lisesi</div>
-                <div class="tl-desc">Lise E鑷抜timi</div>
+                <div class="tl-year">2019 - 2022</div>
+                <div class="tl-title">孝感一中</div>
+                <div class="tl-desc">高中教育</div>
               </div>
             </div>
             <hr class="divider">
-            <div class="tl-section-title">Sertifikalar</div>
+            <div class="tl-section-title">获奖</div>
             <div class="tl-cert">
-              <a href="https://learn.microsoft.com/en-us/users/bilalanl-8550/credentials/38e863aaef982a2d?ref=https%3A%2F%2Fwww.linkedin.com%2F" target="_blank" rel="noopener">Microsoft Certified: Fabric Data Engineer Associate (2026)</a>
-              <a href="https://www.credly.com/badges/3852359e-8131-4422-9279-918a4f5c4c74" target="_blank" rel="noopener">Cisco AI Technical Practitioner (2026)</a>
-            </div>`,
+              <span style="color:#ff6a00">湖北省新能源汽车故障诊断二等奖</span>
+            </div>            `,
             en: `
             <div class="tl-wrap">
               <div class="tl-item active">
-                <div class="tl-year">2024 閳?2027</div>
-                <div class="tl-title">Yeditepe University</div>
-                <div class="tl-desc">Internet and Network Technologies</div>
+                <div class="tl-year">2022 - 2025</div>
+                <div class="tl-title">湖北科技职业学院</div>
+                <div class="tl-desc">互联网与网络技术</div>
               </div>
               <div class="tl-item">
-                <div class="tl-year">2020 閳?2024</div>
-                <div class="tl-title">G鐪夎幗 Karde鑹er Anatolian High School</div>
-                <div class="tl-desc">High School Education</div>
+                <div class="tl-year">2019 - 2022</div>
+                <div class="tl-title">孝感一中</div>
+                <div class="tl-desc">高中教育</div>
               </div>
             </div>
             <hr class="divider">
-            <div class="tl-section-title">Certifications</div>
+            <div class="tl-section-title">获奖</div>
             <div class="tl-cert">
-              <a href="https://learn.microsoft.com/en-us/users/bilalanl-8550/credentials/38e863aaef982a2d?ref=https%3A%2F%2Fwww.linkedin.com%2F" target="_blank" rel="noopener">Microsoft Certified: Fabric Data Engineer Associate (2026)</a>
-              <a href="https://www.credly.com/badges/3852359e-8131-4422-9279-918a4f5c4c74" target="_blank" rel="noopener">Cisco AI Technical Practitioner (2026)</a>
-            </div>`,
+              <span style="color:#ff6a00">湖北省新能源汽车故障诊断二等奖</span>
+            </div>            `,
             de: `
             <div class="tl-wrap">
               <div class="tl-item active">
-                <div class="tl-year">2024 閳?2027</div>
-                <div class="tl-title">Yeditepe Universit鐩瞭</div>
-                <div class="tl-desc">Internet- und Netzwerktechnologien</div>
+                <div class="tl-year">2022 - 2025</div>
+                <div class="tl-title">湖北科技职业学院</div>
+                <div class="tl-desc">互联网与网络技术</div>
               </div>
               <div class="tl-item">
-                <div class="tl-year">2020 閳?2024</div>
-                <div class="tl-title">G鐪夎幗 Karde鑹er Anatolisches Gymnasium</div>
-                <div class="tl-desc">Gymnasiale Ausbildung</div>
+                <div class="tl-year">2019 - 2022</div>
+                <div class="tl-title">孝感一中</div>
+                <div class="tl-desc">高中教育</div>
               </div>
             </div>
             <hr class="divider">
-            <div class="tl-section-title">Zertifikate</div>
+            <div class="tl-section-title">获奖</div>
             <div class="tl-cert">
-              <a href="https://learn.microsoft.com/en-us/users/bilalanl-8550/credentials/38e863aaef982a2d?ref=https%3A%2F%2Fwww.linkedin.com%2F" target="_blank" rel="noopener">Microsoft Certified: Fabric Data Engineer Associate (2026)</a>
-              <a href="https://www.credly.com/badges/3852359e-8131-4422-9279-918a4f5c4c74" target="_blank" rel="noopener">Cisco AI Technical Practitioner (2026)</a>
-            </div>`
+              <span style="color:#ff6a00">湖北省新能源汽车故障诊断二等奖</span>
+            </div>            `
           }
-        },
-        {
+        },        {
           id: 'exp',
           label: { tr: ['Deneyim'], en: ['Experience'], de: ['Erfahrung'] },
           title: { tr: 'DENEY闄孧', en: 'EXPERIENCE', de: 'ERFAHRUNG' },
@@ -5022,6 +5018,7 @@ updateStatusDate();
     mpFadeIn();
   };
 })();
+
 
 
 
