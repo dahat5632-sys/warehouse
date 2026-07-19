@@ -197,78 +197,6 @@ const DATA = {
       ]
     },
 
-    {
-      id: 'projects',
-      label: { tr: ['项目'], en: ['项目'], de: ['项目'] },
-      color: '#ff007a',
-      subs: [
-        {
-          id: 'web',
-          label: { tr: ['网站', '项目'], en: ['网站', '项目'], de: ['网站', '项目'] },
-          title: { tr: '网站项目', en: '网站项目', de: '网站项目' },
-          html: {
-            tr: `
-              <p><strong>项目</strong></p>
-              <ul><li>即将更新...</li><li>即将更新...</li><li>即将更新...</li></ul>
-              <hr class="divider">
-              <p><strong>使用的技术</strong></p>
-              <ul><li>Python</li><li>待添加</li><li>待添加</li></ul>
-            `,
-            en: `
-              <p><strong>项目</strong></p>
-              <ul><li>即将更新...</li><li>即将更新...</li><li>即将更新...</li></ul>
-              <hr class="divider">
-              <p><strong>使用的技术</strong></p>
-              <ul><li>Python</li><li>待添加</li><li>待添加</li></ul>
-            `,
-            de: `
-              <p><strong>项目</strong></p>
-              <ul><li>即将更新...</li><li>即将更新...</li><li>即将更新...</li></ul>
-              <hr class="divider">
-              <p><strong>使用的技术</strong></p>
-              <ul><li>Python</li><li>待添加</li><li>待添加</li></ul>
-            `
-          }
-        },
-        {
-          id: 'aiProject',
-          label: { tr: ['AI', '项目'], en: ['AI', '项目'], de: ['AI', '项目'] },
-          title: { tr: 'AI 项目', en: 'AI 项目', de: 'AI 项目' },
-          html: {
-            tr: `
-              <p><strong>知识库和工具</strong></p>
-              <ul><li>Obsidian</li><li>Codex, VS Code, Gemini, Claude Code</li></ul>
-              <hr class="divider">
-              <p><strong>已完成项目</strong></p>
-              <ul><li>天工开物多模态模型</li></ul>
-              <hr class="divider">
-              <p><strong>兴趣方向</strong></p>
-              <ul><li>自然语言处理</li><li>机器学习</li><li>生成式 AI</li></ul>
-            `,
-            en: `
-              <p><strong>知识库和工具</strong></p>
-              <ul><li>Obsidian</li><li>Codex, VS Code, Gemini, Claude Code</li></ul>
-              <hr class="divider">
-              <p><strong>已完成项目</strong></p>
-              <ul><li>天工开物多模态模型</li></ul>
-              <hr class="divider">
-              <p><strong>兴趣方向</strong></p>
-              <ul><li>自然语言处理</li><li>机器学习</li><li>生成式 AI</li></ul>
-            `,
-            de: `
-              <p><strong>知识库和工具</strong></p>
-              <ul><li>Obsidian</li><li>Codex, VS Code, Gemini, Claude Code</li></ul>
-              <hr class="divider">
-              <p><strong>已完成项目</strong></p>
-              <ul><li>天工开物多模态模型</li></ul>
-              <hr class="divider">
-              <p><strong>兴趣方向</strong></p>
-              <ul><li>自然语言处理</li><li>机器学习</li><li>生成式 AI</li></ul>
-            `
-          }
-        }
-      ]
-    },
     /* BIO: Implementation note for this section. */
     {
       id: 'hobbies',
@@ -5023,7 +4951,6 @@ updateStatusDate();
     mpFadeIn();
   };
 })();
-
 
 
 
