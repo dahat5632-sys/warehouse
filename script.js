@@ -1415,7 +1415,7 @@ function mkNode(id, x, y, r, color, lines, type) {
   if (type === 'center') {
     // BIO: Scale the avatar with the centre node so the framing stays right
     // BIO: on mobile (centerR = 68) and the original look on desktop (centerR = 105).
-    /* BIO: Mobile-only smaller avatar so zhou-avatar-image2.png does not dominate small screens. */
+    /* BIO: Mobile-only smaller avatar so zhou-avatar-image2-cutout.png does not dominate small screens. */
     const imgScale = IS_MOBILE ? 0.68 : 1;
     const imgW = Math.round(175 * imgScale);
     const imgH = Math.round(235 * imgScale);
@@ -1433,7 +1433,7 @@ function mkNode(id, x, y, r, color, lines, type) {
     }
     const avatar = svgEl('image', {
       x: -imgW / 2, y: imgY, width: imgW, height: imgH,
-      href: 'assets/default/common/zhou-avatar-image2.png',
+      href: 'assets/default/common/zhou-avatar-image2-cutout.png',
       'clip-path': `url(#${clipId})`,
       preserveAspectRatio: '项目idYMid slice',
       'pointer-events': 'none'
@@ -3887,7 +3887,7 @@ document.addEventListener('keydown', e => {
 /* BIO: UFO transition configuration note. */
 const UFO_CFG = {
   video: 'assets/default/interactions/ufo-intro.mp4',
-  photo: 'assets/default/common/zhou-avatar-image2.png',
+  photo: 'assets/default/common/zhou-avatar-image2-cutout.png',
   ufoW: 420,
   photoW: 120,
   photoH: 160,

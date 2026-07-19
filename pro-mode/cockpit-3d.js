@@ -138,7 +138,7 @@ const COCKPIT_AWWWARDS_NOMINEE_PAGE_URL = new URL(
 ).href;
 /* BIO: Pilot ID card portrait on About Me sub-planet (CSS3D panel). */
 const PRO_BIO_PILOT_PORTRAIT_URL = new URL(
-  '../assets/default/common/zhou-avatar-image2.png',
+  '../assets/default/common/zhou-avatar-image2-cutout.png',
   import.meta.url
 ).href;
 /* BIO: Planet layout, label, and interaction note. */
