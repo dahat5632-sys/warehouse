@@ -627,9 +627,9 @@ const COCKPIT_PRO_ABOUT_SUB = {
 /* BIO: Pro Mode integration note. */
 const COCKPIT_PRO_PROJECTS_SUB = {
   screens: {
-    web: { x: -0.4, y: 0, z: 0.2 },
-    mob: { x: -0.4, y: 0, z: -0.2 },
-    back: { x: -0.4, y: 0, z: -0.2 }
+    web: { x: -0.4, y: 0, z: 0.12 },
+    mob: { x: -0.4, y: 0, z: -0.12 },
+    back: { x: -0.4, y: 0, z: -0.12 }
   },
   order: ['web', 'mob'],
   planetRadiusMul: 0.092 * 0.48,
