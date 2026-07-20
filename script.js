@@ -158,8 +158,8 @@ const DATA = {
       subs: [
         {
           id: 'web',
-          label: { tr: ['网站', '项目'], en: ['网站', '项目'], de: ['网站', '项目'] },
-          title: { tr: '网站项目', en: '网站项目', de: '网站项目' },
+          label: { tr: ['个人', '作品集'], en: ['个人', '作品集'], de: ['个人', '作品集'] },
+          title: { tr: '个人作品集', en: '个人作品集', de: '个人作品集' },
           html: {
             tr: `
               <p><strong>项目</strong></p>
@@ -732,7 +732,7 @@ function applyChineseLanguageSlotDefault() {
             <p>\u6211\u4ecd\u5728\u6301\u7eed\u5b66\u4e60\u548c\u6210\u957f\u3002\u968f\u7740\u7ecf\u9a8c\u79ef\u7d2f\uff0c\u8fd9\u4e00\u90e8\u5206\u4f1a\u7ee7\u7eed\u66f4\u65b0\u3002</p>` },
     bio: { label: ['\u4e2a\u4eba\u7b80\u4ecb'], title: '\u4e2a\u4eba\u7b80\u4ecb' },
     projects: { label: ['\u9879\u76ee'] },
-    web: { label: ['\u7f51\u7ad9', '\u9879\u76ee'], title: '\u7f51\u7ad9\u9879\u76ee' },
+    web: { label: ['\u4e2a\u4eba', '\u4f5c\u54c1\u96c6'], title: '\u4e2a\u4eba\u4f5c\u54c1\u96c6' },
     mob: { label: ['AI', '\u9879\u76ee'], title: 'AI \u9879\u76ee' },
     hobbies: { label: ['\u5174\u8da3\u7231\u597d'] },
     esp: { label: ['\u7535\u5b50\u7ade\u6280'], title: '\u7535\u5b50\u7ade\u6280', html: `
