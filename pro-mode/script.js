@@ -315,7 +315,7 @@
     aboutSubEdu: '教育经历',
     aboutSubExp: '经历',
     aboutSubBio: '个人简介',
-    projectsSubWeb: '新能源汽车',
+    projectsSubWeb: '个人作品集',
     projectsSubMob: '人工智能',
     projectsSubBack: '',
     hobbiesSubEsp: '电子竞技',

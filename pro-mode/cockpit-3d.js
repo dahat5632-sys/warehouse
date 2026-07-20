@@ -855,7 +855,7 @@ let projectsSubRoot = null;
 const proProjectsSubGroups = [];
 const proProjectsSubLabelSprites = [];
 const proProjectsSubLabelTexts = {
-  web: '新能源汽车',
+  web: '个人作品集',
   mob: 'Artificial Intelligence',
   back: 'Mixed Projects'
 };
@@ -5985,13 +5985,13 @@ const PRO_SUB_CONTENT = {
         <hr class="divider">
         <p><strong>Kulland谋臒谋m Teknolojiler</strong></p>
         <ul><li>Python</li><li>[eklenecek]</li><li>[eklenecek]</li></ul>` },
-      en: { title: '新能源汽车项目', html: `
+      en: { title: '个人作品集', html: `
         <p><strong>Projects</strong></p>
         <ul><li>Coming soon...</li><li>Coming soon...</li><li>Coming soon...</li></ul>
         <hr class="divider">
         <p><strong>Technologies Used</strong></p>
         <ul><li>Python</li><li>[to be added]</li><li>[to be added]</li></ul>` },
-      de: { title: '新能源汽车项目', html: `
+      de: { title: '个人作品集', html: `
         <p><strong>Projekte</strong></p>
         <ul><li>Kommt bald...</li><li>Kommt bald...</li><li>Kommt bald...</li></ul>
         <hr class="divider">
@@ -10457,7 +10457,7 @@ function applyChineseLanguageSlotCockpit() {
       bio: { title: '个人简介', html: `<p>你好，我是 <strong>周天爽</strong>，也可以叫我 <strong>ZTS</strong>。</p><hr class="divider"><p>我关注人工智能、AI 训练、新能源汽车和自动化工具，希望把复杂技术转化为稳定、可用、能解决实际问题的能力。</p><hr class="divider"><p class="psh-note">工作之外，我也喜欢关注新技术、游戏、旅行和有挑战性的训练项目。</p>` }
     },
     projects: {
-      web: { title: '网站项目', html: `<p><strong>项目</strong></p><ul><li>即将更新...</li><li>即将更新...</li><li>即将更新...</li></ul><hr class="divider"><p><strong>使用技术</strong></p><ul><li>Python</li><li>待添加</li><li>待添加</li></ul>` },
+      web: { title: '个人作品集', html: `<p><strong>项目</strong></p><ul><li>即将更新...</li><li>即将更新...</li><li>即将更新...</li></ul><hr class="divider"><p><strong>使用技术</strong></p><ul><li>Python</li><li>待添加</li><li>待添加</li></ul>` },
       mob: { title: 'AI 项目', html: `<p><strong>项目</strong></p><ul><li>天工开物多模态</li></ul><hr class="divider"><p>项目详情待添加。</p>` },
       back: { title: '综合项目', html: `<p><strong>项目</strong></p><ul><li>即将更新...</li><li>即将更新...</li></ul><hr class="divider"><p><strong>使用技术</strong></p><ul><li>Python</li><li>待添加</li><li>待添加</li></ul>` }
     },
