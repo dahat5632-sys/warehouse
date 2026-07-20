@@ -1134,7 +1134,7 @@ const $bb     = document.getElementById('bb');
 
 /* BIO: Implementation note for this section. */
 function _bcSyncRoot() {
-  $bc.classList.toggle('at-root', !$bc.textContent.includes('>'));
+  $bc.classList.toggle('at-root', !$bc.textContent.includes('/'));
 }
 _bcSyncRoot();
 new MutationObserver(_bcSyncRoot).observe($bc, {
@@ -1534,7 +1534,7 @@ function expandNode(nd, nx, ny, ang, anim = true) {
 
   if (S.level === 1 && S.main && S.main.id === nd.id) {
     gsap.to($world, { x: expandBaseWorldX, y: expandBaseWorldY, duration: 0.35, ease: 'power2.inOut' });
-    $bc.textContent = `${UI[currentLang].tree}  閳? ${L(nd.label).join(' ')}`;
+    $bc.textContent = `${UI[currentLang].tree} / ${L(nd.label).join(' ')}`;
     return;
   }
 
@@ -1575,7 +1575,7 @@ function expandNode(nd, nx, ny, ang, anim = true) {
   }
 
   S.level = 1; S.main = nd; S.mainAng = ang; S.mainNx = nx; S.mainNy = ny;
-  $bc.textContent = `${UI[currentLang].tree}  閳? ${L(nd.label).join(' ')}`;
+  $bc.textContent = `${UI[currentLang].tree} / ${L(nd.label).join(' ')}`;
   $bb.textContent = UI[currentLang].back;
   $bb.style.display = 'block';
 
@@ -1872,7 +1872,7 @@ function openPanel(sub, color, sx, sy, subAng = 0) {
   }, twDelay);
 
   // BIO: 閳光偓閳光偓 Breadcrumb 閳光偓閳光偓閳光偓閳光偓閳光偓閳光偓閳光偓閳光偓閳光偓閳光偓閳光偓閳光偓閳光偓閳光偓閳光偓閳光偓閳光偓閳光偓閳光偓閳光偓閳光偓閳光偓閳光偓閳光偓閳光偓閳光偓閳光偓閳光偓閳光偓閳光偓閳光偓閳光偓閳光偓閳光偓閳光偓
-  if (S.main) $bc.textContent = `${UI[currentLang].tree}  閳? ${L(S.main.label).join(' ')}  閳? ${L(sub.label).join(' ')}`;
+  if (S.main) $bc.textContent = `${UI[currentLang].tree} / ${L(S.main.label).join(' ')} / ${L(sub.label).join(' ')}`;
 }
 
 /* BIO: Hologram panel behavior and rendering note. */
@@ -2104,7 +2104,7 @@ function closeHolo() {
   holoOpen = false;
   currentSubId = null;
   if (S.main) {
-    $bc.textContent = `${UI[currentLang].tree}  閳? ${L(S.main.label).join(' ')}`;
+    $bc.textContent = `${UI[currentLang].tree} / ${L(S.main.label).join(' ')}`;
     gsap.to($world, { x: expandBaseWorldX, y: expandBaseWorldY, duration: 0.4, ease: 'power2.inOut' });
   }
 }
