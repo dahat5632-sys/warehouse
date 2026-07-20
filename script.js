@@ -148,52 +148,6 @@ const DATA = {
             <p>Projektdetails werden hinzugef鐪塯t</p>`
           }
         },
-        {
-          id: 'back',
-          label: { tr: ['Karma', 'Projeler'], en: ['Mixed', 'Projects'], de: ['Gemischte', '项目'] },
-          title: { tr: 'KARMA PROJELER', en: 'MIXED PROJECTS', de: 'GEMISCHTE 项目' },
-          html: {
-            tr: `
-            <p><strong>Projeler</strong></p>
-            <ul>
-              <li>鑴無k yak璋媙da...</li>
-              <li>鑴無k yak璋媙da...</li>
-            </ul>
-            <hr class="divider">
-            <p><strong>Kulland璋嬭噿璋媘 Teknolojiler</strong></p>
-            <ul>
-              <li>Python</li>
-              <li>[eklenecek]</li>
-              <li>[eklenecek]</li>
-            </ul>`,
-            en: `
-            <p><strong>Projects</strong></p>
-            <ul>
-              <li>Coming soon...</li>
-              <li>Coming soon...</li>
-            </ul>
-            <hr class="divider">
-            <p><strong>Technologies Used</strong></p>
-            <ul>
-              <li>Python</li>
-              <li>[to be added]</li>
-              <li>[to be added]</li>
-            </ul>`,
-            de: `
-            <p><strong>项目</strong></p>
-            <ul>
-              <li>Kommt bald...</li>
-              <li>Kommt bald...</li>
-            </ul>
-            <hr class="divider">
-            <p><strong>Verwendete Technologien</strong></p>
-            <ul>
-              <li>Python</li>
-              <li>[wird hinzugef鐪塯t]</li>
-              <li>[wird hinzugef鐪塯t]</li>
-            </ul>`
-          }
-        }
       ]
     },
 
@@ -780,7 +734,6 @@ function applyChineseLanguageSlotDefault() {
     projects: { label: ['\u9879\u76ee'] },
     web: { label: ['\u7f51\u7ad9', '\u9879\u76ee'], title: '\u7f51\u7ad9\u9879\u76ee' },
     mob: { label: ['AI', '\u9879\u76ee'], title: 'AI \u9879\u76ee' },
-    back: { label: ['\u7efc\u5408', '\u9879\u76ee'], title: '\u7efc\u5408\u9879\u76ee' },
     hobbies: { label: ['\u5174\u8da3\u7231\u597d'] },
     esp: { label: ['\u7535\u5b50\u7ade\u6280'], title: '\u7535\u5b50\u7ade\u6280', html: `
             <p><strong>\u559c\u6b22\u7684\u6e38\u620f</strong></p>
