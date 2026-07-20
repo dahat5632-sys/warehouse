@@ -628,7 +628,7 @@ const COCKPIT_PRO_ABOUT_SUB = {
 const COCKPIT_PRO_PROJECTS_SUB = {
   screens: {
     web: { x: -0.4, y: 0, z: 0.2 },
-    mob: { x: -0.3, y: 0, z: 0 },
+    mob: { x: -0.4, y: 0, z: -0.2 },
     back: { x: -0.4, y: 0, z: -0.2 }
   },
   order: ['web', 'mob'],
