@@ -4005,13 +4005,9 @@ document.addEventListener('keydown', e => {
 });
 
 
-/* BIO: UFO transition configuration note. */
 const UFO_CFG = {
   video: 'assets/default/interactions/ufo-intro.mp4',
   photo: 'assets/default/common/zhou-avatar-image2-cutout.png',
-  ufoW: 420,
-  photoW: 120,
-  photoH: 160,
   beamTime: 2.5,
   closeTime: 4.5,
   closeSoundTime: 4.2,
@@ -4024,148 +4020,217 @@ const UFO_CFG = {
 };
 
 function playUfoIntro() {
-  const vw = window.innerWidth;
-  const vh = window.innerHeight;
-
   const blocker = document.createElement('div');
   Object.assign(blocker.style, {
-    position: 'fixed', inset: '0', zIndex: '5998',
-    background: 'transparent'
+    position: 'fixed', inset: '0', zIndex: '5998', background: 'transparent'
   });
   document.body.appendChild(blocker);
 
   const skipBtn = document.createElement('button');
   skipBtn.className = 'anim-skip';
-  skipBtn.textContent = UI[currentLang].skip;
+  skipBtn.textContent = UI[currentLang]?.skip || '跳过';
   skipBtn.style.zIndex = '6001';
   document.body.appendChild(skipBtn);
   gsap.to(skipBtn, { opacity: 1, duration: 0.4, delay: 0.6 });
 
-  /* BIO: UFO transition configuration note. */
   const sfx = {};
   for (const [key, cfg] of Object.entries(UFO_CFG.sfx)) {
-    const a = new Audio(cfg.src);
-    a.preload = 'auto';
-    a.loop    = cfg.loop;
-    a.volume  = Math.min(1, cfg.mix * globalVolume);
-    sfx[key] = { audio: a, mix: cfg.mix };
+    const audio = new Audio(cfg.src);
+    audio.preload = 'auto';
+    audio.loop = cfg.loop;
+    audio.volume = Math.min(1, cfg.mix * globalVolume);
+    sfx[key] = { audio, mix: cfg.mix };
   }
+
   function playSfx(key) {
-    const s = sfx[key];
-    if (!s) return;
-    s.audio.volume = Math.min(1, s.mix * globalVolume);
-    try { s.audio.currentTime = 0; } catch (_) {}
-    const p = s.audio.play();
-    if (p && typeof p.catch === 'function') p.catch(() => {});
+    const sound = sfx[key];
+    if (!sound) return;
+    sound.audio.volume = Math.min(1, sound.mix * globalVolume);
+    try { sound.audio.currentTime = 0; } catch (_) {}
+    const promise = sound.audio.play();
+    if (promise && typeof promise.catch === 'function') promise.catch(() => {});
   }
+
   function fadeSfxOut(key, duration) {
-    const s = sfx[key];
-    if (!s) return;
-    gsap.to(s.audio, {
-      volume: 0, duration, ease: 'power2.in',
-      onComplete: () => { try { s.audio.pause(); s.audio.currentTime = 0; } catch (_) {} }
+    const sound = sfx[key];
+    if (!sound) return;
+    gsap.to(sound.audio, {
+      volume: 0,
+      duration,
+      ease: 'power2.in',
+      onComplete: () => {
+        try { sound.audio.pause(); sound.audio.currentTime = 0; } catch (_) {}
+      }
     });
   }
+
   function stopAllSfx() {
-    for (const key in sfx) {
-      const a = sfx[key].audio;
-      gsap.killTweensOf(a);
-      try { a.pause(); a.currentTime = 0; } catch (_) {}
+    for (const sound of Object.values(sfx)) {
+      gsap.killTweensOf(sound.audio);
+      try { sound.audio.pause(); sound.audio.currentTime = 0; } catch (_) {}
     }
   }
 
-  const ufo = document.createElement('video');
-  ufo.src = UFO_CFG.video;
-  ufo.muted = true;
-  ufo.playsInline = true;
-  ufo.preload = 'auto';
-  Object.assign(ufo.style, {
-    position: 'fixed', zIndex: '6000',
-    width: UFO_CFG.ufoW + 'px', height: 'auto',
-    left: '50%', top: -(UFO_CFG.ufoW) + 'px',
-    transform: 'translateX(-50%)',
-    pointerEvents: 'none',
-    mixBlendMode: 'screen'
-  });
+  let finished = false;
+  let controller = null;
+  let engineTimer = 0;
+  let fallbackVideo = null;
+  let fallbackPhoto = null;
 
-  const photo = document.createElement('img');
-  photo.src = UFO_CFG.photo;
-  Object.assign(photo.style, {
-    position: 'fixed', zIndex: '5999',
-    width: UFO_CFG.photoW + 'px', height: UFO_CFG.photoH + 'px',
-    objectFit: 'cover',
-    borderRadius: '8px',
-    left: '50%', top: '15%',
-    transform: 'translateX(-50%)',
-    pointerEvents: 'none',
-    opacity: '0',
-    boxShadow: '0 0 20px rgba(0,229,255,0.4), 0 0 60px rgba(0,229,255,0.15)'
-  });
-
-  document.body.appendChild(ufo);
-  document.body.appendChild(photo);
-
-  let photoDropped = false;
-  let beamClosed = false;
-  let closeSoundPlayed = false;
-
-  const centerY = vh / 2;
-  const photoTargetY = centerY - UFO_CFG.photoH + 20;
-
-  ufo.addEventListener('timeupdate', () => {
-    if (!photoDropped && ufo.currentTime >= UFO_CFG.beamTime) {
-      photoDropped = true;
-      playSfx('beam');
-      gsap.to(photo, {
-        opacity: 1, top: photoTargetY + 'px',
-        duration: 1.4, ease: 'power1.out'
-      });
-    }
-    if (!closeSoundPlayed && ufo.currentTime >= UFO_CFG.closeSoundTime) {
-      closeSoundPlayed = true;
-      playSfx('close');
-    }
-    if (!beamClosed && ufo.currentTime >= UFO_CFG.closeTime) {
-      beamClosed = true;
-      gsap.to(photo, {
-        boxShadow: '0 0 30px rgba(0,229,255,0.6), 0 0 80px rgba(0,229,255,0.2)',
-        duration: 0.3
-      });
-    }
-  });
-
-  ufo.addEventListener('ended', () => {
-    fadeSfxOut('hover', 0.6);
-    playSfx('fly');
-    gsap.to(ufo, {
-      top: -(UFO_CFG.ufoW + 20) + 'px',
-      duration: 0.8, ease: 'power2.in',
-      onComplete: () => { ufo.remove(); blocker.remove(); }
-    });
+  const revealAvatar = () => {
     ufoPhotoRevealed = true;
     const svgAvatar = document.querySelector('.center-avatar');
-    if (svgAvatar) svgAvatar.style.opacity = '1';
-    photo.remove();
-    skipBtn.remove();
-  });
+    if (svgAvatar) gsap.to(svgAvatar, { opacity: 1, duration: 0.32, ease: 'power1.out' });
+  };
 
-  skipBtn.addEventListener('click', () => {
-    gsap.killTweensOf([ufo, photo, skipBtn]);
-    stopAllSfx();
-    try { ufo.pause(); } catch (_) {}
-    ufo.remove();
-    photo.remove();
+  const removePendingEngineListener = () => {
+    clearTimeout(engineTimer);
+    window.removeEventListener('bgs-ufo-3d-ready', handleEngineReady);
+  };
+
+  function finishIntro({ skipped = false } = {}) {
+    if (finished) return;
+    finished = true;
+    removePendingEngineListener();
+    revealAvatar();
+    if (skipped) stopAllSfx();
+    else fadeSfxOut('hover', 0.45);
+    controller?.stop?.();
+    if (fallbackVideo) {
+      try { fallbackVideo.pause(); } catch (_) {}
+      gsap.killTweensOf(fallbackVideo);
+      fallbackVideo.remove();
+    }
+    if (fallbackPhoto) {
+      gsap.killTweensOf(fallbackPhoto);
+      fallbackPhoto.remove();
+    }
     blocker.remove();
     skipBtn.remove();
-    ufoPhotoRevealed = true;
-    const svgAvatar = document.querySelector('.center-avatar');
-    if (svgAvatar) svgAvatar.style.opacity = '1';
-  });
+  }
 
-  gsap.to(ufo, {
-    top: '12%', duration: 1.0, ease: 'power2.out', delay: 0.3,
-    onStart: () => { ufo.play(); playSfx('hover'); }
-  });
+  function getAvatarRect() {
+    const image = document.querySelector('.center-avatar image');
+    const rect = image?.getBoundingClientRect?.();
+    if (rect && rect.width > 20 && rect.height > 20) return rect;
+    const width = Math.min(175, window.innerWidth * 0.24);
+    return {
+      left: window.innerWidth / 2 - width / 2,
+      top: window.innerHeight / 2 - width * 0.78,
+      width,
+      height: width * 1.34
+    };
+  }
+
+  function startVideoFallback() {
+    if (finished || fallbackVideo) return;
+    const rect = getAvatarRect();
+    const ufo = document.createElement('video');
+    ufo.className = 'ufo-intro-fallback-video';
+    ufo.src = UFO_CFG.video;
+    ufo.muted = true;
+    ufo.playsInline = true;
+    ufo.preload = 'auto';
+
+    const photo = document.createElement('img');
+    photo.className = 'ufo-intro-fallback-photo';
+    photo.src = UFO_CFG.photo;
+    photo.alt = '';
+    Object.assign(photo.style, {
+      left: `${rect.left}px`, top: `${rect.top}px`,
+      width: `${rect.width}px`, height: `${rect.height}px`
+    });
+
+    fallbackVideo = ufo;
+    fallbackPhoto = photo;
+    document.body.append(ufo, photo);
+    gsap.set(ufo, { xPercent: -50, scale: 0.58, rotation: -7, opacity: 0 });
+    gsap.to(ufo, {
+      top: '5%', scale: 1, rotation: 0, opacity: 1,
+      duration: 1.25, ease: 'power3.out',
+      onStart: () => {
+        const promise = ufo.play();
+        if (promise && typeof promise.catch === 'function') promise.catch(() => {});
+        playSfx('hover');
+      }
+    });
+
+    let photoDropped = false;
+    let closeSoundPlayed = false;
+    ufo.addEventListener('timeupdate', () => {
+      if (!photoDropped && ufo.currentTime >= UFO_CFG.beamTime) {
+        photoDropped = true;
+        playSfx('beam');
+        gsap.fromTo(photo,
+          { opacity: 0, y: -120, scale: 0.82, filter: 'blur(9px) brightness(2)' },
+          { opacity: 1, y: 0, scale: 1, filter: 'blur(0px) brightness(1.05)', duration: 1.45, ease: 'power2.out' }
+        );
+      }
+      if (!closeSoundPlayed && ufo.currentTime >= UFO_CFG.closeSoundTime) {
+        closeSoundPlayed = true;
+        playSfx('close');
+        revealAvatar();
+        gsap.to(photo, { opacity: 0, duration: 0.3 });
+      }
+    });
+
+    ufo.addEventListener('ended', () => {
+      fadeSfxOut('hover', 0.45);
+      playSfx('fly');
+      gsap.to(ufo, {
+        x: window.innerWidth * 0.58,
+        top: '-55%',
+        scale: 0.22,
+        rotation: 22,
+        opacity: 0,
+        duration: 0.95,
+        ease: 'power3.in',
+        onComplete: () => finishIntro()
+      });
+    }, { once: true });
+  }
+
+  function launch3D(engine) {
+    if (finished) return;
+    if (!engine?.supported) {
+      startVideoFallback();
+      return;
+    }
+    controller = engine.play({
+      photoUrl: UFO_CFG.photo,
+      onReady: () => playSfx('hover'),
+      onBeam: () => playSfx('beam'),
+      onClose: () => playSfx('close'),
+      onReveal: revealAvatar,
+      onDepart: () => {
+        fadeSfxOut('hover', 0.45);
+        playSfx('fly');
+      },
+      onComplete: () => finishIntro(),
+      onError: error => {
+        console.warn('[ufo-intro] 3D unavailable, using masked video fallback:', error?.message || error);
+        controller = null;
+        startVideoFallback();
+      }
+    });
+  }
+
+  function handleEngineReady() {
+    removePendingEngineListener();
+    launch3D(window.BGS_UFO_INTRO_3D);
+  }
+
+  skipBtn.addEventListener('click', () => finishIntro({ skipped: true }), { once: true });
+
+  if (window.BGS_UFO_INTRO_3D) {
+    launch3D(window.BGS_UFO_INTRO_3D);
+  } else {
+    window.addEventListener('bgs-ufo-3d-ready', handleEngineReady, { once: true });
+    engineTimer = window.setTimeout(() => {
+      window.removeEventListener('bgs-ufo-3d-ready', handleEngineReady);
+      startVideoFallback();
+    }, 1800);
+  }
 }
 
 /* BIO: Implementation note for this section. */
@@ -5128,7 +5193,6 @@ updateStatusDate();
     mpFadeIn();
   };
 })();
-
 
 
 

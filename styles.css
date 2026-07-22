@@ -2329,6 +2329,138 @@ body.is-mobile .anim-skip {
   padding: 10px 18px;
   letter-spacing: 2px;
 }
+
+/* 3D UFO handoff: transparent WebGL stage with no rectangular video edge. */
+.ufo-intro-stage {
+  position: fixed;
+  inset: 0;
+  z-index: 6000;
+  overflow: hidden;
+  pointer-events: none;
+  isolation: isolate;
+}
+
+.ufo-intro-canvas {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+.ufo-intro-avatar-shell {
+  position: fixed;
+  z-index: 2;
+  opacity: 0;
+  transform: translate(-50%, -50%) translateY(-120px) scale(.82);
+  transform-origin: 50% 50%;
+  filter: blur(10px) brightness(2.25) saturate(.35) drop-shadow(0 0 18px rgba(89, 242, 255, .9));
+  will-change: transform, opacity, filter;
+}
+
+.ufo-intro-avatar-shell img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.ufo-intro-avatar-scan {
+  position: absolute;
+  left: 6%;
+  right: 6%;
+  top: 0;
+  height: 22%;
+  opacity: 0;
+  background: linear-gradient(to bottom, transparent, rgba(185, 252, 255, .9), transparent);
+  mix-blend-mode: screen;
+  filter: blur(2px);
+}
+
+.ufo-intro-stage.is-beaming .ufo-intro-avatar-shell {
+  animation: ufo-avatar-materialize 2.35s cubic-bezier(.18, .72, .25, 1) forwards;
+}
+
+.ufo-intro-stage.is-beaming .ufo-intro-avatar-scan {
+  animation: ufo-avatar-scan 1.05s linear 2;
+}
+
+.ufo-intro-stage.is-beam-closing .ufo-intro-avatar-shell {
+  animation: ufo-avatar-dematerialize .34s ease forwards;
+}
+
+@keyframes ufo-avatar-materialize {
+  0% {
+    opacity: 0;
+    transform: translate(-50%, -50%) translateY(-120px) scale(.82);
+    filter: blur(10px) brightness(2.25) saturate(.35) drop-shadow(0 0 22px rgba(89, 242, 255, 1));
+  }
+  32% { opacity: .72; }
+  55% {
+    opacity: .42;
+    transform: translate(-50%, -50%) translateY(-44px) scale(.94);
+  }
+  76% { opacity: .9; }
+  100% {
+    opacity: 1;
+    transform: translate(-50%, -50%) translateY(0) scale(1);
+    filter: blur(0) brightness(1.05) saturate(1) drop-shadow(0 0 12px rgba(89, 242, 255, .35));
+  }
+}
+
+@keyframes ufo-avatar-scan {
+  0% { top: -12%; opacity: 0; }
+  12% { opacity: .9; }
+  88% { opacity: .72; }
+  100% { top: 90%; opacity: 0; }
+}
+
+@keyframes ufo-avatar-dematerialize {
+  from {
+    opacity: 1;
+    transform: translate(-50%, -50%) translateY(0) scale(1);
+    filter: blur(0) brightness(1.05) saturate(1) drop-shadow(0 0 12px rgba(89, 242, 255, .35));
+  }
+  to {
+    opacity: 0;
+    transform: translate(-50%, -50%) translateY(5px) scale(1.02);
+    filter: blur(1px) brightness(1.35) saturate(.8) drop-shadow(0 0 28px rgba(89, 242, 255, .75));
+  }
+}
+
+.ufo-intro-fallback-video {
+  position: fixed;
+  z-index: 6000;
+  left: 50%;
+  top: -56vh;
+  width: min(920px, 92vw);
+  height: auto;
+  pointer-events: none;
+  mix-blend-mode: screen;
+  filter: contrast(1.12) saturate(1.16) drop-shadow(0 20px 34px rgba(0, 213, 255, .25));
+  -webkit-mask-image: radial-gradient(ellipse 62% 58% at 50% 48%, #000 0 58%, rgba(0, 0, 0, .92) 68%, transparent 91%);
+  mask-image: radial-gradient(ellipse 62% 58% at 50% 48%, #000 0 58%, rgba(0, 0, 0, .92) 68%, transparent 91%);
+  will-change: transform, top, opacity, filter;
+}
+
+.ufo-intro-fallback-photo {
+  position: fixed;
+  z-index: 5999;
+  object-fit: contain;
+  pointer-events: none;
+  opacity: 0;
+  filter: brightness(1.15) drop-shadow(0 0 18px rgba(0, 229, 255, .65));
+}
+
+@media (max-width: 700px), (prefers-reduced-motion: reduce) {
+  .ufo-intro-avatar-shell {
+    transform: translate(-50%, -50%) translateY(-70px) scale(.88);
+  }
+
+  .ufo-intro-fallback-video {
+    width: min(720px, 112vw);
+  }
+}
 body.is-mobile #intro-sound {
   bottom: 20px;
   left: 16px;
