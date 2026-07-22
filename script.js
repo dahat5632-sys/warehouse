@@ -1,4 +1,4 @@
-﻿'use strict';
+'use strict';
 
 /* BIO: Implementation note for this section. */
 const IS_MOBILE = (() => {
@@ -544,7 +544,7 @@ const DATA = {
 };
 
 /* BIO: Implementation note for this section. */
-let currentLang  = 'de';
+let currentLang  = 'zh';
 let currentTheme = 'dark';
 
 const UI = {
@@ -592,7 +592,7 @@ const UI = {
     mpPrevAria: '鑴皀ceki par鑾絘',
     mpPlayAria: '鑴焌l veya duraklat',
     mpNextAria: 'Sonraki par鑾絘',
-    regionHudAria: 'Status bar',
+    regionHudAria: 'Status display',
     regionMediaAria: 'Ses ve k鐪夎幗鐪塳 m鐪墇ik 鑾絘lar',
     regionSplashVolAria: 'Kar鑹ц皨lama ekran璋?閳?ses ve test',
     regionSplashHeroAria: 'Kar鑹ц皨lama ekran璋?閳?ba鑹璋媖',
@@ -648,7 +648,7 @@ const UI = {
     mpPrevAria: 'Previous track',
     mpPlayAria: 'Play or pause',
     mpNextAria: 'Next track',
-    regionHudAria: 'Status bar',
+    regionHudAria: 'Status display',
     regionMediaAria: 'Volume and mini music player',
     regionSplashVolAria: 'Welcome screen 閳?volume and test',
     regionSplashHeroAria: 'Welcome screen 閳?headline',
@@ -704,7 +704,7 @@ const UI = {
     mpPrevAria: 'Vorheriger Titel',
     mpPlayAria: 'Wiedergabe oder Pause',
     mpNextAria: 'N鐩瞔hster Titel',
-    regionHudAria: 'Status bar',
+    regionHudAria: 'Status display',
     regionMediaAria: 'Lautst鐩瞨ke und Mini閳ユ厷usikplayer',
     regionSplashVolAria: 'Begr鐪夎劷ung 閳?Lautst鐩瞨ke und Test',
     regionSplashHeroAria: 'Begr鐪夎劷ung 閳?鑴篵erschrift',
@@ -720,9 +720,9 @@ const UI = {
 
 
 
-/* BIO: Repurpose the former German language slot as Chinese for this GitHub Pages copy. */
+/* Chinese is the default language; English is enabled only by the EN control. */
 function applyChineseLanguageSlotDefault() {
-  DATA.label.de = ['\u5468\u5929\u723d'];
+  DATA.label.zh = ['\u5468\u5929\u723d'];
   const zhNodeText = {
     about: { label: ['\u5468\u5929\u723d'] },
     edu: { label: ['\u6559\u80b2\u7ecf\u5386'], title: '\u6559\u80b2\u7ecf\u5386' },
@@ -772,15 +772,169 @@ function applyChineseLanguageSlotDefault() {
   const applyZh = node => {
     const zh = zhNodeText[node.id];
     if (zh) {
-      if (zh.label) node.label.de = zh.label;
-      if (zh.title) node.title.de = zh.title;
-      if (zh.html) node.html.de = zh.html;
+      if (zh.label) node.label.zh = zh.label;
+      if (zh.title) node.title.zh = zh.title;
+      if (zh.html) node.html.zh = zh.html;
     }
     (node.subs || []).forEach(applyZh);
   };
   DATA.nodes.forEach(applyZh);
 
-  UI.de = {
+  const enNodeText = {
+    about: { label: ['Zhou Tianshuang'] },
+    edu: {
+      label: ['Education'],
+      title: 'Education',
+      html: `<div class="tl-wrap">
+        <div class="tl-item active"><div class="tl-year">2022 - 2025</div><div class="tl-title">Hubei Science and Technology College</div><div class="tl-desc">Internet and Network Technology</div></div>
+        <div class="tl-item"><div class="tl-year">2019 - 2022</div><div class="tl-title">Xiaogan No. 1 High School</div><div class="tl-desc">High School Education</div></div>
+      </div><hr class="divider"><div class="tl-section-title">Award</div><div class="tl-cert"><span style="color:#ff6a00">Second Prize in New Energy Vehicle Fault Diagnosis, Hubei Province</span></div>`
+    },
+    exp: {
+      label: ['Experience'],
+      title: 'Experience',
+      html: `<p>2025.06-2025.09 AI Trainer, Luobo Yunli Technology Co., Ltd.</p>
+        <p>2025.09-Present AI Trainer, Kunlun Tech Co., Ltd.</p>
+        <p>I continue to learn and grow, and this section will be updated as I gain more experience.</p>`
+    },
+    bio: {
+      label: ['About Me'],
+      title: 'About Me',
+      html: `<p>Hello, I am <strong>Zhou Tianshuang</strong>, also known as <strong>ZTS</strong>.</p><hr class="divider">
+        <p>I focus on artificial intelligence, AI training, new energy vehicles, and automation tools. I aim to turn complex technology into reliable, practical solutions for real problems.</p><hr class="divider">
+        <p><em>Outside work, I enjoy following new technology, gaming, travel, and challenging training projects.</em></p>`
+    },
+    projects: { label: ['Projects'] },
+    web: {
+      label: ['Personal', 'Portfolio'],
+      title: 'Personal Portfolio',
+      html: `<p><strong>Projects</strong></p><ul><li>Coming soon...</li><li>Coming soon...</li><li>Coming soon...</li></ul><hr class="divider"><p><strong>Technologies</strong></p><ul><li>Python</li><li>To be added</li><li>To be added</li></ul>`
+    },
+    mob: {
+      label: ['AI', 'Projects'],
+      title: 'AI Projects',
+      html: `<p><strong>Projects</strong></p><ul><li>Coming soon...</li><li>Coming soon...</li></ul><hr class="divider"><p>Project details will be added.</p>`
+    },
+    aiProject: {
+      label: ['AI', 'Projects'],
+      title: 'AI Projects',
+      html: `<p><strong>Knowledge Base and Tools</strong></p><ul><li>Obsidian</li><li>Codex, VS Code, Gemini, Claude Code</li></ul><hr class="divider"><p><strong>Completed Project</strong></p><ul><li>Tiangong Kaiwu Multimodal Model</li></ul><hr class="divider"><p><strong>Interests</strong></p><ul><li>Natural Language Processing</li><li>Machine Learning</li><li>Generative AI</li></ul>`
+    },
+    hobbies: { label: ['Hobbies'] },
+    esp: {
+      label: ['E-Sports'],
+      title: 'E-Sports',
+      html: `<p><strong>Favorite Game</strong></p><ul><li>Honor of Kings</li></ul><hr class="divider"><p>E-sports has strengthened my communication, teamwork, decision-making under pressure, and rapid problem-solving skills.</p><hr class="divider"><p style="text-align:center"><a href="#" class="photo-link" data-gallery='[{"src":"assets/default/hobbies/king-of-glory.jpg","cap":"Honor of Kings"}]'>View photo</a></p>`
+    },
+    sht: {
+      label: ['Basketball'],
+      title: 'Basketball',
+      html: `<p>Basketball requires fitness, rhythm, teamwork, and quick judgment. It develops my focus, collaboration, resilience, and ability to solve problems quickly.</p><hr class="divider"><p class="psh-note">I enjoy basketball because it combines individual ability with teamwork and self-discipline.</p><hr class="divider"><p style="text-align:center"><a href="#" class="photo-link" data-gallery='[{"src":"assets/default/hobbies/basketball-01.jpg","cap":"Basketball photo 01"},{"src":"assets/default/hobbies/basketball-02.jpg","cap":"Basketball photo 02"}]'>View photos</a></p>`
+    },
+    tec: {
+      label: ['Tech Trends'],
+      title: 'Tech Trends',
+      html: `<p><strong>Areas I Follow</strong></p><ul><li>Artificial intelligence and large language models</li><li>New energy vehicle technology</li><li>Embodied intelligence</li><li>Autonomous driving and driver assistance</li></ul><hr class="divider"><p>I follow technology trends to expand my thinking, keep learning, and turn new developments into practical ideas.</p>`
+    },
+    trv: {
+      label: ['Travel'],
+      title: 'Travel',
+      html: `<p>I enjoy traveling and exploring new places. Every new environment brings fresh experiences, ideas, and perspectives.</p><hr class="divider"><p><em>I bring what I observe on the road back into my work and daily life.</em></p>`
+    },
+    skills: { label: ['Skills &', 'Interests'] },
+    ai: {
+      label: ['Artificial', 'Intelligence'],
+      title: 'Artificial Intelligence',
+      html: `<p><strong>Knowledge Base and Tools</strong></p><ul><li>Obsidian</li><li>Codex, VS Code, Gemini, Claude Code</li></ul><hr class="divider"><p><strong>Completed Project</strong></p><ul><li>Tiangong Kaiwu Multimodal Model</li></ul><hr class="divider"><p><strong>Interests</strong></p><ul><li>Natural Language Processing</li><li>Machine Learning</li><li>Generative AI</li></ul>`
+    },
+    sec: {
+      label: ['New Energy', 'Vehicles'],
+      title: 'New Energy Vehicles',
+      html: `<p><strong>Areas of Interest</strong></p><ul><li>New energy vehicles</li><li>Embodied intelligence</li><li>Autonomous and assisted driving</li></ul>`
+    },
+    contact: { label: ['Contact'] },
+    mail: {
+      label: ['Email'],
+      title: 'Email',
+      html: `<p>You can reach me by email:</p><hr class="divider"><p><a href="mailto:dahat5632@gmail.com" style="color:#ffee00;text-shadow:0 0 12px #ffee00;font-size:14px;border-bottom:1px solid rgba(255,238,0,0.4)">dahat5632@gmail.com</a></p><hr class="divider"><p style="color:rgba(255,238,0,0.45);font-size:12px">Collaboration, project ideas, or a simple hello are all welcome.</p>`
+    },
+    soc: {
+      label: ['Social Media'],
+      title: 'Social Media',
+      html: `<p>WeChat: 19858493168</p><p>Xiaohongshu: 63011307889</p>`
+    }
+  };
+  const applyEn = node => {
+    const en = enNodeText[node.id];
+    if (en) {
+      if (en.label) node.label.en = en.label;
+      if (en.title) node.title.en = en.title;
+      if (en.html) node.html.en = en.html;
+    }
+    (node.subs || []).forEach(applyEn);
+  };
+  DATA.label.en = ['Zhou Tianshuang'];
+  DATA.nodes.forEach(applyEn);
+
+
+  Object.assign(UI.en, {
+    tree: 'MAIN TREE',
+    back: 'GO BACK',
+    boot: 'SYSTEM STARTING',
+    skip: 'SKIP',
+    modeDefault: 'DEFAULT MODE',
+    modePro: 'PRO MODE',
+    defaultLandscapeHint: 'Default Mode is best viewed in portrait.',
+    splashDesktopPro: 'ENTER PRO MODE',
+    splashTagline: 'AI Trainer',
+    splashVolLabel: 'Adjust the volume here, or drag the waveform while testing.',
+    splashVolTest: 'TEST VOLUME',
+    splashVolStop: 'STOP TEST',
+    splashGpuWarnLabel: 'HARDWARE',
+    splashGpuWarnTitle: 'Pro Mode may run slowly on this device',
+    splashGpuWarnBody: 'This device may not run the 3D cockpit smoothly.',
+    splashGpuDefaultBtn: 'DEFAULT MODE',
+    splashGpuProBtn: 'CONTINUE TO PRO MODE',
+    intro2SkipAria: 'Skip transition video',
+    locale: 'en-GB',
+    skipToOverview: 'Skip to summary content',
+    overviewTitle: 'Zhou Tianshuang - Portfolio',
+    overviewLead: 'Browse the interactive node tree. Open a node with the pointer, Enter, or Space.',
+    overviewNavAria: 'Quick links',
+    overviewProLink: 'Three-dimensional Pro Mode cockpit',
+    overviewTreeHeading: 'Portfolio tree and background',
+    overviewTreeNote: 'The full-screen node graph is the primary navigation.',
+    toolbarAria: 'Site toolbar',
+    svgTreeAria: 'Interactive portfolio tree',
+    masterVolAria: 'Master volume',
+    seekAria: 'Playback position',
+    backAria: 'Go back',
+    holoCloseAria: 'Close panel',
+    linkedinAria: 'LinkedIn profile',
+    githubAria: 'GitHub profile',
+    trailToggleAria: 'Cursor trail effect',
+    gridToggleAria: 'Grid effect',
+    fsEnterAria: 'Enter fullscreen',
+    fsExitAria: 'Exit fullscreen',
+    intro1SkipAria: 'Skip opening video',
+    mpPrevAria: 'Previous track',
+    mpPlayAria: 'Play or pause',
+    mpNextAria: 'Next track',
+    regionHudAria: 'Status display',
+    regionMediaAria: 'Volume and mini music player',
+    regionSplashVolAria: 'Welcome screen volume controls',
+    regionSplashHeroAria: 'Welcome screen heading',
+    regionSplashStartAria: 'Welcome screen start button',
+    orpetronSotdTip: 'Orpetron Award',
+    orpetronSotdAria: 'Open the Orpetron award',
+    designNomineesSotdTip: 'Design Nominees Award',
+    designNomineesSotdAria: 'Open the Design Nominees award',
+    awwwardsNomineeTip: 'Awwwards Nominee',
+    awwwardsNomineeAria: 'Open the Awwwards nomination'
+  });
+
+
+  UI.zh = {
     tree: '\u4e3b\u6811',
     back: '\u8fd4\u56de',
     boot: '\u7cfb\u7edf\u542f\u52a8\u4e2d',
@@ -789,7 +943,10 @@ function applyChineseLanguageSlotDefault() {
     modePro: '\u4e13\u4e1a\u6a21\u5f0f',
     defaultLandscapeHint: '\u9ed8\u8ba4\u6a21\u5f0f\u5efa\u8bae\u7ad6\u5c4f\u6d4f\u89c8\u3002',
     splashDesktopPro: '\u4ece\u4e13\u4e1a\u6a21\u5f0f\u5f00\u59cb',
-    splashTagline: '\u4f18\u79c0\u7684AI\u8bad\u7ec3\u5e08',
+    splashTagline: '\u4f18\u79c0\u7684 AI \u8bad\u7ec3\u5e08',
+    splashVolLabel: '\u5728\u6b64\u8c03\u6574\u97f3\u91cf\uff0c\u6d4b\u8bd5\u65f6\u4e5f\u53ef\u62d6\u52a8\u97f3\u9891\u6ce2\u5f62\u3002',
+    splashVolTest: '\u6d4b\u8bd5\u97f3\u91cf',
+    splashVolStop: '\u505c\u6b62\u6d4b\u8bd5',
     splashGpuWarnLabel: '\u786c\u4ef6',
     splashGpuWarnTitle: '\u4e13\u4e1a\u6a21\u5f0f\u53ef\u80fd\u8fd0\u884c\u8f83\u6162',
     splashGpuWarnBody: '\u4f60\u7684\u8bbe\u5907\u56fe\u5f62\u6027\u80fd\u53ef\u80fd\u4e0d\u8db3\u4ee5\u6d41\u7545\u8fd0\u884c 3D \u9a7e\u9a76\u8231\u3002',
@@ -820,24 +977,26 @@ function applyChineseLanguageSlotDefault() {
     mpPrevAria: '\u4e0a\u4e00\u9996',
     mpPlayAria: '\u64ad\u653e\u6216\u6682\u505c',
     mpNextAria: '\u4e0b\u4e00\u9996',
-    regionHudAria: 'Status bar',
+    regionHudAria: 'Status display',
     regionMediaAria: '\u97f3\u91cf\u4e0e\u8ff7\u4f60\u97f3\u4e50\u64ad\u653e\u5668',
     regionSplashVolAria: '\u6b22\u8fce\u5c4f\u5e55 - \u97f3\u91cf',
     regionSplashHeroAria: '\u6b22\u8fce\u5c4f\u5e55 - \u6807\u9898',
     regionSplashStartAria: '\u6b22\u8fce\u5c4f\u5e55 - \u5f00\u59cb',
-    orpetronSotdTip: 'Orpetron Award',
-    orpetronSotdAria: 'Orpetron',
-    designNomineesSotdTip: 'Design Nominees Award',
-    designNomineesSotdAria: 'Design Nominees',
-    awwwardsNomineeTip: 'Awwwards',
-    awwwardsNomineeAria: 'Awwwards'
+    orpetronSotdTip: 'Orpetron \u5956\u9879',
+    orpetronSotdAria: '\u6253\u5f00 Orpetron \u5956\u9879',
+    designNomineesSotdTip: '\u8bbe\u8ba1\u63d0\u540d\u5956',
+    designNomineesSotdAria: '\u6253\u5f00\u8bbe\u8ba1\u63d0\u540d\u5956',
+    awwwardsNomineeTip: 'Awwwards \u63d0\u540d',
+    awwwardsNomineeAria: '\u6253\u5f00 Awwwards \u63d0\u540d'
   };
+  delete UI.tr;
+  delete UI.de;
 }
 
 applyChineseLanguageSlotDefault();
 
 const BGS_LANG_KEY = 'bgs_lang';
-const BGS_LANG_DEFAULT_MIGRATION_KEY = 'bgs_lang_default_zh_v3';
+const BGS_LANG_DEFAULT_MIGRATION_KEY = 'bgs_lang_default_zh_v4';
 /** BIO: Ses seviyesi 閳?Dil gibi saklan璋媟; Default splash, Default toolbar ve Pro Mode ortak kullan璋媟. */
 const BGS_VOL_KEY = 'bgs_vol';
 /** BIO: Ayn璋?sekmede Pro\'ya ge鑾絜rken (鏋歾ellikle mobil) LS g鐪塿enilmezse ses yede鑷抜 閳?pro-mode/script.js ile ayn璋?anahtar. */
@@ -865,15 +1024,15 @@ function persistVolumeToStorage(level) {
 (function readStoredLangFromSharedKey() {
   try {
     if (localStorage.getItem(BGS_LANG_DEFAULT_MIGRATION_KEY) !== '1') {
-      currentLang = 'de';
-      localStorage.setItem(BGS_LANG_KEY, 'de');
+      currentLang = 'zh';
+      localStorage.setItem(BGS_LANG_KEY, 'zh');
       localStorage.setItem(BGS_LANG_DEFAULT_MIGRATION_KEY, '1');
       return;
     }
-    const s = localStorage.getItem(BGS_LANG_KEY);
-    if (s === 'tr') currentLang = 'en';
-    else if (s && UI[s]) currentLang = s;
-  } catch (_) { /* BIO: noop */ }
+    currentLang = localStorage.getItem(BGS_LANG_KEY) === 'en' ? 'en' : 'zh';
+  } catch (_) {
+    currentLang = 'zh';
+  }
 })();
 
 function updateStatusDate() {
@@ -1086,6 +1245,10 @@ function refreshSplashLabels() {
   const $sub = document.getElementById('splash-sub');
   if ($start) $start.textContent = u.splashDesktopPro;
   if ($sub) $sub.textContent = u.splashTagline;
+  const volLabel = document.getElementById('splash-vol-label');
+  const volTest = document.getElementById('splash-vol-test');
+  if (volLabel) volLabel.textContent = u.splashVolLabel;
+  if (volTest) volTest.textContent = u.splashVolTest;
   const i2s = document.getElementById('intro2-skip');
   if (i2s) i2s.setAttribute('aria-label', u.intro2SkipAria);
   paintSplashGpuWarnTexts();
@@ -1114,7 +1277,7 @@ function paintSplashGpuWarnTexts(force) {
 }
 
 /* BIO: Return the current-language array from a multilingual label object */
-function L(obj) { return obj[currentLang] || obj.tr; }
+function L(obj) { return obj[currentLang] || obj.zh || obj.en; }
 
 /* BIO: Implementation note for this section. */
 const S = { level: 0, main: null, mainAng: 0, mainNx: 0, mainNy: 0 };
@@ -1696,7 +1859,7 @@ function openPanel(sub, color, sx, sy, subAng = 0) {
 
   // BIO: Populate trusted, author-controlled static content only.
   // BIO: Do not route URL params, CMS data, or visitor input into this sink.
-  $holoBody.innerHTML = (typeof sub.html === 'object') ? (sub.html[currentLang] || sub.html.tr) : sub.html;
+  $holoBody.innerHTML = (typeof sub.html === 'object') ? (sub.html[currentLang] || sub.html.zh || sub.html.en) : sub.html;
   $holoTitle.textContent = '';
 
   // BIO: Tint border/glow with node color
@@ -2446,11 +2609,14 @@ function reExpand(savedMain) {
 }
 
 function setLang(lang) {
-  if (lang === 'tr') lang = 'en';
+  lang = lang === 'en' ? 'en' : 'zh';
   currentLang = lang;
   try { localStorage.setItem(BGS_LANG_KEY, lang); } catch (_) { /* BIO: noop */ }
   try { localStorage.setItem(BGS_LANG_DEFAULT_MIGRATION_KEY, '1'); } catch (_) { /* BIO: noop */ }
-  document.documentElement.lang = lang;
+  document.documentElement.lang = UI[lang].locale;
+  document.title = lang === 'en' ? 'Zhou Tianshuang | Portfolio' : '周天爽 | 个人作品集';
+  const footerLabel = document.getElementById('footer-label');
+  if (footerLabel) footerLabel.textContent = lang === 'en' ? 'ZTS | PORTFOLIO' : 'ZTS | 个人作品集';
   document.querySelectorAll('.tb-lang').forEach(b =>
     b.classList.toggle('active', b.dataset.lang === lang)
   );
@@ -2524,6 +2690,11 @@ document.querySelectorAll('.tb-mode').forEach(btn => {
 
 /* BIO: Audio, SFX, and mini-player behavior note. */
 const PRO_CONFIRM = {
+  zh: [
+    { label: '确认 / 01', title: '是否进入专业模式？', sub: '你即将进入三维驾驶舱。', yes: '是', no: '否' },
+    { label: '提示 / 02', title: '是否继续？', sub: '专业模式需要加载较多资源。', yes: '继续', no: '取消' },
+    { label: '最终确认 / 03', title: '准备好了吗？', sub: '确认后将启动专业模式。', yes: '启动', no: '取消' }
+  ],
   tr: [
     { label: 'ONAY  /  01',           title: "PRO MOD'A GE鑴烳EK 闄孲T闄孻OR MUSUN?",     sub: 'Farkl璋?bir d鐪塶yaya ge鑾絠鑹?yapacaks璋媙.',                      yes: 'EVET',        no: 'HAYIR' },
     { label: 'UYARI  /  02',          title: 'EM闄孨 M闄孲闄孨? GER闄?D鑴癗鑴鸿墻鑴?KOLAY DE鑷戦檶L.',                                                  yes: 'EVET, EM闄孨闄孧', no: '闄孭TAL' },
@@ -2551,20 +2722,17 @@ const $pcNo    = document.getElementById('pc-no');
 
 /* BIO: Hologram panel behavior and rendering note. */
 const PRO_CONFIRM_SUB2_LOADING = {
-  tr: 'Calculating Pro Mode download size...',
   en: 'Calculating Pro Mode download size...',
-  de: '正在计算专业模式下载大小...'
+  zh: '正在计算专业模式下载大小...'
 };
 const PRO_CONFIRM_SUB2_FALLBACK = {
-  tr: 'Pro Mode 鑾給k veri indirir. Emin misin?',
-  en: 'Pro Mode downloads a lot of data. Are you sure?',
-  de: 'Pro Mode l鐩瞕t viele Daten. Bist du sicher?'
+  en: 'Pro Mode downloads a large amount of data. Continue?',
+  zh: '专业模式需要加载较多数据，是否继续？'
 };
 /* BIO: Implementation note for this section. */
 const PRO_CONFIRM_SUB2_WITH_MB = {
-  tr: 'Pro Mode {mb} MB i鑾絜riyor, emin misin?',
-  en: 'Pro Mode contains {mb} MB. Are you sure?',
-  de: 'Pro Mode umfasst ca. {mb} MB. Bist du sicher?'
+  en: 'Pro Mode contains about {mb} MB. Continue?',
+  zh: '专业模式约需加载 {mb} MB，是否继续？'
 };
 
 let _proPayloadBytes = null; /* BIO: null = not measured yet; -1 = measurement failed; >=0 bytes. */
@@ -4216,7 +4384,7 @@ updateStatusDate();
     updateBlocks(splashBlocks, SPLASH_BLOCKS);
     updateBlocks(mainBlocks, MAIN_BLOCKS);
     const pct = Math.round(globalVolume * 100) + '%';
-    const icon = globalVolume === 0 ? '棣冩敧' : '棣冩敯';
+    const icon = globalVolume === 0 ? '🔇' : '🔊';
     $splashPct.textContent = pct;
     $splashIcon.textContent = icon;
     $mainVolPct.textContent = pct;
@@ -4409,7 +4577,7 @@ updateStatusDate();
   $volTest.addEventListener('click', () => {
     if (!testAudio.paused) {
       $volTest.classList.remove('playing');
-      $volTest.textContent = '閳?TEST VOLUME';
+      $volTest.textContent = UI[currentLang].splashVolTest;
       if (fadeTween) { fadeTween.kill(); fadeTween = null; }
       fadeProxy.v = testAudio.volume;
       fadeTween = gsap.to(fadeProxy, {
@@ -4435,11 +4603,11 @@ updateStatusDate();
       onComplete: () => { fadeTween = null; }
     });
     $volTest.classList.add('playing');
-    $volTest.textContent = '閳?STOP';
+    $volTest.textContent = UI[currentLang].splashVolStop;
   });
   testAudio.addEventListener('ended', () => {
     $volTest.classList.remove('playing');
-    $volTest.textContent = '閳?TEST VOLUME';
+    $volTest.textContent = UI[currentLang].splashVolTest;
     if (fadeTween) { fadeTween.kill(); fadeTween = null; }
     stopViz();
   });
@@ -4598,8 +4766,8 @@ updateStatusDate();
     const p = $introVid.play();
     if (p) p.catch(() => {
       $introVid.muted = true;
-      $soundIcon.textContent = '棣冩敧';
-      $soundLabel.textContent = 'SOUND OFF';
+      $soundIcon.textContent = '🔇';
+      $soundLabel.textContent = currentLang === 'zh' ? '声音已关闭' : 'SOUND OFF';
       $introVid.play();
     });
 
@@ -4699,28 +4867,12 @@ updateStatusDate();
     }
   });
 
-  $splashStart.addEventListener('click', async () => {
+  $splashStart.addEventListener('click', () => {
     if (splashGpuGateBusy) return;
     splashGpuGateBusy = true;
     $splashStart.disabled = true;
-    try {
-      const tier = await probeSplashGpuTier();
-      if (shouldOpenSplashGpuWarnModal(tier)) {
-        openSplashGpuWarnModal();
-        return;
-      }
-      splashIntentDirectPro = true;
-      startSite();
-    } catch (_) {
-      splashIntentDirectPro = true;
-      startSite();
-    } finally {
-      const gw = document.getElementById('splash-gpu-warn');
-      if (!gw || !gw.classList.contains('open')) {
-        splashGpuGateBusy = false;
-        $splashStart.disabled = false;
-      }
-    }
+    splashIntentDirectPro = true;
+    startSite();
   });
 
   /* BIO: UFO transition configuration note. */
@@ -4785,7 +4937,7 @@ updateStatusDate();
   if ($introSound) {
     $introSound.addEventListener('click', () => {
       $introVid.muted = !$introVid.muted;
-      if ($soundIcon)  $soundIcon.textContent  = $introVid.muted ? '棣冩敧' : '棣冩敯';
+      if ($soundIcon)  $soundIcon.textContent  = $introVid.muted ? '🔇' : '🔊';
       if ($soundLabel) $soundLabel.textContent = $introVid.muted ? 'SOUND OFF' : 'SOUND';
     });
   }

@@ -1,4 +1,4 @@
-﻿/* BIO: Cockpit layout, rendering, and interaction note. */
+/* BIO: Cockpit layout, rendering, and interaction note. */
 import * as THREE from 'three';
 import { mergeGeometries } from 'three/addons/utils/BufferGeometryUtils.js';
 import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
@@ -496,7 +496,7 @@ function syncBioLogoStickerTint() {
 /* BIO: Implementation note for this section. */
 const COCKPIT_LANG_SCREENS = {
   en: { x: -0.061, y: 0.12, z: -0.175 },
-  de: { x: 0.006, y: 0.108, z: -0.175 }
+  zh: { x: 0.006, y: 0.108, z: -0.175 }
 };
 
 /* BIO: Implementation note for this section. */
@@ -2501,17 +2501,17 @@ function onProUiStrings(e) {
 
 function getStoredLang() {
   try {
-    return localStorage.getItem('bgs_lang') || 'de';
+    return localStorage.getItem('bgs_lang') === 'en' ? 'en' : 'zh';
   } catch (_) {
-    return 'de';
+    return 'zh';
   }
 }
 
 /* BIO: Button layout and interaction note. */
 function getClockIntlLocale() {
   const lang = getStoredLang();
-  if (lang === 'tr') return 'en-GB';
-  if (lang === 'de') return 'zh-CN';
+  if (lang === 'zh') return 'zh-CN';
+
   return 'en-GB';
 }
 
@@ -2521,7 +2521,7 @@ function syncLangButtonTextures() {
     const data = m.userData;
     if (!data._ctx) continue;
     const lang = data.lang;
-    const up = lang === 'de' ? '中文' : (lang || 'en').toString().toUpperCase();
+    const up = lang === 'zh' ? '中文' : (lang || 'en').toString().toUpperCase();
     const h = data._uiHoverF != null ? data._uiHoverF : 0;
     drawLangButtonCanvas(data._ctx, LANG_CANVAS.w, LANG_CANVAS.h, up, active === lang, h);
     if (data._map) {
@@ -6150,7 +6150,7 @@ const PRO_SUB_CONTENT = {
         <p>艦u an Cisco'nun CyberOps ve Ethical Hacking e臒itimlerini al谋yorum. Bu e臒itimler sonras谋ndaysa sertifika s谋navlar谋na girip sertifikalar谋m谋 alaca臒谋m.</p>` },
       en: { title: '新能源汽车', html: `
         <p><strong>研究兴趣领域</strong></p>
-        <ul><li>新能源汽车</li><li>智能座舱</li><li>电池与电驱系统</li><li>自动驾驶与车联网</li></ul>` },
+        <ul><li>新能源汽车</li><li>具身智能</li><li>自动驾驶与辅助驾驶</li></ul>` },
       de: { title: 'CYBERSICHERHEIT', html: `
         <p><strong>Interessengebiete</strong></p>
         <ul><li>Netzwerksicherheit</li><li>Penetrationstests</li><li>Schwachstellenanalyse (CVE)</li><li>Kryptographie</li></ul>
@@ -6269,9 +6269,9 @@ const _proSubTerminalSeen = new Set();
 
 function _proCurrentLang() {
   const v = (document.documentElement && document.documentElement.lang) || '';
-  if (v === 'tr') return 'en';
+
   if (v === 'en') return 'en';
-  return 'de';
+  return 'zh';
 }
 
 function ensureProSubHoloCss() {
@@ -6495,7 +6495,12 @@ function _ensureProSubDetailDots(cfg) {
   }
   const wrap = document.createElement('div');
   wrap.className = 'pro-sub-detail-dots';
-  wrap.setAttribute('aria-label', 'Sub-detail pages');
+  const detailLang = _proCurrentLang();
+  const detailLabel = (value, enFallback, zhFallback) => {
+    if (value && typeof value === 'object') return value[detailLang] || value.en || value.zh;
+    return value || (detailLang === 'zh' ? zhFallback : enFallback);
+  };
+  wrap.setAttribute('aria-label', detailLang === 'zh' ? '详情页面' : 'Sub-detail pages');
   if (cfg && typeof cfg.dotsTopPx === 'number') wrap.style.top = cfg.dotsTopPx + 'px';
   if (cfg && cfg.themeRgba) {
     const t = cfg.themeRgba;
@@ -6505,11 +6510,11 @@ function _ensureProSubDetailDots(cfg) {
     if (t.activeFill) wrap.style.setProperty('--psd-active', t.activeFill);
     if (t.glow) wrap.style.setProperty('--psd-active-shadow', t.glow);
   }
-  const dotLabel = (cfg && cfg.dotLabel) || 'Detail';
-  const labels = ['Hologram', dotLabel];
+  const dotLabel = detailLabel(cfg && cfg.dotLabel, 'Detail', '详情');
+  const labels = [detailLang === 'zh' ? '内容面板' : 'Hologram', dotLabel];
   /* BIO: Implementation note for this section. */
   if (cfg && cfg.secondBuilder) {
-    labels.push((cfg.secondBuilder.dotLabel) || '3D Figure');
+    labels.push(detailLabel(cfg.secondBuilder.dotLabel, '3D Figure', '三维模型'));
   }
   for (let i = 0; i < labels.length; i += 1) {
     const btn = document.createElement('button');
@@ -10109,6 +10114,12 @@ function injectProMobileLandscapeGate() {
       primary: 'Use landscape',
       secondary: 'Continue in portrait'
     },
+    zh: {
+      title: '建议横屏浏览',
+      msg: '移动端专业模式在横屏下效果更好。请旋转设备，或尝试锁定为横屏。',
+      primary: '切换横屏',
+      secondary: '继续竖屏浏览'
+    },
     de: {
       title: 'Querformat empfohlen',
       msg:
@@ -10240,6 +10251,11 @@ function injectProMobileGyroBanner() {
         'Enabling motion sensors is recommended for left/right cockpit look. Allow access, or skip to use one-finger look.',
       enable: 'Enable motion (recommended)',
       skip: 'Skip'
+    },
+    zh: {
+      msg: '建议启用动作传感器来左右查看驾驶舱。你也可以跳过，并使用单指拖动视角。',
+      enable: '启用动作传感器（推荐）',
+      skip: '跳过'
     },
     de: {
       msg:
@@ -10401,7 +10417,7 @@ const _CENTER_LOOK_COPY = {
   en: {
     lock: 'Lock to center',
     unlock: 'Free look',
-    pressedLabel: 'Cockpit view locked to center 鈥?tap for free look'
+    pressedLabel: 'Cockpit view locked to center - tap for free look'
   },
   de: {
     lock: 'Ansicht zentrieren',
@@ -10415,11 +10431,11 @@ const _CENTER_LOOK_COPY = {
 /* BIO: Repurpose the former German language slot as Chinese for this GitHub Pages copy. */
 function applyChineseLanguageSlotCockpit() {
   try {
-    COCKPIT_CANVAS_ARIA_BY_LANG.de = '三维驾驶舱视图。页面开头提供文字摘要。';
+    COCKPIT_CANVAS_ARIA_BY_LANG.zh = '三维驾驶舱视图。页面开头提供文字摘要。';
   } catch (_) {}
 
   try {
-    PRO_BIO_ID_CARD_TEXT.de = {
+    PRO_BIO_ID_CARD_TEXT.zh = {
       org: 'BIO 学院',
       orgSub: '驾驶员档案',
       clrLabel: '权限',
@@ -10464,12 +10480,12 @@ function applyChineseLanguageSlotCockpit() {
     hobbies: {
       esp: { title: '电子竞技', html: `<p><strong>喜欢的游戏</strong></p><ul><li>王者荣耀</li></ul><hr class="divider"><p>电子竞技训练了我的沟通、协作、压力下决策和快速解决问题的能力。</p>` },
       sht: { title: '篮球', html: `<p>篮球需要体能、节奏感、团队配合和临场判断。它训练了我的专注力、沟通能力以及在压力下快速决策的能力。</p><hr class="divider"><p class="psh-note">这是一项需要热情、耐心、纪律和协作的运动。</p>` },
-      tec: { title: '技术趋势', html: `<p><strong>关注领域</strong></p><ul><li>人工智能与大语言模型</li><li>新能源汽车</li><li>AI 与自动化应用</li></ul><hr class="divider"><p>我喜欢跟踪技术趋势，并把这些变化转化为学习方向和项目灵感。</p>` },
+      tec: { title: '技术趋势', html: `<p><strong>关注领域</strong></p><ul><li>人工智能与大语言模型</li><li>具身智能</li><li>新能源汽车</li><li>AI 与自动化应用</li></ul><hr class="divider"><p>我喜欢跟踪技术趋势，并把这些变化转化为学习方向和项目灵感。</p>` },
       trv: { title: '旅行', html: `<p>我喜欢旅行和探索新地方。新的环境会带来新的经验、想法和观察角度。</p>` }
     },
     skills: {
       ai: { title: '人工智能', html: `<p><strong>知识库和工具</strong></p><ul><li>Obsidian</li><li>Codex, VS Code, Gemini, Claude Code</li></ul><hr class="divider"><p><strong>已完成项目</strong></p><ul><li>天工开物多模态模型</li></ul><hr class="divider"><p><strong>兴趣方向</strong></p><ul><li>自然语言处理</li><li>机器学习</li><li>生成式 AI</li></ul>` },
-      sec: { title: '新能源汽车', html: `<p><strong>研究兴趣领域</strong></p><ul><li>新能源汽车</li><li>智能座舱</li><li>电池与电驱系统</li><li>自动驾驶与车联网</li></ul>` }
+      sec: { title: '新能源汽车', html: `<p><strong>研究兴趣领域</strong></p><ul><li>新能源汽车</li><li>具身智能</li><li>自动驾驶与辅助驾驶</li></ul>` }
     },
     contact: {
       mail: { title: '邮箱', html: `<p>你可以通过邮箱联系我：</p><p class="psh-mail"><a href="mailto:dahat5632@gmail.com">dahat5632@gmail.com</a></p><p class="psh-note">合作、项目想法，或者简单打个招呼，都欢迎联系。</p>` },
@@ -10482,21 +10498,174 @@ function applyChineseLanguageSlotCockpit() {
       if (!PRO_SUB_CONTENT[planet]) continue;
       for (const [sub, value] of Object.entries(subs)) {
         if (!PRO_SUB_CONTENT[planet][sub]) continue;
-        PRO_SUB_CONTENT[planet][sub].de = value;
+        PRO_SUB_CONTENT[planet][sub].zh = value;
       }
     }
   } catch (_) {}
 
   try {
-    _CENTER_LOOK_COPY.de = {
+    _CENTER_LOOK_COPY.zh = {
       lock: '锁定中心',
       unlock: '自由视角',
       pressedLabel: '驾驶舱视角已锁定中心，点击切换为自由视角'
     };
   } catch (_) {}
+
+  try {
+    PRO_COCKPIT_STICKER_HINT_COPY.frog.zh = '贴纸';
+    PRO_COCKPIT_STICKER_HINT_COPY.orpetronSotd.zh = 'Orpetron 奖项';
+    PRO_COCKPIT_STICKER_HINT_COPY.designNominees.zh = '设计提名奖';
+    PRO_COCKPIT_STICKER_HINT_COPY.awwwardsNominee.zh = 'Awwwards 提名';
+
+    const details = {
+      'about/edu': {
+        dotLabel: { en: 'University 3D', zh: '学校三维模型' },
+        labelText: '湖北科技职业学院三维示意模型',
+        scrollHintText: '滚动查看三维模型'
+      },
+      'about/bio': {
+        dotLabel: { en: 'Pilot ID Card', zh: '个人档案卡' },
+        labelText: '个人档案卡',
+        scrollHintText: '滚动查看个人档案卡'
+      },
+      'hobbies/sht': {
+        dotLabel: { en: 'Photo Wall', zh: '照片墙' },
+        labelText: '篮球记录',
+        scrollHintText: '滚动查看照片和三维模型',
+        wallText: { title: '篮球记录', p1: '篮球合影 01', p2: '篮球合影 02' },
+        secondDotLabel: { en: '3D Figure', zh: '三维模型' },
+        secondLabelText: '我的篮球三维模型'
+      },
+      'hobbies/esp': {
+        dotLabel: { en: 'Photo Wall', zh: '照片墙' },
+        labelText: '电子竞技记录',
+        scrollHintText: '滚动查看照片',
+        wallText: { title: '电子竞技记录', p1: '线下比赛记录，2021', p2: '与队友参加比赛' }
+      }
+    };
+    for (const [key, copy] of Object.entries(details)) {
+      const cfg = PRO_SUB_DETAIL_REGISTRY[key];
+      if (!cfg) continue;
+      cfg.dotLabel = copy.dotLabel;
+      cfg.labelText.zh = copy.labelText;
+      cfg.scrollHintText.zh = copy.scrollHintText;
+      if (copy.wallText) cfg.wallText.zh = copy.wallText;
+      if (cfg.secondBuilder && copy.secondDotLabel) {
+        cfg.secondBuilder.dotLabel = copy.secondDotLabel;
+        cfg.secondBuilder.labelText.zh = copy.secondLabelText;
+      }
+    }
+  } catch (_) {}
+}
+
+function applyEnglishContentCockpit() {
+  const content = {
+    about: {
+      edu: {
+        title: 'EDUCATION',
+        html: '<div class="tl-wrap"><div class="tl-item active"><div class="tl-year">2022 - 2025</div><div class="tl-title">Hubei Science and Technology Vocational College</div><div class="tl-desc">Internet and Network Technology</div></div><div class="tl-item"><div class="tl-year">2019 - 2022</div><div class="tl-title">Xiaogan No. 1 Senior High School</div><div class="tl-desc">High School Education</div></div></div><hr class="divider"><div class="tl-section-title">AWARD</div><div class="tl-cert">Second Prize, Hubei New Energy Vehicle Fault Diagnosis Competition</div>'
+      },
+      exp: {
+        title: 'EXPERIENCE',
+        html: '<div class="tl-wrap"><div class="tl-item active"><div class="tl-year">2025.06 - 2025.09</div><div class="tl-title">AI Trainer</div><div class="tl-desc">Luobo Yunli Technology Co., Ltd.</div></div><div class="tl-item"><div class="tl-year">2025.09 - Present</div><div class="tl-title">AI Trainer</div><div class="tl-desc">Kunlun Tech Co., Ltd.</div></div></div><hr class="divider"><p>I continue to learn and grow, and will keep this section updated as I gain experience.</p>'
+      },
+      bio: {
+        title: 'ABOUT ME',
+        html: '<p>Hello, I am <strong>Zhou Tianshuang</strong>, also known as <strong>ZTS</strong>.</p><hr class="divider"><p>I focus on artificial intelligence, AI training, new energy vehicles, and automation tools. I enjoy turning complex technology into reliable solutions for real problems.</p><hr class="divider"><p class="psh-note">Outside work, I follow emerging technology and enjoy games, travel, and challenging training projects.</p>'
+      }
+    },
+    projects: {
+      web: {
+        title: 'PERSONAL PORTFOLIO',
+        html: '<p><strong>Project</strong></p><ul><li>This interactive personal portfolio</li></ul><hr class="divider"><p><strong>Technologies</strong></p><ul><li>HTML, CSS, JavaScript</li><li>Three.js and WebGL</li><li>GitHub Pages</li></ul>'
+      },
+      mob: {
+        title: 'AI PROJECTS',
+        html: '<p><strong>Project</strong></p><ul><li>Tiangong Kaiwu Multimodal Model</li></ul><hr class="divider"><p>More project details will be added.</p>'
+      },
+      back: { title: '', html: '' }
+    },
+    hobbies: {
+      esp: {
+        title: 'E-SPORTS',
+        html: '<p><strong>Favorite Game</strong></p><ul><li>Honor of Kings</li></ul><hr class="divider"><p>E-sports strengthened my communication, teamwork, decision-making under pressure, and rapid problem-solving.</p>'
+      },
+      sht: {
+        title: 'BASKETBALL',
+        html: '<p>Basketball requires fitness, rhythm, teamwork, and quick judgment. It strengthens my focus, communication, and decision-making under pressure.</p><hr class="divider"><p class="psh-note">It is a sport built on passion, patience, discipline, and collaboration.</p>'
+      },
+      tec: {
+        title: 'TECH TRENDS',
+        html: '<p><strong>Areas I Follow</strong></p><ul><li>Artificial intelligence and large language models</li><li>Embodied intelligence</li><li>New energy vehicles</li><li>AI and automation applications</li></ul><hr class="divider"><p>I follow technology trends and turn them into learning directions and project ideas.</p>'
+      },
+      trv: {
+        title: 'TRAVEL',
+        html: '<p>I enjoy traveling and exploring new places. New environments bring new experiences, ideas, and perspectives.</p>'
+      }
+    },
+    skills: {
+      ai: {
+        title: 'ARTIFICIAL INTELLIGENCE',
+        html: '<p><strong>Knowledge Base and Tools</strong></p><ul><li>Obsidian</li><li>Codex, VS Code, Gemini, Claude Code</li></ul><hr class="divider"><p><strong>Completed Project</strong></p><ul><li>Tiangong Kaiwu Multimodal Model</li></ul><hr class="divider"><p><strong>Interests</strong></p><ul><li>Natural Language Processing</li><li>Machine Learning</li><li>Generative AI</li></ul>'
+      },
+      sec: {
+        title: 'NEW ENERGY VEHICLES',
+        html: '<p><strong>Areas of Interest</strong></p><ul><li>New energy vehicles</li><li>Embodied intelligence</li><li>Autonomous and assisted driving</li></ul>'
+      }
+    },
+    contact: {
+      mail: {
+        title: 'EMAIL',
+        html: '<p>You can contact me by email:</p><p class="psh-mail"><a href="mailto:dahat5632@gmail.com">dahat5632@gmail.com</a></p><p class="psh-note">Collaboration, project ideas, and friendly messages are all welcome.</p>'
+      },
+      soc: {
+        title: 'SOCIAL MEDIA',
+        html: '<p>WeChat: 19858493168</p><p>Xiaohongshu: 63011307889</p>'
+      }
+    }
+  };
+
+  for (const [planet, subs] of Object.entries(content)) {
+    if (!PRO_SUB_CONTENT[planet]) continue;
+    for (const [sub, value] of Object.entries(subs)) {
+      if (PRO_SUB_CONTENT[planet][sub]) PRO_SUB_CONTENT[planet][sub].en = value;
+    }
+  }
+
+  PRO_BIO_ID_CARD_TEXT.en = {
+    org: 'ZTS ACADEMY',
+    orgSub: 'PILOT PROFILE',
+    clrLabel: 'CLEARANCE',
+    clrVal: 'A-7',
+    name: 'NAME',
+    nameVal: 'Zhou Tianshuang',
+    codename: 'CODENAME',
+    codenameVal: 'ZTS',
+    role: 'ROLE',
+    roleVal: 'AI TRAINER',
+    focus: 'FOCUS',
+    focusVal: 'AI · NEW ENERGY VEHICLES',
+    statCuriosity: 'CURIOSITY',
+    statFocus: 'FOCUS',
+    statCalm: 'CALM',
+    statTeamwork: 'TEAMWORK',
+    statProactivity: 'PROACTIVITY',
+    statCreativity: 'CREATIVITY',
+    idText: 'ID-2026-CN-04A7'
+  };
+
+  const esp = PRO_SUB_DETAIL_REGISTRY['hobbies/esp'];
+  if (esp) {
+    esp.wallText.en = {
+      title: 'E-SPORTS ARCHIVE',
+      p1: 'Offline tournament, 2021',
+      p2: 'Competing with my team'
+    };
+  }
 }
 
 applyChineseLanguageSlotCockpit();
+applyEnglishContentCockpit();
 
 function syncProMobileCenterLookToggleUi() {
   const btn = typeof document !== 'undefined' ? document.getElementById('bgs-pro-center-look-toggle') : null;
@@ -11720,7 +11889,7 @@ function injectProLangToolbarFallback() {
       btn.type = 'button';
       btn.className = 'tb-lang';
       btn.dataset.lang = code;
-      btn.textContent = code === 'de' ? '中文' : code.toUpperCase();
+      btn.textContent = code === 'zh' ? '中文' : code.toUpperCase();
       host.appendChild(btn);
     }
     host.removeAttribute('hidden');

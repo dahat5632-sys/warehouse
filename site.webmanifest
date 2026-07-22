@@ -1,27 +1,31 @@
 {
-  "name": "周天爽 | Portfolio",
-  "short_name": "ZTS",
-  "description": "周天爽 — interaktif siberpunk portfolyo.",
-  "start_url": "/",
-  "scope": "/",
-  "display": "standalone",
-  "orientation": "any",
-  "background_color": "#020408",
-  "theme_color": "#020408",
-  "lang": "tr",
-  "categories": ["portfolio", "personal", "education"],
-  "icons": [
-    {
-      "src": "assets/default/common/favicon.svg",
-      "sizes": "any",
-      "type": "image/svg+xml",
-      "purpose": "any"
-    },
-    {
-      "src": "assets/default/common/bio-logo.webp",
-      "sizes": "512x512",
-      "type": "image/webp",
-      "purpose": "any maskable"
-    }
-  ]
+    "name":  "周天爽 | 个人作品集",
+    "short_name":  "ZTS",
+    "description":  "周天爽的交互式个人作品集，聚焦人工智能、AI 训练、新能源汽车与自动化工具。",
+    "start_url":  "/",
+    "scope":  "/",
+    "display":  "standalone",
+    "orientation":  "any",
+    "background_color":  "#020408",
+    "theme_color":  "#020408",
+    "lang":  "zh-CN",
+    "categories":  [
+                       "portfolio",
+                       "personal",
+                       "education"
+                   ],
+    "icons":  [
+                  {
+                      "src":  "assets/default/common/favicon.svg",
+                      "sizes":  "any",
+                      "type":  "image/svg+xml",
+                      "purpose":  "any"
+                  },
+                  {
+                      "src":  "assets/default/common/bio-logo.webp",
+                      "sizes":  "512x512",
+                      "type":  "image/webp",
+                      "purpose":  "any maskable"
+                  }
+              ]
 }

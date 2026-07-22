@@ -1,4 +1,4 @@
-﻿/* BIO: Cockpit layout, rendering, and interaction note. */
+/* BIO: Cockpit layout, rendering, and interaction note. */
 (() => {
   'use strict';
 
@@ -128,15 +128,15 @@
       aboutSubEdu: 'Education',
       aboutSubExp: 'Experience',
       aboutSubBio: 'About Me',
-      projectsSubWeb: 'Cyber Security',
+      projectsSubWeb: 'Personal Portfolio',
       projectsSubMob: 'Artificial Intelligence',
-      projectsSubBack: 'Mixed Projects',
+      projectsSubBack: '',
       hobbiesSubEsp: 'E-Sports',
-      hobbiesSubSht: 'Shooting',
+      hobbiesSubSht: 'Basketball',
       hobbiesSubTec: 'Tech Trends',
       hobbiesSubTrv: 'Travel',
-      skillsSubAi: '人工智能',
-      skillsSubSec: '新能源汽车',
+      skillsSubAi: 'Artificial Intelligence',
+      skillsSubSec: 'New Energy Vehicles',
       contactSubMail: 'E-mail',
       contactSubSoc: 'Social Media',
       backLabel:   '◄ GO BACK',
@@ -300,8 +300,8 @@
 
 
 
-  /* BIO: Repurpose the former German language slot as Chinese for this GitHub Pages copy. */
-  UI.de = {
+  /* BIO: Chinese is the default language; English is available explicitly. */
+  UI.zh = {
     modeDefault: '默认模式',
     modePro: '专业模式',
     sub: '欢迎进入专业模式',
@@ -377,6 +377,7 @@
   };
 
   delete UI.tr;
+  delete UI.de;
 
   let defaultExitModalOpen = false;
   let pdxFocusReturn = null;
@@ -442,24 +443,25 @@
   }
 
   const STORAGE_LANG = 'bgs_lang';
-  const STORAGE_LANG_DEFAULT_MIGRATION = 'bgs_lang_default_zh_v3';
+  const STORAGE_LANG_DEFAULT_MIGRATION = 'bgs_lang_default_zh_v4';
   /** BIO: Ana site ile aynı anahtar (script.js BGS_VOL_KEY). */
   const STORAGE_VOL = 'bgs_vol';
   /** BIO: Mobil / aynı-sekme Pro geçişi — script.js BGS_VOL_SESSION_KEY ile ortak. */
   const STORAGE_VOL_SESSION = 'bgs_vol_session';
-  let currentLang = 'de';
+  let currentLang = 'zh';
   try {
     if (localStorage.getItem(STORAGE_LANG_DEFAULT_MIGRATION) !== '1') {
-      localStorage.setItem(STORAGE_LANG, 'de');
+      currentLang = 'zh';
+      localStorage.setItem(STORAGE_LANG, 'zh');
       localStorage.setItem(STORAGE_LANG_DEFAULT_MIGRATION, '1');
     } else {
-      currentLang = localStorage.getItem(STORAGE_LANG) || 'de';
+      currentLang = localStorage.getItem(STORAGE_LANG) === 'en' ? 'en' : 'zh';
     }
   } catch (_) {
-    currentLang = 'de';
+    currentLang = 'zh';
   }
-  if (currentLang === 'tr') currentLang = 'en';
-  if (!UI[currentLang]) currentLang = 'de';
+
+  if (!UI[currentLang]) currentLang = 'zh';
 
   const MAP_PLANETS = [
     { id: 'about', tex: '../assets/pro/aboutme/aboutme-texture.webp', shape: 'sphere' },
@@ -794,11 +796,13 @@
   }
 
   function applyLang(lang) {
-    const t = UI[lang] || UI.en;
+    lang = lang === 'en' ? 'en' : 'zh';
+    const t = UI[lang];
     currentLang = lang;
     try { localStorage.setItem(STORAGE_LANG, lang); } catch (_) {}
     try { localStorage.setItem(STORAGE_LANG_DEFAULT_MIGRATION, '1'); } catch (_) {}
     document.documentElement.lang = t.htmlLang;
+    document.title = lang === 'en' ? 'Zhou Tianshuang | Pro Mode Portfolio' : '周天爽 | 专业模式作品集';
 
     document.querySelectorAll('.tb-mode').forEach(btn => {
       if (btn.dataset.mode === 'default') btn.textContent = t.modeDefault;
