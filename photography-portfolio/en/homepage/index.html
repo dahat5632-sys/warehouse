@@ -921,6 +921,33 @@ white-space: normal;
   will-change: clip-path, opacity, transform;
 }
 
+.style-card .style-card-label {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 44px;
+  padding: 0 24px;
+  border: 1.5px solid rgba(0, 0, 0, .48);
+  border-radius: 999px;
+  color: #000;
+  font-size: clamp(14px, 1.05vw, 18px);
+  font-weight: 700;
+  line-height: 1.2;
+  text-align: center;
+  margin: clamp(22px, 2vw, 34px) auto clamp(18px, 1.8vw, 28px);
+  max-width: calc(100% - 34px);
+}
+
+.style-card .style-card-image {
+  display: block;
+  width: calc(100% - clamp(34px, 3vw, 56px));
+  height: calc(100% - clamp(98px, 7vw, 130px));
+  margin: 0 auto;
+  border-radius: 16px;
+  object-fit: cover;
+  object-position: center;
+}
+
 .style-grid.is-drawer-ready .style-card {
   clip-path: inset(100% 0 0 0 round var(--border-radius));
   opacity: 0;
@@ -2499,15 +2526,39 @@ marquee.appendChild(clone);
 </g>
 </svg>
 </section>
-<div class="style-grid" aria-label="八张风格展示空白卡片">
-<article class="style-card" aria-label="风格空白卡片 1"></article>
-<article class="style-card" aria-label="风格空白卡片 2"></article>
-<article class="style-card" aria-label="风格空白卡片 3"></article>
-<article class="style-card" aria-label="风格空白卡片 4"></article>
-<article class="style-card" aria-label="风格空白卡片 5"></article>
-<article class="style-card" aria-label="风格空白卡片 6"></article>
-<article class="style-card" aria-label="风格空白卡片 7"></article>
-<article class="style-card" aria-label="风格空白卡片 8"></article>
+<div class="style-grid" aria-label="八张风格展示卡片">
+<article class="style-card" aria-label="皮克斯风格">
+<div class="style-card-label">皮克斯风格</div>
+<img class="style-card-image" src="../../wp-content/uploads/2026/07/style-pixar-clean-v2.png" alt="皮克斯风格展示图" loading="lazy" decoding="async">
+</article>
+<article class="style-card" aria-label="宫崎骏风格">
+<div class="style-card-label">宫崎骏风格</div>
+<img class="style-card-image" src="../../wp-content/uploads/2026/07/style-miyazaki-clean-v2.png" alt="宫崎骏风格展示图" loading="lazy" decoding="async">
+</article>
+<article class="style-card" aria-label="新海诚风格">
+<div class="style-card-label">新海诚风格</div>
+<img class="style-card-image" src="../../wp-content/uploads/2026/07/style-shinkai-clean-v2.png" alt="新海诚风格展示图" loading="lazy" decoding="async">
+</article>
+<article class="style-card" aria-label="CG风格">
+<div class="style-card-label">CG风格</div>
+<img class="style-card-image" src="../../wp-content/uploads/2026/07/style-cg-clean-v2.png" alt="CG风格展示图" loading="lazy" decoding="async">
+</article>
+<article class="style-card" aria-label="港风复古风格">
+<div class="style-card-label">港风复古风格</div>
+<img class="style-card-image" src="../../wp-content/uploads/2026/07/style-hk-retro-clean-v2.png" alt="港风复古风格展示图" loading="lazy" decoding="async">
+</article>
+<article class="style-card" aria-label="赛博朋克风格">
+<div class="style-card-label">赛博朋克风格</div>
+<img class="style-card-image" src="../../wp-content/uploads/2026/07/style-cyberpunk-clean-v2.png" alt="赛博朋克风格展示图" loading="lazy" decoding="async">
+</article>
+<article class="style-card" aria-label="蒸汽朋克风格">
+<div class="style-card-label">蒸汽朋克风格</div>
+<img class="style-card-image" src="../../wp-content/uploads/2026/07/style-steampunk-clean-v2.png" alt="蒸汽朋克风格展示图" loading="lazy" decoding="async">
+</article>
+<article class="style-card" aria-label="废土风格">
+<div class="style-card-label">废土风格</div>
+<img class="style-card-image" src="../../wp-content/uploads/2026/07/style-wasteland-clean-v2.png" alt="废土风格展示图" loading="lazy" decoding="async">
+</article>
 </div>
 </section>
 <div class="inner-wrap position-relative">
