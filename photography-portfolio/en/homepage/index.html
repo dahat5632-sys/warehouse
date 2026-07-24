@@ -876,6 +876,291 @@ min-height: 440px;
 white-space: normal;
 }
 }
+
+/* ZTS mobile adaptation start */
+@media (max-width: 768px) {
+  html,
+  body {
+    max-width: 100%;
+    overflow-x: hidden !important;
+  }
+
+  body.home > #app {
+    overflow-x: hidden !important;
+  }
+
+  .hero {
+    min-height: 92svh !important;
+    height: 92svh !important;
+  }
+
+  .hero .inner-wrap {
+    padding: 0 22px !important;
+  }
+
+  .hero .portfolio-title {
+    font-size: clamp(38px, 12vw, 58px) !important;
+    line-height: 1.12 !important;
+  }
+
+  .warm-description-section {
+    padding: 38px 12px !important;
+  }
+
+  .warm-description-section .warm-description-inner {
+    max-width: none !important;
+    width: 100% !important;
+  }
+
+  .warm-description-section .warm-description-title,
+  .label,
+  .focal-length-card .label,
+  .light-position-feature .label,
+  .light-position-card .label,
+  .light-shadow-card .label {
+    font-size: 13px !important;
+    min-height: 34px !important;
+    padding: 9px 18px !important;
+  }
+
+  .warm-description-section .warm-gallery {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    gap: 8px !important;
+    margin-top: 22px !important;
+  }
+
+  .warm-description-section .warm-tone-copy {
+    font-size: 17px !important;
+    line-height: 1.75 !important;
+  }
+
+  .marquee.background-white {
+    border-radius: 22px !important;
+    margin-left: 8px !important;
+    margin-right: 8px !important;
+    max-width: calc(100vw - 16px) !important;
+    min-height: 48px !important;
+    overflow: hidden !important;
+    --marquee-item-gap: 34px;
+    --marquee-word-icon-gap: 20px;
+  }
+
+  .marquee.background-white .item {
+    white-space: nowrap !important;
+  }
+
+  .flat-shot-section {
+    padding: 12px !important;
+  }
+
+  .flat-shot-section .living-track {
+    flex-direction: column !important;
+    gap: 14px !important;
+    height: auto !important;
+    transform: none !important;
+    width: 100% !important;
+  }
+
+  .flat-shot-section .flat-shot-card {
+    border-radius: 28px !important;
+    height: auto !important;
+    min-height: 0 !important;
+    padding: 22px !important;
+    width: 100% !important;
+  }
+
+  .flat-shot-section .flat-shot-images {
+    gap: 10px !important;
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    max-width: 100% !important;
+  }
+
+  .flat-shot-section .flat-shot-copy,
+  .typical_unit .composition-card .composition-copy,
+  .composition-grid-section .composition-gallery-copy,
+  .shot-scale-cards-grid .shot-scale-copy {
+    font-size: 16px !important;
+    line-height: 1.7 !important;
+  }
+
+  .flat-shot-section .flat-shot-copy strong,
+  .typical_unit .composition-card .composition-copy strong,
+  .composition-grid-section .composition-gallery-copy strong,
+  .shot-scale-cards-grid .shot-scale-copy strong {
+    font-size: 24px !important;
+  }
+
+  .typical_unit,
+  .composition-grid-section,
+  .home section.what-we-stand-for.shot-scale-cards-grid,
+  .light-position-section,
+  .light-shadow-section,
+  .focal-length-section {
+    padding-left: 12px !important;
+    padding-right: 12px !important;
+  }
+
+  .typical_unit .composition-card,
+  .composition-grid-section .composition-gallery-card,
+  .home section.what-we-stand-for.shot-scale-cards-grid .item.shot-scale-card {
+    border-radius: 28px !important;
+    height: auto !important;
+    min-height: 0 !important;
+    padding: 22px !important;
+    width: 100% !important;
+  }
+
+  .composition-grid-section {
+    display: grid !important;
+    gap: 14px !important;
+    grid-template-columns: 1fr !important;
+  }
+
+  .composition-grid-section .composition-gallery-images {
+    gap: 10px !important;
+  }
+
+  .arrows-header.shot-scale-header,
+  .focal-length-header,
+  .light-position-section .light-position-strip {
+    border-radius: 24px !important;
+    min-height: 64px !important;
+    padding: 16px 20px !important;
+  }
+
+  .arrows-header.shot-scale-header h2,
+  .focal-length-header h2,
+  .light-position-section .light-position-strip h2 {
+    font-size: 24px !important;
+  }
+
+  .home section.what-we-stand-for.shot-scale-cards-grid {
+    gap: 14px !important;
+    grid-template-columns: 1fr !important;
+  }
+
+  .shot-scale-cards-grid .shot-scale-card img,
+  .composition-grid-section .composition-gallery-images img,
+  .typical_unit .composition-card .composition-images img {
+    max-height: 54svh !important;
+    object-fit: cover !important;
+  }
+
+  .light-position-layout {
+    display: grid !important;
+    gap: 14px !important;
+    grid-template-columns: 1fr !important;
+    overflow: visible !important;
+  }
+
+  .light-position-feature,
+  .light-position-card {
+    border-radius: 28px !important;
+    height: auto !important;
+    min-height: 460px !important;
+    padding: 22px !important;
+  }
+
+  .light-position-loop {
+    margin-left: -12px !important;
+    margin-right: -12px !important;
+    overflow-x: auto !important;
+    overflow-y: hidden !important;
+    padding: 0 12px 8px !important;
+    scroll-snap-type: x proximity;
+  }
+
+  .light-position-track {
+    gap: 14px !important;
+  }
+
+  .light-position-card {
+    flex: 0 0 min(78vw, 360px) !important;
+    scroll-snap-align: start;
+  }
+
+  .light-shadow-scroll {
+    height: auto !important;
+  }
+
+  .light-shadow-sticky {
+    padding-top: 14px !important;
+    position: static !important;
+  }
+
+  .light-shadow-viewport {
+    overflow-x: auto !important;
+    overflow-y: hidden !important;
+    padding-bottom: 8px !important;
+    scroll-snap-type: x proximity;
+  }
+
+  .light-shadow-track {
+    display: flex !important;
+    gap: 14px !important;
+    transform: none !important;
+    width: max-content !important;
+  }
+
+  .light-shadow-card {
+    border-radius: 28px !important;
+    flex: 0 0 min(78vw, 360px) !important;
+    height: 480px !important;
+    padding: 22px !important;
+    scroll-snap-align: start;
+  }
+
+  .focal-length-section {
+    padding-top: 14px !important;
+    padding-bottom: 14px !important;
+  }
+
+  .focal-length-grid {
+    display: flex !important;
+    flex-wrap: nowrap !important;
+    gap: 14px !important;
+    margin-left: -12px !important;
+    margin-right: -12px !important;
+    overflow-x: auto !important;
+    overflow-y: hidden !important;
+    padding: 0 12px 8px !important;
+    scroll-snap-type: x proximity;
+  }
+
+  .focal-length-card {
+    border-radius: 28px !important;
+    flex: 0 0 min(76vw, 340px) !important;
+    min-height: 420px !important;
+    padding: 18px !important;
+    scroll-snap-align: start;
+  }
+
+  .focal-length-card img {
+    max-height: 330px !important;
+  }
+
+  body.home > #app > footer {
+    min-height: 80px !important;
+    padding: 0 !important;
+  }
+}
+
+@media (max-width: 420px) {
+  .warm-description-section .warm-gallery {
+    grid-template-columns: 1fr !important;
+  }
+
+  .flat-shot-section .flat-shot-images {
+    grid-template-columns: 1fr !important;
+  }
+
+  .focal-length-card,
+  .light-position-card,
+  .light-shadow-card {
+    flex-basis: calc(100vw - 48px) !important;
+  }
+}
+/* ZTS mobile adaptation end */
 </style>
 <script>
 window.addEventListener('DOMContentLoaded', function () {
