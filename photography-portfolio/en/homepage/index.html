@@ -1,4 +1,4 @@
-<!doctype html>
+﻿<!doctype html>
 <html lang="en-US" class="theme-light">
 <head>
 <style>
@@ -967,6 +967,52 @@ white-space: normal;
   aspect-ratio: 1 / .62;
 }
 
+.aigc-video-strip {
+  background: #fff !important;
+  color: #000 !important;
+  margin-top: var(--gap);
+  min-height: clamp(82px, 7vw, 128px);
+}
+
+.arrows-header.style-header.aigc-video-strip {
+  margin-top: var(--gap) !important;
+}
+
+.arrows-header.aigc-video-strip .arrow-group path {
+  stroke: #000 !important;
+}
+
+.aigc-video-grid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.aigc-video-card {
+  aspect-ratio: auto;
+  min-height: auto;
+  padding: clamp(22px, 2vw, 34px);
+}
+
+.aigc-video-card .style-card-label {
+  margin-top: 0;
+  margin-bottom: clamp(18px, 1.4vw, 26px);
+  text-align: center;
+}
+
+.aigc-video-frame {
+  aspect-ratio: 16 / 9;
+  background: #000;
+  border-radius: 18px;
+  overflow: hidden;
+  width: 100%;
+}
+
+.aigc-video-frame video {
+  display: block;
+  height: 100%;
+  object-fit: cover;
+  width: 100%;
+}
+
 .style-grain-card {
   padding: clamp(22px, 2vw, 34px);
 }
@@ -1076,6 +1122,24 @@ white-space: normal;
 
   .style-grain-grid {
     grid-template-columns: 1fr;
+  }
+
+  .aigc-video-strip {
+    border-radius: 24px !important;
+    min-height: 64px !important;
+    padding: 16px 20px !important;
+  }
+
+  .aigc-video-strip span {
+    font-size: 24px !important;
+  }
+
+  .aigc-video-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .aigc-video-card {
+    min-height: auto;
   }
 
   .style-grain-grid .style-card {
@@ -2642,6 +2706,53 @@ marquee.appendChild(clone);
 <div class="style-grain-image-pair">
 <img src="../../wp-content/uploads/2026/07/grain-night-moody-01-clean.png" alt="暗调夜景氛围感风格颗粒展示图一" loading="lazy" decoding="async">
 <img src="../../wp-content/uploads/2026/07/grain-night-moody-02-clean.png" alt="暗调夜景氛围感风格颗粒展示图二" loading="lazy" decoding="async">
+</div>
+</article>
+</div>
+<section class="arrows-header style-header aigc-video-strip d-flex align-items-center justify-content-between" aria-labelledby="aigc-video-title">
+<svg width="58" height="42" viewBox="0 0 58 42" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+<g class="arrow-group" clip-path="url(#clip0_aigc_left)">
+<path d="M13.7907 1.87317V38.8797" stroke="#000" stroke-width="2.33333" stroke-linecap="round" stroke-linejoin="round" />
+<path d="M25.7493 25.1344L13.791 39.937L1.83266 25.1344" stroke="#000" stroke-width="2.33333" stroke-linecap="round" stroke-linejoin="round" />
+</g>
+<g class="arrow-group _2" clip-path="url(#clip1_aigc_left)">
+<path d="M47.0029 6.50269V34.556" stroke="#000" stroke-width="2.33333" stroke-linecap="round" stroke-linejoin="round" />
+<path d="M56.0442 24.1362L47.0026 35.3576L37.9609 24.1362" stroke="#000" stroke-width="2.33333" stroke-linecap="round" stroke-linejoin="round" />
+</g>
+<defs>
+<clipPath id="clip0_aigc_left"><rect width="27" height="42" fill="white" /></clipPath>
+<clipPath id="clip1_aigc_left"><rect width="22" height="32" fill="white" transform="translate(36 5)" /></clipPath>
+</defs>
+</svg>
+<span id="aigc-video-title" class="f-al-44-100 text-center">我的AIGC作品</span>
+<svg width="59" height="50" viewBox="0 0 59 50" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+<g class="arrow-group">
+<path d="M45.4573 1.34106V46.9771" stroke="#000" stroke-width="2.33333" stroke-linecap="round" stroke-linejoin="round" />
+<path d="M57.4174 30.0265L45.4591 48.2809L33.5007 30.0265" stroke="#000" stroke-width="2.33333" stroke-linecap="round" stroke-linejoin="round" />
+</g>
+<g class="arrow-group _2">
+<path d="M15.5 13.8773V41.3337" stroke="#000" stroke-width="2.33333" stroke-linecap="round" stroke-linejoin="round" />
+<path d="M24.5404 31.1356L15.4987 42.1182L6.45703 31.1356" stroke="#000" stroke-width="2.33333" stroke-linecap="round" stroke-linejoin="round" />
+</g>
+</svg>
+</section>
+<div class="style-grid aigc-video-grid" aria-label="我的AIGC作品视频卡片">
+<article class="style-card aigc-video-card" aria-label="麦克尔·贝环绕镜头">
+<div class="style-card-label">麦克尔·贝环绕镜头</div>
+<div class="aigc-video-frame">
+<video controls preload="metadata" playsinline src="../../wp-content/uploads/2026/07/videos/aigc-michael-bay-orbit.mp4"></video>
+</div>
+</article>
+<article class="style-card aigc-video-card" aria-label="希区柯克变焦">
+<div class="style-card-label">希区柯克变焦</div>
+<div class="aigc-video-frame">
+<video controls preload="metadata" playsinline src="../../wp-content/uploads/2026/07/videos/aigc-hitchcock-zoom.mp4"></video>
+</div>
+</article>
+<article class="style-card aigc-video-card" aria-label="子弹时间">
+<div class="style-card-label">子弹时间</div>
+<div class="aigc-video-frame">
+<video controls preload="metadata" playsinline src="../../wp-content/uploads/2026/07/videos/aigc-bullet-time.mp4"></video>
 </div>
 </article>
 </div>
