@@ -948,6 +948,22 @@ white-space: normal;
   object-position: center;
 }
 
+.style-grain-strip {
+  background: #fff !important;
+  color: #000 !important;
+  justify-content: center !important;
+  margin-top: var(--gap);
+  min-height: clamp(82px, 7vw, 128px);
+}
+
+.style-grain-grid {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.style-grain-grid .style-card {
+  aspect-ratio: 1 / .62;
+}
+
 .style-grid.is-drawer-ready .style-card {
   clip-path: inset(100% 0 0 0 round var(--border-radius));
   opacity: 0;
@@ -1015,6 +1031,11 @@ white-space: normal;
     gap: 14px;
     grid-template-columns: 1fr;
     margin-top: 14px;
+  }
+
+  .style-grain-strip {
+    border-radius: 24px !important;
+    min-height: 64px !important;
   }
 
   .style-card {
@@ -1425,13 +1446,17 @@ requestAnimationFrame(revealVisibleCards);
 }
 
 function setupStyleDrawers() {
-var grid = document.querySelector('.style-grid');
-if (!grid) return;
+var grids = Array.prototype.slice.call(document.querySelectorAll('.style-grid'));
+if (!grids.length) return;
+
+var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches || !('IntersectionObserver' in window);
+
+grids.forEach(function (grid) {
 var cards = Array.prototype.slice.call(grid.querySelectorAll('.style-card'));
 if (!cards.length) return;
 
 grid.classList.add('is-drawer-ready');
-if (window.matchMedia('(prefers-reduced-motion: reduce)').matches || !('IntersectionObserver' in window)) {
+if (reduceMotion) {
 cards.forEach(function (card) {
 card.classList.add('is-drawer-open');
 });
@@ -1467,6 +1492,7 @@ observer.observe(card);
 window.addEventListener('scroll', revealVisibleCards, { passive: true });
 window.addEventListener('resize', revealVisibleCards, { passive: true });
 requestAnimationFrame(revealVisibleCards);
+});
 }
 function setupColorWallpaperReveals() {
 var section = document.querySelector('.warm-description-section');
@@ -2559,6 +2585,13 @@ marquee.appendChild(clone);
 <div class="style-card-label">废土风格</div>
 <img class="style-card-image" src="../../wp-content/uploads/2026/07/style-wasteland-clean-v2.png" alt="废土风格展示图" loading="lazy" decoding="async">
 </article>
+</div>
+<div class="strip-bar background-white style-grain-strip" aria-labelledby="style-grain-title">
+<span id="style-grain-title" class="f-ab-20-120 color-black">风格颗粒</span>
+</div>
+<div class="style-grid style-grain-grid" aria-label="两张风格颗粒空白卡片">
+<article class="style-card" aria-label="风格颗粒空白卡片 1"></article>
+<article class="style-card" aria-label="风格颗粒空白卡片 2"></article>
 </div>
 </section>
 <div class="inner-wrap position-relative">
