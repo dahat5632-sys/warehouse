@@ -1013,6 +1013,32 @@ white-space: normal;
   width: 100%;
 }
 
+.personal-site-strip {
+  align-items: center;
+  background: #fff !important;
+  border-radius: 999px;
+  color: #000 !important;
+  display: flex;
+  justify-content: center;
+  margin-top: var(--gap);
+  min-height: clamp(82px, 7vw, 128px);
+  text-decoration: none !important;
+  transition: transform 0.28s ease, box-shadow 0.28s ease;
+  width: 100%;
+}
+
+.personal-site-strip:hover,
+.personal-site-strip:focus-visible {
+  box-shadow: 0 18px 45px rgba(0, 0, 0, 0.08);
+  color: #000 !important;
+  outline: none;
+  transform: translateY(-4px);
+}
+
+.personal-site-strip span {
+  pointer-events: none;
+}
+
 .style-grain-card {
   padding: clamp(22px, 2vw, 34px);
 }
@@ -1136,6 +1162,16 @@ white-space: normal;
 
   .aigc-video-grid {
     grid-template-columns: 1fr;
+  }
+
+  .personal-site-strip {
+    border-radius: 24px;
+    min-height: 64px;
+    padding: 16px 20px;
+  }
+
+  .personal-site-strip span {
+    font-size: 24px !important;
   }
 
   .aigc-video-card {
@@ -2756,6 +2792,9 @@ marquee.appendChild(clone);
 </div>
 </article>
 </div>
+<a class="personal-site-strip" href="https://intro3d.com/u/1oqie9a12p" target="_blank" rel="noopener noreferrer" aria-label="打开我的个人网站">
+<span class="f-al-44-100 text-center">我的个人网站</span>
+</a>
 </section>
 <div class="inner-wrap position-relative">
 <div class="top-wrap">
