@@ -967,6 +967,34 @@ white-space: normal;
   aspect-ratio: 1 / .62;
 }
 
+.style-grain-card {
+  padding: clamp(22px, 2vw, 34px);
+}
+
+.style-grain-card .style-card-label {
+  margin-top: 0;
+  margin-bottom: clamp(18px, 1.4vw, 26px);
+}
+
+.style-grain-image-pair {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: clamp(14px, 1.2vw, 22px);
+  width: 100%;
+  flex: 1;
+  min-height: 0;
+}
+
+.style-grain-image-pair img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  min-height: 0;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 18px;
+}
+
 .style-grid.is-drawer-ready .style-card {
   clip-path: inset(100% 0 0 0 round var(--border-radius));
   opacity: 0;
@@ -1044,6 +1072,15 @@ white-space: normal;
   .style-card {
     border-radius: 28px;
     min-height: 320px;
+  }
+
+  .style-grain-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .style-grain-grid .style-card {
+    aspect-ratio: auto;
+    min-height: 420px;
   }
 }
 /* Style section end */
@@ -2592,9 +2629,21 @@ marquee.appendChild(clone);
 <div class="strip-bar background-white style-grain-strip" aria-labelledby="style-grain-title">
 <span id="style-grain-title" class="f-ab-20-120 color-black">风格颗粒</span>
 </div>
-<div class="style-grid style-grain-grid" aria-label="两张风格颗粒空白卡片">
-<article class="style-card" aria-label="风格颗粒空白卡片 1"></article>
-<article class="style-card" aria-label="风格颗粒空白卡片 2"></article>
+<div class="style-grid style-grain-grid" aria-label="两张风格颗粒展示卡片">
+<article class="style-card style-grain-card" aria-label="复古胶片风格颗粒">
+<div class="style-card-label">复古胶片风格颗粒</div>
+<div class="style-grain-image-pair">
+<img src="../../wp-content/uploads/2026/07/grain-retro-film-01-clean.png" alt="复古胶片风格颗粒展示图一" loading="lazy" decoding="async">
+<img src="../../wp-content/uploads/2026/07/grain-retro-film-02-clean.png" alt="复古胶片风格颗粒展示图二" loading="lazy" decoding="async">
+</div>
+</article>
+<article class="style-card style-grain-card" aria-label="暗调夜景氛围感风格颗粒">
+<div class="style-card-label">暗调夜景氛围感风格颗粒</div>
+<div class="style-grain-image-pair">
+<img src="../../wp-content/uploads/2026/07/grain-night-moody-01-clean.png" alt="暗调夜景氛围感风格颗粒展示图一" loading="lazy" decoding="async">
+<img src="../../wp-content/uploads/2026/07/grain-night-moody-02-clean.png" alt="暗调夜景氛围感风格颗粒展示图二" loading="lazy" decoding="async">
+</div>
+</article>
 </div>
 </section>
 <div class="inner-wrap position-relative">
