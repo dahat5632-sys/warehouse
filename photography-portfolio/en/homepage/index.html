@@ -1,10 +1,141 @@
 <!doctype html>
-<html lang="en-US" class="theme-light">
+<html lang="en-US" class="theme-light portfolio-loading">
 <head>
 <style>
 body {
 background: #f3f3f1 !important;
 opacity: 1 !important;
+}
+.portfolio-loading,
+.portfolio-loading body {
+height: 100%;
+overflow: hidden !important;
+}
+.portfolio-loader {
+--portfolio-load-progress: 0.06;
+align-items: stretch;
+background: #11110f;
+box-sizing: border-box;
+color: #f7f4ed;
+display: flex;
+flex-direction: column;
+height: 100dvh;
+inset: 0;
+isolation: isolate;
+justify-content: space-between;
+overflow: hidden;
+padding: clamp(24px, 3.5vw, 54px);
+position: fixed;
+transition: opacity 0.7s cubic-bezier(0.22, 1, 0.36, 1), visibility 0.7s;
+width: 100%;
+z-index: 2147483000;
+}
+.portfolio-loader::after {
+background: linear-gradient(180deg, rgba(8, 10, 10, 0.22), rgba(8, 10, 10, 0.72));
+content: "";
+inset: 0;
+pointer-events: none;
+position: absolute;
+z-index: -1;
+}
+.portfolio-loader.is-complete {
+opacity: 0;
+pointer-events: none;
+visibility: hidden;
+}
+.portfolio-loader__landscape {
+animation: portfolio-loader-drift 8s cubic-bezier(0.22, 1, 0.36, 1) both;
+background-image: url("../../wp-content/uploads/2026/07/portfolio-beach-background-wide.jpg");
+background-position: center 52%;
+background-repeat: no-repeat;
+background-size: cover;
+filter: saturate(0.76) contrast(1.04);
+inset: 0;
+position: absolute;
+transform: scale(1.035);
+z-index: -2;
+}
+.portfolio-loader__top,
+.portfolio-loader__bottom {
+align-items: center;
+display: flex;
+font-family: "Microsoft YaHei", "PingFang SC", "Noto Sans CJK SC", Arial, sans-serif;
+justify-content: space-between;
+position: relative;
+z-index: 1;
+}
+.portfolio-loader__monogram {
+font-size: clamp(20px, 2vw, 30px);
+font-weight: 800;
+letter-spacing: -0.04em;
+}
+.portfolio-loader__edition,
+.portfolio-loader__eyebrow,
+.portfolio-loader__status {
+font-size: clamp(10px, 0.8vw, 13px);
+font-weight: 500;
+letter-spacing: 0.18em;
+text-transform: uppercase;
+}
+.portfolio-loader__center {
+margin: auto;
+max-width: 1100px;
+position: relative;
+text-align: center;
+z-index: 1;
+}
+.portfolio-loader__eyebrow {
+display: block;
+margin-bottom: clamp(16px, 2vw, 28px);
+opacity: 0.78;
+}
+.portfolio-loader__title {
+font-family: "Microsoft YaHei", "PingFang SC", "Noto Sans CJK SC", Arial, sans-serif;
+font-size: clamp(42px, 7.6vw, 118px);
+font-weight: 800;
+letter-spacing: -0.045em;
+line-height: 1.04;
+margin: 0;
+text-wrap: balance;
+}
+.portfolio-loader__bottom {
+align-items: flex-end;
+gap: 24px;
+}
+.portfolio-loader__progress-wrap {
+flex: 1;
+max-width: 620px;
+}
+.portfolio-loader__progress {
+background: rgba(255, 255, 255, 0.3);
+height: 1px;
+overflow: hidden;
+position: relative;
+width: 100%;
+}
+.portfolio-loader__progress-fill {
+background: #fff;
+height: 100%;
+inset: 0 auto 0 0;
+position: absolute;
+transform: scaleX(var(--portfolio-load-progress));
+transform-origin: left center;
+transition: transform 0.26s ease-out;
+width: 100%;
+}
+.portfolio-loader__status {
+display: flex;
+justify-content: space-between;
+margin-top: 12px;
+opacity: 0.88;
+}
+.portfolio-loader__count {
+font-variant-numeric: tabular-nums;
+letter-spacing: 0.06em;
+}
+@keyframes portfolio-loader-drift {
+from { transform: scale(1.075); }
+to { transform: scale(1.035); }
 }
 .preloader {
 display: none !important;
@@ -1158,6 +1289,44 @@ white-space: normal;
 /* Style section end */
 /* ZTS mobile adaptation start */
 @media (max-width: 768px) {
+  .portfolio-loader {
+    min-height: 100svh;
+    padding: 22px 20px 28px;
+  }
+
+  .portfolio-loader__landscape {
+    animation: none !important;
+    background-position: center 50%;
+    transform: none !important;
+  }
+
+  .portfolio-loader__edition {
+    letter-spacing: 0.1em;
+  }
+
+  .portfolio-loader__center {
+    width: 100%;
+  }
+
+  .portfolio-loader__eyebrow {
+    font-size: 10px;
+    letter-spacing: 0.14em;
+  }
+
+  .portfolio-loader__title {
+    font-size: clamp(40px, 11.5vw, 56px);
+    letter-spacing: -0.05em;
+    line-height: 1.08;
+  }
+
+  .portfolio-loader__bottom {
+    display: block;
+  }
+
+  .portfolio-loader__progress-wrap {
+    max-width: none;
+  }
+
   html,
   body {
     max-width: 100%;
@@ -1178,8 +1347,34 @@ white-space: normal;
   }
 
   .hero .portfolio-title {
+    color: #fff !important;
     font-size: clamp(38px, 12vw, 58px) !important;
     line-height: 1.12 !important;
+    text-shadow: 0 2px 24px rgba(0, 0, 0, 0.32);
+  }
+
+  .hero > img {
+    display: none !important;
+  }
+
+  .hero .image-wrap,
+  .hero .image-wrap img,
+  .hero .inner-wrap,
+  .hero .portfolio-title {
+    animation: none !important;
+    opacity: 1 !important;
+    transition: none !important;
+    visibility: visible !important;
+  }
+
+  .hero .image-wrap,
+  .hero .image-wrap img,
+  .hero .inner-wrap {
+    transform: none !important;
+  }
+
+  .hero .image-wrap img {
+    object-position: center 52% !important;
   }
 
   .warm-description-section {
@@ -1206,6 +1401,14 @@ white-space: normal;
     grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
     gap: 8px !important;
     margin-top: 22px !important;
+  }
+
+  .warm-description-section .warm-gallery figure:not(.mobile-color-choice) {
+    display: none !important;
+  }
+
+  .warm-description-section .warm-gallery figure.mobile-color-choice {
+    display: block !important;
   }
 
   .warm-description-section .warm-tone-copy {
@@ -1473,9 +1676,111 @@ white-space: normal;
   }
 }
 /* ZTS mobile adaptation end */
+@media (prefers-reduced-motion: reduce) {
+  .portfolio-loader,
+  .portfolio-loader__progress-fill,
+  .portfolio-loader__landscape {
+    animation: none !important;
+    transition-duration: 0.01ms !important;
+  }
+}
 </style>
 <script>
 window.addEventListener('DOMContentLoaded', function () {
+function setupPortfolioLoader() {
+var root = document.documentElement;
+var loader = document.getElementById('portfolio-loader');
+if (!loader) {
+root.classList.remove('portfolio-loading');
+return;
+}
+
+var progressText = loader.querySelector('[data-portfolio-loader-count]');
+var startedAt = window.performance && performance.now ? performance.now() : Date.now();
+var isMobileLoader = window.matchMedia('(max-width: 768px)').matches;
+var reducedLoaderMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+var minimumDuration = isMobileLoader ? 650 : 900;
+var maximumDuration = isMobileLoader ? 3200 : 4200;
+var progress = 6;
+var finished = false;
+var safetyTimer = 0;
+
+var setProgress = function (value) {
+progress = Math.max(progress, Math.min(100, value));
+loader.style.setProperty('--portfolio-load-progress', progress / 100);
+if (progressText) progressText.textContent = Math.round(progress) + '%';
+};
+
+var progressTimer = window.setInterval(function () {
+if (finished) return;
+var remaining = 92 - progress;
+setProgress(progress + Math.max(0.7, remaining * 0.065));
+}, 120);
+
+var waitForImage = function (image) {
+if (!image) return Promise.resolve();
+image.loading = 'eager';
+var decodeImage = function () {
+if (typeof image.decode !== 'function') return Promise.resolve();
+return image.decode().catch(function () {});
+};
+if (image.complete) return decodeImage();
+return new Promise(function (resolve) {
+var settled = false;
+var settle = function () {
+if (settled) return;
+settled = true;
+image.removeEventListener('load', settle);
+image.removeEventListener('error', settle);
+decodeImage().then(resolve);
+};
+image.addEventListener('load', settle, { once: true });
+image.addEventListener('error', settle, { once: true });
+window.setTimeout(settle, 2600);
+});
+};
+
+var heroImage = document.querySelector('.hero .image-wrap img');
+var firstColorGallery = document.querySelector('.warm-description-section .warm-gallery');
+var firstColorImages = firstColorGallery ? Array.prototype.slice.call(firstColorGallery.querySelectorAll('img')) : [];
+if (isMobileLoader) {
+firstColorImages = firstColorImages.filter(function (image) {
+return image.closest('.mobile-color-choice');
+});
+}
+var criticalImages = [heroImage].concat(firstColorImages).filter(Boolean);
+var imageReady = Promise.all(criticalImages.map(waitForImage));
+var fontsReady = document.fonts && document.fonts.ready
+? document.fonts.ready.catch(function () {})
+: Promise.resolve();
+var contentReady = Promise.all([imageReady, fontsReady]);
+var maximumWait = new Promise(function (resolve) {
+window.setTimeout(resolve, maximumDuration);
+});
+
+var finishLoader = function () {
+if (finished) return;
+finished = true;
+window.clearInterval(progressTimer);
+window.clearTimeout(safetyTimer);
+setProgress(100);
+window.setTimeout(function () {
+loader.classList.add('is-complete');
+root.classList.remove('portfolio-loading');
+revealHomepageHero();
+window.setTimeout(function () {
+loader.hidden = true;
+}, reducedLoaderMotion ? 20 : 760);
+}, reducedLoaderMotion ? 0 : 180);
+};
+
+Promise.race([contentReady, maximumWait]).then(function () {
+var now = window.performance && performance.now ? performance.now() : Date.now();
+window.setTimeout(finishLoader, Math.max(0, minimumDuration - (now - startedAt)));
+}).catch(finishLoader);
+safetyTimer = window.setTimeout(finishLoader, maximumDuration + 900);
+}
+
 function setupShotScaleDrawers() {
 var grid = document.querySelector('.shot-scale-cards-grid');
 if (!grid) return;
@@ -1827,6 +2132,7 @@ el.style.visibility = 'visible';
 el.style.transform = 'none';
 });
 }
+setupPortfolioLoader();
 document.body.style.opacity = '1';
 document.querySelectorAll('.preloader').forEach(function (el) {
 el.style.display = 'none';
@@ -1852,7 +2158,7 @@ setupStyleDrawers();
 setupColorWallpaperReveals();
 }
 
-setTimeout(revealHomepageHero, isMobileViewport ? 700 : 2500);
+setTimeout(revealHomepageHero, isMobileViewport ? 0 : 2500);
 });
 </script>
 <meta charset="utf-8">
@@ -1955,6 +2261,29 @@ f.parentNode.insertBefore( j, f );
   <link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2064%2064%22%3E%3Crect%20width%3D%2264%22%20height%3D%2264%22%20rx%3D%2214%22%20fill%3D%22%23000000%22%2F%3E%3Ctext%20x%3D%2232%22%20y%3D%2239%22%20text-anchor%3D%22middle%22%20font-family%3D%22Arial%2CHelvetica%2Csans-serif%22%20font-size%3D%2222%22%20font-weight%3D%22800%22%20fill%3D%22%23ffffff%22%3EZTS%3C%2Ftext%3E%3C%2Fsvg%3E" />
 </head>
 <body class="home wp-singular page-template template-frontpage page page-id-784 wp-embed-responsive wp-theme-units desktop" role="document" data-barba="wrapper" data-anchor="body">
+<div class="portfolio-loader" id="portfolio-loader" role="status" aria-live="polite" aria-label="周天爽的作品集正在加载">
+<div class="portfolio-loader__landscape" aria-hidden="true"></div>
+<div class="portfolio-loader__top">
+<span class="portfolio-loader__monogram">ZTS</span>
+<span class="portfolio-loader__edition">摄影知识作品集 · 2026</span>
+</div>
+<div class="portfolio-loader__center">
+<span class="portfolio-loader__eyebrow">Photography Portfolio</span>
+<h1 class="portfolio-loader__title">周天爽的作品集</h1>
+</div>
+<div class="portfolio-loader__bottom">
+<div class="portfolio-loader__progress-wrap">
+<div class="portfolio-loader__progress" aria-hidden="true">
+<span class="portfolio-loader__progress-fill"></span>
+</div>
+<div class="portfolio-loader__status">
+<span>正在加载影像</span>
+<span class="portfolio-loader__count" data-portfolio-loader-count>6%</span>
+</div>
+</div>
+</div>
+</div>
+<noscript><style>.portfolio-loader{display:none!important}.portfolio-loading,.portfolio-loading body{height:auto;overflow:auto!important}</style></noscript>
 <header>
 <div class="header-wrap">
 <div class="logo-wrap">
@@ -2085,9 +2414,8 @@ fill="white" />
 <section class="hero">
 <picture class="x-picture image-wrap js-gallery-item" data-id="762" >
 <source media="(max-width:768px)" srcset="../../wp-content/uploads/2026/07/portfolio-beach-background-wide.jpg">
-<img width="2560" height="1696" src="../../wp-content/uploads/2026/07/portfolio-beach-background-wide.jpg" class=" " alt="" decoding="async" srcset="../../wp-content/uploads/2026/07/portfolio-beach-background-wide.jpg 2560w" sizes="100vw" />
+<img width="2560" height="1696" src="../../wp-content/uploads/2026/07/portfolio-beach-background-wide.jpg" class=" " alt="海边日落风景" decoding="async" fetchpriority="high" srcset="../../wp-content/uploads/2026/07/portfolio-beach-background-wide.jpg 2560w" sizes="100vw" />
 </picture>
-<img src="" alt="" />
 <div class="inner-wrap">
 <span class="title portfolio-title d-block color-white">周天爽的作品集</span>
 </div>
@@ -2099,16 +2427,16 @@ fill="white" />
 <p class="warm-tone-copy"><strong>暖色调：</strong>暖色调是以红、橙、黄、棕、杏色等色系为主的色彩，源于太阳、火光、落日等温暖事物的视觉联想，整体观感柔和治愈，自带松弛温馨的氛围感。</p>
 <div class="warm-gallery uniform-length-gallery" aria-label="暖色调图片">
 <figure>
-                            <img src="../../wp-content/uploads/2026/07/warm-tone-cup-clean-v2.png" alt="暖色调陶瓷杯静物">
+                            <img src="../../wp-content/uploads/2026/07/warm-tone-cup-clean-v2.png" alt="暖色调陶瓷杯静物" loading="lazy" decoding="async">
+</figure>
+<figure class="mobile-color-choice">
+                            <img src="../../wp-content/uploads/2026/07/warm-tone-portrait-clean-v2.png" alt="暖色调金色侧光人物" loading="lazy" decoding="async">
+</figure>
+<figure class="mobile-color-choice">
+                            <img src="../../wp-content/uploads/2026/07/warm-tone-still-life-clean-v2.png" alt="暖色调古典雕塑静物" loading="lazy" decoding="async">
 </figure>
 <figure>
-                            <img src="../../wp-content/uploads/2026/07/warm-tone-portrait-clean-v2.png" alt="暖色调金色侧光人物">
-</figure>
-<figure>
-                            <img src="../../wp-content/uploads/2026/07/warm-tone-still-life-clean-v2.png" alt="暖色调古典雕塑静物">
-</figure>
-<figure>
-<img src="../../wp-content/uploads/2026/07/warm-tone-clean-04.png" alt="暖色调湖边树影">
+<img src="../../wp-content/uploads/2026/07/warm-tone-clean-04.png" alt="暖色调湖边树影" loading="lazy" decoding="async">
 </figure>
 </div>
 </div>
@@ -2116,16 +2444,16 @@ fill="white" />
 <p class="warm-tone-copy"><strong>冷色调：</strong>冷色调以蓝、青、浅绿、冷灰为主，自带清冷安静的视觉感受，常用来营造冷静、科技、简约的氛围。</p>
 <div class="warm-gallery uniform-length-gallery" aria-label="冷色调图片">
 <figure>
-<img src="../../wp-content/uploads/2026/07/cool-tone-clean-01.png" alt="冷色调冰湖雪山">
+<img src="../../wp-content/uploads/2026/07/cool-tone-clean-01.png" alt="冷色调冰湖雪山" loading="lazy" decoding="async">
 </figure>
 <figure>
-<img src="../../wp-content/uploads/2026/07/cool-tone-clean-02.png" alt="冷色调雾气山谷">
+<img src="../../wp-content/uploads/2026/07/cool-tone-clean-02.png" alt="冷色调雾气山谷" loading="lazy" decoding="async">
 </figure>
-<figure>
-                            <img src="../../wp-content/uploads/2026/07/cool-tone-mist-mountain-clean-v2.png" alt="冷色调雾山倒影人物">
+<figure class="mobile-color-choice">
+                            <img src="../../wp-content/uploads/2026/07/cool-tone-mist-mountain-clean-v2.png" alt="冷色调雾山倒影人物" loading="lazy" decoding="async">
 </figure>
-<figure>
-                            <img src="../../wp-content/uploads/2026/07/cool-tone-still-life-clean-v2.png" alt="冷色调雕塑花瓶静物">
+<figure class="mobile-color-choice">
+                            <img src="../../wp-content/uploads/2026/07/cool-tone-still-life-clean-v2.png" alt="冷色调雕塑花瓶静物" loading="lazy" decoding="async">
 </figure>
 </div>
 </div>
@@ -2133,33 +2461,33 @@ fill="white" />
 <p class="warm-tone-copy"><strong>高饱和：</strong>高饱和指画面里色彩纯度极高、鲜艳浓烈、干净不发灰，没有灰蒙蒙、暗沉浑浊的灰调中和，红更艳、蓝更透亮、黄更鲜亮，色彩识别度与视觉冲击力极强。</p>
 <div class="warm-gallery high-saturation-gallery" aria-label="高饱和图片">
 <figure>
-                            <img src="../../wp-content/uploads/2026/07/high-saturation-red-portrait-clean-v2.png" alt="高饱和红衣黄底人物">
+                            <img src="../../wp-content/uploads/2026/07/high-saturation-red-portrait-clean-v2.png" alt="高饱和红衣黄底人物" loading="lazy" decoding="async">
+</figure>
+<figure class="mobile-color-choice">
+                            <img src="../../wp-content/uploads/2026/07/high-saturation-tableware-clean-v2.png" alt="高饱和彩色餐桌" loading="lazy" decoding="async">
 </figure>
 <figure>
-                            <img src="../../wp-content/uploads/2026/07/high-saturation-tableware-clean-v2.png" alt="高饱和彩色餐桌">
+<img src="../../wp-content/uploads/2026/07/high-saturation-clean-03.png" alt="高饱和红黑叶片" loading="lazy" decoding="async">
 </figure>
-<figure>
-<img src="../../wp-content/uploads/2026/07/high-saturation-clean-03.png" alt="高饱和红黑叶片">
-</figure>
-<figure>
-                            <img src="../../wp-content/uploads/2026/07/high-saturation-tulips-clean-v2.png" alt="高饱和红色郁金香">
+<figure class="mobile-color-choice">
+                            <img src="../../wp-content/uploads/2026/07/high-saturation-tulips-clean-v2.png" alt="高饱和红色郁金香" loading="lazy" decoding="async">
 </figure>
 </div>
 </div>
 <div class="color-wallpaper-block">
 <p class="warm-tone-copy"><strong>低饱和：</strong>低饱和指画面里的色彩纯度较低，普遍掺入了灰调、白调来弱化鲜艳度，颜色不再浓烈刺眼，呈现出柔和内敛的视觉质感。</p>
 <div class="warm-gallery uniform-length-gallery" aria-label="低饱和图片">
-<figure>
-<img src="../../wp-content/uploads/2026/07/low-saturation-portrait-clean-v2.png" alt="低饱和浅灰绿背景人物">
+<figure class="mobile-color-choice">
+<img src="../../wp-content/uploads/2026/07/low-saturation-portrait-clean-v2.png" alt="低饱和浅灰绿背景人物" loading="lazy" decoding="async">
+</figure>
+<figure class="mobile-color-choice">
+<img src="../../wp-content/uploads/2026/07/low-saturation-desk-still-life-clean-v2.png" alt="低饱和书本咖啡静物" loading="lazy" decoding="async">
 </figure>
 <figure>
-<img src="../../wp-content/uploads/2026/07/low-saturation-desk-still-life-clean-v2.png" alt="低饱和书本咖啡静物">
+<img src="../../wp-content/uploads/2026/07/low-saturation-vase-clean-v2.png" alt="低饱和陶罐枯枝静物" loading="lazy" decoding="async">
 </figure>
 <figure>
-<img src="../../wp-content/uploads/2026/07/low-saturation-vase-clean-v2.png" alt="低饱和陶罐枯枝静物">
-</figure>
-<figure>
-<img src="../../wp-content/uploads/2026/07/low-saturation-clean-04.png" alt="低饱和海边石路">
+<img src="../../wp-content/uploads/2026/07/low-saturation-clean-04.png" alt="低饱和海边石路" loading="lazy" decoding="async">
 </figure>
 </div>
 </div>
@@ -2542,7 +2870,7 @@ marquee.appendChild(clone);
 <p class="shot-scale-copy"><strong>远景：</strong>镜头远距离拍摄，完整展现人物与周边大环境、交代场景氛围的景别画面。</p>
 </div>
 <div class="item shot-scale-card" aria-label="特写">
-<img src="../../wp-content/uploads/2026/07/shot-scale-close-up.png" alt="特写示例">
+<img src="../../wp-content/uploads/2026/07/shot-scale-close-up-film-still-v2.png" alt="电影人物面部特写示例">
 <p class="shot-scale-copy"><strong>特写：</strong>特写是近距离聚焦主体局部的景别，放大细节、突出情绪与关键特征，弱化环境背景。</p>
 </div>
 <div class="item shot-scale-card" aria-label="全景">
@@ -2753,7 +3081,7 @@ marquee.appendChild(clone);
 </article>
 <article class="style-card" aria-label="CG风格">
 <div class="style-card-label">CG风格</div>
-<img class="style-card-image" src="../../wp-content/uploads/2026/07/style-cg-clean-v2.png" alt="CG风格展示图" loading="lazy" decoding="async">
+<img class="style-card-image" src="../../wp-content/uploads/2026/07/style-cg-mecha-city-v2.png" alt="城市机甲CG风格展示图" loading="lazy" decoding="async">
 </article>
 <article class="style-card" aria-label="港风复古风格">
 <div class="style-card-label">港风复古风格</div>
@@ -2828,7 +3156,7 @@ marquee.appendChild(clone);
 <article class="style-card aigc-video-card" aria-label="希区柯克变焦">
 <div class="style-card-label">希区柯克变焦</div>
 <div class="aigc-video-frame">
-<video controls preload="metadata" playsinline src="../../wp-content/uploads/2026/07/videos/aigc-hitchcock-zoom.mp4"></video>
+<video controls preload="metadata" playsinline src="../../wp-content/uploads/2026/07/videos/aigc-hitchcock-zoom-v2.mp4"></video>
 </div>
 </article>
 <article class="style-card aigc-video-card" aria-label="子弹时间">
