@@ -166,14 +166,22 @@ overflow: hidden;
 transition: box-shadow 0.25s ease;
 }
 .warm-description-section .warm-gallery img {
-border-radius: 8px;
-display: block;
-height: auto;
-transition: transform 0.25s ease;
-width: 100%;
+  border-radius: 8px;
+  display: block;
+  height: auto;
+  transition: transform 0.25s ease;
+  width: 100%;
+}
+.warm-description-section .uniform-length-gallery figure {
+  aspect-ratio: 1600 / 2620;
+}
+.warm-description-section .uniform-length-gallery img {
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
 }
 .warm-description-section .warm-gallery figure:hover {
-box-shadow: 0 18px 34px rgba(0, 0, 0, 0.14);
+  box-shadow: 0 18px 34px rgba(0, 0, 0, 0.14);
 }
 .warm-description-section .warm-gallery figure:hover img {
 transform: scale(1.02);
@@ -2061,7 +2069,7 @@ fill="white" />
 <h2 class="warm-description-title">图片描述</h2>
 <div class="color-wallpaper-block">
 <p class="warm-tone-copy"><strong>暖色调：</strong>暖色调是以红、橙、黄、棕、杏色等色系为主的色彩，源于太阳、火光、落日等温暖事物的视觉联想，整体观感柔和治愈，自带松弛温馨的氛围感。</p>
-<div class="warm-gallery" aria-label="暖色调图片">
+<div class="warm-gallery uniform-length-gallery" aria-label="暖色调图片">
 <figure>
                             <img src="../../wp-content/uploads/2026/07/warm-tone-cup-clean-v2.png" alt="暖色调陶瓷杯静物">
 </figure>
@@ -2078,7 +2086,7 @@ fill="white" />
 </div>
 <div class="color-wallpaper-block">
 <p class="warm-tone-copy"><strong>冷色调：</strong>冷色调以蓝、青、浅绿、冷灰为主，自带清冷安静的视觉感受，常用来营造冷静、科技、简约的氛围。</p>
-<div class="warm-gallery" aria-label="冷色调图片">
+<div class="warm-gallery uniform-length-gallery" aria-label="冷色调图片">
 <figure>
 <img src="../../wp-content/uploads/2026/07/cool-tone-clean-01.png" alt="冷色调冰湖雪山">
 </figure>
