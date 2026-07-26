@@ -318,11 +318,12 @@ transition: box-shadow 0.25s ease;
 transform: scale(1.02);
 }
 .warm-description-section .high-saturation-gallery figure {
-aspect-ratio: 205 / 412;
+  aspect-ratio: 1600 / 2620;
 }
 .warm-description-section .high-saturation-gallery img {
-height: 100%;
-object-fit: fill;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
 }
 .warm-description-section .warm-tone-copy {
 color: #000;
@@ -1554,6 +1555,11 @@ white-space: normal;
 
   .light-position-track {
     gap: 14px !important;
+    width: max-content !important;
+  }
+
+  .light-position-track > .light-position-card[aria-hidden="true"] {
+    display: none !important;
   }
 
   .light-position-card {
@@ -1950,8 +1956,8 @@ if (!section) return;
 
 // Animation tuning parameters: trigger line, title delay, and image stagger.
 var triggerRatio = 0.85;
-var titleThenImageDelay = 580;
-var imageStagger = 70;
+var titleThenImageDelay = 220;
+var imageStagger = 40;
 var sectionTitle = section.querySelector('.warm-description-title');
 var blocks = Array.prototype.slice.call(section.querySelectorAll('.color-wallpaper-block'));
 if (!sectionTitle && !blocks.length) return;
@@ -2083,7 +2089,9 @@ cards.forEach(function (card) {
 card.style.flexBasis = cardWidth + 'px';
 });
 
-overflowDistance = Math.max(0, track.scrollWidth - viewport.clientWidth);
+var lastCard = cards[cards.length - 1];
+var desiredDistance = lastCard ? lastCard.offsetLeft + lastCard.offsetWidth - viewport.clientWidth : 0;
+overflowDistance = Math.max(0, Math.ceil(desiredDistance));
 shell.style.height = (sticky.offsetHeight + overflowDistance) + 'px';
 requestTrackUpdate();
 };
@@ -2164,6 +2172,8 @@ setTimeout(revealHomepageHero, isMobileViewport ? 0 : 2500);
 <meta charset="utf-8">
 <meta http-equiv="x-ua-compatible" content="ie=edge">
 <meta name="viewport" content="width=device-width initial-scale=1.0 maximum-scale=1.0 user-scalable=no">
+<link rel="preload" as="image" href="../../wp-content/uploads/2026/07/warm-tone-portrait-clean-v2.png" fetchpriority="high">
+<link rel="preload" as="image" href="../../wp-content/uploads/2026/07/warm-tone-still-life-clean-v2.png" fetchpriority="high">
 <script src="../../cdn.jsdelivr.net/npm/plyr@3.8.3/dist/plyr.min.js"></script>
 <script src="../../cdn.jsdelivr.net/npm/lottie-web@5.13.0/build/player/lottie.min.js"></script>
 <script src="../../cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js"></script>
@@ -2430,10 +2440,10 @@ fill="white" />
                             <img src="../../wp-content/uploads/2026/07/warm-tone-cup-clean-v2.png" alt="暖色调陶瓷杯静物" loading="lazy" decoding="async">
 </figure>
 <figure class="mobile-color-choice">
-                            <img src="../../wp-content/uploads/2026/07/warm-tone-portrait-clean-v2.png" alt="暖色调金色侧光人物" loading="lazy" decoding="async">
+                            <img src="../../wp-content/uploads/2026/07/warm-tone-portrait-clean-v2.png" alt="暖色调金色侧光人物" loading="eager" fetchpriority="high" decoding="async">
 </figure>
 <figure class="mobile-color-choice">
-                            <img src="../../wp-content/uploads/2026/07/warm-tone-still-life-clean-v2.png" alt="暖色调古典雕塑静物" loading="lazy" decoding="async">
+                            <img src="../../wp-content/uploads/2026/07/warm-tone-still-life-clean-v2.png" alt="暖色调古典雕塑静物" loading="eager" fetchpriority="high" decoding="async">
 </figure>
 <figure>
 <img src="../../wp-content/uploads/2026/07/warm-tone-clean-04.png" alt="暖色调湖边树影" loading="lazy" decoding="async">
