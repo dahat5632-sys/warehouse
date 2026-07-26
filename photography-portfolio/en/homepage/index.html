@@ -1731,10 +1731,11 @@ var track = section.querySelector('.light-shadow-track');
 var cards = Array.prototype.slice.call(section.querySelectorAll('.light-shadow-card'));
 if (!shell || !sticky || !viewport || !track || cards.length !== 13) return;
 
-var reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+var reducedMotionQuery = window.matchMedia('(prefers-reduced-motion: reduce)');
+var mobileViewportQuery = window.matchMedia('(max-width: 768px)');
 var overflowDistance = 0;
-var scrollStart = 0;
 var isTicking = false;
+var measureFrame = 0;
 
 var getVisibleCount = function () {
 if (window.innerWidth >= 1200) return 6;
@@ -1744,21 +1745,30 @@ return 1.2;
 
 var updateTrack = function () {
 isTicking = false;
-if (reducedMotion || overflowDistance <= 0) {
+if (reducedMotionQuery.matches || mobileViewportQuery.matches || overflowDistance <= 0) {
 track.style.transform = 'translate3d(0, 0, 0)';
 return;
 }
-var progress = Math.max(0, Math.min(1, (window.scrollY - scrollStart) / overflowDistance));
+var stickyTop = parseFloat(window.getComputedStyle(sticky).top) || 0;
+var progress = Math.max(0, Math.min(1, (stickyTop - shell.getBoundingClientRect().top) / overflowDistance));
 track.style.transform = 'translate3d(' + (-overflowDistance * progress) + 'px, 0, 0)';
 };
 
 var requestTrackUpdate = function () {
+if (reducedMotionQuery.matches || mobileViewportQuery.matches) return;
 if (isTicking) return;
 isTicking = true;
 window.requestAnimationFrame(updateTrack);
 };
 
 var measureTrack = function () {
+measureFrame = 0;
+if (reducedMotionQuery.matches || mobileViewportQuery.matches) {
+overflowDistance = 0;
+shell.style.height = 'auto';
+track.style.transform = 'none';
+return;
+}
 var visibleCount = getVisibleCount();
 var styles = window.getComputedStyle(track);
 var gap = parseFloat(styles.columnGap || styles.gap) || 0;
@@ -1769,21 +1779,39 @@ card.style.flexBasis = cardWidth + 'px';
 });
 
 overflowDistance = Math.max(0, track.scrollWidth - viewport.clientWidth);
-if (reducedMotion) {
-shell.style.height = 'auto';
-track.style.transform = 'none';
-return;
-}
 shell.style.height = (sticky.offsetHeight + overflowDistance) + 'px';
-var stickyTop = parseFloat(window.getComputedStyle(sticky).top) || 0;
-scrollStart = shell.getBoundingClientRect().top + window.scrollY - stickyTop;
 requestTrackUpdate();
 };
 
+var requestMeasure = function () {
+if (measureFrame) window.cancelAnimationFrame(measureFrame);
+measureFrame = window.requestAnimationFrame(measureTrack);
+};
+
 window.addEventListener('scroll', requestTrackUpdate, { passive: true });
-window.addEventListener('resize', measureTrack, { passive: true });
+window.addEventListener('resize', requestMeasure, { passive: true });
+window.addEventListener('orientationchange', requestMeasure, { passive: true });
+window.addEventListener('pageshow', requestMeasure);
+window.addEventListener('load', requestMeasure, { once: true });
+if (reducedMotionQuery.addEventListener) reducedMotionQuery.addEventListener('change', requestMeasure);
+if (mobileViewportQuery.addEventListener) mobileViewportQuery.addEventListener('change', requestMeasure);
+if ('ResizeObserver' in window) {
+var lightShadowResizeObserver = new ResizeObserver(requestMeasure);
+lightShadowResizeObserver.observe(viewport);
+lightShadowResizeObserver.observe(sticky);
+}
+cards.forEach(function (card) {
+var image = card.querySelector('img');
+if (!image || image.complete) return;
+image.addEventListener('load', requestMeasure, { once: true });
+image.addEventListener('error', requestMeasure, { once: true });
+});
+if (document.fonts && document.fonts.ready) {
+document.fonts.ready.then(requestMeasure);
+}
 measureTrack();
-window.setTimeout(measureTrack, 250);
+window.setTimeout(requestMeasure, 250);
+window.setTimeout(requestMeasure, 1000);
 }
 
 function revealHomepageHero() {
@@ -1808,6 +1836,7 @@ el.style.pointerEvents = 'none';
 var isMobileViewport = window.matchMedia('(max-width: 768px)').matches;
 setupShotScaleDrawers();
 setupFlatShotWheelPace();
+setupLightShadowScroll();
 
 if (isMobileViewport) {
 document.querySelectorAll('.focal-length-card, .style-card').forEach(function(card) {
@@ -1821,7 +1850,6 @@ lightShadowTrack.style.transform = 'none';
 setupFocalLengthDrawers();
 setupStyleDrawers();
 setupColorWallpaperReveals();
-setupLightShadowScroll();
 }
 
 setTimeout(revealHomepageHero, isMobileViewport ? 700 : 2500);
