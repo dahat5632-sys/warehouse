@@ -1846,7 +1846,6 @@ if (!grid) return;
 var cards = Array.prototype.slice.call(grid.querySelectorAll('.shot-scale-card'));
 if (!cards.length) return;
 
-grid.classList.add('is-drawer-ready');
 if (window.matchMedia('(prefers-reduced-motion: reduce)').matches || !('IntersectionObserver' in window)) {
 cards.forEach(function (card) {
 card.classList.add('is-drawer-open');
@@ -1854,33 +1853,30 @@ card.classList.add('is-drawer-open');
 return;
 }
 
-var revealVisibleCards = function () {
-var revealLine = window.innerHeight * .9;
+var hasOpened = false;
+var openDrawers = function () {
+if (hasOpened) return;
+hasOpened = true;
+grid.classList.add('is-drawer-ready');
+void grid.offsetHeight;
+requestAnimationFrame(function () {
 cards.forEach(function (card) {
-if (card.classList.contains('is-drawer-open')) return;
-var rect = card.getBoundingClientRect();
-if (rect.top <= revealLine && rect.bottom >= 0) {
 card.classList.add('is-drawer-open');
-}
+});
 });
 };
 
 var observer = new IntersectionObserver(function (entries) {
-entries.forEach(function (entry) {
-if (!entry.isIntersecting) return;
-entry.target.classList.add('is-drawer-open');
-observer.unobserve(entry.target);
-});
+if (!entries.some(function (entry) { return entry.isIntersecting; })) return;
+observer.disconnect();
+openDrawers();
 }, {
 root: null,
-rootMargin: '0px 0px -12% 0px',
-threshold: 0.12
+rootMargin: '30% 0px 40% 0px',
+threshold: 0
 });
 
-cards.forEach(function (card) {
-observer.observe(card);
-});
-requestAnimationFrame(revealVisibleCards);
+observer.observe(grid);
 }
 
 function setupFlatShotWheelPace() {
