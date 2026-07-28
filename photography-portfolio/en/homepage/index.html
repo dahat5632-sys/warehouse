@@ -1766,7 +1766,7 @@ return image.closest('.mobile-color-choice');
 }
 var criticalImages = [heroImage].concat(firstColorImages).filter(Boolean);
 var imageReady = Promise.all(criticalImages.map(waitForImage));
-var fontsReady = document.fonts && document.fonts.ready
+var fontsReady = !isMobileLoader && document.fonts && document.fonts.ready
 ? document.fonts.ready.catch(function () {})
 : Promise.resolve();
 var contentReady = Promise.all([imageReady, fontsReady]);
@@ -1837,15 +1837,7 @@ threshold: 0.12
 cards.forEach(function (card) {
 observer.observe(card);
 });
-window.addEventListener('scroll', revealVisibleCards, { passive: true });
-window.addEventListener('resize', revealVisibleCards, { passive: true });
 requestAnimationFrame(revealVisibleCards);
-var drawerPoll = window.setInterval(function () {
-revealVisibleCards();
-if (cards.every(function (card) { return card.classList.contains('is-drawer-open'); })) {
-window.clearInterval(drawerPoll);
-}
-}, 180);
 }
 
 function setupFlatShotWheelPace() {
@@ -2054,6 +2046,11 @@ if (!shell || !sticky || !viewport || !track || cards.length !== 13) return;
 
 var reducedMotionQuery = window.matchMedia('(prefers-reduced-motion: reduce)');
 var mobileViewportQuery = window.matchMedia('(max-width: 768px)');
+if (mobileViewportQuery.matches) {
+shell.style.height = 'auto';
+track.style.transform = 'none';
+return;
+}
 var overflowDistance = 0;
 var isTicking = false;
 var measureFrame = 0;
@@ -2225,20 +2222,20 @@ setTimeout(revealHomepageHero, isMobileViewport ? 0 : 2500);
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 <link rel="preload" as="image" href="../../wp-content/uploads/2026/07/warm-tone-portrait-clean-v2.png" fetchpriority="high">
 <link rel="preload" as="image" href="../../wp-content/uploads/2026/07/warm-tone-still-life-clean-v2.png" fetchpriority="high">
-<script src="../../cdn.jsdelivr.net/npm/plyr@3.8.3/dist/plyr.min.js"></script>
-<script src="../../cdn.jsdelivr.net/npm/lottie-web@5.13.0/build/player/lottie.min.js"></script>
-<script src="../../cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js"></script>
-<script src="../../cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/ScrollTrigger.min.js"></script>
-<script src="../../cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/ScrollToPlugin.min.js"></script>
-<script src="../../cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/SplitText.min.js"></script>
-<script src="../../cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/Flip.min.js"></script>
-<script src="../../cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/DrawSVGPlugin.min.js"></script>
-<script src="../../cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/MorphSVGPlugin.min.js"></script>
-<script src="../../cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/ScrambleTextPlugin.min.js"></script>
-<script src="../../cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/Draggable.min.js"></script>
-<script src="../../cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/InertiaPlugin.min.js"></script>
-<script src="../../cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
-<script src="../../cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.umd.js"></script>
+<script defer src="../../cdn.jsdelivr.net/npm/plyr@3.8.3/dist/plyr.min.js"></script>
+<script defer src="../../cdn.jsdelivr.net/npm/lottie-web@5.13.0/build/player/lottie.min.js"></script>
+<script defer src="../../cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js"></script>
+<script defer src="../../cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/ScrollTrigger.min.js"></script>
+<script defer src="../../cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/ScrollToPlugin.min.js"></script>
+<script defer src="../../cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/SplitText.min.js"></script>
+<script defer src="../../cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/Flip.min.js"></script>
+<script defer src="../../cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/DrawSVGPlugin.min.js"></script>
+<script defer src="../../cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/MorphSVGPlugin.min.js"></script>
+<script defer src="../../cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/ScrambleTextPlugin.min.js"></script>
+<script defer src="../../cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/Draggable.min.js"></script>
+<script defer src="../../cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/InertiaPlugin.min.js"></script>
+<script defer src="../../cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+<script defer src="../../cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.umd.js"></script>
 <meta name='robots' content='index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1' />
 <!-- This site is optimized with the Yoast SEO plugin v27.8 - https://yoast.com/product/yoast-seo-wordpress/ -->
 <title>ZTS</title>
@@ -2268,8 +2265,8 @@ img:is([sizes=auto i],[sizes^="auto," i]){contain-intrinsic-size:3000px 1500px}
 /*# sourceURL=global-styles-inline-css */
 </style>
 <link rel='stylesheet' id='app/0-css' href='../../wp-content/cache/wpfc-minified/djjfayfp/61nu4.css' media='all' />
-<script id="jquery-core-js" src="../../wp-includes/js/jquery/jquery.min__q_c8a53ae4de.js"></script>
-<script id="jquery-migrate-js" src="../../wp-includes/js/jquery/jquery-migrate.min__q_ed1ec5e4c7.js"></script>
+<script defer id="jquery-core-js" src="../../wp-includes/js/jquery/jquery.min__q_c8a53ae4de.js"></script>
+<script defer id="jquery-migrate-js" src="../../wp-includes/js/jquery/jquery-migrate.min__q_ed1ec5e4c7.js"></script>
 <link rel="apple-touch-icon" href="../../wp-content/uploads/2025/11/cropped-Favicon-white-180x180.jpg" />
 <meta name="msapplication-TileImage" content="../../wp-content/uploads/2025/11/cropped-Favicon-white-270x270.jpg" />
   <link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2064%2064%22%3E%3Crect%20width%3D%2264%22%20height%3D%2264%22%20rx%3D%2214%22%20fill%3D%22%23000000%22%2F%3E%3Ctext%20x%3D%2232%22%20y%3D%2239%22%20text-anchor%3D%22middle%22%20font-family%3D%22Arial%2CHelvetica%2Csans-serif%22%20font-size%3D%2222%22%20font-weight%3D%22800%22%20fill%3D%22%23ffffff%22%3EZTS%3C%2Ftext%3E%3C%2Fsvg%3E" />
@@ -2725,8 +2722,8 @@ fill="white" />
 </div>
 <div class="middle-wrap flat-shot-content">
 <div class="flat-shot-images">
-<img src="../../wp-content/uploads/2026/07/flat-shot-clean-01.png" alt="平拍人物示例一">
-<img src="../../wp-content/uploads/2026/07/flat-shot-clean-02.png" alt="平拍人物示例二">
+<img src="../../wp-content/uploads/2026/07/flat-shot-clean-01.png" alt="平拍人物示例一" loading="lazy" decoding="async" fetchpriority="low">
+<img src="../../wp-content/uploads/2026/07/flat-shot-clean-02.png" alt="平拍人物示例二" loading="lazy" decoding="async" fetchpriority="low">
 </div>
 <p class="flat-shot-copy"><strong>平拍：</strong>指相机镜头高度和被拍摄主体视线保持同一水平线进行拍摄。这种视角贴近人日常观看事物的角度，画面观感自然平和，适合刻画人物情绪。</p>
 </div>
@@ -2737,8 +2734,8 @@ fill="white" />
 </div>
 <div class="middle-wrap flat-shot-content">
 <div class="flat-shot-images">
-<img src="../../wp-content/uploads/2026/07/up-shot-clean-01.png" alt="仰拍人物示例一">
-<img src="../../wp-content/uploads/2026/07/up-shot-spiral-stair-clean-v2.png" alt="仰拍螺旋楼梯示例">
+<img src="../../wp-content/uploads/2026/07/up-shot-clean-01.png" alt="仰拍人物示例一" loading="lazy" decoding="async" fetchpriority="low">
+<img src="../../wp-content/uploads/2026/07/up-shot-spiral-stair-clean-v2.png" alt="仰拍螺旋楼梯示例" loading="lazy" decoding="async" fetchpriority="low">
 </div>
 <p class="flat-shot-copy"><strong>仰拍：</strong>镜头放置在被拍摄主体下方、从低处往高处拍摄的拍摄角度。低机位向上仰视拍摄，常用来塑造英雄、强者、宏伟建筑。</p>
 </div>
@@ -2749,8 +2746,8 @@ fill="white" />
 </div>
 <div class="middle-wrap flat-shot-content">
 <div class="flat-shot-images">
-<img src="../../wp-content/uploads/2026/07/down-shot-clean-01.png" alt="俯拍人物示例一">
-<img src="../../wp-content/uploads/2026/07/down-shot-clean-02.png" alt="俯拍人物示例二">
+<img src="../../wp-content/uploads/2026/07/down-shot-clean-01.png" alt="俯拍人物示例一" loading="lazy" decoding="async" fetchpriority="low">
+<img src="../../wp-content/uploads/2026/07/down-shot-clean-02.png" alt="俯拍人物示例二" loading="lazy" decoding="async" fetchpriority="low">
 </div>
 <p class="flat-shot-copy"><strong>俯拍：</strong>将镜头置于被拍摄对象上方，从高处向下俯视拍摄的机位角度，镜头居高临下看向主体，会压缩人物身高、弱化人物气场。</p>
 </div>
@@ -2761,8 +2758,8 @@ fill="white" />
 </div>
 <div class="middle-wrap flat-shot-content">
 <div class="flat-shot-images">
-<img src="../../wp-content/uploads/2026/07/fisheye-clean-01.png" alt="鱼眼画面示例一">
-<img src="../../wp-content/uploads/2026/07/fisheye-clean-02.png" alt="鱼眼画面示例二">
+<img src="../../wp-content/uploads/2026/07/fisheye-clean-01.png" alt="鱼眼画面示例一" loading="lazy" decoding="async" fetchpriority="low">
+<img src="../../wp-content/uploads/2026/07/fisheye-clean-02.png" alt="鱼眼画面示例二" loading="lazy" decoding="async" fetchpriority="low">
 </div>
 <p class="flat-shot-copy"><strong>鱼眼：</strong>使用鱼眼镜头拍摄出的特殊广角画面，镜头视角极大，画面中心景物基本正常，边缘会出现明显弧形拉伸、桶形畸变，四周线条向外弯曲。</p>
 </div>
@@ -2840,8 +2837,11 @@ item.setAttribute('aria-hidden', 'true');
  * largest practical viewport so each new group wraps at the frame's right
  * edge instead of reappearing partway across a wide white strip.
  */
-var targetWidth = Math.max(6000, marquee.clientWidth + 1800);
-var safetyLimit = 80;
+var compactMarquee = window.matchMedia('(max-width: 768px)').matches;
+var targetWidth = compactMarquee
+? Math.max(1800, marquee.clientWidth + 900)
+: Math.max(6000, marquee.clientWidth + 1800);
+var safetyLimit = compactMarquee ? 32 : 80;
 while (marquee.scrollWidth < targetWidth && marquee.children.length < safetyLimit) {
 seedItems.forEach(function (item) {
 var clone = item.cloneNode(true);
@@ -2858,8 +2858,8 @@ marquee.appendChild(clone);
 </div>
 <div class="middle-wrap composition-content">
 <div class="composition-images">
-<img src="../../wp-content/uploads/2026/07/symmetry-composition-01.png" alt="建筑轴对称构图示例" />
-<img src="../../wp-content/uploads/2026/07/symmetry-composition-02.png" alt="水面倒影对称构图示例" />
+<img src="../../wp-content/uploads/2026/07/symmetry-composition-01.png" alt="建筑轴对称构图示例" loading="lazy" decoding="async" fetchpriority="low" />
+<img src="../../wp-content/uploads/2026/07/symmetry-composition-02.png" alt="水面倒影对称构图示例" loading="lazy" decoding="async" fetchpriority="low" />
 </div>
 <p class="composition-copy"><strong>对称构图：</strong>按照一定的对称轴或对称中心，使画面中景物形成轴对称或中心对称。常用于拍摄建筑、隧道等。</p>
 </div>
@@ -2871,48 +2871,48 @@ marquee.appendChild(clone);
 <article class="composition-gallery-card">
 <span class="label d-inline-block f-a-16-120 color-black">三分构图</span>
 <div class="composition-gallery-images">
-<img src="../../wp-content/uploads/2026/07/third-composition-01-clean.png" alt="小船位于画面三分线附近的三分构图示例" />
-<img src="../../wp-content/uploads/2026/07/third-composition-02-clean.png" alt="城市主体位于三分线附近的三分构图示例" />
+<img src="../../wp-content/uploads/2026/07/third-composition-01-clean.png" alt="小船位于画面三分线附近的三分构图示例" loading="lazy" decoding="async" fetchpriority="low" />
+<img src="../../wp-content/uploads/2026/07/third-composition-02-clean.png" alt="城市主体位于三分线附近的三分构图示例" loading="lazy" decoding="async" fetchpriority="low" />
 </div>
 <p class="composition-gallery-copy"><strong>三分构图：</strong>把画面横竖各两条线均分九格，将主体放在分割线或交点上，让画面平衡耐看、视觉重点更突出。</p>
 </article>
 <article class="composition-gallery-card">
 <span class="label d-inline-block f-a-16-120 color-black">中心构图</span>
 <div class="composition-gallery-images">
-<img src="../../wp-content/uploads/2026/07/center-composition-01.png" alt="天坛位于画面中央的中心构图示例" />
-<img src="../../wp-content/uploads/2026/07/center-composition-02-clean.png" alt="建筑入口位于画面中央的中心构图示例" />
+<img src="../../wp-content/uploads/2026/07/center-composition-01.png" alt="天坛位于画面中央的中心构图示例" loading="lazy" decoding="async" fetchpriority="low" />
+<img src="../../wp-content/uploads/2026/07/center-composition-02-clean.png" alt="建筑入口位于画面中央的中心构图示例" loading="lazy" decoding="async" fetchpriority="low" />
 </div>
 <p class="composition-gallery-copy"><strong>中心构图：</strong>把主体放在画面正中央，视觉焦点直接突出主体的构图方式。</p>
 </article>
 <article class="composition-gallery-card">
 <span class="label d-inline-block f-a-16-120 color-black">曲线构图</span>
 <div class="composition-gallery-images">
-<img src="../../wp-content/uploads/2026/07/curve-composition-01-clean.png" alt="沙丘曲线构图示例" />
-<img src="../../wp-content/uploads/2026/07/curve-composition-02-clean.png" alt="溪流与道路曲线构图示例" />
+<img src="../../wp-content/uploads/2026/07/curve-composition-01-clean.png" alt="沙丘曲线构图示例" loading="lazy" decoding="async" fetchpriority="low" />
+<img src="../../wp-content/uploads/2026/07/curve-composition-02-clean.png" alt="溪流与道路曲线构图示例" loading="lazy" decoding="async" fetchpriority="low" />
 </div>
 <p class="composition-gallery-copy"><strong>曲线构图：</strong>利用画面里自然或人为的曲线线条引导视线、增添柔和流动美感的构图方式。</p>
 </article>
 <article class="composition-gallery-card">
 <span class="label d-inline-block f-a-16-120 color-black">三角构图</span>
 <div class="composition-gallery-images">
-<img src="../../wp-content/uploads/2026/07/triangle-composition-01-clean.png" alt="雪山与倒影形成三角结构的构图示例" />
-<img src="../../wp-content/uploads/2026/07/triangle-composition-02-clean.png" alt="建筑梁架形成三角结构的构图示例" />
+<img src="../../wp-content/uploads/2026/07/triangle-composition-01-clean.png" alt="雪山与倒影形成三角结构的构图示例" loading="lazy" decoding="async" fetchpriority="low" />
+<img src="../../wp-content/uploads/2026/07/triangle-composition-02-clean.png" alt="建筑梁架形成三角结构的构图示例" loading="lazy" decoding="async" fetchpriority="low" />
 </div>
 <p class="composition-gallery-copy"><strong>三角构图：</strong>三角构图是以画面内元素搭建三角形稳定结构，强化画面平衡、聚焦视觉重心的摄影构图手法。</p>
 </article>
 <article class="composition-gallery-card">
 <span class="label d-inline-block f-a-16-120 color-black">对角线构图</span>
 <div class="composition-gallery-images">
-<img src="../../wp-content/uploads/2026/07/diagonal-composition-01-clean.png" alt="荷塘石桥形成对角线的构图示例" />
-<img src="../../wp-content/uploads/2026/07/diagonal-composition-02-clean.png" alt="巷道墙面形成对角线的构图示例" />
+<img src="../../wp-content/uploads/2026/07/diagonal-composition-01-clean.png" alt="荷塘石桥形成对角线的构图示例" loading="lazy" decoding="async" fetchpriority="low" />
+<img src="../../wp-content/uploads/2026/07/diagonal-composition-02-clean.png" alt="巷道墙面形成对角线的构图示例" loading="lazy" decoding="async" fetchpriority="low" />
 </div>
 <p class="composition-gallery-copy"><strong>对角线构图：</strong>利用画面中的斜线或沿对角线安排主体，引导视线并增强延伸感与动势的构图方式。</p>
 </article>
 <article class="composition-gallery-card">
 <span class="label d-inline-block f-a-16-120 color-black">水平线构图</span>
 <div class="composition-gallery-images">
-<img src="../../wp-content/uploads/2026/07/horizontal-composition-01-clean.png" alt="田野地平线构图示例" />
-<img src="../../wp-content/uploads/2026/07/horizontal-composition-02-clean.png" alt="城市天际线构图示例" />
+<img src="../../wp-content/uploads/2026/07/horizontal-composition-01-clean.png" alt="田野地平线构图示例" loading="lazy" decoding="async" fetchpriority="low" />
+<img src="../../wp-content/uploads/2026/07/horizontal-composition-02-clean.png" alt="城市天际线构图示例" loading="lazy" decoding="async" fetchpriority="low" />
 </div>
 <p class="composition-gallery-copy"><strong>水平线构图：</strong>以画面中水平线条为核心分割画面，带来平稳开阔、舒缓宁静视觉感受的构图方式。</p>
 </article>
@@ -2950,27 +2950,27 @@ marquee.appendChild(clone);
 </section>
 <section class="what-we-stand-for shot-scale-cards-grid">
 <div class="item shot-scale-card" aria-label="大远景">
-<img src="../../wp-content/uploads/2026/07/shot-scale-wide-long-shot.png" alt="大远景示例">
+<img src="../../wp-content/uploads/2026/07/shot-scale-wide-long-shot.png" alt="大远景示例" loading="lazy" decoding="async" fetchpriority="low">
 <p class="shot-scale-copy"><strong>大远景：</strong>镜头远距离拍摄完整环境与渺小人物，侧重交代整体场景氛围的大远景镜头。</p>
 </div>
 <div class="item shot-scale-card" aria-label="远景">
-<img src="../../wp-content/uploads/2026/07/shot-scale-long-shot.png" alt="远景示例">
+<img src="../../wp-content/uploads/2026/07/shot-scale-long-shot.png" alt="远景示例" loading="lazy" decoding="async" fetchpriority="low">
 <p class="shot-scale-copy"><strong>远景：</strong>镜头远距离拍摄，完整展现人物与周边大环境、交代场景氛围的景别画面。</p>
 </div>
 <div class="item shot-scale-card" aria-label="特写">
-<img src="../../wp-content/uploads/2026/07/shot-scale-close-up-film-still-v2.png" alt="电影人物面部特写示例">
+<img src="../../wp-content/uploads/2026/07/shot-scale-close-up-film-still-v2.png" alt="电影人物面部特写示例" loading="lazy" decoding="async" fetchpriority="low">
 <p class="shot-scale-copy"><strong>特写：</strong>特写是近距离聚焦主体局部的景别，放大细节、突出情绪与关键特征，弱化环境背景。</p>
 </div>
 <div class="item shot-scale-card" aria-label="全景">
-<img src="../../wp-content/uploads/2026/07/shot-scale-full-shot.png" alt="全景示例">
+<img src="../../wp-content/uploads/2026/07/shot-scale-full-shot.png" alt="全景示例" loading="lazy" decoding="async" fetchpriority="low">
 <p class="shot-scale-copy"><strong>全景：</strong>全景图完整呈现人物全身及所处完整环境，兼顾人物整体动作与场景空间的景别。</p>
 </div>
 <div class="item shot-scale-card" aria-label="中景">
-<img src="../../wp-content/uploads/2026/07/shot-scale-medium-shot.png" alt="中景示例">
+<img src="../../wp-content/uploads/2026/07/shot-scale-medium-shot.png" alt="中景示例" loading="lazy" decoding="async" fetchpriority="low">
 <p class="shot-scale-copy"><strong>中景：</strong>中景图截取人物膝盖以上部分，兼顾人物肢体动作与少量周边环境，侧重展现人物互动、动作神态的景别。</p>
 </div>
 <div class="item shot-scale-card" aria-label="近景">
-<img src="../../wp-content/uploads/2026/07/shot-scale-near-shot.png" alt="近景示例">
+<img src="../../wp-content/uploads/2026/07/shot-scale-near-shot.png" alt="近景示例" loading="lazy" decoding="async" fetchpriority="low">
 <p class="shot-scale-copy"><strong>近景：</strong>近景聚焦人物胸部以上，突出面部神态与细微情绪，弱化大面积环境的景别画面。</p>
 </div>
 </section>
@@ -2981,50 +2981,50 @@ marquee.appendChild(clone);
 <div class="light-position-layout">
 <article class="light-position-feature" aria-label="模特">
 <span class="label d-inline-block f-a-16-120 color-black">模特</span>
-<img src="../../wp-content/uploads/2026/07/light-position-model.png" alt="光位示例模特" loading="lazy">
+<img src="../../wp-content/uploads/2026/07/light-position-model.png" alt="光位示例模特" loading="lazy" decoding="async" fetchpriority="low">
 </article>
 <div class="light-position-loop" aria-label="五种光位示例" data-mobile-scroll-container>
 <span class="mobile-scroll-hint" data-mobile-scroll-hint>滑动以展示更多》</span>
 <div class="light-position-track">
 <article class="light-position-card" aria-label="左侧光">
 <span class="label d-inline-block f-a-16-120 color-black">左侧光</span>
-<img src="../../wp-content/uploads/2026/07/light-position-left.png" alt="左侧光人像示例" loading="lazy">
+<img src="../../wp-content/uploads/2026/07/light-position-left.png" alt="左侧光人像示例" loading="lazy" decoding="async" fetchpriority="low">
 </article>
 <article class="light-position-card" aria-label="右侧光">
 <span class="label d-inline-block f-a-16-120 color-black">右侧光</span>
-<img src="../../wp-content/uploads/2026/07/light-position-right.png" alt="右侧光人像示例" loading="lazy">
+<img src="../../wp-content/uploads/2026/07/light-position-right.png" alt="右侧光人像示例" loading="lazy" decoding="async" fetchpriority="low">
 </article>
 <article class="light-position-card" aria-label="逆光">
 <span class="label d-inline-block f-a-16-120 color-black">逆光</span>
-<img src="../../wp-content/uploads/2026/07/light-position-back.png" alt="逆光人像示例" loading="lazy">
+<img src="../../wp-content/uploads/2026/07/light-position-back.png" alt="逆光人像示例" loading="lazy" decoding="async" fetchpriority="low">
 </article>
 <article class="light-position-card" aria-label="顶光">
 <span class="label d-inline-block f-a-16-120 color-black">顶光</span>
-<img src="../../wp-content/uploads/2026/07/light-position-top.png" alt="顶光人像示例" loading="lazy">
+<img src="../../wp-content/uploads/2026/07/light-position-top.png" alt="顶光人像示例" loading="lazy" decoding="async" fetchpriority="low">
 </article>
 <article class="light-position-card" aria-label="顺光">
 <span class="label d-inline-block f-a-16-120 color-black">顺光</span>
-<img src="../../wp-content/uploads/2026/07/light-position-front.png" alt="顺光人像示例" loading="lazy">
+<img src="../../wp-content/uploads/2026/07/light-position-front.png" alt="顺光人像示例" loading="lazy" decoding="async" fetchpriority="low">
 </article>
 <article class="light-position-card" aria-hidden="true">
 <span class="label d-inline-block f-a-16-120 color-black">左侧光</span>
-<img src="../../wp-content/uploads/2026/07/light-position-left.png" alt="" loading="lazy">
+<img src="../../wp-content/uploads/2026/07/light-position-left.png" alt="" loading="lazy" decoding="async" fetchpriority="low">
 </article>
 <article class="light-position-card" aria-hidden="true">
 <span class="label d-inline-block f-a-16-120 color-black">右侧光</span>
-<img src="../../wp-content/uploads/2026/07/light-position-right.png" alt="" loading="lazy">
+<img src="../../wp-content/uploads/2026/07/light-position-right.png" alt="" loading="lazy" decoding="async" fetchpriority="low">
 </article>
 <article class="light-position-card" aria-hidden="true">
 <span class="label d-inline-block f-a-16-120 color-black">逆光</span>
-<img src="../../wp-content/uploads/2026/07/light-position-back.png" alt="" loading="lazy">
+<img src="../../wp-content/uploads/2026/07/light-position-back.png" alt="" loading="lazy" decoding="async" fetchpriority="low">
 </article>
 <article class="light-position-card" aria-hidden="true">
 <span class="label d-inline-block f-a-16-120 color-black">顶光</span>
-<img src="../../wp-content/uploads/2026/07/light-position-top.png" alt="" loading="lazy">
+<img src="../../wp-content/uploads/2026/07/light-position-top.png" alt="" loading="lazy" decoding="async" fetchpriority="low">
 </article>
 <article class="light-position-card" aria-hidden="true">
 <span class="label d-inline-block f-a-16-120 color-black">顺光</span>
-<img src="../../wp-content/uploads/2026/07/light-position-front.png" alt="" loading="lazy">
+<img src="../../wp-content/uploads/2026/07/light-position-front.png" alt="" loading="lazy" decoding="async" fetchpriority="low">
 </article>
 </div>
 </div>
@@ -3041,55 +3041,55 @@ marquee.appendChild(clone);
 <div class="light-shadow-track" aria-label="十三张光影效果展示卡片">
 <article class="light-shadow-card" aria-label="自然光">
 <span class="label">自然光</span>
-<img src="../../wp-content/uploads/2026/07/light-shadow-natural.png" alt="自然光摄影示例" loading="lazy">
+<img src="../../wp-content/uploads/2026/07/light-shadow-natural.png" alt="自然光摄影示例" loading="lazy" decoding="async" fetchpriority="low">
 </article>
 <article class="light-shadow-card" aria-label="人造光">
 <span class="label">人造光</span>
-<img src="../../wp-content/uploads/2026/07/light-shadow-artificial.png" alt="人造光摄影示例" loading="lazy">
+<img src="../../wp-content/uploads/2026/07/light-shadow-artificial.png" alt="人造光摄影示例" loading="lazy" decoding="async" fetchpriority="low">
 </article>
 <article class="light-shadow-card" aria-label="硬光">
 <span class="label">硬光</span>
-<img src="../../wp-content/uploads/2026/07/light-shadow-hard.png" alt="硬光摄影示例" loading="lazy">
+<img src="../../wp-content/uploads/2026/07/light-shadow-hard.png" alt="硬光摄影示例" loading="lazy" decoding="async" fetchpriority="low">
 </article>
 <article class="light-shadow-card" aria-label="软光">
 <span class="label">软光</span>
-<img src="../../wp-content/uploads/2026/07/light-shadow-soft.png" alt="软光摄影示例" loading="lazy">
+<img src="../../wp-content/uploads/2026/07/light-shadow-soft.png" alt="软光摄影示例" loading="lazy" decoding="async" fetchpriority="low">
 </article>
 <article class="light-shadow-card" aria-label="剪影光">
 <span class="label">剪影光</span>
-<img src="../../wp-content/uploads/2026/07/light-shadow-silhouette.png" alt="剪影光摄影示例" loading="lazy">
+<img src="../../wp-content/uploads/2026/07/light-shadow-silhouette.png" alt="剪影光摄影示例" loading="lazy" decoding="async" fetchpriority="low">
 </article>
 <article class="light-shadow-card" aria-label="蝴蝶光">
 <span class="label">蝴蝶光</span>
-<img src="../../wp-content/uploads/2026/07/light-shadow-butterfly.png" alt="蝴蝶光摄影示例" loading="lazy">
+<img src="../../wp-content/uploads/2026/07/light-shadow-butterfly.png" alt="蝴蝶光摄影示例" loading="lazy" decoding="async" fetchpriority="low">
 </article>
 <article class="light-shadow-card" aria-label="霓虹光">
 <span class="label">霓虹光</span>
-<img src="../../wp-content/uploads/2026/07/light-shadow-neon.png" alt="霓虹光摄影示例" loading="lazy">
+<img src="../../wp-content/uploads/2026/07/light-shadow-neon.png" alt="霓虹光摄影示例" loading="lazy" decoding="async" fetchpriority="low">
 </article>
 <article class="light-shadow-card" aria-label="伦勃朗光">
 <span class="label">伦勃朗光</span>
-<img src="../../wp-content/uploads/2026/07/light-shadow-rembrandt.png" alt="伦勃朗光摄影示例" loading="lazy">
+<img src="../../wp-content/uploads/2026/07/light-shadow-rembrandt.png" alt="伦勃朗光摄影示例" loading="lazy" decoding="async" fetchpriority="low">
 </article>
 <article class="light-shadow-card" aria-label="丁达尔光">
 <span class="label">丁达尔光</span>
-<img src="../../wp-content/uploads/2026/07/light-shadow-tyndall.png" alt="丁达尔光摄影示例" loading="lazy">
+<img src="../../wp-content/uploads/2026/07/light-shadow-tyndall.png" alt="丁达尔光摄影示例" loading="lazy" decoding="async" fetchpriority="low">
 </article>
 <article class="light-shadow-card" aria-label="胶片晕光">
 <span class="label">胶片晕光</span>
-<img src="../../wp-content/uploads/2026/07/light-shadow-film-halation.png" alt="胶片晕光摄影示例" loading="lazy">
+<img src="../../wp-content/uploads/2026/07/light-shadow-film-halation.png" alt="胶片晕光摄影示例" loading="lazy" decoding="async" fetchpriority="low">
 </article>
 <article class="light-shadow-card" aria-label="百叶窗光">
 <span class="label">百叶窗光</span>
-<img src="../../wp-content/uploads/2026/07/light-shadow-blinds.png" alt="百叶窗光摄影示例" loading="lazy">
+<img src="../../wp-content/uploads/2026/07/light-shadow-blinds.png" alt="百叶窗光摄影示例" loading="lazy" decoding="async" fetchpriority="low">
 </article>
 <article class="light-shadow-card" aria-label="黄金时刻">
 <span class="label">黄金时刻</span>
-<img src="../../wp-content/uploads/2026/07/light-shadow-golden-hour.png" alt="黄金时刻摄影示例" loading="lazy">
+<img src="../../wp-content/uploads/2026/07/light-shadow-golden-hour.png" alt="黄金时刻摄影示例" loading="lazy" decoding="async" fetchpriority="low">
 </article>
 <article class="light-shadow-card" aria-label="蓝调时刻">
 <span class="label">蓝调时刻</span>
-<img src="../../wp-content/uploads/2026/07/light-shadow-blue-hour.png" alt="蓝调时刻摄影示例" loading="lazy">
+<img src="../../wp-content/uploads/2026/07/light-shadow-blue-hour.png" alt="蓝调时刻摄影示例" loading="lazy" decoding="async" fetchpriority="low">
 </article>
 </div>
 </div>
@@ -3461,8 +3461,8 @@ fill="black" />
 var ajax_object = {"ajax_url":"../../wp-admin/admin-ajax.php","ajax_nonce":"f0890835c4","upload_dir":"../../wp-content/uploads","theme_dir":"../../wp-content/themes/units","skey":"pk_test_51KrnftKfXxuQ5MrsGHbz4vO3OebxJQJS6cqW8jRFSKMR4XkpjUMf3z9oRXOHb5xq5VSEmvSaW5Yflfh8NOHhXof500rGpQLQXv","instafeedConfig":{"accessToken":""},"checkout_links":{"policy":"../terms-of-use/index.html","terms":"../terms-of-use/index.html"},"checkout_menu":""};
 //# sourceURL=app%2F0-js-extra
 </script>
-<script src="../../wp-content/uploads/2026/07/tunnel-textures-v2.js?v=20260723-1"></script>
-<script id="app/0-js" src="../../wp-content/themes/units/public/dist/scripts/main__q_47a9561d2e.js?v=20260724-1"></script>
+<script defer src="../../wp-content/uploads/2026/07/tunnel-textures-v2.js?v=20260723-1"></script>
+<script defer id="app/0-js" src="../../wp-content/themes/units/public/dist/scripts/main__q_47a9561d2e.js?v=20260724-1"></script>
 </body>
 </html><!-- WP Fastest Cache file was created in 1.042 seconds, on July 8, 2026 @ 7:45 am -->
 
