@@ -1870,10 +1870,6 @@ var images = Array.prototype.slice.call(document.querySelectorAll('main img[load
 return !image.closest('.light-position-card[aria-hidden="true"]');
 });
 
-images.forEach(function (image) {
-image.removeAttribute('fetchpriority');
-});
-
 if (!('IntersectionObserver' in window)) return;
 
 var observer = new IntersectionObserver(function (entries) {
