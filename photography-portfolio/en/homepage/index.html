@@ -496,14 +496,17 @@ min-height: 0;
 }
 .flat-shot-section .flat-shot-images {
 align-items: stretch;
+display: flex;
 flex: 1 1 398px;
 max-height: 398px;
 min-height: 0;
 }
 .flat-shot-section .flat-shot-images img {
-aspect-ratio: auto;
+aspect-ratio: 1 / 1;
+flex: 0 0 auto;
 height: 100%;
 min-height: 0;
+width: auto;
 }
 .flat-shot-section .flat-shot-copy {
 flex: 0 0 auto;
