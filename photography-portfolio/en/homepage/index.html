@@ -484,6 +484,9 @@ line-height: 1.25;
 margin-bottom: 12px;
 }
 @media (min-width: 1025px) {
+.flat-shot-section .living-track {
+height: max(calc(100dvh - 125px), 820px) !important;
+}
 .flat-shot-section .flat-shot-card {
 overflow: hidden;
 }
@@ -497,7 +500,8 @@ min-height: 0;
 .flat-shot-section .flat-shot-images {
 align-items: stretch;
 display: flex;
-flex: 1 1 398px;
+flex: 0 0 398px;
+height: 398px;
 max-height: 398px;
 min-height: 0;
 }
