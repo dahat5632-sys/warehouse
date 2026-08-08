@@ -484,13 +484,19 @@ line-height: 1.25;
 margin-bottom: 12px;
 }
 @media (min-width: 1025px) {
+.flat-shot-section {
+--flat-shot-image-size: clamp(260px, calc(100dvh - 440px), 330px);
+--flat-shot-image-gap: clamp(14px, 1.5vw, 24px);
+--flat-shot-card-x-padding: clamp(32px, 3vw, 48px);
+--flat-shot-card-width: min(calc(100vw - 30px), calc(var(--flat-shot-image-size) + var(--flat-shot-image-size) + var(--flat-shot-image-gap) + var(--flat-shot-card-x-padding) + var(--flat-shot-card-x-padding)));
+}
 .flat-shot-section .living-track {
 height: auto !important;
 }
 .flat-shot-section .flat-shot-card {
 height: auto !important;
 overflow: hidden;
-padding: 24px clamp(40px, 5vw, 64px) !important;
+padding: 24px var(--flat-shot-card-x-padding) !important;
 }
 .flat-shot-section .flat-shot-card .top-wrap {
 margin-bottom: 18px;
@@ -505,10 +511,13 @@ min-height: 0;
 .flat-shot-section .flat-shot-images {
 align-items: stretch;
 display: flex;
-flex: 0 0 clamp(260px, calc(100dvh - 440px), 330px);
-height: clamp(260px, calc(100dvh - 440px), 330px);
+flex: 0 0 var(--flat-shot-image-size);
+gap: var(--flat-shot-image-gap);
+height: var(--flat-shot-image-size);
 max-height: 330px;
+max-width: none;
 min-height: 0;
+width: fit-content;
 }
 .flat-shot-section .flat-shot-images img {
 aspect-ratio: 1 / 1;
@@ -522,6 +531,8 @@ flex: 0 0 auto;
 font-size: clamp(17px, 1.25vw, 22px);
 line-height: 1.55;
 margin-top: 18px;
+max-width: none;
+width: 100%;
 }
 .flat-shot-section .flat-shot-copy strong {
 font-size: clamp(21px, 1.7vw, 28px);
