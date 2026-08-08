@@ -485,10 +485,14 @@ margin-bottom: 12px;
 }
 @media (min-width: 1025px) {
 .flat-shot-section .living-track {
-height: max(calc(100dvh - 125px), 820px) !important;
+height: clamp(580px, calc(100dvh - 150px), 760px) !important;
 }
 .flat-shot-section .flat-shot-card {
 overflow: hidden;
+padding: clamp(24px, 3vh, 36px) clamp(40px, 5vw, 64px) !important;
+}
+.flat-shot-section .flat-shot-card .top-wrap {
+margin-bottom: clamp(14px, 2vh, 22px);
 }
 .flat-shot-section .flat-shot-content {
 display: flex;
@@ -500,9 +504,9 @@ min-height: 0;
 .flat-shot-section .flat-shot-images {
 align-items: stretch;
 display: flex;
-flex: 0 0 398px;
-height: 398px;
-max-height: 398px;
+flex: 0 0 clamp(280px, calc(100dvh - 484px), 380px);
+height: clamp(280px, calc(100dvh - 484px), 380px);
+max-height: 380px;
 min-height: 0;
 }
 .flat-shot-section .flat-shot-images img {
